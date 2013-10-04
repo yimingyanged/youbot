@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/youbot/ros/workspaces/youbot/src/youbot_driver/src/display/DisplayIpAddress.cpp
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+errno.h
+-
+termios.h
+-
+time.h
+-
+iostream
+-
+string
+-
+sys/types.h
+-
+ifaddrs.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+cstdlib
+-
+

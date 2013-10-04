@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "youbot_driver")
+set(youbot_driver_MAINTAINER "Russell Toris <rctoris@wpi.edu>")
+set(youbot_driver_DEPRECATED "")
+set(youbot_driver_VERSION "0.1.7")
+set(youbot_driver_BUILD_DEPENDS "rosconsole" "roscpp" "cppunit")
+set(youbot_driver_RUN_DEPENDS "roscpp" "rosconsole" "cppunit" "libcap2-bin")
+set(youbot_driver_BUILDTOOL_DEPENDS "catkin")

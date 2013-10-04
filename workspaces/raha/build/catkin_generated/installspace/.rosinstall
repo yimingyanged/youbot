@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/youbot/ros/workspaces/raha/install/setup.sh
