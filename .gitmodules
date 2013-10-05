@@ -1,6 +1,6 @@
 [submodule "workspaces/youbot/src/youbot_oodl"]
 	path = workspaces/youbot/src/youbot_oodl
-	url = http://github.com/WPI-RAIL/youbot_oodl.git
+	url = http://github.com/eAndrius/youbot_oodl.git
 [submodule "workspaces/youbot/src/youbot_description"]
 	path = workspaces/youbot/src/youbot_description
 	url = http://github.com/WPI-RAIL/youbot_description.git
