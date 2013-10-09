@@ -52,10 +52,10 @@
 <!--Second arm-->
   <xacro:youbot_arm name="arm_2" parent="base_link">
     <!--<origin xyz="-0.143 0 0.046" rpy="0 0 3.1415" />-->
-    <origin xyz="-0.123 0 0.046" rpy="0 0 3.1415" />  <!-- x offset needs to be further verified -->
+    <origin xyz="-0.143 0 0.056" rpy="0 0 3.1415" />  <!-- x offset needs to be further verified -->
   </xacro:youbot_arm>
   <xacro:youbot_gripper name="gripper_2" parent="arm_2_link_5">
-    <origin xyz="0 0 0" rpy="0 0 0" />
+    <origin xyz="-0.0027 0 .016" rpy="0 ${-M_PI/2} ${M_PI}" />
   </xacro:youbot_gripper>
 
 <!-- SENSOR SPECIFIC STUFF -->
