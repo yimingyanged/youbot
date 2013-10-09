@@ -8,7 +8,7 @@
 	<include filename="$(find youbot_description)/urdf/youbot_gripper/gripper.transmission.xacro" />
 	<include filename="$(find youbot_description)/urdf/youbot_gripper/limits.urdf.xacro" />
 
-	<include filename="$(find youbot_description)/urdf/sensors/asus_xtion_camera.urdf.xacro" />
+<!--	<include filename="$(find youbot_description)/urdf/sensors/asus_xtion_camera.urdf.xacro" /> -->
 
 	<xacro:macro name="youbot_gripper" params="parent name *origin">
 
@@ -140,10 +140,10 @@
 		</gazebo>
 
                 <!-- asus xtion camera -->
-		<xacro:asus_xtion_camera name="xtion" parent="${name}_palm_link" tilt="0.0">
+<!--		<xacro:asus_xtion_camera name="xtion" parent="${name}_palm_link" tilt="0.0"> -->
                   <!-- AR_CALIBRATOR:EDIT_HERE -->
-                  <origin xyz="0.0197188 -0.0341838 0.0459352" rpy="0.0201114 0.00763208 3.0937" />
-                </xacro:asus_xtion_camera>
+<!--                  <origin xyz="0.0197188 -0.0341838 0.0459352" rpy="0.0201114 0.00763208 3.0937" />  -->
+<!--                </xacro:asus_xtion_camera>  -->
 
 		
 		<!-- extensions -->
