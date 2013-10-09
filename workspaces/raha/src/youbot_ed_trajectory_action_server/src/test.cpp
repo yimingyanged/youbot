@@ -24,7 +24,7 @@ public:
 	{
 		isReady(false);
 		// tell the action client that we want to spin a thread by default
-		traj_client_ = new TrajClient("arm_1/arm_controller/follow_joint_trajectory", true);
+		traj_client_ = new TrajClient("arm_2/arm_controller/follow_joint_trajectory", true);
 
 		// wait for action server to come up
 		int count = 0;
@@ -68,11 +68,11 @@ control_msgs::FollowJointTrajectoryGoal armExtensionTrajectory() {
 	control_msgs::FollowJointTrajectoryGoal goal;
 	ROS_INFO("entry");
 	// First, the joint names, which apply to all waypoints
-	goal.trajectory.joint_names.push_back("arm_joint_1");
-	goal.trajectory.joint_names.push_back("arm_joint_2");
-	goal.trajectory.joint_names.push_back("arm_joint_3");
-	goal.trajectory.joint_names.push_back("arm_joint_4");
-	goal.trajectory.joint_names.push_back("arm_joint_5");
+	goal.trajectory.joint_names.push_back("arm_2_joint_1");
+	goal.trajectory.joint_names.push_back("arm_2_joint_2");
+	goal.trajectory.joint_names.push_back("arm_2_joint_3");
+	goal.trajectory.joint_names.push_back("arm_2_joint_4");
+	goal.trajectory.joint_names.push_back("arm_2_joint_5");
 
 	// We will have two waypoints in this goal trajectory
 	goal.trajectory.points.resize(2);
@@ -161,7 +161,7 @@ int main(int argc, char **argv) {
 
 	// create the action client
 	actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction> 
-		ac("/arm_1/arm_controller/follow_joint_trajectory", false);
+		ac("/arm_2/arm_controller/follow_joint_trajectory", false);
 	boost::thread spin_thread(&spinThread);
 
 	ROS_INFO("Waiting for action server to start.");
