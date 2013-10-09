@@ -1,8 +1,0 @@
-prefix=/home/youbot/ros/workspaces/youbot/devel
-
-Name: youbot_driver
-Description: Description of youbot_driver
-Version: 0.1.7
-Cflags: -I/home/youbot/ros/workspaces/youbot/src/youbot_driver/include
-Libs: -L/home/youbot/ros/workspaces/youbot/devel/lib -lYouBotDriver -lsoem
-Requires: rosconsole

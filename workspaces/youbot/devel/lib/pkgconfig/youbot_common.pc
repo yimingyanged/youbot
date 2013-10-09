@@ -1,8 +1,0 @@
-prefix=/home/youbot/ros/workspaces/youbot/devel
-
-Name: youbot_common
-Description: Description of youbot_common
-Version: 0.1.3
-Cflags: -I/home/youbot/ros/workspaces/youbot/devel/include -I/home/youbot/ros/workspaces/youbot/src/youbot_oodl/include
-Libs: -L/home/youbot/ros/workspaces/youbot/devel/lib -lyoubot_trajectory_action_server
-Requires: 

@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "youbot_common")
-set(youbot_common_MAINTAINER "Russell Toris <rctoris@wpi.edu>")
-set(youbot_common_DEPRECATED "")
-set(youbot_common_VERSION "0.1.3")
-set(youbot_common_BUILD_DEPENDS "message_generation" "brics_actuator" "std_msgs" "rosconsole" "roscpp" "actionlib" "actionlib_msgs" "tf" "youbot_driver" "control_msgs" "nav_msgs" "std_msgs" "std_srvs" "geometry_msgs" "diagnostic_msgs" "orocos_kdl" "eigen" "pr2_controller_manager")
-set(youbot_common_RUN_DEPENDS "brics_actuator" "roscpp" "rosconsole" "cppunit" "actionlib" "actionlib_msgs" "tf" "control_msgs" "youbot_driver" "message_runtime" "nav_msgs" "std_msgs" "std_srvs" "geometry_msgs" "control_msgs" "diagnostic_msgs" "orocos_kdl" "eigen" "libcap2-bin")
-set(youbot_common_BUILDTOOL_DEPENDS "catkin")
