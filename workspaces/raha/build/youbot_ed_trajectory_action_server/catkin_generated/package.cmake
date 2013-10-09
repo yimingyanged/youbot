@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "youbot_ed_trajectory_action_server")
-set(youbot_ed_trajectory_action_server_MAINTAINER "raha <raha@todo.todo>")
-set(youbot_ed_trajectory_action_server_DEPRECATED "")
-set(youbot_ed_trajectory_action_server_VERSION "0.0.0")
-set(youbot_ed_trajectory_action_server_BUILD_DEPENDS "roscpp" "actionlib" "actionlib_msgs")
-set(youbot_ed_trajectory_action_server_RUN_DEPENDS "actionlib" "actionlib_msgs")
-set(youbot_ed_trajectory_action_server_BUILDTOOL_DEPENDS "catkin")

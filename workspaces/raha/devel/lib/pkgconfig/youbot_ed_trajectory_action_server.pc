@@ -1,8 +1,0 @@
-prefix=/home/youbot/ros/workspaces/raha/devel
-
-Name: youbot_ed_trajectory_action_server
-Description: Description of youbot_ed_trajectory_action_server
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/youbot/ros/workspaces/raha/devel/lib 
-Requires: 
