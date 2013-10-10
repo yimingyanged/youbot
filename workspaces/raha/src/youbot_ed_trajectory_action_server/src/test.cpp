@@ -87,7 +87,7 @@ control_msgs::FollowJointTrajectoryGoal armExtensionTrajectory() {
 	goal.trajectory.points[ind].positions[0] = 0.2500000;
 	goal.trajectory.points[ind].positions[1] = 0.2256610;
 	goal.trajectory.points[ind].positions[2] =-0.2486099;
-	goal.trajectory.points[ind].positions[3] = 0.0069911;
+	goal.trajectory.points[ind].positions[3] = 0.2000000;
 	goal.trajectory.points[ind].positions[4] = 0.9257740;
 	// Velocities
 	ROS_INFO("1: vels");
@@ -113,7 +113,7 @@ control_msgs::FollowJointTrajectoryGoal armExtensionTrajectory() {
 	goal.trajectory.points[ind].positions[0] = 0.2500000;
 	goal.trajectory.points[ind].positions[1] = 0.2256610;
 	goal.trajectory.points[ind].positions[2] =-0.2486099;
-	goal.trajectory.points[ind].positions[3] = 0.0069911;
+	goal.trajectory.points[ind].positions[3] = 0.1500000;
 	goal.trajectory.points[ind].positions[4] = 1.9257740;
 	// Velocities
 	ROS_INFO("2: vels");
@@ -131,7 +131,7 @@ control_msgs::FollowJointTrajectoryGoal armExtensionTrajectory() {
 
 	// To be reached 2 seconds after starting along the trajectory
 	ROS_INFO("2: time");
-	goal.trajectory.points[ind].time_from_start = ros::Duration(1.0);
+	goal.trajectory.points[ind].time_from_start = ros::Duration(4.0);
 
 	//we are done; return the goal
 	return goal;
