@@ -59,49 +59,82 @@ ros::Time last_heartbeat_time;
 void heartbeatCallback(const std_msgs::Bool::ConstPtr& msg)
 {
   ros::Time now = ros::Time::now();
-  if (!has_received_heartbeat) ROS_INFO("Got first heartbeat");
+  
+  if (!has_received_heartbeat) {
+    ROS_INFO("Got first heartbeat");
+  } 
   else {
     //ROS_INFO_STREAM("Got heartbeat " << heartbeat_timeout << " ticks after last one");
     double secs = (now-last_heartbeat_time).toSec();
-    if (secs>=heartbeat_timeout_max*0.01)
+    if (secs >= heartbeat_timeout_max*0.01)
     {
-      ROS_WARN_STREAM("Got heartbeat " << (now-last_heartbeat_time).toSec() << " seconds after last, reconnecting...");
+      //ROS_WARN_STREAM("Got heartbeat " << (now-last_heartbeat_time).toSec() << " seconds after last, reconnecting...");
+      printf("Got heartbeat %2.5f seconds after last, reconnecting...", (now-last_heartbeat_time).toSec());
       //heartbeat is late so we have timed out already
       //call reconnect and reset state
       std_srvs::Empty::Request req;
       std_srvs::Empty::Response res;
-      ros::service::call("/reconnect",req,res);
+      //ros::service::call("/reconnect",req,res);
+      //youBot->switchOnBaseMotorsCallback(req, res);
       printf("Reconnected\r\n");
-      bad=false;
-      now=ros::Time::now();
       
+      bad = false;
+      now = ros::Time::now();
     }
-    else
-    {
-      ROS_INFO_STREAM("Got heartbeat " << (now-last_heartbeat_time).toSec() << " seconds after last");
+    else {
+      //ROS_INFO_STREAM("Got heartbeat " << (now-last_heartbeat_time).toSec() << " seconds after last");
+      //printf("Got heartbeat " << (now-last_heartbeat_time).toSec() << " seconds after last");
+      printf("\rGot heartbeat %2.5f seconds after last", (now-last_heartbeat_time).toSec());
+      
     }
   }
 
-  has_received_heartbeat=true;
-  heartbeat_timeout=0;
-  last_heartbeat_time=now;
+  has_received_heartbeat = true;
+  heartbeat_timeout = 0;
+  last_heartbeat_time = now;
 }
 
 void checkHeartbeat(youBot::YouBotOODLWrapper *youBot) {
-  //printf("AWESOME\r\n");
   if (bad) {
-      ROS_INFO("Stopping motors...");
-      //kill motors
-      //&YouBotOODLWrapper::switchOffBaseMotorsCallback, this
-      //bool YouBotOODLWrapper::switchOffBaseMotorsCallback(std_srvs::Empty::Request& request, std_srvs::Empty::Response& response)
-      std_srvs::Empty::Request req;
-      std_srvs::Empty::Response res;
+    //ROS_INFO("Stopping motors...");
+    //printf("Stopping motors...");
+    // Kill base motors
+    std_srvs::Empty::Request req;
+    std_srvs::Empty::Response res;
+    //youBot->switchOffBaseMotorsCallback(req, res);
 
-      youBot->switchOffBaseMotorsCallback(req, res);
-      //ros::service::call("arm_1/switchOffMotors", empty);
-      //ros::service::call("base/switchOffMotors", empty); 
+    // Stop arm without powering down motors
+    //youBot->youBotConfiguration.youBotArmConfigurations[0].youBotArm->getArmJoint(1).stopJoint();
+    //youBot->youBotConfiguration.youBotArmConfigurations[0].youBotArm->getArmJoint(2).stopJoint();
+      // stop the controller
+    for (int armIndex = 0; armIndex < 2; armIndex++) {
+  for (int i = 0; i < 5; ++i)
+  {
+    try
+    {
+      // youBot joints start with 1 not with 0 -> i + 1
+      //TODO cancel trajectory
+      youBot->youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmJoint(i + 1).trajectoryController.cancelCurrentTrajectory();
+      youBot->youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmJoint(i + 1).stopJoint();
+    }
+    catch (std::exception& e)
+    {
+      std::string errorMessage = e.what();
+      ROS_WARN("Cannot stop joint %i: %s", i + 1, errorMessage.c_str());
+    }
+  }
+}
 
-      ROS_INFO("Stopped motors");
+    // TODO: get current goal
+    //actionlib::ActionServer<control_msgs::FollowJointTrajectoryAction>::GoalHandle goal;
+    //youBot->armJointTrajectoryCancelCallback(goal, 0);
+    //youBot->armJointTrajectoryCancelCallback(goal, 1);
+    
+    //youBot->switchOffArmMotorsCallback(req, res, 0);
+    //youBot->switchOffArmMotorsCallback(req, res, 1);
+
+    //ROS_INFO("Stopped motors");
+    //printf("Stopped motors");
   }
 
   if (has_received_heartbeat && !bad) {
@@ -109,7 +142,8 @@ void checkHeartbeat(youBot::YouBotOODLWrapper *youBot) {
       
     if (heartbeat_timeout > heartbeat_timeout_max)
     {
-      ROS_INFO("HEARTBEAT TIMED OUT!");
+      //ROS_INFO("HEARTBEAT TIMED OUT!");
+      printf("HEARTBEAT TIMED OUT! Stopping motors...");
       bad = true;
     }
   }

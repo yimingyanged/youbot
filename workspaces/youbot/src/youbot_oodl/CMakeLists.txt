@@ -83,10 +83,10 @@ target_link_libraries(youbot_2nd_arm_test ${catkin_LIBRARIES})
 #)
 #target_link_libraries(youbot_controller_manager ${catkin_LIBRARIES})
 
-add_executable(youbot_network_estopper src/youbot_network_estopper/YoubotNetworkEstopper.cpp)
-target_link_libraries(youbot_network_estopper ${catkin_LIBRARIES})
+#add_executable(youbot_network_estopper src/youbot_network_estopper/YoubotNetworkEstopper.cpp)
+#target_link_libraries(youbot_network_estopper ${catkin_LIBRARIES})
 
-add_executable(heartbeat_generator src/youbot_network_estopper/HeartbeatGenerator.cpp)
+add_executable(heartbeat_generator src/hearbeat_generator.cpp)
 target_link_libraries(heartbeat_generator ${catkin_LIBRARIES})
 
 add_executable(cmd_vel_safety src/cmd_vel_safety/CmdVelSafety.cpp)
@@ -97,7 +97,7 @@ target_link_libraries(cmd_vel_safety ${catkin_LIBRARIES})
 #############
 
 ## Mark executables and/or libraries for installation
-install(TARGETS youbot_wrapper youbot_arm_test youbot_2nd_arm_test youbot_trajectory_action_server youbot_network_estopper heartbeat_generator #youbot_controller_manager
+install(TARGETS youbot_wrapper youbot_arm_test youbot_2nd_arm_test youbot_trajectory_action_server heartbeat_generator #youbot_controller_manager
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
