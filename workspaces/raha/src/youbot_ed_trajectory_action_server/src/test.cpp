@@ -20,11 +20,12 @@ public:
 
 	//! Initialize the action client and wait for action server to come up
 	RobotArm(bool localClient) {
+		traj_client_ = NULL;
 	if(localClient)
 	{
 		isReady(false);
 		// tell the action client that we want to spin a thread by default
-		traj_client_ = new TrajClient("arm_2/arm_controller/follow_joint_trajectory", true);
+		traj_client_ = new TrajClient("arm_1/arm_controller/follow_joint_trajectory", true);
 
 		// wait for action server to come up
 		int count = 0;
@@ -47,7 +48,8 @@ public:
 
 //! Clean up the action client
 ~RobotArm() {
-	delete traj_client_;
+	if(traj_client_ != NULL)
+		delete traj_client_;
 }
 
 //! Sends the command to start a given trajectory
@@ -161,7 +163,7 @@ int main(int argc, char **argv) {
 
 	// create the action client
 	actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction> 
-		ac("/arm_2/arm_controller/follow_joint_trajectory", false);
+		ac("/arm_1/arm_controller/follow_joint_trajectory", false);
 	boost::thread spin_thread(&spinThread);
 
 	ROS_INFO("Waiting for action server to start.");
