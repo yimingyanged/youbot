@@ -176,10 +176,13 @@ int main(int argc, char **argv)
   if (configLocation == NULL)
     throw std::runtime_error("youbot_wrapper.cpp: Could not find environment variable YOUBOT_CONFIG_FOLDER_LOCATION");
 
-  n.param < std::string
-      > ("youBotConfigurationFilePath", youBot.youBotConfiguration.configurationFilePath, configLocation);
+	n.param<std::string>("youBotConfigurationFilePath",
+			youBot.youBotConfiguration.configurationFilePath,
+			configLocation);
 
-  n.param < std::string > ("youBotBaseName", youBot.youBotConfiguration.baseConfiguration.baseID, "youbot-base");
+	n.param<std::string>("youBotBaseName",
+			youBot.youBotConfiguration.baseConfiguration.baseID,
+			"youbot-base");
 
   // Retrieve all defined arm names from the launch file params
   int i = 1;

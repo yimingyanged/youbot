@@ -47,12 +47,16 @@
 /* wrapper includes */
 #include <youbot_driver/youbot/YouBotBase.hpp>
 #include <youbot_driver/youbot/YouBotManipulator.hpp>
-#include <actionlib/server/simple_action_server.h>
+//#include <actionlib/server/simple_action_server.h>
+#include <actionlib/server/action_server.h>
+//#include <actionlib/action_definition.h>
 #include <control_msgs/FollowJointTrajectoryAction.h>
+#include <control_msgs/GripperCommandAction.h>
 
-typedef actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction> Server;
+//typedef actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction> ArmServer;
+//typedef actionlib::SimpleActionServer<control_msgs::GripperCommandAction> GripperServer;
 
-class JointTrajectoryAction;
+//class JointTrajectoryAction;
 
 namespace youBot
 {
@@ -144,6 +148,8 @@ public:
     /// Receives "brics_actuator/JointPositions" for the gripper
     ros::Subscriber gripperPositionCommandSubscriber;
 
+    /// Implements a "control_msgs/GripperCommand" action
+	actionlib::ActionServer<control_msgs::GripperCommandAction> *gripperCommandAction;
 
     /// Publishes JointState messages with angles for the arm.
     ros::Publisher armJointStatePublisher;
@@ -157,7 +163,7 @@ public:
     /// Service to calibrate the arm
     ros::ServiceServer calibrateService;
 
-    //Server* trajectoryActionServer;
+    //ArmServer* trajectoryActionServer;
     //JointTrajectoryAction* jointTrajectoryAction;
 
     /**

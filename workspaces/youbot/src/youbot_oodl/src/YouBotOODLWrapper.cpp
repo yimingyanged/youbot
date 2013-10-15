@@ -232,6 +232,7 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 
   if (enableStandardGripper)
   {
+	// standard interface
     topicName.str("");
     topicName << youBotConfiguration.youBotArmConfigurations[armIndex].commandTopicName
         << "gripper_controller/position_command";
@@ -239,6 +240,17 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
         < brics_actuator::JointPositions
         > (topicName.str(), 1000, boost::bind(&YouBotOODLWrapper::gripperPositionsCommandCallback, this, _1, armIndex));
     youBotConfiguration.youBotArmConfigurations[armIndex].lastGripperCommand = 0.0; //This is true if the gripper is calibrated.
+
+
+    // actionServer Interface (for moveit) using <control_msg/GripperCommand>
+    topicName.str("");
+    topicName << youBotConfiguration.youBotArmConfigurations[armIndex].commandTopicName
+        << "gripper_controller/gripper_command";
+
+    youBotConfiguration.youBotArmConfigurations[armIndex].gripperCommandAction = new actionlib::ActionServer<
+        control_msgs::GripperCommandAction>(
+        node, topicName.str(), boost::bind(&YouBotOODLWrapper::gripperCommandGoalCallback, this, _1, armIndex),
+        boost::bind(&YouBotOODLWrapper::gripperCommandCancelCallback, this, _1, armIndex), false);
   }
 
   /* setup services*/
@@ -786,6 +798,29 @@ void YouBotOODLWrapper::gripperPositionsCommandCallback(
   {
     ROS_ERROR("Arm%i is not correctly initialized!", armIndex + 1);
   }
+}
+
+void YouBotOODLWrapper::gripperCommandGoalCallback(
+		actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle youbotGripperGoal, unsigned int armIndex)
+{
+	stringstream ss;
+	ss 	<< "Now in gripper goal callback " 		<< "\n"
+		<< "-------------------------------------" 	<< "\n"
+		<< "msg recieved: " 						<< "\n"
+		<< youbotGripperGoal						<< "\n"
+		<< "-------------------------------------" 	<< "\n";
+}
+
+void YouBotOODLWrapper::gripperCommandCancelCallback(
+		actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle youbotGripperGoal, unsigned int armIndex)
+{
+	stringstream ss;
+	ss 	<< "Now in gripper cancel callback " 		<< "\n"
+		<< "-------------------------------------" 	<< "\n"
+		<< "msg recieved: " 						<< "\n"
+		<< youbotGripperGoal						<< "\n"
+		<< "-------------------------------------" 	<< "\n";
+
 }
 
 void YouBotOODLWrapper::computeOODLSensorReadings()

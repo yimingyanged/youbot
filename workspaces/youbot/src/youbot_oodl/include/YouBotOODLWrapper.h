@@ -168,6 +168,21 @@ public:
     void gripperPositionsCommandCallback(const brics_actuator::JointPositionsConstPtr& youbotGripperCommand, int armIndex);
 
     /**
+     * @brief Callback that is executed when an action goal of a gripper command trajectory comes in.
+     * @param youbotGripperGoal Actionlib goal that contains the gripepr position
+     * @param armIndex Index that identifies the arm where the gripper is mounted
+     */
+    void gripperCommandGoalCallback(actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle youbotGripperGoal, unsigned int armIndex);
+
+    /**
+     * @brief Callback that is executed when an action goal of a gripper command is canceled.
+     *
+     * @param youbotGripperCommand Message that contains the desired joint configuration.
+     * @param armIndex Index that identifies the arm where the gripper is mounted
+     */
+    void gripperCommandCancelCallback(actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle youbotGripperGoal, unsigned int armIndex);
+
+    /**
      * @brief Publishes all sensor measurements. Both for base and arm.
      *
      * Depending on what has been initialized before, either odometry and/or joint state valiues are published.
