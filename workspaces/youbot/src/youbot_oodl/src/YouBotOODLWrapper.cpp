@@ -310,6 +310,7 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 
   // we can handle actionlib requests only after the complete initialization has been performed
   youBotConfiguration.youBotArmConfigurations[armIndex].armJointTrajectoryAction->start();
+  youBotConfiguration.youBotArmConfigurations[armIndex].gripperCommandAction->start();
 }
 
 /*
