@@ -268,13 +268,19 @@ private:
     vector<sensor_msgs::JointState> armJointStateMessages;
 
     /// The joint trajectory goal that is currently active.
-	actionlib::ActionServer<control_msgs::FollowJointTrajectoryAction>::GoalHandle armActiveJointTrajectoryGoal;
+	vector<actionlib::ActionServer<control_msgs::FollowJointTrajectoryAction>::GoalHandle> armActiveJointTrajectoryGoals;
 
 	/// Tell if a goal is currently active.
-	bool armHasActiveJointTrajectoryGoal;
+	vector<bool> armHasActiveJointTrajectoryGoals;
 
-	youbot::GripperSensedBarPosition gripperBar1Position;
-	youbot::GripperSensedBarPosition gripperBar2Position;
+    /// The GripperCommand goal that is currently active.
+	vector<actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle> gripperActiveGripperCommandGoals;
+
+	/// Tell if a goal is currently active.
+	vector<bool> gripperHasGripperCommandGoals;
+
+	vector<youbot::GripperSensedBarPosition> gripperBar1Positions;
+	vector<youbot::GripperSensedBarPosition> gripperBar2Positions;
 	int gripperCycleCounter;
 
     //void executeActionServer(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal,  int armIndex);

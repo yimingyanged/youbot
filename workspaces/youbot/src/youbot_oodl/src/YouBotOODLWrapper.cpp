@@ -303,7 +303,7 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
   areArmMotorsSwitchedOn = true;
 
   // currently no action is running
-  armHasActiveJointTrajectoryGoal = false;
+  armHasActiveJointTrajectoryGoals[armIndex] = false;
 
   //tracejoint = 4;
   //myTrace = new youbot::DataTrace(youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmJoint(tracejoint), "Joint4TrajectoryTrace");
@@ -613,9 +613,9 @@ void YouBotOODLWrapper::armJointTrajectoryGoalCallback(
   std::vector < youbot::JointTrajectory > jointTrajectories(youBotArmDoF);
 
   // convert from the ROS trajectory representation to the controller's representation
-  std::vector < std::vector<quantity<plane_angle> > > positions(youBotArmDoF);
-  std::vector < std::vector<quantity<angular_velocity> > > velocities(youBotArmDoF);
-  std::vector < std::vector<quantity<angular_acceleration> > > accelerations(youBotArmDoF);
+//  std::vector < std::vector<quantity<plane_angle> > > positions(youBotArmDoF);
+//  std::vector < std::vector<quantity<angular_velocity> > > velocities(youBotArmDoF);
+//  std::vector < std::vector<quantity<angular_acceleration> > > accelerations(youBotArmDoF);
   youbot::TrajectorySegment segment;
   for (unsigned int i = 0; i < trajectory.points.size(); i++)
   {
@@ -658,8 +658,8 @@ void YouBotOODLWrapper::armJointTrajectoryGoalCallback(
 
   // replace the old goal with the new one
   youbotArmGoal.setAccepted();
-  armActiveJointTrajectoryGoal = youbotArmGoal;
-  armHasActiveJointTrajectoryGoal = true;
+  armActiveJointTrajectoryGoals[armIndex] = youbotArmGoal;
+  armHasActiveJointTrajectoryGoals[armIndex] = true;
 
   // myTrace->startTrace();
 
@@ -705,11 +705,11 @@ void YouBotOODLWrapper::armJointTrajectoryCancelCallback(
     }
   }
 
-  if (armActiveJointTrajectoryGoal == youbotArmGoal)
+  if (armActiveJointTrajectoryGoals[armIndex] == youbotArmGoal)
   {
     // Marks the current goal as canceled.
     youbotArmGoal.setCanceled();
-    armHasActiveJointTrajectoryGoal = false;
+    armHasActiveJointTrajectoryGoals[armIndex] = false;
   }
 }
 
@@ -805,7 +805,7 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 		actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle youbotGripperGoal, unsigned int armIndex)
 {
 	stringstream ss;
-	ss 	<< "Now in gripper cancel callback " 		<< "\n"
+	ss 	<< "Now in gripper cancel callback for arm " << armIndex << "\n"
 		<< "-------------------------------------" 	<< "\n"
 		<< "msg recieved: " 						<< "\n"
 		<< "  effort  : " <<  youbotGripperGoal.getGoal()->command.max_effort << "\n"
@@ -828,8 +828,9 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 		rightGripperFingerPosition.barPosition = position/2 * meter;
 		leftGripperFingerPosition.barPosition = position/2 * meter;
 
-
-		ROS_DEBUG("Trying to set the right gripper to new value %f", position/2);
+		// ensure that all joint values will be send at the same time
+		youbot::EthercatMaster::getInstance().AutomaticSendOn(false);
+		ROS_DEBUG("Trying to set the right finger to new value %f", position/2);
 		try
 		{
 			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().
@@ -839,10 +840,10 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 		catch (std::exception& e)
 		{
 			std::string errorMessage = e.what();
-			ROS_WARN("Cannot set the right gripper finger: %s", errorMessage.c_str());
+			ROS_WARN("Cannot set the right finger finger: %s", errorMessage.c_str());
 		}
 
-		ROS_DEBUG("Trying to set the left gripper to new value %f", position/2);
+		ROS_DEBUG("Trying to set the left finger to new value %f", position/2);
 		try
 		{
 			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().
@@ -856,11 +857,20 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 		}
 
 
+		// replace the old goal with the new one
+		youbotGripperGoal.setAccepted();
+		gripperActiveGripperCommandGoals[armIndex] = youbotGripperGoal;
+		gripperHasGripperCommandGoals[armIndex] = true;
+
+		// ensure that all joint values will be send at the same time
+		youbot::EthercatMaster::getInstance().AutomaticSendOn(true);
 	}
 	else
 	{
 		ROS_ERROR("Arm%i is not correctly initialized!", armIndex + 1);
 	}
+
+	ROS_INFO("set gripper command");
 
 }
 
@@ -1047,52 +1057,87 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
             break;
           }
         }
-        if (areTrajectoryControllersDone && armHasActiveJointTrajectoryGoal)
+        if (areTrajectoryControllersDone && armHasActiveJointTrajectoryGoals[armIndex])
         {
-          armHasActiveJointTrajectoryGoal = false;
+          armHasActiveJointTrajectoryGoals[armIndex] = false;
           control_msgs::FollowJointTrajectoryResult trajectoryResult;
           trajectoryResult.error_code = trajectoryResult.SUCCESSFUL;
-          armActiveJointTrajectoryGoal.setSucceeded(trajectoryResult, "trajectory successful");
+          armActiveJointTrajectoryGoals[armIndex].setSucceeded(trajectoryResult, "trajectory successful");
           // ROS_INFO("trajectory successful");
           // myTrace->stopTrace();
           // myTrace->plotTrace();
         }
 
-        /*
-         * NOTE: gripper slide rails are always symmetric, but the fingers can be screwed in different
-         * positions! The published values account for the distance between the gripper slide rails, not the fingers
-         * themselves. Of course if the finger are screwed to the most inner position (i.e. the can close completely),
-         * than it is correct.
-         */
+
+
+        // Check if youbot_driver gripper controller is active
+        bool isGripperControllersDone = true;
+        youbot::TargetPositionReached bar1TargetReched;
+        youbot::TargetPositionReached bar2TargetReched;
+        bool targetReachedBar1 = false;
+        bool targetReachedBar2 = false;
         try
         {
-          youbot::YouBotGripperBar& gripperBar1 =
-              youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().getGripperBar1();
-          youbot::YouBotGripperBar& gripperBar2 =
-              youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().getGripperBar2();
+        	youbot::YouBotGripperBar& gripperBar1 =
+        			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().getGripperBar1();
+        	youbot::YouBotGripperBar& gripperBar2 =
+        			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().getGripperBar2();
 
-          if (gripperCycleCounter == 0)
-          { //workaround: avoid congestion of mailbox message by querying only every ith iteration
-            gripperCycleCounter = youBotDriverCycleFrequencyInHz / 5; //approx. 5Hz here
-            gripperBar1.getData(gripperBar1Position);
-            gripperBar2.getData(gripperBar2Position);
-          }
-          gripperCycleCounter--;
 
-          armJointStateMessages[armIndex].name[youBotArmDoF + 0] =
-              youBotConfiguration.youBotArmConfigurations[armIndex].gripperFingerNames[YouBotArmConfiguration::LEFT_FINGER_INDEX];
-          double leftGipperFingerPosition = gripperBar1Position.barPosition.value();
-          armJointStateMessages[armIndex].position[youBotArmDoF + 0] = leftGipperFingerPosition;
+        	/*
+        	 * NOTE: gripper slide rails are always symmetric, but the fingers can be screwed in different
+        	 * positions! The published values account for the distance between the gripper slide rails, not the fingers
+        	 * themselves. Of course if the finger are screwed to the most inner position (i.e. the can close completely),
+        	 * than it is correct.
+        	 */
 
-          double rightGipperFingerPosition = gripperBar2Position.barPosition.value();
-          armJointStateMessages[armIndex].name[youBotArmDoF + 1] =
-              youBotConfiguration.youBotArmConfigurations[armIndex].gripperFingerNames[YouBotArmConfiguration::RIGHT_FINGER_INDEX];
-          armJointStateMessages[armIndex].position[youBotArmDoF + 1] = rightGipperFingerPosition;
+        	if (gripperCycleCounter == 0)
+        	{ //workaround: avoid congestion of mailbox message by querying only every ith iteration
+        		gripperCycleCounter = youBotDriverCycleFrequencyInHz / 5; //approx. 5Hz here
+        		gripperBar1.getData(gripperBar1Positions[armIndex]);
+        		gripperBar2.getData(gripperBar2Positions[armIndex]);
+        	}
+        	gripperCycleCounter--;
+
+        	armJointStateMessages[armIndex].name[youBotArmDoF + 0] =
+        			youBotConfiguration.youBotArmConfigurations[armIndex].gripperFingerNames[YouBotArmConfiguration::LEFT_FINGER_INDEX];
+        	double leftGipperFingerPosition = gripperBar1Positions[armIndex].barPosition.value();
+        	armJointStateMessages[armIndex].position[youBotArmDoF + 0] = leftGipperFingerPosition;
+
+        	double rightGipperFingerPosition = gripperBar2Positions[armIndex].barPosition.value();
+        	armJointStateMessages[armIndex].name[youBotArmDoF + 1] =
+        			youBotConfiguration.youBotArmConfigurations[armIndex].gripperFingerNames[YouBotArmConfiguration::RIGHT_FINGER_INDEX];
+        	armJointStateMessages[armIndex].position[youBotArmDoF + 1] = rightGipperFingerPosition;
+
+
+        	// Handling GripperCommandAction
+        	// Read actual status of individual fingers
+        	gripperBar1.getConfigurationParameter(bar1TargetReched);
+        	bar1TargetReched.getParameter(targetReachedBar1);
+        	gripperBar2.getConfigurationParameter(bar2TargetReched);
+        	bar2TargetReched.getParameter(targetReachedBar2);
+
+        	if (targetReachedBar1 && targetReachedBar2)
+        		isGripperControllersDone = true;
+
+        	if (isGripperControllersDone && gripperHasGripperCommandGoals[armIndex])
+        	{
+        		gripperHasGripperCommandGoals[armIndex] = false;
+        		control_msgs::GripperCommandResult gripperCommandResult;
+        		gripperCommandResult.reached_goal 	= true;
+        		gripperCommandResult.stalled 		= false;
+        		gripperCommandResult.position = abs( rightGipperFingerPosition - leftGipperFingerPosition);
+        		gripperActiveGripperCommandGoals[armIndex].setSucceeded(gripperCommandResult, "grasp successful");
+        		// ROS_INFO("trajectory successful");
+        		// myTrace->stopTrace();
+        		// myTrace->plotTrace();
+        	}
+
         }
         catch (std::exception& e)
         {
-          std::string errorMessage = e.what();
-          ROS_WARN("Cannot read gripper values: %s", errorMessage.c_str());
+        	std::string errorMessage = e.what();
+        	ROS_WARN("Cannot read gripper values: %s", errorMessage.c_str());
         }
         /*
          if (trajectoryActionServerEnable)
