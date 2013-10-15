@@ -810,6 +810,7 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 		<< "msg recieved: " 						<< "\n"
 //		<< youbotGripperGoal						<< "\n"
 		<< "-------------------------------------" 	<< "\n";
+		  ROS_INFO(ss.str().c_str());
 }
 
 void YouBotOODLWrapper::gripperCommandCancelCallback(
@@ -821,7 +822,7 @@ void YouBotOODLWrapper::gripperCommandCancelCallback(
 		<< "msg recieved: " 						<< "\n"
 //		<< youbotGripperGoal						<< "\n"
 		<< "-------------------------------------" 	<< "\n";
-
+  ROS_INFO(ss.str().c_str());
 }
 
 void YouBotOODLWrapper::computeOODLSensorReadings()
