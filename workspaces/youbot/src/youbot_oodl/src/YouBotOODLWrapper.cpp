@@ -808,7 +808,7 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 	ss 	<< "Now in gripper goal callback " 		<< "\n"
 		<< "-------------------------------------" 	<< "\n"
 		<< "msg recieved: " 						<< "\n"
-		<< youbotGripperGoal						<< "\n"
+//		<< youbotGripperGoal						<< "\n"
 		<< "-------------------------------------" 	<< "\n";
 }
 
@@ -819,7 +819,7 @@ void YouBotOODLWrapper::gripperCommandCancelCallback(
 	ss 	<< "Now in gripper cancel callback " 		<< "\n"
 		<< "-------------------------------------" 	<< "\n"
 		<< "msg recieved: " 						<< "\n"
-		<< youbotGripperGoal						<< "\n"
+//		<< youbotGripperGoal						<< "\n"
 		<< "-------------------------------------" 	<< "\n";
 
 }
