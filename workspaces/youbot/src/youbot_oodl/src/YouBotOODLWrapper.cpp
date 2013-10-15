@@ -805,12 +805,63 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 		actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle youbotGripperGoal, unsigned int armIndex)
 {
 	stringstream ss;
-	ss 	<< "Now in gripper goal callback " 		<< "\n"
+	ss 	<< "Now in gripper cancel callback " 		<< "\n"
 		<< "-------------------------------------" 	<< "\n"
 		<< "msg recieved: " 						<< "\n"
-//		<< youbotGripperGoal						<< "\n"
+		<< "  effort  : " <<  youbotGripperGoal.getGoal()->command.max_effort << "\n"
+		<< "  position: " <<  youbotGripperGoal.getGoal()->command.position << "\n"
 		<< "-------------------------------------" 	<< "\n";
-		  ROS_INFO(ss.str().c_str());
+	ROS_INFO(ss.str().c_str());
+
+	ROS_DEBUG("Command for gripper%i received", armIndex + 1);
+	ROS_ASSERT(0 <= armIndex && armIndex < static_cast<int>(youBotConfiguration.youBotArmConfigurations.size()));
+
+	if (youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm != 0)
+	{ // in case stop has been invoked
+
+		double position 	= youbotGripperGoal.getGoal()->command.position;
+		double max_effort 	= youbotGripperGoal.getGoal()->command.max_effort;
+
+
+		youbot::GripperBarPositionSetPoint leftGripperFingerPosition;
+		youbot::GripperBarPositionSetPoint rightGripperFingerPosition;
+		rightGripperFingerPosition.barPosition = position/2 * meter;
+		leftGripperFingerPosition.barPosition = position/2 * meter;
+
+
+		ROS_DEBUG("Trying to set the right gripper to new value %f", position/2);
+		try
+		{
+			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().
+					getGripperBar2().
+					setData(rightGripperFingerPosition);
+		}
+		catch (std::exception& e)
+		{
+			std::string errorMessage = e.what();
+			ROS_WARN("Cannot set the right gripper finger: %s", errorMessage.c_str());
+		}
+
+		ROS_DEBUG("Trying to set the left gripper to new value %f", position/2);
+		try
+		{
+			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().
+					getGripperBar1().
+					setData(leftGripperFingerPosition);
+		}
+		catch (std::exception& e)
+		{
+			std::string errorMessage = e.what();
+			ROS_WARN("Cannot set the right gripper finger: %s", errorMessage.c_str());
+		}
+
+
+	}
+	else
+	{
+		ROS_ERROR("Arm%i is not correctly initialized!", armIndex + 1);
+	}
+
 }
 
 void YouBotOODLWrapper::gripperCommandCancelCallback(
@@ -820,7 +871,8 @@ void YouBotOODLWrapper::gripperCommandCancelCallback(
 	ss 	<< "Now in gripper cancel callback " 		<< "\n"
 		<< "-------------------------------------" 	<< "\n"
 		<< "msg recieved: " 						<< "\n"
-//		<< youbotGripperGoal						<< "\n"
+		<< "  effort  : " <<  youbotGripperGoal.getGoal()->command.max_effort << "\n"
+		<< "  position: " <<  youbotGripperGoal.getGoal()->command.position << "\n"
 		<< "-------------------------------------" 	<< "\n";
   ROS_INFO(ss.str().c_str());
 }
