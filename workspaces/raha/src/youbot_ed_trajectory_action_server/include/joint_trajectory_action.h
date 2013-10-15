@@ -53,7 +53,7 @@ namespace KDL
 class Trajectory_Composite;
 }
 
-typedef actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction> Server;
+typedef actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction> ArmServer;
 
 class JointStateObserver;
 
@@ -66,7 +66,7 @@ public:
     JointTrajectoryAction(const JointTrajectoryAction& orig);
     virtual ~JointTrajectoryAction();
 
-    void execute(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, Server* as);
+    void execute(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, ArmServer* as);
 
     void jointStateCallback(const sensor_msgs::JointState& joint_state);
     void jointStateCallback(const brics_actuator::JointPositions& position,

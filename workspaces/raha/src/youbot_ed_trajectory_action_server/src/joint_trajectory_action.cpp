@@ -192,7 +192,7 @@ void JointTrajectoryAction::setTargetTrajectory(double angle1,
     trajectoryComposite.Add(trajectorySegment);
 }
 
-void JointTrajectoryAction::execute(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, Server* as)
+void JointTrajectoryAction::execute(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, ArmServer* as)
 {
 
     current_state.name = goal->trajectory.joint_names;
