@@ -161,7 +161,7 @@ public:
 	}
 
 	// returns goal for open and close states
-	control_msgs::GripperCommandGoal getOpenGripperGoal()
+	control_msgs::GripperCommandGoal getCloseGripperGoal()
 	{
 		//goal variable
 		control_msgs::GripperCommandGoal goal;
@@ -172,12 +172,12 @@ public:
 		return goal;
 	}
 
-	control_msgs::GripperCommandGoal getCloseGripperGoal()
+	control_msgs::GripperCommandGoal getOpenGripperGoal()
 	{
 		//goal variable
 		control_msgs::GripperCommandGoal goal;
 		// setting data
-		goal.command.position = gripper_max_travel*2;
+		goal.command.position = gripper_max_travel*3;
 		goal.command.max_effort = 0.5;
 
 		return goal;
