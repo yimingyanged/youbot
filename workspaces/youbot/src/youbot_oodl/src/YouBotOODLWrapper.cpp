@@ -303,7 +303,10 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
   areArmMotorsSwitchedOn = true;
 
   // currently no action is running
-  armHasActiveJointTrajectoryGoals[armIndex] = false;
+  if(armHasActiveJointTrajectoryGoals.size() <= armIndex)
+	  armHasActiveJointTrajectoryGoals.push_back(false);
+  else
+	  armHasActiveJointTrajectoryGoals[armIndex] = false;
 
   //tracejoint = 4;
   //myTrace = new youbot::DataTrace(youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmJoint(tracejoint), "Joint4TrajectoryTrace");

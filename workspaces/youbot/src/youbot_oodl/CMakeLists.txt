@@ -53,7 +53,7 @@ link_directories(
   ${catkin_LIBRARY_DIRS}
 )
 
-set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Debug)
 
 add_library(youbot_trajectory_action_server src/youbot_trajectory_action_server/joint_trajectory_action.cpp)
 target_link_libraries(youbot_trajectory_action_server ${catkin_LIBRARIES} ${EIGEN_DEFINITIONS})
