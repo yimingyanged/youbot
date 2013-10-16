@@ -204,6 +204,10 @@ int main(int argc, char **argv)
 
   ros::Subscriber heartbeatSubscriber = n.subscribe("youbot_network_heartbeat", 1, heartbeatCallback);
 
+  // wait for debugger
+  ros::spinOnce();
+  ros::Duration(30).sleep();
+
 
 
   ROS_ASSERT((youBotHasBase == true) || (youBotHasArms == true)); // At least one should be true, otherwise nothing to be started.
