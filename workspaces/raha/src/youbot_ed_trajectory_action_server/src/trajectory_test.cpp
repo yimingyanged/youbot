@@ -177,7 +177,7 @@ public:
 		//goal variable
 		control_msgs::GripperCommandGoal goal;
 		// setting data
-		goal.command.position = gripper_max_travel*3;
+		goal.command.position = gripper_max_travel;
 		goal.command.max_effort = 0.5;
 
 		return goal;

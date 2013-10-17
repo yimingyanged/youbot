@@ -70,7 +70,7 @@ catkin_package(
 # )
 set(CMAKE_BUILD_TYPE Debug)
 ## Declare a cpp executable
-add_executable(trajectory_test src/test.cpp)
+add_executable(trajectory_test src/trajectory_test.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
