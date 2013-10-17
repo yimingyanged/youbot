@@ -69,7 +69,7 @@ public:
 	control_msgs::FollowJointTrajectoryGoal armExtensionTrajectory() {
 		//our goal variable
 		control_msgs::FollowJointTrajectoryGoal goal;
-		ROS_INFO("entry");
+
 		// First, the joint names, which apply to all waypoints
 		goal.trajectory.joint_names.push_back("arm_joint_1");
 		goal.trajectory.joint_names.push_back("arm_joint_2");
@@ -78,64 +78,78 @@ public:
 		goal.trajectory.joint_names.push_back("arm_joint_5");
 
 		// We will have two waypoints in this goal trajectory
-		goal.trajectory.points.resize(2);
+		goal.trajectory.points.resize(3);
+
+		int ind  = 0;
+		// First point
+		setFirstPoint(goal, ind, 2.0);
+
+
+		// Second trajectory point
+		ind++;
+		setFirstPoint(goal, ind, 8.0);
+
+		// First point
+		ind++;
+		setFirstPoint(goal, ind, 12.0);
+
+		//we are done; return the goal
+		return goal;
+	}
+
+	void setFirstPoint(control_msgs::FollowJointTrajectoryGoal &goal, int ind, double timeToReach)
+	{
 
 		// First trajectory point
-		// Positions
+					// Positions
 		ROS_INFO("creating 1st point");
-		int ind = 0;
 		goal.trajectory.points[ind].positions.resize(5);
-		goal.trajectory.points[ind].positions[0] = 0.2500000;
-		goal.trajectory.points[ind].positions[1] = 0.2256610;
-		goal.trajectory.points[ind].positions[2] =-0.2486099;
-		goal.trajectory.points[ind].positions[3] = 0.2000000;
-		goal.trajectory.points[ind].positions[4] = 0.9257740;
+		goal.trajectory.points[ind].positions[0] = 0.25;
+		goal.trajectory.points[ind].positions[1] = 0.30;
+		goal.trajectory.points[ind].positions[2] =-0.45;
+		goal.trajectory.points[ind].positions[3] = 0.14;
+		goal.trajectory.points[ind].positions[4] = 1.4;
 		// Velocities
 		ROS_INFO("1: vels");
 		goal.trajectory.points[ind].velocities.resize(5);
 		for (size_t j = 0; j < 5; ++j) {
-			goal.trajectory.points[ind].velocities[j] = 0.0;
+			goal.trajectory.points[ind].velocities[j] = 0.00001;
 		}
 
 		// Accelerations
 		goal.trajectory.points[ind].accelerations.resize(5);
 		for (size_t j = 0; j < 5; ++j) {
-			goal.trajectory.points[ind].accelerations[j] = 0.0;
+			goal.trajectory.points[ind].accelerations[j] = 0.00001;
 		}
 		// To be reached 1 second after starting along the trajectory
-		goal.trajectory.points[ind].time_from_start = ros::Duration(1.0);
+		goal.trajectory.points[ind].time_from_start = ros::Duration(timeToReach);
+	}
 
+	void setSecondPoint(control_msgs::FollowJointTrajectoryGoal &goal, int ind, double timeToReach)
+	{
 
-		// Second trajectory point
 		// Positions
 		ROS_INFO("creating 2nd point");
-		ind += 1;
 		goal.trajectory.points[ind].positions.resize(5);
-		goal.trajectory.points[ind].positions[0] = 0.2500000;
-		goal.trajectory.points[ind].positions[1] = 0.2256610;
-		goal.trajectory.points[ind].positions[2] =-0.2486099;
-		goal.trajectory.points[ind].positions[3] = 0.1500000;
-		goal.trajectory.points[ind].positions[4] = 1.9257740;
+		goal.trajectory.points[ind].positions[0] = 0.5;
+		goal.trajectory.points[ind].positions[1] = 0.30;
+		goal.trajectory.points[ind].positions[2] =-0.45;
+		goal.trajectory.points[ind].positions[3] = 0.14;
+		goal.trajectory.points[ind].positions[4] = 4.6;
 		// Velocities
-		ROS_INFO("2: vels");
 		goal.trajectory.points[ind].velocities.resize(5);
 		for (size_t j = 0; j < 5; ++j) {
-			goal.trajectory.points[ind].velocities[j] = 0.0;
+			goal.trajectory.points[ind].velocities[j] = 0.00001;
 		}
 
 		// Accelerations
-		ROS_INFO("2: acc");
 		goal.trajectory.points[ind].accelerations.resize(5);
 		for (size_t j = 0; j < 5; ++j) {
-			goal.trajectory.points[ind].accelerations[j] = 0.0;
+			goal.trajectory.points[ind].accelerations[j] = 0.00001;
 		}
 
 		// To be reached 2 seconds after starting along the trajectory
-		ROS_INFO("2: time");
-		goal.trajectory.points[ind].time_from_start = ros::Duration(4.0);
-
-		//we are done; return the goal
-		return goal;
+		goal.trajectory.points[ind].time_from_start = ros::Duration(timeToReach);
 	}
 
 	//! Returns the current state of the action
