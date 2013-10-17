@@ -150,7 +150,7 @@ namespace controller {
         JointStateObserver* jointStateObserver = new JointStateObserverGazebo(this);
         jointTrajectoryAction = new JointTrajectoryAction(jointStateObserver, 0.2, 1.0, 50);
 
-        trajectoryServer = new Server("arm_1/arm_controller/joint_trajectory_action",
+        trajectoryServer = new ArmServer("arm_1/arm_controller/joint_trajectory_action",
                 boost::bind(&YouBotUniversalController::executeActionServer, this, _1, trajectoryServer),
                 false);
         
@@ -159,7 +159,7 @@ namespace controller {
         return true;
     }
 
-    void YouBotUniversalController::executeActionServer(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, Server* as) {
+    void YouBotUniversalController::executeActionServer(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, ArmServer* as) {
         if (jointTrajectoryAction != NULL) {
             jointTrajectoryAction->execute(goal, trajectoryServer);
             

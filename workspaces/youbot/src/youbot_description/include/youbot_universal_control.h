@@ -54,7 +54,7 @@
 #include <sensor_msgs/JointState.h>
 #include "joint_state_observer_gazebo.h"
 
-typedef actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction> Server;
+typedef actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction> ArmServer;
 
 class JointTrajectoryAction;
 //class JointStateObserverGazebo;
@@ -94,7 +94,7 @@ namespace controller {
         ros::Subscriber velocityCommandSubscriber;
         ros::Subscriber torqueCommandSubscriber;
         JointTrajectoryAction* jointTrajectoryAction;
-        Server* trajectoryServer;
+        ArmServer* trajectoryServer;
 
         void pr2JointStateToJointStateMsgs(const std::vector<pr2_mechanism_model::JointState*>& pr2_joint_states, sensor_msgs::JointState& joint_states);
         void updateJointPosition(double setPoint, pr2_mechanism_model::JointState* joint_state_, control_toolbox::Pid* pid_controller_, const ros::Duration& dt);
@@ -104,7 +104,7 @@ namespace controller {
         void positionCommand(const brics_actuator::JointPositions &jointPositions);
         void velocityCommand(const brics_actuator::JointVelocities &jointVelocities);
         void torqueCommand(const brics_actuator::JointTorques &jointTorques);
-        void executeActionServer(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, Server* as);
+        void executeActionServer(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal, ArmServer* as);
 
         friend class JointStateObserverGazebo;
     };
