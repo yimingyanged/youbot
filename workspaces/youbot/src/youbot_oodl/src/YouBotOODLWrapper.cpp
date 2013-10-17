@@ -303,10 +303,25 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
   areArmMotorsSwitchedOn = true;
 
   // currently no action is running
-  if(armHasActiveJointTrajectoryGoals.size() <= armIndex)
-	  armHasActiveJointTrajectoryGoals.push_back(false);
+  if(gripperHasGripperCommandGoals.size() <= armIndex)
+	  gripperHasGripperCommandGoals.push_back(false);
   else
-	  armHasActiveJointTrajectoryGoals[armIndex] = false;
+	  gripperHasGripperCommandGoals[armIndex] = false;
+
+  if(armHasActiveJointTrajectoryGoals.size() <= armIndex)
+ 	  armHasActiveJointTrajectoryGoals.push_back(false);
+   else
+ 	  armHasActiveJointTrajectoryGoals[armIndex] = false;
+  // setup
+
+  if(gripperBar1Positions.size() <= armIndex)
+	  gripperBar1Positions.push_back(youbot::GripperSensedBarPosition());
+  if(gripperBar2Positions.size() <= armIndex)
+	  gripperBar2Positions.push_back(youbot::GripperSensedBarPosition());
+
+//  these has to be fixed..
+  armJointStateMessages; // needs testing to secure that there is infact one per arm, and not just a common one (which it seems like..)
+  armActiveJointTrajectoryGoals;
 
   //tracejoint = 4;
   //myTrace = new youbot::DataTrace(youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmJoint(tracejoint), "Joint4TrajectoryTrace");
@@ -645,23 +660,32 @@ void YouBotOODLWrapper::armJointTrajectoryGoalCallback(
   }
   for (int j = 0; j < youBotArmDoF; j++)
   {
-    jointTrajectories[j].start_time = boost::posix_time::microsec_clock::local_time(); //TODO is this correct to set the trajectory start time to now
+	  jointTrajectories[j].start_time = boost::posix_time::microsec_clock::local_time(); //TODO is this correct to set the trajectory start time to now
   }
 
   // cancel the old goal
-  /*
-   if (armHasActiveJointTrajectoryGoal) {
-   armActiveJointTrajectoryGoal.setCanceled();
-   armHasActiveJointTrajectoryGoal = false;
-   for (int i = 0; i < youBotArmDoF; ++i) {
-   youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmJoint(i + 1).cancelTrajectory();
-   }
-   }
-   */
+
+  if (armHasActiveJointTrajectoryGoals[armIndex])
+  {
+	  ROS_INFO("Cancelling old goal in GoalCallback for arm %d", armIndex);
+	  armActiveJointTrajectoryGoals[armIndex].setCanceled();
+	  armHasActiveJointTrajectoryGoals[armIndex] = false;
+	  for (int i = 0; i < youBotArmDoF; ++i)
+	  {
+		  youBotConfiguration.youBotArmConfigurations[armIndex].
+		  youBotArm->getArmJoint(i + 1).
+		  trajectoryController.
+		  cancelCurrentTrajectory();
+	  }
+  }
+
 
   // replace the old goal with the new one
   youbotArmGoal.setAccepted();
-  armActiveJointTrajectoryGoals[armIndex] = youbotArmGoal;
+  if(armActiveJointTrajectoryGoals.size() <= armIndex)
+	  armActiveJointTrajectoryGoals.push_back(youbotArmGoal);
+  else
+	  armActiveJointTrajectoryGoals[armIndex] = youbotArmGoal;
   armHasActiveJointTrajectoryGoals[armIndex] = true;
 
   // myTrace->startTrace();
@@ -672,8 +696,10 @@ void YouBotOODLWrapper::armJointTrajectoryGoalCallback(
     try
     {
       // youBot joints start with 1 not with 0 -> i + 1
-      youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmJoint(i + 1).trajectoryController.setTrajectory(
-          jointTrajectories[i]);
+      youBotConfiguration.youBotArmConfigurations[armIndex].
+      youBotArm->getArmJoint(i + 1).
+      trajectoryController.setTrajectory(jointTrajectories[i]);
+
       ROS_INFO("set trajectories %d", i);
     }
     catch (std::exception& e)
@@ -862,8 +888,11 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 
 		// replace the old goal with the new one
 		youbotGripperGoal.setAccepted();
-		gripperActiveGripperCommandGoals[armIndex] = youbotGripperGoal;
-		gripperHasGripperCommandGoals[armIndex] = true;
+		if(gripperActiveGripperCommandGoals.size() <= armIndex)
+			gripperActiveGripperCommandGoals.push_back(youbotGripperGoal);
+		else
+			gripperActiveGripperCommandGoals[armIndex] = youbotGripperGoal;
+			gripperHasGripperCommandGoals[armIndex] = true;
 
 		// ensure that all joint values will be send at the same time
 		youbot::EthercatMaster::getInstance().AutomaticSendOn(true);
@@ -1082,9 +1111,11 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
         try
         {
         	youbot::YouBotGripperBar& gripperBar1 =
-        			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().getGripperBar1();
+        			youBotConfiguration.youBotArmConfigurations[armIndex].
+        			youBotArm->getArmGripper().getGripperBar1();
         	youbot::YouBotGripperBar& gripperBar2 =
-        			youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm->getArmGripper().getGripperBar2();
+        			youBotConfiguration.youBotArmConfigurations[armIndex].
+        			youBotArm->getArmGripper().getGripperBar2();
 
 
         	/*
@@ -1120,8 +1151,8 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
         	gripperBar2.getConfigurationParameter(bar2TargetReched);
         	bar2TargetReched.getParameter(targetReachedBar2);
 
-        	if (targetReachedBar1 && targetReachedBar2)
-        		isGripperControllersDone = true;
+        	if (!targetReachedBar1 || !targetReachedBar2)
+        		isGripperControllersDone = false;
 
         	if (isGripperControllersDone && gripperHasGripperCommandGoals[armIndex])
         	{

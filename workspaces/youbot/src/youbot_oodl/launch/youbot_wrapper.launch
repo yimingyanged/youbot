@@ -4,6 +4,10 @@
   <arg unless="$(arg debug)" name ="launch_prefix" value="" />
   <arg if="$(arg debug)" name ="launch_prefix" value="sudo gdb --ex run --args" />
   
+  <arg name="debug-remote" default="false"/>
+  <arg unless="$(arg debug-remote)" name ="waittime" value="0" />
+  <arg if="$(arg debug-remote)" name ="waittime" value="30" />
+  
   <arg name="youBotHasBase" default="true" />
   <arg name="youBotHasArms" value="true" /> 
   <arg name="youBotDriverCycleFrequencyInHz" value="50.0" />
@@ -27,10 +31,10 @@
 
   <group if="$(arg dualArm)">
     <param name="youBotArmName2" type="str" value="$(arg youBotArmName2)" />
-    <node name="youbot_wrapper" launch-prefix="$(arm launch_prefix)" pkg="youbot_common" type="youbot_wrapper" output="screen" />
+    <node name="youbot_wrapper" launch-prefix="$(arg launch_prefix)" pkg="youbot_common" type="youbot_wrapper" args="$(arg waittime)" output="screen" />
   </group>
   <group unless="$(arg dualArm)">
-    <node name="youbot_wrapper" pkg="youbot_common" launch-prefix="$(arg launch_prefix)" type="youbot_wrapper" output="screen">
+    <node name="youbot_wrapper" pkg="youbot_common" launch-prefix="$(arg launch_prefix)" type="youbot_wrapper" args="$(arg waittime)" output="screen">
       <remap from="base/joint_states" to="joint_states" /> 
       <remap from="arm_1/joint_states" to="joint_states" />
     </node>

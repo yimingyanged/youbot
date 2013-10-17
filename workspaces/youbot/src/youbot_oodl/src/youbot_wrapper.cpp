@@ -152,7 +152,12 @@ void checkHeartbeat(youBot::YouBotOODLWrapper *youBot) {
 
 int main(int argc, char **argv)
 {
-
+	int debugWait = 0;
+	if(argc > 1)
+	{
+		debugWait = atoi(argv[1]);
+		ROS_INFO("Debug wait time set to %d", debugWait);
+	}
   youbot::Logger::toConsole = false;
   youbot::Logger::toFile = false;
   youbot::Logger::toROS = true;
@@ -205,8 +210,12 @@ int main(int argc, char **argv)
   ros::Subscriber heartbeatSubscriber = n.subscribe("youbot_network_heartbeat", 1, heartbeatCallback);
 
   // wait for debugger
-  ros::spinOnce();
-  ros::Duration(30).sleep();
+  //  ros::spinOnce();
+  if(debugWait > 0)
+  {
+	  ROS_INFO("Waiting for remote debugger..");
+	  ros::Duration(debugWait).sleep();
+  }
 
 
 
