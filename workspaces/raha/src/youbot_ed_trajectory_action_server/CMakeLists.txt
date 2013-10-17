@@ -68,7 +68,7 @@ catkin_package(
 # add_library(youbot_ed_trajectory_action_server
 #   src/${PROJECT_NAME}/youbot_ed_trajectory_action_server.cpp
 # )
-
+set(CMAKE_BUILD_TYPE Debug)
 ## Declare a cpp executable
 add_executable(trajectory_test src/test.cpp)
 

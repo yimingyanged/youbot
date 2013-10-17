@@ -7,7 +7,15 @@
 # ignore tmp files 
 *~
 # ignore devel, build  and install directorys
-*/devel/ 
-*/build/
-*/install/
-/.*~
+*/devel/*
+*/build/*
+*/install/*
+/.*~	
+
+workspaces/youbot/build/*
+workspaces/youbot/devel/*
+workspaces/andrew/build/*
+workspaces/andrew/devel/*
+workspaces/raha/build/*
+workspaces/raha/devel/*
+

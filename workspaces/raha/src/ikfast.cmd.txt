@@ -1,0 +1,34 @@
+python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py \
+--robot=youbot_clean_rounded5.dae \
+--iktype=translationdirection5d \
+--baselink=2 \
+--eelink=8 \
+--savefile=ikfast68_youbot_clean_rounded_5.cpp
+
+# not working
+openrave.py \
+--database inversekinematics \
+--robot=youbot_clean_fix_rounded_5.dae \
+--iktype=translationdirection5d \
+--baselink=2 \
+--eelink=8 \
+--iktests=100
+
+
+python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py \
+--robot=youbot_ed_5d_base_single_arm_and_gripper.openrave_no_data.xml \
+--iktype=translationdirection5d \
+--baselink=2 \
+--eelink=8 \
+--savefile=ikfast68_youbot_clean_rounded_5_.cpp
+
+
+python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py \
+--robot=youbot_kdl_rounded_5.dae \
+--iktype=translationdirection5d \
+--baselink=1 \
+--eelink=8 \
+--savefile=ikfast68_youbot_kdl.cpp
+
+
+youbot_clean_rounded5.dae
