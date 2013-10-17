@@ -281,6 +281,8 @@ private:
 
 	vector<youbot::GripperSensedBarPosition> gripperBar1Positions;
 	vector<youbot::GripperSensedBarPosition> gripperBar2Positions;
+	vector<youbot::GripperSensedBarSpacing> gripperBarSpacings;
+
 	int gripperCycleCounter;
 
     //void executeActionServer(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal,  int armIndex);
