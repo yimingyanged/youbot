@@ -242,7 +242,7 @@ int main(int argc, char **argv)
     ros::spinOnce();
 
     //if (runNetworkEstopper)
-      checkHeartbeat(&youBot);
+    checkHeartbeat(&youBot);
 
     youBot.computeOODLSensorReadings();
     youBot.publishOODLSensorReadings();
