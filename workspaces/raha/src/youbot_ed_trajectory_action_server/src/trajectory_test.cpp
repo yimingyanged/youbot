@@ -60,7 +60,7 @@ public:
 		traj_client_->sendGoal(goal);
 	}
 
-	control_msgs::FollowJointTrajectoryGoal joint5test(int poseId)
+	control_msgs::FollowJointTrajectoryGoal joint5test(int poseId, double setpoint, double time = 2.0, int repeat = 1)
 	{
 		control_msgs::FollowJointTrajectoryGoal goal;
 
@@ -72,22 +72,26 @@ public:
 		goal.trajectory.joint_names.push_back("arm_joint_5");
 
 		// We will have two waypoints in this goal trajectory
-		goal.trajectory.points.resize(1);
+		goal.trajectory.points.resize(repeat);
 
 		int ind  = 0;
-		if(poseId == 0)
+		for(int i = 0; i < repeat; i++)
 		{
-			// First point
-			setFirstPoint(goal, ind, 2.0);
-		}
-		else
-		{
-			// Second trajectory point
-//			ind++;
-			setSecondPoint(goal, ind, 2.0);
-//			goal.trajectory.points[ind].positions[4] = 2.0;
-		}
 
+			if(poseId == 0)
+			{
+				// First point
+				setFirstPoint(goal, i, time*(i+1));
+			}
+			else
+			{
+				// Second trajectory point
+	//			ind++;
+				setSecondPoint(goal, i, time*(i+1));
+	//			goal.trajectory.points[ind].positions[4] = 2.0;
+			}
+			goal.trajectory.points[i].positions[4] = setpoint;
+		}
 //		ROS_INFO("Joint 5 set-point is: %4.2f", goal.trajectory.points[ind].positions[4]);
 
 		//we are done; return the goal
@@ -254,6 +258,20 @@ int main(int argc, char **argv) {
 		ROS_INFO("Using setpoint id %f",setpoint);
 	}
 
+	double time = 2.0;
+	if(argc>3)
+	{
+		time = atof(argv[3]);
+		ROS_INFO("Using time %f",time);
+	}
+
+	int repeat = 1;
+	if(argc>4)
+	{
+		repeat = atoi(argv[4]);
+		ROS_INFO("Repeating %d times with time step %4.2f",repeat, time);
+	}
+
 	// Acces to the trajoxtory generatror
 	RobotArm arm(false);
 	RobotGripper gripper;
@@ -276,9 +294,8 @@ int main(int argc, char **argv) {
 	// send a goal to the arm action
 	control_msgs::FollowJointTrajectoryGoal armGoal;
 //	armGoal = arm.armExtensionTrajectory();
-	armGoal = arm.joint5test(poseId);
-	if(setpoint > 0.0)
-		armGoal.trajectory.points[0].positions[4] = setpoint;
+	armGoal = arm.joint5test(poseId, setpoint, time, repeat);
+
 	ROS_INFO("Arm goal created, now sending...");
 	acArm.sendGoal(armGoal);
 
