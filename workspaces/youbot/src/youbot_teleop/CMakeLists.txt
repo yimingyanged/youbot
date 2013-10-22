@@ -4,7 +4,7 @@ project(youbot_teleop)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp joy geometry_msgs brics_actuator moveit_ros_planning_interface tf)
+find_package(catkin REQUIRED COMPONENTS roscpp joy geometry_msgs brics_actuator tf) #moveit_ros_planning_interface 
 
 ###################################################
 ## Declare things to be passed to other projects ##
@@ -29,13 +29,13 @@ include_directories(
 set(CMAKE_BUILD_TYPE Release)
 
 add_executable(youbot_joy_teleop src/youbot_joy_teleop.cpp)
-add_executable(youbot_teleop_arm src/youbot_teleop_arm.cpp)
-add_executable(youbot_moveit_teleop src/youbot_moveit_teleop.cpp)
-add_executable(pick_and_place_demo src/pick_and_place_demo.cpp)
-target_link_libraries(youbot_teleop_arm ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-target_link_libraries(youbot_moveit_teleop ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+#add_executable(youbot_teleop_arm src/youbot_teleop_arm.cpp)
+#add_executable(youbot_moveit_teleop src/youbot_moveit_teleop.cpp)
+#add_executable(pick_and_place_demo src/pick_and_place_demo.cpp)
+#target_link_libraries(youbot_teleop_arm ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+#target_link_libraries(youbot_moveit_teleop ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 target_link_libraries(youbot_joy_teleop ${catkin_LIBRARIES})
-target_link_libraries(pick_and_place_demo ${catkin_LIBRARIES})
+#target_link_libraries(pick_and_place_demo ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -45,12 +45,12 @@ target_link_libraries(pick_and_place_demo ${catkin_LIBRARIES})
 install(TARGETS youbot_joy_teleop
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-install(TARGETS youbot_teleop_arm
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-install(TARGETS youbot_moveit_teleop
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-install(PROGRAMS scripts/youbot_keyboard_teleop.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+#install(TARGETS youbot_teleop_arm
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
+#install(TARGETS youbot_moveit_teleop
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
+#install(PROGRAMS scripts/youbot_keyboard_teleop.py
+#  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
