@@ -45,7 +45,7 @@ void youbot_joy_teleop::joy_cback(const sensor_msgs::Joy::ConstPtr& joy)
   // right joystick controls the angular movement
   twist.angular.x = 0;
   twist.angular.y = 0;
-  twist.angular.z = joy->axes.at(2);
+  twist.angular.z = joy->axes.at(3);
   // send the twist command
   cmd_vel.publish(twist);
 }
