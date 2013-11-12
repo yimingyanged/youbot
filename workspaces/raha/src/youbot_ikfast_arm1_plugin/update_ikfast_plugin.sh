@@ -1,1 +1,0 @@
-rosrun moveit_ikfast create_ikfast_moveit_plugin.py youbot arm youbot_ikfast_arm1_plugin /home/raha/youbot_edinburgh/workspaces/raha/src/youbot_ikfast_arm1_plugin/src/youbot_arm_ikfast_solver.cpp
