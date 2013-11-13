@@ -40,6 +40,7 @@
 #include <ros/ros.h>
 
 #include <geometry_msgs/PoseStamped.h>
+#include <kdl/frames_io.hpp>
 #include <kdl_parser/kdl_parser.hpp>
 #include <eigen_conversions/eigen_msg.h>
 #include <eigen_conversions/eigen_kdl.h>
@@ -91,6 +92,7 @@ bool YoubotArmKinematicsPlugin::initialize(const std::string& robot_description,
                                            const std::string& tip_name,
                                            double search_discretization)
 {
+  ROS_ERROR("base_name: %s", base_name.c_str());
   setValues(robot_description, group_name, base_name, tip_name,search_discretization);
 
   std::string xml_string;
@@ -190,6 +192,7 @@ YoubotArmKinematicsPlugin::getPositionIK(
     moveit_msgs::MoveItErrorCodes &error_code,
     const kinematics::KinematicsQueryOptions &options) const
 {
+  ROS_ERROR("The function is not yet implemented: %s", BOOST_CURRENT_FUNCTION);
   return false;
 }
 
@@ -210,6 +213,9 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
   Eigen::Affine3d tp;
   tf::poseMsgToEigen(ik_pose, tp);
   tf::transformEigenToKDL(tp, pose_desired);
+//  stringstream ss;
+//  ss << pose_desired;
+//  ROS_ERROR("Printing desired pose: %s", ss.str().c_str());
 
   //Do the IK
   KDL::JntArray jnt_pos_in;
@@ -259,6 +265,7 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
                                                  moveit_msgs::MoveItErrorCodes &error_code,
                                                  const kinematics::KinematicsQueryOptions &options) const
 {
+  ROS_ERROR("The function is not yet implemented: %s", BOOST_CURRENT_FUNCTION);
   return false;
 }
 
@@ -270,21 +277,23 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
                                                  moveit_msgs::MoveItErrorCodes &error_code,
                                                  const kinematics::KinematicsQueryOptions &options) const
 {
-  ROS_ERROR("Now in EMPTY!: %s", BOOST_CURRENT_FUNCTION);
+  ROS_ERROR("The function is not yet implemented: %s", BOOST_CURRENT_FUNCTION);
   return false;
 }
 
-bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
-                                                 const std::vector<double> &ik_seed_state,
-                                                 double timeout,
-                                                 const std::vector<double> &consistency_limit,
-                                                 std::vector<double> &solution,
-                                                 const IKCallbackFn &solution_callback,
-                                                 moveit_msgs::MoveItErrorCodes &error_code,
-                                                 const kinematics::KinematicsQueryOptions &options) const
-{
+bool
+YoubotArmKinematicsPlugin::searchPositionIK(
+    const geometry_msgs::Pose &ik_pose,
+    const std::vector<double> &ik_seed_state,
+    double timeout,
+    const std::vector<double> &consistency_limit,
+    std::vector<double> &solution,
+    const IKCallbackFn &solution_callback,
+    moveit_msgs::MoveItErrorCodes &error_code,
+    const kinematics::KinematicsQueryOptions &options) const
+    {
 
- return searchPositionIK(ik_pose,
+  return searchPositionIK(ik_pose,
                           ik_seed_state,
                           timeout,
                           solution,
