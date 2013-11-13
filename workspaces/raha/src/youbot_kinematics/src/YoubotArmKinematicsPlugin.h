@@ -186,8 +186,6 @@ public:
    */
   const std::vector<std::string>& getLinkNames() const;
 
-protected:
-
   bool active_;
   int free_angle_;
   boost::shared_ptr<urdf::ModelInterface> robot_model_;

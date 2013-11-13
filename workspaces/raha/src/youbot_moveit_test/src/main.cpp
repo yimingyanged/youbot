@@ -10,6 +10,6 @@ int main(int argc, char **argv)
   // specify that our target will be a random one
   group.setRandomTarget();
   // plan the motion and then move the group to the sampled target 
-  group.plan();
+  group.move();
   ros::waitForShutdown();
 }

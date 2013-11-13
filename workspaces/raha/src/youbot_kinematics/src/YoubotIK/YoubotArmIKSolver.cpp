@@ -65,6 +65,7 @@ YoubotArmIKSolver::YoubotArmIKSolver(YoubotArmIK &ik,
   free_angle_ = free_angle;
   root_frame_name_ = root_frame_name;
   youbot_arm_ik_.getSolverInfo(_solver_info);
+  active_ = true;
 }
 
 int YoubotArmIKSolver::CartToJnt(const KDL::JntArray& q_init,
