@@ -46,7 +46,7 @@
     <origin xyz="0.143 0 0.056" rpy="0 0 0" />
   </xacro:youbot_arm>
   <xacro:youbot_gripper name="gripper" parent="arm_link_5">
-    <origin xyz="-0.0027 0 .016" rpy="0 ${-M_PI/2} ${M_PI}" />
+    <origin xyz="-0.0027 0 0.016" rpy="0 ${-M_PI/2} ${M_PI}" />
   </xacro:youbot_gripper>
 
 <!--Second arm-->
