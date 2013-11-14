@@ -1,0 +1,14 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b sequence_matching 
+
+<!-- 
+    cyphy_vslam_msgs provides messages to support communication between nodes in the visual slam package.  These messages are designed to provide common datatypes between switchable nodes in a visual slam application.
+-->
+
+-->
+
+
+*/

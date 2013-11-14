@@ -1,0 +1,20 @@
+<launch>
+    <node name="vo" pkg="viso2_ros" type="stereo_odometer" output="screen">
+        <param name="odom_frame_id" value="/odom_combined"/>
+        <param name="base_link_frame_id" value="/base_footprint"/>
+        <param name="publish_tf" value="true"/>
+        <remap from="image" to="image_rect"/>
+        <remap from="vo" to="stereo"/>
+    </node>
+
+    <node ns="stereo" name="image_proc" pkg="stereo_image_proc" type="stereo_image_proc" output="screen"/>
+
+      <node pkg="tf" type="static_transform_publisher" name="link2laser" args="0.037 0 0.2 0 0 0  /base_footprint /laser 100" />
+       <node pkg="tf" type="static_transform_publisher" name="base_camera_0" args="0.0 -0.150 1.150 -1.57 0 -1.74  /base_link /camera_0 80" />
+        <node pkg="tf" type="static_transform_publisher" name="foot2link" args="0 0 0 0 0 0 /base_footprint /base_link 100"/>
+
+
+</launch>
+
+
+

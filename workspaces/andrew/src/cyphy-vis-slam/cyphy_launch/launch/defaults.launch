@@ -1,0 +1,7 @@
+<launch>	
+	<include file="$(find cyphy_launch)/launch/stereo_launch.launch"/>
+	<include file="$(find image_cache)/launch/defaults.launch"/>
+	<include file="$(find geometric_verification)/launch/defaults.launch"/>
+	<include file="$(find slam_backend)/launch/defaults.launch"/>
+	<include file="$(find openfabmap2)/launch/run.launch"/>
+</launch>

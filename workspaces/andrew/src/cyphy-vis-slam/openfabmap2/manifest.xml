@@ -1,0 +1,21 @@
+<package>
+  <description brief="openfabmap2">
+
+     openfabmap2
+
+  </description>
+  <author>Timothy Morris</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/openfabmap2</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_transport"/>
+  <depend package="dynamic_reconfigure"/>
+  <depend package="driver_base" />
+  <depend package="cyphy_vslam_msgs" />
+</package>
+
+

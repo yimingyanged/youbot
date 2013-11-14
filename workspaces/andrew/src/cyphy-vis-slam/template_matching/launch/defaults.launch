@@ -1,0 +1,7 @@
+<launch>
+	<arg name="threshold"/>
+	<node pkg="template_matching" type="template_matcher" name="template_matcher_node">
+		<param name="new_template_threshold" value="$(arg threshold)"/>
+		<param name="acceptable_match_threshold" value="$(arg threshold)"/>
+	</node>
+</launch>
