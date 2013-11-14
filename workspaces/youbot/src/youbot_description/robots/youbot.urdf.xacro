@@ -68,9 +68,11 @@
   <include filename="$(find youbot_description)/urdf/sensors/asus_xtion_camera.urdf.xacro" />
   
   <!-- base laser rear -->
-  <xacro:hokuyo_urg04_laser name="base_laser_rear" parent="base" ros_topic="scan_rear" update_rate="10" min_angle="-1.57" max_angle="1.57">
+<!-- 
+   <xacro:hokuyo_urg04_laser name="base_laser_rear" parent="base" ros_topic="scan_rear" update_rate="10" min_angle="-1.57" max_angle="1.57">
      <origin xyz="-0.3 0.0 -0.03" rpy="0 0 ${M_PI}" />
   </xacro:hokuyo_urg04_laser>
+-->
 
   <!-- Sensor angle on arm -->
   <xacro:sensor_angle name="arm_sensor_angle" parent="arm_link_5">

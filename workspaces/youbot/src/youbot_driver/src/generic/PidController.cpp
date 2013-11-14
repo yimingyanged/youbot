@@ -134,7 +134,7 @@ double PidController::updatePid(double error, boost::posix_time::time_duration d
   d_term = d_gain_ * d_error_;
   cmd_ = -p_term - i_term - d_term;
 
-  // printf(" p_error_ %lf  i_error_ %lf  p_term %lf i_term %lf  dt %lf out %lf\n", p_error_, i_error_, p_term, i_term, deltatime, cmd_);
+//  printf(" p_error_ %lf  i_error_ %lf  p_term %lf i_term %lf  dt %lf out %lf\n", p_error_, i_error_, p_term, i_term, deltatime, cmd_);
 
   return cmd_;
 }
@@ -157,7 +157,7 @@ double PidController::updatePid(double error, double error_dot, boost::posix_tim
   last_i_error = deltatime * p_error_;
 
   // i_error_ = i_error_ + deltatime * p_error_;
-  //   printf("i_error_ %lf dt.fractional_seconds() %lf\n", i_error_, deltatime);
+//  printf("i_error_ %lf dt.fractional_seconds() %lf\n", i_error_, deltatime);
 
   //Calculate integral contribution to command
   i_term = i_gain_ * i_error_;
@@ -178,6 +178,12 @@ double PidController::updatePid(double error, double error_dot, boost::posix_tim
   d_term = d_gain_ * d_error_;
   cmd_ = -p_term - i_term - d_term;
 
+//  if(/*abs(cmd_) > 0.0001 && */d_gain_ > 5)
+//  {
+//	  printf("cmd: %4.3f  ", cmd_);
+//	  printf("vals (p: %4.2f i: %4.2f d: %4.2f)  ", p_term, i_term, d_term);
+//	  printf("gains (p_g: %4.2f  p_i: %4.2f  p_d: %4.2f)\n", p_gain_, i_gain_, d_gain_);
+//  }
   return cmd_;
 }
 

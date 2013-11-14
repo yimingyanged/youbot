@@ -18,5 +18,6 @@ workspaces/andrew/build/*
 workspaces/andrew/devel/*
 workspaces/raha/build/*
 workspaces/raha/devel/*
+workspaces/raha/install/*
 
-workspaces/youbot/install/
+workspaces/youbot/install/*
