@@ -92,15 +92,15 @@ KDL::JntArray YoubotArmAnalyticalIK::ik(const KDL::Frame& g0,
 {
   // Parameters from youBot URDF file
   double l0x = 0.024;
-  double l0z = 0.096;
+  double l0z = 0.115;
   double l1x = 0.033;
-  double l1z = 0.019;
+  double l1z = 0.000;
   double l2 = 0.155;
   double l3 = 0.135;
 
   // Distance from arm_link_3 to arm_link_5 (can also be replaced by e.g.
   // distance from arm_link_3 to tool center point)
-  double d = 0.13;
+  double d = 0.114;
 
   double j1;
   double j2;
@@ -173,6 +173,7 @@ KDL::JntArray YoubotArmAnalyticalIK::ik(const KDL::Frame& g0,
 
   // Check if the goal position can be reached at all
   if ((l2 + l3) < sqrt((p2.x() * p2.x()) + (p2.z() * p2.z()))) {
+//    ROS_ERROR("Goal pose is not reachable by the arm..");
     return KDL::JntArray();
   }
 

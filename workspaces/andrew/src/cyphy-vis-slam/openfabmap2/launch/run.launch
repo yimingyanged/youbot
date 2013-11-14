@@ -1,0 +1,19 @@
+<launch>
+	<node pkg="openfabmap2" type="run_node" name="run_node">
+		<remap from="image" to="/throttled/image_raw"/>
+		<param name="vocab" value="$(find openfabmap2)/codebooks/R02/vocab.yml"/>
+		<param name="clTree" value="$(find openfabmap2)/codebooks/R02/clTree.yml"/>
+		<param name="trainbows" value="$(find openfabmap2)/codebooks/R02/trainbows.yml"/>
+		<param name="DetectorType" value="SURF"/>
+		<param name="FabMapVersion" value="FABMAP2"/>
+		<param name="NewPlaceMethod" value="Sampled"/>
+		<param name="sampleRate" value="12.5"/>
+		<param name="visualise" value="false"/>
+		<param name="minMatchValue" value="0.98"/>
+		<param name="maxMatches" value="3"/>
+		<param name="DisableSelfMatch" value="true"/>
+		<param name="SelfMatchWindow" value="50"/>
+		<param name="DisableUnknownMatch" value="true"/>
+		<param name="AddOnlyNewPlaces" value="false"/>
+	</node>
+</launch>

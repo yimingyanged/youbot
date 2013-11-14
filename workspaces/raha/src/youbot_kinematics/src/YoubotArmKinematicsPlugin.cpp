@@ -37,7 +37,10 @@
 #include <iostream>
 #include <fstream>
 
+#include <ros/ros.h>
+
 #include <geometry_msgs/PoseStamped.h>
+#include <kdl/frames_io.hpp>
 #include <kdl_parser/kdl_parser.hpp>
 #include <eigen_conversions/eigen_msg.h>
 #include <eigen_conversions/eigen_kdl.h>
@@ -45,6 +48,8 @@
 #include <numeric>
 
 #include <pluginlib/class_list_macros.h>
+
+#include <boost/current_function.hpp>
 
 #include "YoubotArmKinematicsPlugin.h"
 #include "YoubotIK/YoubotArmAnalyticalIK.h"
@@ -75,17 +80,9 @@ void
 YoubotArmKinematicsPlugin::setRobotModel(
     boost::shared_ptr<urdf::ModelInterface>& robot_model)
 {
-  std::ofstream outfile ("/home/raha/plugin_log.txt");
-
-  outfile << "Now setting the robot model in YoubotArmKinematicsPlugin!" << std::endl;
-  outfile << "Has the address value: " << (long) robot_model.get() << std::endl;
-  outfile.close();
-  int count = 0;
-  for(int i = 0; i<100000000; i++)
-  {
-    count ++;
-  }
-  if (count > 0)
+  ROS_ERROR("YoubotArmKinematicsPlugin::setRobotModel");
+  ROS_ERROR("Now setting the robot model in YoubotArmKinematicsPlugin!");
+  ROS_ERROR("Has the address value: %ld", (long) robot_model.get());
   robot_model_ = robot_model;
 }
 
@@ -95,12 +92,44 @@ bool YoubotArmKinematicsPlugin::initialize(const std::string& robot_description,
                                            const std::string& tip_name,
                                            double search_discretization)
 {
+  ROS_ERROR("base_name: %s", base_name.c_str());
   setValues(robot_description, group_name, base_name, tip_name,search_discretization);
 
   std::string xml_string;
   dimension_ = 5;
 
-  ROS_DEBUG("Loading KDL Tree");
+  ros::NodeHandle node_handle("~/"+group_name);
+
+  boost::shared_ptr<urdf::ModelInterface> robot_model_interface;
+  urdf::Model *robot_model = new urdf::Model();
+
+  std::string urdf_xml,full_urdf_xml;
+  node_handle.param(robot_description,urdf_xml,std::string(""));
+
+//  ROS_ERROR("node_handle.searchParam(urdf_xml,full_urdf_xml);");
+//  node_handle.searchParam(urdf_xml,full_urdf_xml);
+//  ROS_ERROR("urdf_xml: %s", urdf_xml.c_str());
+//  ROS_ERROR("full_urdf_xml: %s", full_urdf_xml.c_str());
+
+  if (!node_handle.getParam(robot_description, urdf_xml))
+  {
+    ROS_FATAL("Could not load the xml from parameter server: %s\n", urdf_xml.c_str());
+    return false;
+  }
+
+//  node_handle.param(full_urdf_xml,xml_string,std::string());
+//  ROS_ERROR("node_handle.param(full_urdf_xml,xml_string,std::string());");
+//  ROS_ERROR("full_urdf_xml: %s", full_urdf_xml.c_str());
+//  ROS_ERROR("xml_string: %s", xml_string.c_str());
+
+  ROS_ERROR("creating model from xml string..");
+  robot_model->initString(urdf_xml);
+
+  robot_model_interface.reset(robot_model);
+
+  setRobotModel(robot_model_interface);
+
+  ROS_ERROR("Loading KDL Tree");
   if(!kinematics_helper::getKDLChain(*robot_model_,base_frame_,tip_frame_,kdl_chain_))
   {
     active_ = false;
@@ -113,7 +142,7 @@ bool YoubotArmKinematicsPlugin::initialize(const std::string& robot_description,
   // _ik = boost::shared_ptr<InverseKinematics>(new ArmKdlInverseKinematics(robot_model, xml_string, base_name, tip_name));
   ik_.reset(
       new youbot_kinematics::YoubotArmAnalyticalIK(*robot_model_,
-                                xml_string,
+                                                   robot_description,
                                 base_name,
                                 tip_name));
 
@@ -163,6 +192,7 @@ YoubotArmKinematicsPlugin::getPositionIK(
     moveit_msgs::MoveItErrorCodes &error_code,
     const kinematics::KinematicsQueryOptions &options) const
 {
+  ROS_ERROR("The function is not yet implemented: %s", BOOST_CURRENT_FUNCTION);
   return false;
 }
 
@@ -183,6 +213,9 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
   Eigen::Affine3d tp;
   tf::poseMsgToEigen(ik_pose, tp);
   tf::transformEigenToKDL(tp, pose_desired);
+//  stringstream ss;
+//  ss << pose_desired;
+//  ROS_ERROR("Printing desired pose: %s", ss.str().c_str());
 
   //Do the IK
   KDL::JntArray jnt_pos_in;
@@ -200,11 +233,13 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
   if(ik_valid == youbot_kinematics::NO_IK_SOLUTION)
   {
     error_code.val = error_code.NO_IK_SOLUTION;
+    ROS_ERROR("No valid inverse kinematics found..");
     return false;
   }
 
   if(ik_valid >= 0)
   {
+    ROS_ERROR("An IK solution was found");
     solution.resize(dimension_);
     for(int i=0; i < dimension_; i++)
     {
@@ -216,6 +251,7 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
   else
   {
     ROS_DEBUG("An IK solution could not be found");
+    ROS_ERROR("An IK solution could not be found, error code: %d", ik_valid);
     error_code.val = error_code.NO_IK_SOLUTION;
     return false;
   }
@@ -229,6 +265,7 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
                                                  moveit_msgs::MoveItErrorCodes &error_code,
                                                  const kinematics::KinematicsQueryOptions &options) const
 {
+  ROS_ERROR("The function is not yet implemented: %s", BOOST_CURRENT_FUNCTION);
   return false;
 }
 
@@ -240,25 +277,36 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
                                                  moveit_msgs::MoveItErrorCodes &error_code,
                                                  const kinematics::KinematicsQueryOptions &options) const
 {
+  ROS_ERROR("The function is not yet implemented: %s", BOOST_CURRENT_FUNCTION);
   return false;
 }
 
-bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
-                                                 const std::vector<double> &ik_seed_state,
-                                                 double timeout,
-                                                 const std::vector<double> &consistency_limit,
-                                                 std::vector<double> &solution,
-                                                 const IKCallbackFn &solution_callback,
-                                                 moveit_msgs::MoveItErrorCodes &error_code,
-                                                 const kinematics::KinematicsQueryOptions &options) const
-{
-  return false;
+bool
+YoubotArmKinematicsPlugin::searchPositionIK(
+    const geometry_msgs::Pose &ik_pose,
+    const std::vector<double> &ik_seed_state,
+    double timeout,
+    const std::vector<double> &consistency_limit,
+    std::vector<double> &solution,
+    const IKCallbackFn &solution_callback,
+    moveit_msgs::MoveItErrorCodes &error_code,
+    const kinematics::KinematicsQueryOptions &options) const
+    {
+
+  return searchPositionIK(ik_pose,
+                          ik_seed_state,
+                          timeout,
+                          solution,
+                          error_code,
+                          options);
+
 }
 
 bool YoubotArmKinematicsPlugin::getPositionFK(const std::vector<std::string> &link_names,
                                               const std::vector<double> &joint_angles,
                                               std::vector<geometry_msgs::Pose> &poses) const
 {
+  ROS_ERROR("Now in: %s", BOOST_CURRENT_FUNCTION);
   if (!active_) {
     ROS_ERROR("kinematics not active");
     return false;
