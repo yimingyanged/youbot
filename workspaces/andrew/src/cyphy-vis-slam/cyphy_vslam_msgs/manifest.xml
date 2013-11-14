@@ -1,0 +1,15 @@
+<package>
+  <description brief="cyphy_vslam_msgs">
+
+     cyphy_vslam_msgs provides messages to support communication between nodes
+     in the visual slam package.  These messages are designed to provide common      datatypes between switchable nodes in a visual slam application.
+
+  </description>
+  <author>Liz Murphy (liz.murphy@qut.edu.au></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cyphy_vslam_msgs</url>
+
+</package>
+
+

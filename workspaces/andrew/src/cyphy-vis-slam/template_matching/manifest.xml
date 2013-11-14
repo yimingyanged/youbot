@@ -1,0 +1,19 @@
+<package>
+  <description brief="template_matching">
+
+     sequence_matching
+
+  </description>
+  <author>liz</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/sequence_matching</url>
+  <depend package="roscpp"/>
+  <depend package="cyphy_vslam_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_transport"/>
+
+</package>
+
+
