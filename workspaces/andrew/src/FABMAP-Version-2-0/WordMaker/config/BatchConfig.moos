@@ -1,0 +1,43 @@
+ProcessConfig = pWordMaker
+{
+	Mode = BATCH	//Mode can be BATCH, SURF_ONLY or QUANTIZE_ONLY
+					      //BATCH mode: Specify a directory full of images (any image format is OK), and it processes the contents. It will first generate SURF features, and then quantize those features against a vocabulary to produce bag-of-words output. 
+					      //SURF_ONLY: Generates SURF feature files for a directory full of images. Use it when generating SURFs to build a new vocabulary.
+			          //QUANTIZE_ONLY: Given a directory contain surf feature files, it will generate a .OXS file (scenes file listing all the bag-of-words vectors for the files in a directory) and/or .words (files listing bag-of-words for an individual image). . Use it when building a new vocabulary. 
+
+	//Where is the Vocab?
+	VocabPath = ../../Examples/Resources/Vocabularies/OxfordVocab_Surf_11k/
+	VocabName = OxfordVocab_Surf_11k
+
+	//Where is the data?
+	//We read input and write output to subdirectories of this path
+    BaseDataPath = ../../Examples/Sample_Data/
+	
+    //Were are the images?
+    //By default we assume BaseDataPath/Images
+    //Specifying an ImagePath overrides the default
+    //ImagePath = /my/custom/image/path
+
+    //Do we want to write out .surf files?
+    WriteDescriptors = TRUE
+    //Where to write out the .surf files to?
+    //By default we assume BaseDataPath/Surf
+    //Specifying a DescriptorOutputPath overrides the default
+	//DescriptorPath =  /custom/path
+
+	//Do we want to write out .words files?
+    WriteWords = TRUE
+    //Where to write out the .words files to?
+    //By default we assume BaseDataPath/Words_VocabName
+    //Specifying a WordOutputPath overrides the default
+	//WordOutputPath = /custom/path
+
+	//Output OXS?
+	//OXS gets output to the BaseData path
+	WriteOXS = TRUE
+
+	//SURF Parameters
+	SURFThres = 25.0		//Blob response threshold. 25.0 yields 50-100 interst points per image
+	SURFUpright = true		//Set true to turn off rotation invariance
+	SURF128 = true			//Set true to compute longer 128-dimensional discriptors.
+}

@@ -1,0 +1,57 @@
+Youbot:
+roscore
+roslaunch youbot_common youbot_wrapper.launch
+roslaunch youbot_common youbot_joint_state_publisher.launch
+roslaunch youbot_navigation_common base_front_hokuyo_node.launch
+roslaunch openni_launch openni.launch
+
+Default eff:
+name: ['arm_joint_1', 'arm_joint_2', 'arm_joint_3', 'arm_joint_4', 'arm_joint_5', 'gripper_finger_joint_l', 'gripper_finger_joint_r']
+
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_1, rad, 2.95]]'
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_2, rad, 1.2]]'
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_3, rad, -2.5]]'
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_4, rad, 3.25]]'
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_5, rad, 2.93]]'
+2.95
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_1, rad, 2.925]]' 
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_2, rad, 0.2]]'
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_3, rad, -1.6]]'
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_4, rad, 3.4]]'
+rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_5, rad, 2.93]]'
+
+
+Control:
+rosrun youbot_common heartbeat_generator
+roslaunch youbot_navigation_common slam.launch
+rosrun rviz rviz
+
+rosparam set joy_node/dev "/dev/input/js2"
+roslaunch youbot_teleop youbot_joy_teleop.launch
+
+
+
+
+rosbag record /tf /odom /camera/rgb/image_raw /camera/depth/image_raw /base_scan
+rosparam set use_sim_time true
+ROS_NAMESPACE=camera/rgb rosrun image_proc image_proc
+rosbag play 2013-11-10-23-23-34.bag -r 1 --clock
+
+
+rosrun image_view disparity_view image:=/camera/depth/disparity
+rosrun image_view image_view image:=/camera/rgb/image_color
+
+
+Rviz:
+rosrun map_server map_server mymap.yaml
+rosrun tf static_transform_publisher 0 0 0 0 0 0 /map /odom 100
+ROS_NAMESPACE=camera/rgb rosrun image_proc image_proc
+
+
+-----------------------------------------------------------------------
+roscore
+rosparam set use_sim_time true && rosrun rviz rviz
+cd /media/sf_youbot_edinburgh/workspaces/andrew/floorplans/ && rosrun map_server map_server floor1.yaml
+rosrun tf static_transform_publisher 0 0 0 0 0 0 /map /odom 100
+ROS_NAMESPACE=camera/rgb rosrun image_proc image_proc
+cd /media/sf_andrew_tmp/ && rosbag play 2013-11-10-23-23-34.bag -r 1 --clock

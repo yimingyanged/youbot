@@ -1,0 +1,27 @@
+ProcessConfig = pWordMaker
+{
+	Mode = SURF_ONLY	//Mode can be ONLINE, BATCH or SURF_ONLY
+						//ONLINE listens for images to be posted to the MOOSDB, then converts them to words
+						//BATCH mode, you specify a directory full of images (any image format is OK), and it processes the contents
+						//SURF_ONLY generates SURfs for a directory full of images. Use it when generating SURFs to build a new vocabulary.
+    			        //QUANTIZE_ONLY generates .OXS and/or .words for a directory full of surf features. Use it when building a new vocabulary.
+
+	//Where is the data?
+	//We read input and write output to subdirectories of this path
+    BaseDataPath = ../../Examples/Sample_Data/
+	
+    //Were are the images?
+    //By default we assume BaseDataPath/Images
+    //Specifying an ImagePath overrides the default
+    //ImagePath = /custom/path
+
+    //Where to write out the .surf files to?
+    //By default we assume BaseDataPath/Surf
+    //Specifying a DescriptorOutputPath overrides the default
+	//DescriptorPath =  /custom/path
+
+	//SURF Parameters
+	SURFThres = 25.0		//Blob response threshold. 25.0 yields 50-100 interst points per image
+	SURFUpright = true		//Set true to turn off rotation invariance
+	SURF128 = true			//Set true to compute longer 128-dimensional discriptors.
+}

@@ -1,0 +1,5 @@
+<launch>
+    <node name="geometric_verifier" pkg="geometric_verification" type="geometric_verification" output="screen">
+        <param name="cache_path" value="/home/tim/data/guiabot/level07_20_05_12/new_cache"/>
+    </node>
+</launch>

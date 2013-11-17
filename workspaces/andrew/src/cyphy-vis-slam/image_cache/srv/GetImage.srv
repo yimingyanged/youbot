@@ -1,0 +1,11 @@
+# Namespace to publish response topics in. 
+int32 from
+int32[] to 
+bool rectified
+---
+int32 from_id
+int32[] to_id 
+sensor_msgs/Image from_l # Regenerated messages of the requested images. 
+sensor_msgs/Image from_r
+sensor_msgs/Image[] to_l
+sensor_msgs/Image[] to_r

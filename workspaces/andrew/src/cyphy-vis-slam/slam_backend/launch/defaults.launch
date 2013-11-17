@@ -1,0 +1,9 @@
+<launch>
+	<node pkg="slam_backend" type="slam_backend" name="slam_backend">
+		<param name="vo_topic" value="/vo/odometry" />
+		<param name="slam_map_frame" value="odom_combined"/>
+		<param name="graph_publish_rate" value="0.2"/>
+		<param name="vertex_sep" value="1.0"/>
+		<param name="min_closures_to_optimize" value="1"/>
+	</node>
+</launch>

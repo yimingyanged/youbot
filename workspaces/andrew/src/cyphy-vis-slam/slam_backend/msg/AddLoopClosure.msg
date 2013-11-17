@@ -1,0 +1,6 @@
+Header header
+int32 node_id1
+int32 node_id2
+time interpolated_time
+float32 frac
+geometry_msgs/PoseWithCovarianceStamped transform

@@ -1,0 +1,28 @@
+<package>
+  <description brief="geometric_verification">
+
+     geometric_verification
+
+  </description>
+  <author>Liz Murphy (liz.murphy@qut.edu.au)</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/geometric_verification</url>
+  <depend package="roscpp"/>
+  <depend package="cv_bridge"/>
+  <depend package="sensor_msgs"/>
+  <depend package="stereo_msgs"/>
+  <depend package="image_transport"/>
+  <depend package="image_geometry"/>
+  <depend package="message_filters"/>
+  <depend package="openfabmap2"/>
+  <depend package="image_cache"/>
+  <depend package="opencv2"/>
+  <depend package="viso2_ros"/>
+  <depend package="tf"/>
+  <depend package="geometry_msgs"/>
+  <depend package="cyphy_vslam_msgs"/>
+
+</package>
+
+

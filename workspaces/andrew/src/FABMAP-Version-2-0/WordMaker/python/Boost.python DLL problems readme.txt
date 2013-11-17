@@ -1,0 +1,22 @@
+Getting boost python working
+
+
+--There is an error 
+  "DLL Load Failed"
+
+-> Need to copy 
+boost_python-vc80-mt-1_34.dll  into the path.
+
+For debug builds, the equivalent DLL is 
+boost_python-vc80-mt-gd-1_34.dll 
+
+
+This is the DLL in
+
+boost_1_34_0\bin.v2\libs\python\build\msvc-8.0\debug\threading-multi
+
+
+---------------
+Another caveat
+---------------
+Exception handling and RTTI are required to be enabled for Boost.Python to function properly. Secondly, under MSVC, you should build your project with the Multithread DLL versions of the C runtime library or you can get some very subtle and strange runtime errors. 

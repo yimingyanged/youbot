@@ -1,0 +1,18 @@
+<package>
+  <description brief="cyphy_vslam">
+
+     cyphy_vslam
+
+  </description>
+  <author>liz</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cyphy_vslam</url>
+  <depend package="g2o"/>
+  <depend package="roscpp"/>
+  <depend package="nav_msgs"/>
+  <depend package="visualization_msgs"/>
+  <depend package="geometry_msgs"/>
+</package>
+
+

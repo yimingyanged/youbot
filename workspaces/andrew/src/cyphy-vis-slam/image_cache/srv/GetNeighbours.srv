@@ -1,0 +1,7 @@
+# Namespace to publish response topics in. 
+int32 nodeID
+---
+int32 node1
+int32 node2
+float32 frac
+time inter_time

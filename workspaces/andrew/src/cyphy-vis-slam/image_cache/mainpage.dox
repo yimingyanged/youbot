@@ -1,0 +1,20 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b image_cache 
+
+<!-- 
+The image cache node holds a central position in our architecture and serves multiple purposes: 
+ 1. Resampling the incoming video stream to a lower rate for use by the computationally intensive place recognition nodes 
+ 2. Saving the resampled images in a persistent image store 
+ 3. Serving stored images to other nodes with optional rectification 
+ 4. Finding the neighbours of an image with respect to the backend map 
+
+The cache also contains a number of databases that serve to establish the equivalence between images at different places in the pipeline; this is required as the same images once republished have different message sequence numbers.  The overall functionality of the cache node is shown diagrammatically in the figure below. It receives raw stereo images at frame rate from the camera driver and republishes only the left image at a throttled rate for downstream consumption by place recognition nodes - these are computationally intense and typically do not require stereo imagery or full frame rate.  The cache republishes and saves raw images rather than rectified images since the latter have black regions which are warping artifacts and their edges result in large numbers of features which can adversely affect the performance of the feature-based place recognition algorithms.  However, the cache stores both left and right raw images corresponding to the republished frames in lossless PNG (portable network graphics).
+-->
+
+-->
+
+
+*/
