@@ -35,8 +35,8 @@
   </group>
   <group unless="$(arg dualArm)">
     <node name="youbot_wrapper" pkg="youbot_common" launch-prefix="$(arg launch_prefix)" type="youbot_wrapper" args="$(arg waittime)" output="screen">
-      <remap from="base/joint_states" to="joint_states" /> 
-      <remap from="arm_1/joint_states" to="joint_states" />
+<!--      <remap from="base/joint_states" to="joint_states" />  --> 
+<!--      <remap from="arm_1/joint_states" to="joint_states" /> -->
     </node>
   </group>
 </launch>
