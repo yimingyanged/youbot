@@ -10,6 +10,8 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_ros_planning
   moveit_ros_manipulation
   moveit_ros_move_group
+  tf
+  kdl_conversions
   roscpp
 )
 
