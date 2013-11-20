@@ -600,7 +600,7 @@ void YouBotOODLWrapper::armJointTrajectoryGoalCallback(
 		actionlib::ActionServer<control_msgs::FollowJointTrajectoryAction>::GoalHandle youbotArmGoal, unsigned int armIndex)
 {
 	boost::mutex::scoped_lock lock(_mutex);
-	ROS_INFO("Goal for arm%i received", armIndex + 1);
+	ROS_DEBUG("Goal for arm%i received", armIndex + 1);
 	ROS_ASSERT(armIndex < youBotConfiguration.youBotArmConfigurations.size());
 
 	if (youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm == 0)
@@ -718,7 +718,7 @@ void YouBotOODLWrapper::armJointTrajectoryGoalCallback(
 			youBotArm->getArmJoint(i + 1).
 			trajectoryController.setTrajectory(jointTrajectories[i]);
 
-			ROS_INFO("set trajectories %d", i);
+			ROS_DEBUG("set trajectories %d", i);
 		}
 		catch (std::exception& e)
 		{
