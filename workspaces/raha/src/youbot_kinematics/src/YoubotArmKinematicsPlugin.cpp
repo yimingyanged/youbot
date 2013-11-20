@@ -231,12 +231,13 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
 
   if(ik_valid >= 0)
   {
-    stringstream ss;
-    geometry_msgs::Pose p;
-    tf::PoseKDLToMsg(pose_desired, p);
-    ss << "Q  : " << p.orientation;
-    ss << "Pos: " << p.position;
-    ROS_DEBUG("An IK solution was found for pose %s", ss.str().c_str());
+//    stringstream ss;
+//    geometry_msgs::Pose p;
+//    tf::poseKDLToMsg(pose_desired, p);
+//    ss << "Q  : " << p.orientation;
+//    ss << "Pos: " << p.position;
+//    ROS_DEBUG("An IK solution was found for pose %s", ss.str().c_str());
+
     solution.resize(dimension_);
     for(int i=0; i < dimension_; i++)
     {
