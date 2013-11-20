@@ -12,7 +12,7 @@
       <arg name="dualArm" value="$(arg dualArm)"/>
     </include>
     
-    <include file="$(find youbot_common)/launch/youbot_joint_state_publisher.launch">
+    <include file="$(find youbot_common)/launch/youbot_joint_state_publisher.launch" />
     
     <group if="$(arg useKinect)">
       <include file="$(find youbot_common)/launch/youbot_openni.launch" />
