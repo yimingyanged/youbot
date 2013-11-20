@@ -855,7 +855,7 @@ void YouBotOODLWrapper::gripperCommandGoalCallback(
 			<< "  effort  : " <<  youbotGripperGoal.getGoal()->command.max_effort << "\n"
 			<< "  position: " <<  youbotGripperGoal.getGoal()->command.position << "\n"
 			<< "-------------------------------------" 	<< "\n";
-	ROS_INFO(ss.str().c_str());
+	ROS_INFO("%s", ss.str().c_str());
 
 	ROS_DEBUG("Command for gripper%i received", armIndex + 1);
 	ROS_ASSERT(0 <= armIndex && armIndex < static_cast<int>(youBotConfiguration.youBotArmConfigurations.size()));
@@ -921,7 +921,7 @@ void YouBotOODLWrapper::gripperCommandCancelCallback(
 			<< "  effort  : " <<  youbotGripperGoal.getGoal()->command.max_effort << "\n"
 			<< "  position: " <<  youbotGripperGoal.getGoal()->command.position << "\n"
 			<< "-------------------------------------" 	<< "\n";
-	ROS_INFO(ss.str().c_str());
+	ROS_INFO("%s", ss.str().c_str());
 }
 
 void YouBotOODLWrapper::computeOODLSensorReadings()
