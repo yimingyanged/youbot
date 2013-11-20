@@ -112,6 +112,7 @@ YouBotConfiguration::YouBotConfiguration()
   armNameToArmIndexMapping.clear();
   hasBase = false;
   hasArms = false;
+  doPublishCompleteJointState = true;
 }
 
 YouBotConfiguration::~YouBotConfiguration()

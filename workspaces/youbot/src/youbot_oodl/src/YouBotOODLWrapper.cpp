@@ -232,6 +232,7 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 	topicName << youBotConfiguration.youBotArmConfigurations[armIndex].commandTopicName << "joint_states";
 	youBotConfiguration.youBotArmConfigurations[armIndex].armJointStatePublisher = node.advertise
 			< sensor_msgs::JointState > (topicName.str(), 1); //TODO different names or one topic?
+  youBotConfiguration.completeJointStatePublisher = node.advertise<sensor_msgs::JointState>("joint_states", 1);
 
 	if (enableStandardGripper)
 	{
@@ -240,8 +241,7 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 		topicName << youBotConfiguration.youBotArmConfigurations[armIndex].commandTopicName
 				<< "gripper_controller/position_command";
 		youBotConfiguration.youBotArmConfigurations[armIndex].gripperPositionCommandSubscriber = node.subscribe
-				< brics_actuator::JointPositions
-				> (topicName.str(), 1000, boost::bind(&YouBotOODLWrapper::gripperPositionsCommandCallback, this, _1, armIndex));
+				< brics_actuator::JointPositions > (topicName.str(), 1000, boost::bind(&YouBotOODLWrapper::gripperPositionsCommandCallback, this, _1, armIndex));
 		youBotConfiguration.youBotArmConfigurations[armIndex].lastGripperCommand = 0.0; //This is true if the gripper is calibrated.
 
 
@@ -381,6 +381,7 @@ void YouBotOODLWrapper::stop()
 		youBotConfiguration.youBotArmConfigurations[armIndex].switchOffMotorsService.shutdown();
 	}
 
+	youBotConfiguration.completeJointStatePublisher.shutdown();
 	youBotConfiguration.hasArms = false;
 	areArmMotorsSwitchedOn = false;
 	youBotConfiguration.youBotArmConfigurations.clear();
@@ -1022,6 +1023,7 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 				baseJointStateMessage.name[i] = youBotConfiguration.baseConfiguration.wheelNames[i];
 				baseJointStateMessage.position[i] = currentAngle.angle.value();
 				baseJointStateMessage.velocity[i] = currentVelocity.angularVelocity.value();
+				baseJointStateMessage.effort[i] = 0;
 			}
 
 			/*
@@ -1030,15 +1032,19 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 			 */
 			baseJointStateMessage.name[4] = "caster_joint_fl";
 			baseJointStateMessage.position[4] = 0.0;
+			baseJointStateMessage.effort[4] = 0;
 
 			baseJointStateMessage.name[5] = "caster_joint_fr";
 			baseJointStateMessage.position[5] = 0.0;
+			baseJointStateMessage.effort[5] = 0;
 
 			baseJointStateMessage.name[6] = "caster_joint_bl";
 			baseJointStateMessage.position[6] = 0.0;
+			baseJointStateMessage.effort[6] = 0;
 
 			baseJointStateMessage.name[7] = "caster_joint_br";
 			baseJointStateMessage.position[7] = 0.0;
+			baseJointStateMessage.effort[7] = 0;
 
 			/*
 			 * Yet another hack to make the published values compatible with the URDF description.
@@ -1063,6 +1069,8 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 				armJointStateMessages[armIndex].name.resize(youBotArmDoF + youBotNumberOfFingers);
 				armJointStateMessages[armIndex].position.resize(youBotArmDoF + youBotNumberOfFingers);
 				armJointStateMessages[armIndex].velocity.resize(youBotArmDoF + youBotNumberOfFingers);
+				armJointStateMessages[armIndex].effort.resize(youBotArmDoF + youBotNumberOfFingers);
+
 
 				if (youBotConfiguration.youBotArmConfigurations[armIndex].youBotArm == 0)
 				{
@@ -1081,6 +1089,7 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 					armJointStateMessages[armIndex].name[i] = youBotConfiguration.youBotArmConfigurations[armIndex].jointNames[i]; //TODO no unique names for URDF yet
 					armJointStateMessages[armIndex].position[i] = currentAngle.angle.value();
 					armJointStateMessages[armIndex].velocity[i] = currentVelocity.angularVelocity.value();
+					armJointStateMessages[armIndex].effort[i] = 0;
 				}
 
 				// check if trajectory controller is finished
@@ -1133,20 +1142,28 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 						gripperCycleCounter = youBotDriverCycleFrequencyInHz / 5; //approx. 5Hz here
 						gripperBar1.getData(gripperBar1Positions[armIndex]);
 						gripperBar2.getData(gripperBar2Positions[armIndex]);
+						gripperBar1.getData(gripperBar1Velocities[armIndex]);
+            gripperBar2.getData(gripperBar2Velocities[armIndex]);
 					}
 					gripperCycleCounter--;
 
+					// Left bar
 					armJointStateMessages[armIndex].name[youBotArmDoF + 0] =
 							youBotConfiguration.youBotArmConfigurations[armIndex].
 							gripperFingerNames[YouBotArmConfiguration::LEFT_FINGER_INDEX];
 					double leftGipperFingerPosition = gripperBar1Positions[armIndex].barPosition.value();
 					armJointStateMessages[armIndex].position[youBotArmDoF + 0] = leftGipperFingerPosition;
+					armJointStateMessages[armIndex].velocity[youBotArmDoF + 0] = gripperBar1Velocities[armIndex].barVelocity;
+					armJointStateMessages[armIndex].effort[youBotArmDoF + 0] = 0;
 
+					// Right bar
 					double rightGipperFingerPosition = gripperBar2Positions[armIndex].barPosition.value();
 					armJointStateMessages[armIndex].name[youBotArmDoF + 1] =
 							youBotConfiguration.youBotArmConfigurations[armIndex].
 							gripperFingerNames[YouBotArmConfiguration::RIGHT_FINGER_INDEX];
 					armJointStateMessages[armIndex].position[youBotArmDoF + 1] = rightGipperFingerPosition;
+					armJointStateMessages[armIndex].velocity[youBotArmDoF + 1] = gripperBar2Velocities[armIndex].barVelocity;
+					armJointStateMessages[armIndex].effort[youBotArmDoF + 1] = 0;
 
 
 					// Handling GripperCommandAction
@@ -1192,7 +1209,30 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 			}
 		}
 
+		// Prepare the complete joint state messsage
+		completeJointStateMessage.header.stamp = currentTime;
+		completeJointStateMessage.effort.clear();
+		completeJointStateMessage.name.clear();
+		completeJointStateMessage.position.clear();
+		completeJointStateMessage.velocity.clear();
 
+		//copy base values
+		for(int i = 0; i < baseJointStateMessage.name.size(); i++)
+		{
+		  completeJointStateMessage.name.push_back(baseJointStateMessage.name.at(i));
+		  completeJointStateMessage.position.push_back(baseJointStateMessage.position.at(i));
+		  completeJointStateMessage.velocity.push_back(baseJointStateMessage.velocity.at(i));
+		  completeJointStateMessage.effort.push_back(baseJointStateMessage.effort.at(i));
+		}
+		//copy arm values
+		for(int k = 0; k < armJointStateMessages.size();k++)
+		  for(int i = 0; i < armJointStateMessages.at(k).name.size(); i++)
+		  {
+		    completeJointStateMessage.name.push_back(armJointStateMessages.at(k).name.at(i));
+		    completeJointStateMessage.position.push_back(armJointStateMessages.at(k).position.at(i));
+		    completeJointStateMessage.velocity.push_back(armJointStateMessages.at(k).velocity.at(i));
+		    completeJointStateMessage.effort.push_back(armJointStateMessages.at(k).effort.at(i));
+		  }
 		youbot::EthercatMaster::getInstance().AutomaticReceiveOn(true); // ensure that all joint values will be received at the same time
 	}
 	catch (youbot::EtherCATConnectionException& e)
@@ -1225,6 +1265,9 @@ void YouBotOODLWrapper::publishOODLSensorReadings()
 					armJointStateMessages[armIndex]);
 		}
 	}
+
+	if(youBotConfiguration.doPublishCompleteJointState)
+	  youBotConfiguration.completeJointStatePublisher.publish(completeJointStateMessage);
 
 }
 
