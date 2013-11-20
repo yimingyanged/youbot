@@ -321,6 +321,10 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 		gripperBar1Positions.push_back(youbot::GripperSensedBarPosition());
 	if(gripperBar2Positions.size() <= armIndex)
 		gripperBar2Positions.push_back(youbot::GripperSensedBarPosition());
+  if(gripperBar1Velocities.size() <= armIndex)
+    gripperBar1Velocities.push_back(youbot::GripperSensedVelocity());
+  if(gripperBar2Velocities.size() <= armIndex)
+    gripperBar2Velocities.push_back(youbot::GripperSensedVelocity());
 
 	//  these has to be fixed..
 	armJointStateMessages; // needs testing to secure that there is infact one per arm, and not just a common one (which it seems like..)
