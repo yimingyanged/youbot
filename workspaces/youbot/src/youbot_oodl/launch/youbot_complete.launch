@@ -8,8 +8,9 @@
     <arg name="useKinect" value="false" />
     
     <include file="$(find youbot_common)/launch/youbot_wrapper.launch">
-      <arg name="debug" value="$(arg debug)"/>
+ <!--     <arg name="debug" value="$(arg debug)"/>
       <arg name="dualArm" value="$(arg dualArm)"/>
+ -->
     </include>
     
     <include file="$(find youbot_common)/launch/youbot_joint_state_publisher.launch" />
