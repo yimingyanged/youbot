@@ -3,23 +3,32 @@
 <!-- load the robot description file -->
   <param name="robot_description" command="$(find xacro)/xacro.py '$(find youbot_description)/robots/youbot.urdf.xacro'"/>
 
+<!--  Publish youbot to tf -->
+<node pkg="robot_state_publisher" type="robot_state_publisher" name="youbot_base_state_publisher" output="screen">
+  <param name="tf_prefix" type="string" value="" />
+</node> 	
 <!--  Publish base to tf -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="youbot_base_state_publisher" output="screen">
+<!--
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="youbot_base_state_publisher"
+    output="screen">
     <param name="tf_prefix" type="string" value="" />
-      <remap from="joint_states" to="/base/joint_states"/>
+    <remap from="joint_states" to="/base/joint_states"/>
   </node>
-  
+-->
 <!--  Publish arm_1 to tf -->
+<!--
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="youbot_arm_1_state_publisher" output="screen">
     <param name="tf_prefix" type="string" value="" />
     <remap from="joint_states" to="/arm_1/joint_states"/>
   </node>
-  
+--> 
 <!--  Publish arm_2 to tf -->
+<!--
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_arm_2_state_publisher" output="screen">
     <param name="tf_prefix" type="string" value="" />
     <remap from="joint_states" to="/arm_2/joint_states"/>
   </node>
+-->
 
 
 </launch>
