@@ -1020,6 +1020,7 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 			baseJointStateMessage.name.resize(youBotNumberOfWheels * 2); // *2 because of virtual wheel joints in the URDF description
 			baseJointStateMessage.position.resize(youBotNumberOfWheels * 2);
 			baseJointStateMessage.velocity.resize(youBotNumberOfWheels * 2);
+			baseJointStateMessage.effort.resize(youBotNumberOfWheels * 2);
 
 			ROS_ASSERT(
 					(youBotConfiguration.baseConfiguration.wheelNames.size() == static_cast<unsigned int>(youBotNumberOfWheels)));
