@@ -1210,6 +1210,7 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 		}
 
 		// Prepare the complete joint state messsage
+		cout << "Creating complete state message.." <<  endl;
 		completeJointStateMessage.header.stamp = currentTime;
 		completeJointStateMessage.effort.clear();
 		completeJointStateMessage.name.clear();
