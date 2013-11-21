@@ -272,22 +272,29 @@ private:
     /// Vector of the published joint states of per arm with angles in [RAD]
     vector<sensor_msgs::JointState> armJointStateMessages;
 
-    /// The joint trajectory goal that is currently active.
+    /// The complete joint state
+    sensor_msgs::JointState completeJointStateMessage;
+
+    /// The joint trajectory goal that is currently active pr. arm.
 	vector<actionlib::ActionServer<control_msgs::FollowJointTrajectoryAction>::GoalHandle> armActiveJointTrajectoryGoals;
 
 	/// Tell if a goal is currently active.
 	vector<bool> armHasActiveJointTrajectoryGoals;
 
-    /// The GripperCommand goal that is currently active.
+	/// The GripperCommand goal that is currently active.
 	vector<actionlib::ActionServer<control_msgs::GripperCommandAction>::GoalHandle> gripperActiveGripperCommandGoals;
 
 	/// Tell if a goal is currently active.
 	vector<bool> gripperHasGripperCommandGoals;
 
+  /// Gripper positions
 	vector<youbot::GripperSensedBarPosition> gripperBar1Positions;
 	vector<youbot::GripperSensedBarPosition> gripperBar2Positions;
 	vector<youbot::GripperSensedBarSpacing> gripperBarSpacings;
 
+	/// Gripper velocities
+	vector<youbot::GripperSensedVelocity> gripperBar1Velocities;
+  vector<youbot::GripperSensedVelocity> gripperBar2Velocities;
 	int gripperCycleCounter;
 
     //void executeActionServer(const control_msgs::FollowJointTrajectoryGoalConstPtr& goal,  int armIndex);
@@ -310,7 +317,7 @@ private:
     std::string diagnosticNameBase;
 
     bool areBaseMotorsSwitchedOn;
-    bool areArmMotorsSwitchedOn;
+    vector<bool> areArmMotorsSwitchedOn;
 
     // Mutex for controlling threaded access
     boost::mutex _mutex;

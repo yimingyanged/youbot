@@ -80,9 +80,6 @@ void
 YoubotArmKinematicsPlugin::setRobotModel(
     boost::shared_ptr<urdf::ModelInterface>& robot_model)
 {
-  ROS_ERROR("YoubotArmKinematicsPlugin::setRobotModel");
-  ROS_ERROR("Now setting the robot model in YoubotArmKinematicsPlugin!");
-  ROS_ERROR("Has the address value: %ld", (long) robot_model.get());
   robot_model_ = robot_model;
 }
 
@@ -92,7 +89,6 @@ bool YoubotArmKinematicsPlugin::initialize(const std::string& robot_description,
                                            const std::string& tip_name,
                                            double search_discretization)
 {
-  ROS_ERROR("base_name: %s", base_name.c_str());
   setValues(robot_description, group_name, base_name, tip_name,search_discretization);
 
   std::string xml_string;
@@ -122,14 +118,13 @@ bool YoubotArmKinematicsPlugin::initialize(const std::string& robot_description,
 //  ROS_ERROR("full_urdf_xml: %s", full_urdf_xml.c_str());
 //  ROS_ERROR("xml_string: %s", xml_string.c_str());
 
-  ROS_ERROR("creating model from xml string..");
   robot_model->initString(urdf_xml);
 
   robot_model_interface.reset(robot_model);
 
   setRobotModel(robot_model_interface);
 
-  ROS_ERROR("Loading KDL Tree");
+  ROS_DEBUG("Loading KDL Tree");
   if(!kinematics_helper::getKDLChain(*robot_model_,base_frame_,tip_frame_,kdl_chain_))
   {
     active_ = false;
@@ -213,9 +208,6 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
   Eigen::Affine3d tp;
   tf::poseMsgToEigen(ik_pose, tp);
   tf::transformEigenToKDL(tp, pose_desired);
-//  stringstream ss;
-//  ss << pose_desired;
-//  ROS_ERROR("Printing desired pose: %s", ss.str().c_str());
 
   //Do the IK
   KDL::JntArray jnt_pos_in;
@@ -233,13 +225,19 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
   if(ik_valid == youbot_kinematics::NO_IK_SOLUTION)
   {
     error_code.val = error_code.NO_IK_SOLUTION;
-    ROS_ERROR("No valid inverse kinematics found..");
+    ROS_DEBUG("No valid inverse kinematics found..");
     return false;
   }
 
   if(ik_valid >= 0)
   {
-    ROS_ERROR("An IK solution was found");
+//    stringstream ss;
+//    geometry_msgs::Pose p;
+//    tf::poseKDLToMsg(pose_desired, p);
+//    ss << "Q  : " << p.orientation;
+//    ss << "Pos: " << p.position;
+//    ROS_DEBUG("An IK solution was found for pose %s", ss.str().c_str());
+
     solution.resize(dimension_);
     for(int i=0; i < dimension_; i++)
     {
@@ -251,7 +249,6 @@ bool YoubotArmKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_p
   else
   {
     ROS_DEBUG("An IK solution could not be found");
-    ROS_ERROR("An IK solution could not be found, error code: %d", ik_valid);
     error_code.val = error_code.NO_IK_SOLUTION;
     return false;
   }

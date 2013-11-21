@@ -1,0 +1,21 @@
+
+  <launch>
+    <arg name="debug" default="false" />
+    <arg unless="$(arg debug)" name ="launch_prefix" value="" />
+    <arg if="$(arg debug)" name ="launch_prefix" value="gdb --ex run --args" />
+    
+    <arg name="dualArm" value="true" />
+    <arg name="useKinect" value="false" />
+    
+    <include file="$(find youbot_common)/launch/youbot_wrapper.launch">
+ <!--     <arg name="debug" value="$(arg debug)"/>
+      <arg name="dualArm" value="$(arg dualArm)"/>
+ -->
+    </include>
+    
+    <include file="$(find youbot_common)/launch/youbot_joint_state_publisher.launch" />
+    
+    <group if="$(arg useKinect)">
+      <include file="$(find youbot_common)/launch/youbot_openni.launch" />
+    </group>
+  </launch>

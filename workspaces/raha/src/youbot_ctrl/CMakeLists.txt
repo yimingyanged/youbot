@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(youbot_moveit_test)
+project(youbot_ctrl)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  moveit_core
-  moveit_ros_planning_interface
-  moveit_ros_planning
-  moveit_ros_manipulation
-  moveit_ros_move_group
   tf
   kdl_conversions
+  moveit_core
+  moveit_ros_manipulation
+  moveit_ros_move_group
+  moveit_ros_planning
+  moveit_ros_planning_interface
   roscpp
 )
 
@@ -86,8 +86,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES youbot_moveit_test
-#  CATKIN_DEPENDS moveit_core roscpp
+#  LIBRARIES youbot_ctrl
+#  CATKIN_DEPENDS kdl_conversions moveit moveit_core moveit_ros_manipulation moveit_ros_move_group moveit_ros_planning moveit_ros_planning_interface rosconsole roscpo tf
 #  DEPENDS system_lib
 )
 
@@ -103,21 +103,23 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(youbot_moveit_test
-#   src/${PROJECT_NAME}/youbot_moveit_test.cpp
+# add_library(youbot_ctrl
+#   src/${PROJECT_NAME}/youbot_ctrl.cpp
 # )
 
 ## Declare a cpp executable
- add_executable(youbot_moveit_test_node src/main.cpp)
+add_executable(youbot_ctrl_node src/youbot_ctrl_node.cpp 
+                                src/YoubotCtrl.cpp
+                                src/ObjectInfo.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(youbot_moveit_test_node youbot_moveit_test_generate_messages_cpp)
+# add_dependencies(youbot_ctrl_node youbot_ctrl_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(youbot_moveit_test_node
-   ${catkin_LIBRARIES}
- )
+target_link_libraries(youbot_ctrl_node
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
@@ -134,7 +136,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS youbot_moveit_test youbot_moveit_test_node
+# install(TARGETS youbot_ctrl youbot_ctrl_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -159,7 +161,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_youbot_moveit_test.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_youbot_ctrl.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

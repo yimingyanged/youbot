@@ -204,6 +204,12 @@ public:
     /// Whether every EtherCAT connection is okay
     bool isEtherCATOkay();
 
+    /// Flag to indicate whether full joint_state should be published on /joint_states
+    bool doPublishCompleteJointState;
+
+    /// Publishes JointState messages of entire robot (base + active arms)
+    ros::Publisher completeJointStatePublisher;
+
     /// Publishes diagnostic messages
     ros::Publisher diagnosticArrayPublisher;
 

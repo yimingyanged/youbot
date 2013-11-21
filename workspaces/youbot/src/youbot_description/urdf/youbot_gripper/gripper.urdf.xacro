@@ -65,7 +65,7 @@
 -->
 	
 		<joint name="${name}_finger_joint_l" type="prismatic">
-			<origin xyz="0.046 0.010 0.003 " rpy="0 ${-M_PI / 2} ${M_PI}" />
+			<origin xyz="0.046 0.010 0.0027 " rpy="0 ${-M_PI / 2} ${M_PI}" />
 			<parent link="${name}_palm_link"/>
 			<child link="${name}_finger_link_l"/>
 			<axis xyz="0 -1 0" />
@@ -103,7 +103,7 @@
 		</gazebo>
 
     <joint name="${name}_finger_joint_r" type="prismatic">
-			<origin xyz="0.046 -0.010 0.003" rpy="0 ${M_PI / 2} 0" />
+			<origin xyz="0.046 -0.010 0.0027" rpy="0 ${M_PI / 2} 0" />
 			<parent link="${name}_palm_link"/>
 			<child link="${name}_finger_link_r"/>
 			<axis xyz="0 -1 0" />
@@ -139,11 +139,27 @@
 			<material>Black</material>
 		</gazebo>
 
-                <!-- asus xtion camera -->
+
+<!-- TCP joint and link -->
+    <joint name="${name}_tcp_joint" type="fixed">
+			<origin xyz="0.079 0.0 0.0027" rpy="0 ${-M_PI / 2} ${M_PI}" />
+			<parent link="${name}_palm_link"/>
+			<child link="${name}_tcp_link"/>
+		</joint>
+
+		<link name="${name}_tcp_link">
+			<inertial>
+				<origin xyz="0.000 0.000 0" rpy="0 0 0" />
+				<mass value="0.00"/>
+				<inertia ixx="0.00" ixy="0" ixz="0" iyy="0.00" iyz="0" izz="0.00" />
+			</inertial>
+		</link>
+		
+<!-- asus xtion camera -->
 <!--		<xacro:asus_xtion_camera name="xtion" parent="${name}_palm_link" tilt="0.0"> -->
-                  <!-- AR_CALIBRATOR:EDIT_HERE -->
-<!--                  <origin xyz="0.0197188 -0.0341838 0.0459352" rpy="0.0201114 0.00763208 3.0937" />  -->
-<!--                </xacro:asus_xtion_camera>  -->
+<!-- AR_CALIBRATOR:EDIT_HERE -->
+<!--      <origin xyz="0.0197188 -0.0341838 0.0459352" rpy="0.0201114 0.00763208 3.0937" />  -->
+<!--    </xacro:asus_xtion_camera>  -->
 
 		
 		<!-- extensions -->
