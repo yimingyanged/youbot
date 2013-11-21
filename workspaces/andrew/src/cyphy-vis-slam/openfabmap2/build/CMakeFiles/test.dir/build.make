@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2
+CMAKE_SOURCE_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build
+CMAKE_BINARY_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build
 
 # Utility rule file for test.
 
@@ -60,6 +60,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 

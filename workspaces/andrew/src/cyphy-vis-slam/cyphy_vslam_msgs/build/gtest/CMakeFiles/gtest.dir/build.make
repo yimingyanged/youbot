@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs
+CMAKE_SOURCE_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build
+CMAKE_BINARY_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build
 
 # Include any dependencies generated for this target.
 include gtest/CMakeFiles/gtest.dir/depend.make
@@ -51,17 +51,17 @@ include gtest/CMakeFiles/gtest.dir/flags.make
 
 gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: gtest/CMakeFiles/gtest.dir/flags.make
 gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: /usr/src/gtest/src/gtest-all.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/gtest/src/gtest-all.cc
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/gtest/src/gtest-all.cc
 
 gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/src/gtest-all.cc.i"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -E /usr/src/gtest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -E /usr/src/gtest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
 
 gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/src/gtest-all.cc.s"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -S /usr/src/gtest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -S /usr/src/gtest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
 
 gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.requires:
 .PHONY : gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.requires
@@ -79,24 +79,24 @@ gtest_OBJECTS = \
 # External object files for target gtest
 gtest_EXTERNAL_OBJECTS =
 
-/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so: gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so: gtest/CMakeFiles/gtest.dir/build.make
-/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so: gtest/CMakeFiles/gtest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
+/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so: gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so: gtest/CMakeFiles/gtest.dir/build.make
+/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so: gtest/CMakeFiles/gtest.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so"
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-gtest/CMakeFiles/gtest.dir/build: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so
+gtest/CMakeFiles/gtest.dir/build: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/lib/libgtest.so
 .PHONY : gtest/CMakeFiles/gtest.dir/build
 
 gtest/CMakeFiles/gtest.dir/requires: gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.requires
 .PHONY : gtest/CMakeFiles/gtest.dir/requires
 
 gtest/CMakeFiles/gtest.dir/clean:
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
 .PHONY : gtest/CMakeFiles/gtest.dir/clean
 
 gtest/CMakeFiles/gtest.dir/depend:
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs /usr/src/gtest /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs /usr/src/gtest /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : gtest/CMakeFiles/gtest.dir/depend
 

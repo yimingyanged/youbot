@@ -1,0 +1,44 @@
+ProcessConfig = pWordMaker
+{
+	Mode = BATCH
+
+	//Where is the Vocab?
+	VocabPath = ../Resources/Vocabularies/OxfordVocab_Surf_11k/
+	VocabName = OxfordVocab_Surf_11k
+
+	//Where is the data?
+    //Images are expected to be in BaseDataPath/Images
+	//Output is placed in other subdirectories of this path
+    BaseDataPath = ../Resources/Sample_Data/
+
+    //Were are the images?
+    //By default we assume BaseDataPath/Images
+    //Specifying an ImagePath overrides the default
+    //ImagePath = /some/custom/path
+
+    //Do we want to write out .surf files?
+    WriteDescriptors = TRUE
+    //Where to write out the .surf files to?
+    //By default we assume BaseDataPath/Surf
+    //Specifying a DescriptorOutputPath overrides the default
+    //DescriptorPath =  /some/custom/path
+
+    //Do we want to write out .words files?
+    WriteWords = TRUE
+    //Where to write out the .words files to?
+    //By default we assume BaseDataPath/Words_VocabName
+    //Specifying a WordOutputPath overrides the default
+    //WordOutputPath = /some/custom/path
+
+    //The .oxs file is an index file that records the 
+    //bag-of-words for each image in the directory we're processing
+    //OXS gets output to the BaseData path
+    WriteOXS = TRUE
+
+    //SURF Parameters
+    //The vocabulary has been learned with the following parameters
+    //Changing these parameters requires learning a new vocabulary
+    SURFThres = 1.0		//Blob response threshold. 25.0 yields approx 50-500 interest points per image on outdoor images.
+    SURFUpright = true		//Set true to turn off rotation invariance
+    SURF128 = true		//Set true to compute longer 128-dimensional discriptors.
+}

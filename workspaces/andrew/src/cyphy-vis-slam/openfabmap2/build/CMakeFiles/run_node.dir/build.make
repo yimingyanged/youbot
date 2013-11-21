@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2
+CMAKE_SOURCE_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build
+CMAKE_BINARY_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/run_node.dir/depend.make
@@ -87,19 +87,19 @@ CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/share/diagnostic_msgs
 CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/share/diagnostic_updater/package.xml
 CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/share/self_test/package.xml
 CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/share/driver_base/package.xml
-CMakeFiles/run_node.dir/src/run_node.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
-CMakeFiles/run_node.dir/src/run_node.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/run_node.dir/src/run_node.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
+CMakeFiles/run_node.dir/src/run_node.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run_node.dir/src/run_node.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/run_node.cpp.o -c /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/run_node.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/run_node.cpp.o -c /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/run_node.cpp
 
 CMakeFiles/run_node.dir/src/run_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_node.dir/src/run_node.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/run_node.cpp > CMakeFiles/run_node.dir/src/run_node.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/run_node.cpp > CMakeFiles/run_node.dir/src/run_node.cpp.i
 
 CMakeFiles/run_node.dir/src/run_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_node.dir/src/run_node.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/run_node.cpp -o CMakeFiles/run_node.dir/src/run_node.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/run_node.cpp -o CMakeFiles/run_node.dir/src/run_node.cpp.s
 
 CMakeFiles/run_node.dir/src/run_node.cpp.o.requires:
 .PHONY : CMakeFiles/run_node.dir/src/run_node.cpp.o.requires
@@ -148,19 +148,19 @@ CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /opt/ros/hydro/share/diagnostic
 CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /opt/ros/hydro/share/diagnostic_updater/package.xml
 CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /opt/ros/hydro/share/self_test/package.xml
 CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /opt/ros/hydro/share/driver_base/package.xml
-CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
-CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_2)
+CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
+CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o -c /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/BOWMSCTrainer.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o -c /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/BOWMSCTrainer.cpp
 
 CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/BOWMSCTrainer.cpp > CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/BOWMSCTrainer.cpp > CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.i
 
 CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/BOWMSCTrainer.cpp -o CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/BOWMSCTrainer.cpp -o CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.s
 
 CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o.requires:
 .PHONY : CMakeFiles/run_node.dir/src/BOWMSCTrainer.cpp.o.requires
@@ -209,19 +209,19 @@ CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /opt/ros/hydro/share/diagnostic_m
 CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /opt/ros/hydro/share/diagnostic_updater/package.xml
 CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /opt/ros/hydro/share/self_test/package.xml
 CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /opt/ros/hydro/share/driver_base/package.xml
-CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
-CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_3)
+CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
+CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o -c /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/ChowLiuTree.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o -c /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/ChowLiuTree.cpp
 
 CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/ChowLiuTree.cpp > CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/ChowLiuTree.cpp > CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.i
 
 CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/ChowLiuTree.cpp -o CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/ChowLiuTree.cpp -o CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.s
 
 CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o.requires:
 .PHONY : CMakeFiles/run_node.dir/src/ChowLiuTree.cpp.o.requires
@@ -270,19 +270,19 @@ CMakeFiles/run_node.dir/src/FabMap.cpp.o: /opt/ros/hydro/share/diagnostic_msgs/p
 CMakeFiles/run_node.dir/src/FabMap.cpp.o: /opt/ros/hydro/share/diagnostic_updater/package.xml
 CMakeFiles/run_node.dir/src/FabMap.cpp.o: /opt/ros/hydro/share/self_test/package.xml
 CMakeFiles/run_node.dir/src/FabMap.cpp.o: /opt/ros/hydro/share/driver_base/package.xml
-CMakeFiles/run_node.dir/src/FabMap.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
-CMakeFiles/run_node.dir/src/FabMap.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_4)
+CMakeFiles/run_node.dir/src/FabMap.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
+CMakeFiles/run_node.dir/src/FabMap.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run_node.dir/src/FabMap.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/FabMap.cpp.o -c /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/FabMap.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/FabMap.cpp.o -c /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/FabMap.cpp
 
 CMakeFiles/run_node.dir/src/FabMap.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_node.dir/src/FabMap.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/FabMap.cpp > CMakeFiles/run_node.dir/src/FabMap.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/FabMap.cpp > CMakeFiles/run_node.dir/src/FabMap.cpp.i
 
 CMakeFiles/run_node.dir/src/FabMap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_node.dir/src/FabMap.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/FabMap.cpp -o CMakeFiles/run_node.dir/src/FabMap.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/FabMap.cpp -o CMakeFiles/run_node.dir/src/FabMap.cpp.s
 
 CMakeFiles/run_node.dir/src/FabMap.cpp.o.requires:
 .PHONY : CMakeFiles/run_node.dir/src/FabMap.cpp.o.requires
@@ -331,19 +331,19 @@ CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/share/diagnost
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/share/diagnostic_updater/package.xml
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/share/self_test/package.xml
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/share/driver_base/package.xml
-CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
-CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_5)
+CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/manifest.xml
+CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o -c /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/openfabmap2_ros.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o -c /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/openfabmap2_ros.cpp
 
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/openfabmap2_ros.cpp > CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/openfabmap2_ros.cpp > CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.i
 
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/openfabmap2_ros.cpp -o CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/src/openfabmap2_ros.cpp -o CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.s
 
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o.requires:
 .PHONY : CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o.requires
@@ -408,6 +408,6 @@ CMakeFiles/run_node.dir/clean:
 .PHONY : CMakeFiles/run_node.dir/clean
 
 CMakeFiles/run_node.dir/depend:
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles/run_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles/run_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_node.dir/depend
 

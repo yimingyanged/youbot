@@ -1,0 +1,56 @@
+ProcessConfig = pWordMaker
+{
+	Mode = QUANTIZE_ONLY	//Mode can be ONLINE, BATCH or SURF_ONLY or QUANTIZE_ONLY
+					//ONLINE listens for images to be posted to the MOOSDB, then converts them to words
+					//BATCH mode, you specify a directory full of images (any image format is OK), and it processes the contents
+					//SURF_ONLY generates SURfs for a directory full of images. Use it when generating SURFs to build a new vocabulary.
+			        //QUANTIZE_ONLY generates .OXS and/or .words for a directory full of surf features. Use it when building a new vocabulary.
+
+	//Where is the Vocab?
+	VocabPath = ../Resources/Sample_Data/Vocabulary/
+	VocabName = Vocab
+
+	//Where is the data?
+	//Output written to subdirectories of this path
+    BaseDataPath = ../Resources/Sample_Data/Vocabulary/
+	
+    //Were are the images?
+    //By default we assume BaseDataPath/Images
+    //Specifying an ImagePath overrides the default
+    ImagePath = ../Resources/Sample_Data/Images/
+
+    //Do we want to write out .surf files?
+    WriteDescriptors = FALSE
+    //Where to write out the .surf files to?
+    //By default we assume BaseDataPath/Surf
+    //Specifying a DescriptorOutputPath overrides the default
+	DescriptorPath =  ../Resources/Sample_Data/Surf/
+
+	//Do we want to write out .words files?
+    WriteWords = FALSE
+    //Where to write out the .words files to?
+    //By default we assume BaseDataPath/Words_VocabName
+    //Specifying a WordOutputPath overrides the default
+	WordOutputPath = ../Resources/Sample_Data/
+
+	//Output OXS?
+	//OXS gets output to the BaseData path
+	WriteOXS = TRUE
+
+
+	//SURF Parameters
+	SURFThres = 25.0		//Blob response threshold. 25.0 yields 50-100 interst points per image
+	SURFUpright = true		//Set true to turn off rotation invariance
+	SURF128 = true			//Set true to compute longer 128-dimensional discriptors.
+
+	//Binary Cache Settings
+	BINARYCACHEHOST = Localhost
+	BINARYCACHEPORT = 9100
+
+	//MoosDB Settings
+	PublishAs = WORDS				//What to write to
+	ImageMessageName = CAMERA_GRAB	//What to listen for
+}
+
+
+

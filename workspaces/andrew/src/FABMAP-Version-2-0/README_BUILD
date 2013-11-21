@@ -1,0 +1,163 @@
+======================================================================================
+Welcome to FAB-MAP 2.0
+======================================================================================
+
+What's in this package:
+
+----------------------
+Main Packages
+----------------------
+
+* FabMapV2
+    Version 2 of the FabMap Code for place recognition and loop closure detection.
+    As described in the IJRR paper "Appearance-only SLAM at large scale with FAB-MAP 2.0"
+    Compile as a stand-alone binary, or use as a library from your own C++ code.
+
+* WordMaker
+    Feature generation code. Converts images into bag-of-words observations required by FabMap.
+
+    This requires a SURF feature extraction implementation; originally FabMap used SURF 
+    libraries from ETH Zurich as the underlying image descriptor (32-bit only). 
+    There is also an open source version available, Panomatic SURF. 
+   
+    These implementations are compatible with FAB-MAP via an abstracted interface called SurfTools.h
+    The code is also placed in ThirdParty folder
+
+    Links for Surf implementations:
+		- ETH Zurich 32bit only SURF (http://www.vision.ee.ethz.ch/~surf/)
+		- Panomatic SURF (http://aorlinsk2.free.fr/panomatic/, could also be replaced by ParallelSURF)
+	
+    For ETH/OpenSURF compile as a stand-alone library and headers and point CMake at these when
+    configuring. The Panomatic SURF source is included in ThirdParty folder and is built automatically
+    when WordMakerPanomatic is selected.
+    Note that due to implementation differences the two might present slightly different results. However, in our test images we have not noticed any major differences. 
+
+    When using the WordMaker, the Threshold at which features are detected is required.
+    The value can be adjusted according to the application. The CAR-SLAM data set used a value of 25.
+    A lower value of 2 was found appropriate for test images in this package. 
+   
+   
+* FabMapPythonInterface
+* WordMakerPythonInterface
+    Boost::Python wrapper. Provides a Python interface to FabMap and WordMaker.
+
+---------------------------------------
+Vocabulary Learning Packages
+---------------------------------------
+  (note: pre-generated vocabularies are supplied at: http://www.robots.ox.ac.uk/~mjc/Software.htm
+         Vocabulary learning is optional.)
+
+* KMeans
+    An out-of-core implementation of approximate KMeans clustering.
+
+* pAcceleratedChowLiu_CompactMemory
+* pAcceleratedChowLiu_Fast
+    Implementation of Meila's algorithm for fast Chow Liu tree learning. 
+    See "An Accelerated Chow and Liu Algorithm: Fitting Tree Distributions to High-Dimensional Sparse Data", Meila, ICML 99
+    These packages require both the STXXL external memory container library, and also have large RAM requirements.
+    e.g. Our largest vocabulary was trained on a machine with 30GB RAM.
+    Try the Fast one first, and if that runs out of memory then use the compact one.
+
+* Examples
+    Contains a step-by-step example for running FabMap, and for running vocabulary generation.
+
+---------------------------------------
+Supporting Code
+---------------------------------------
+
+* CMakeModules
+  CMake scripts required by the build system
+  
+* ThirdParty
+  Contains randomized kd-forest code from David Lowe (http://www.cs.ubc.ca/~lowe/) at the
+  University of British Columbia.  This code has since been further developed and turned into the BSD licensed 'FLANN'
+  library, by Marius Muja and David Lowe.
+  
+  Also contains CImg, Stxxl, PanomaticSURF and ETH SURF (32-bit)
+
+
+------------
+Dependencies
+------------
+To build FabMap the following dependencies are required:
+
+* CMake build system
+  Obtain from http://www.cmake.org/
+  FabMap requires at least version 2.8.0 
+
+* zlib
+  Available from http://www.zlib.net/
+  Or via your favourite package manager.
+  This is required by MOOS.
+  
+* MOOS
+  Obtain from http://www.robots.ox.ac.uk/~mobile/MOOS/wiki/pmwiki.php
+  Tested with revision 2352, but should work with revision 2300 onwards.
+  Note that only the core libraries need to be built.
+
+* VXL
+  Obtain from http://vxl.sourceforge.net/
+  We tested with version 1.13.0
+  FabMap only requires the core VNL stuff, and does not need any of the
+  'Contributed' libraries.
+
+* STXXL
+  Required ONLY if you want to learn your own vocabularies.
+  Version 1.3.0 is included in the FabMap/ThirdParty directory.
+  Please extract and build the library using 'make library_g++'. 
+
+* CImg
+  Requires version 1.4.6 or upwards.
+  Version 1.4.6 is included in FabMap/ThirdParty.
+  Simply extract CImg,  no compilation required. 
+  It is a single header that is needed by FabMap.
+
+* Boost
+  Available from http://www.boost.org/
+  Or via your favourite package manager.
+  Tested with version 1.42.0.  Version 1.40 upwards should work.  Older
+  versions may also work.
+
+* X11 development headers on Linux/OSX
+  Should be available via your favourite package manager.
+ 
+* ETH Surf libraries
+  Required if you want to build WordMaker.  Note that the SURF libraries are
+  only available as 32-bit binaries.  This means you won't be able to build
+  WordMaker as a 64-bit binary.
+  Obtain these from http://www.vision.ee.ethz.ch/~surf/
+ 
+* Python
+  Required if you want to build any of the Python wrappers.
+  
+  
+---------------
+Building FabMap
+---------------
+
+cd path/to/build/dir
+ccmake path/to/source/dir
+
+Keep pressing 'c' for 'configure' until there are no options with asterisks by
+them.  During this process you will likely have to specify paths to various
+dependencies in the list above.
+
+If you turn on the WordMaker build, you will also have to supply the location
+of the SURF library directory.
+
+Press 'g' for 'generate' the makefile. Then simply call 'make'.
+
+
+---------------
+Troubleshooting
+---------------
+
+Q: STXXL won't build in 32-bit mode in OSX Snow Leopard
+A: Make a 'make.settings.local' file and put these things in it:
+
+  UNAME_M	 ?= i386
+  CPPFLAGS_i386  ?= -arch i386
+  STXXL_LDFLAGS  += -arch i386
+
+
+  

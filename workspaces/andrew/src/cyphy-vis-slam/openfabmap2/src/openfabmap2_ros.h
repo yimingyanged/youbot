@@ -7,8 +7,9 @@
 
 #ifndef _openfabmap2_ros_h
 #define _openfabmap2_ros_h
-
 #include "openfabmap.hpp"
+
+#include <std_srvs/Empty.h>
 #include <cyphy_vslam_msgs/Match.h>
 #include <sensor_msgs/image_encodings.h>
 #include <sensor_msgs/Image.h>
@@ -76,6 +77,7 @@ namespace openfabmap2_ros
 		
 		void processImgCallback(const sensor_msgs::ImageConstPtr& image_msg);
 		void visualiseMatches(std::vector<of2::IMatch> &matches);
+		bool dumpConfusionMatrix(std_srvs::Empty::Request& request, std_srvs::Empty::Response& response);
 		bool loadCodebook();
 		void shutdown();
 		
@@ -86,8 +88,11 @@ namespace openfabmap2_ros
 		int self_match_window_;
 		bool disable_unknown_match_;
 		bool only_new_places_;
+		bool show_confusion_matrix_;
+		std::string confMatrixDumpFile_;
 		
 		ros::Publisher pub_;
+		ros::ServiceServer service_dump_;
 		std::vector<int> toImgSeq;
 		cv::Mat confusionMat;
 	};

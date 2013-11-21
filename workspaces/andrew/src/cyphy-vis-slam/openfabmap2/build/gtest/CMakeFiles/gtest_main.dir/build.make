@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2
+CMAKE_SOURCE_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build
+CMAKE_BINARY_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build
 
 # Include any dependencies generated for this target.
 include gtest/CMakeFiles/gtest_main.dir/depend.make
@@ -51,17 +51,17 @@ include gtest/CMakeFiles/gtest_main.dir/flags.make
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: gtest/CMakeFiles/gtest_main.dir/flags.make
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: /usr/src/gtest/src/gtest_main.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/gtest/src/gtest_main.cc
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/gtest/src/gtest_main.cc
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest_main.dir/src/gtest_main.cc.i"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -E /usr/src/gtest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -E /usr/src/gtest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest_main.dir/src/gtest_main.cc.s"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -S /usr/src/gtest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -S /usr/src/gtest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires:
 .PHONY : gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires
@@ -79,25 +79,25 @@ gtest_main_OBJECTS = \
 # External object files for target gtest_main
 gtest_main_EXTERNAL_OBJECTS =
 
-/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/build.make
-/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest.so
-/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so"
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
+/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/build.make
+/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest.so
+/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so: gtest/CMakeFiles/gtest_main.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so"
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-gtest/CMakeFiles/gtest_main.dir/build: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so
+gtest/CMakeFiles/gtest_main.dir/build: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest_main.so
 .PHONY : gtest/CMakeFiles/gtest_main.dir/build
 
 gtest/CMakeFiles/gtest_main.dir/requires: gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires
 .PHONY : gtest/CMakeFiles/gtest_main.dir/requires
 
 gtest/CMakeFiles/gtest_main.dir/clean:
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean.cmake
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean.cmake
 .PHONY : gtest/CMakeFiles/gtest_main.dir/clean
 
 gtest/CMakeFiles/gtest_main.dir/depend:
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /usr/src/gtest /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2 /usr/src/gtest /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : gtest/CMakeFiles/gtest_main.dir/depend
 

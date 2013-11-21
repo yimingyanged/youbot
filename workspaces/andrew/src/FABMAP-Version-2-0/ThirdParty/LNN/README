@@ -1,0 +1,7 @@
+The LNN source comes from David Lowe (http://www.cs.ubc.ca/~lowe/) at the
+University of British Columbia. 
+
+It has since been further developed and turned into the BSD licensed 'FLANN'
+library, by Marius Muja and David Lowe.  FLANN can be found here: 
+
+http://www.cs.ubc.ca/~mariusm/index.php/FLANN/FLANN

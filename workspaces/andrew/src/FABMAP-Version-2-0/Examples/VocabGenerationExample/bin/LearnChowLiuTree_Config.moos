@@ -1,0 +1,10 @@
+ProcessConfig = pAcceleratedCL
+{
+    DatasetPath = ../Resources/Sample_Data/Vocabulary
+    // Name of .oxs file to load (build by WordMaker from SURF descriptors & pKMeans clustering)
+    DatasetName = Vocab
+
+    BlobResponseFilter = 0.0       //Optionally, discard all SURF points with a blob response below this threshold. Comment out for no filtering.
+
+    //OutputPath = ../Resources/Sample_Data/Vocabulary      //If none supplied, defaults to input path
+}
