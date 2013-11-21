@@ -1,9 +1,11 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 84
+    Help Height: 78
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
+        - /Status1
         - /MotionPlanning1
         - /MotionPlanning1/Scene Geometry1
         - /MotionPlanning1/Scene Robot1
@@ -11,13 +13,10 @@ Panels:
         - /MotionPlanning1/Planning Metrics1
         - /MotionPlanning1/Planned Path1
         - /Axes1
-        - /Axes2
-        - /Axes3
-        - /Axes4
         - /Axes5
         - /Axes6
       Splitter Ratio: 0.74256
-    Tree Height: 266
+    Tree Height: 274
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -61,6 +60,36 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
+          arm_2_link_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           arm_link_0:
             Alpha: 1
             Show Axes: false
@@ -129,6 +158,25 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
           caster_link_fr:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          gripper_2_finger_link_l:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_2_finger_link_r:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_2_palm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_2_tcp_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -220,8 +268,8 @@ Visualization Manager:
         Goal State Color: 250; 128; 0
         Interactive Marker Size: 0.1
         Joint Violation Color: 255; 0; 255
-        Planning Group: arm_joints
-        Query Goal State: false
+        Planning Group: arm_1_joints
+        Query Goal State: true
         Query Start State: false
         Show Workspace: false
         Start State Alpha: 0.05
@@ -243,6 +291,36 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
+          arm_2_link_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_2_link_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           arm_link_0:
             Alpha: 1
             Show Axes: false
@@ -311,6 +389,25 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
           caster_link_fr:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          gripper_2_finger_link_l:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_2_finger_link_r:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_2_palm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_2_tcp_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -384,36 +481,36 @@ Visualization Manager:
             Show Trail: false
         Robot Alpha: 0.3
         Show Robot Collision: false
-        Show Robot Visual: true
+        Show Robot Visual: false
       Value: true
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 0.05
       Name: Axes
       Radius: 0.001
       Reference Frame: arm_link_5
-      Value: true
+      Value: false
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 0.025
       Name: Axes
       Radius: 0.001
       Reference Frame: gripper_finger_link_r
-      Value: true
+      Value: false
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 0.05
       Name: Axes
       Radius: 0.003
       Reference Frame: gripper_palm_link
-      Value: true
+      Value: false
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 0.05
       Name: Axes
       Radius: 0.003
       Reference Frame: gripper_finger_link_l
-      Value: true
+      Value: false
     - Class: rviz/Axes
       Enabled: true
       Length: 0.05
@@ -422,16 +519,16 @@ Visualization Manager:
       Reference Frame: gripper_tcp_link
       Value: true
     - Class: rviz/Axes
-      Enabled: false
-      Length: 1
+      Enabled: true
+      Length: 0.051
       Name: Axes
-      Radius: 0.1
-      Reference Frame: <Fixed Frame>
-      Value: false
+      Radius: 0.005
+      Reference Frame: goal_frame
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom_combined
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -445,15 +542,15 @@ Visualization Manager:
       Class: rviz/XYOrbit
       Distance: 1.48997
       Focal Point:
-        X: 0.479546
-        Y: -0.0410331
-        Z: -1.47782e-06
+        X: 0.00364149
+        Y: -0.00216235
+        Z: -1.53742e-06
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.250201
+      Pitch: 0.195202
       Target Frame: base_footprint
       Value: XYOrbit (rviz)
-      Yaw: 1.03911
+      Yaw: 4.61639
     Saved: ~
 Window Geometry:
   Displays:
@@ -465,9 +562,9 @@ Window Geometry:
   Hide Right Dock: false
   Motion Planning:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000326fc0200000005fb000000100044006900730070006c00610079007301000000280000019f000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001cd000001810000017400ffffff000003570000032600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000326fc0200000005fb000000100044006900730070006c0061007900730100000028000001a1000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001cf0000017f0000017400ffffff000003570000032600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1535
-  X: 58
-  Y: 24
+  X: 57
+  Y: -4
