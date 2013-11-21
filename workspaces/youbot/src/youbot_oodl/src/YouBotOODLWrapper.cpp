@@ -219,13 +219,20 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 			> (topicName.str(), 1000, boost::bind(&YouBotOODLWrapper::armVelocitiesCommandCallback, this, _1, armIndex));
 
 	topicName.str("");
+
 	topicName << youBotConfiguration.youBotArmConfigurations[armIndex].commandTopicName
 			<< "arm_controller/follow_joint_trajectory";
 	// topicName.str("/arm_1/arm_controller/follow_joint_trajectory");
+	cout << "Initializing trajectory for arm " << armIndex << " on topic " << topicName.str() << endl;
 	youBotConfiguration.youBotArmConfigurations[armIndex].armJointTrajectoryAction = new actionlib::ActionServer<
 			control_msgs::FollowJointTrajectoryAction>(
 					node, topicName.str(), boost::bind(&YouBotOODLWrapper::armJointTrajectoryGoalCallback, this, _1, armIndex),
 					boost::bind(&YouBotOODLWrapper::armJointTrajectoryCancelCallback, this, _1, armIndex), false);
+	cout << "The addr of the trajectory controllers are\n";
+	for(int i = 0; i < youBotConfiguration.youBotArmConfigurations.size(); i++)
+	{
+	  cout << "   " << i << " -> " << youBotConfiguration.youBotArmConfigurations[i].armJointTrajectoryAction << "\n";
+	}
 
 	topicName.str("");
 	topicName << youBotConfiguration.youBotArmConfigurations[armIndex].commandTopicName << "joint_states";
