@@ -310,9 +310,9 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 	ROS_INFO("System has %i initialized arm(s).", static_cast<int>(youBotConfiguration.youBotArmConfigurations.size()));
 	youBotConfiguration.hasArms = true;
 	if(areArmMotorsSwitchedOn.size() <= armIndex)
-	  gripperHasGripperCommandGoals.push_back(true);
+	  areArmMotorsSwitchedOn.push_back(true);
 	else
-	  gripperHasGripperCommandGoals[armIndex] = false;
+	  areArmMotorsSwitchedOn[armIndex] = false;
 
 	// currently no action is running
 	if(gripperHasGripperCommandGoals.size() <= armIndex)
