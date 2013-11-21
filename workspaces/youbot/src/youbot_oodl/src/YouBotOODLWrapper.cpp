@@ -59,7 +59,6 @@ YouBotOODLWrapper::YouBotOODLWrapper(ros::NodeHandle n) :
 	youBotConfiguration.hasBase = false;
 	youBotConfiguration.hasArms = false;
 	areBaseMotorsSwitchedOn = false;
-	areArmMotorsSwitchedOn = false;
 
 	youBotChildFrameID = "base_link"; //holds true for both: base and arm
 	armJointStateMessages.clear();
@@ -303,7 +302,7 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 	ROS_INFO("Arm \"%s\" is initialized.", armName.c_str());
 	ROS_INFO("System has %i initialized arm(s).", static_cast<int>(youBotConfiguration.youBotArmConfigurations.size()));
 	youBotConfiguration.hasArms = true;
-	areArmMotorsSwitchedOn = true;
+	areArmMotorsSwitchedOn[armIndex] = true;
 
 	// currently no action is running
 	if(gripperHasGripperCommandGoals.size() <= armIndex)
@@ -328,7 +327,6 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
     gripperBar2Velocities.push_back(youbot::GripperSensedVelocity());
 
 	//  these has to be fixed..
-	armJointStateMessages; // needs testing to secure that there is infact one per arm, and not just a common one (which it seems like..)
 	armActiveJointTrajectoryGoals;
 
 	//tracejoint = 4;
@@ -384,11 +382,13 @@ void YouBotOODLWrapper::stop()
 		youBotConfiguration.youBotArmConfigurations[armIndex].gripperPositionCommandSubscriber.shutdown();
 		youBotConfiguration.youBotArmConfigurations[armIndex].switchONMotorsService.shutdown();
 		youBotConfiguration.youBotArmConfigurations[armIndex].switchOffMotorsService.shutdown();
+
+
+		areArmMotorsSwitchedOn[armIndex] = false;
 	}
 
 	youBotConfiguration.completeJointStatePublisher.shutdown();
 	youBotConfiguration.hasArms = false;
-	areArmMotorsSwitchedOn = false;
 	youBotConfiguration.youBotArmConfigurations.clear();
 	armJointStateMessages.clear();
 
@@ -732,7 +732,7 @@ void YouBotOODLWrapper::armJointTrajectoryCancelCallback(
 		actionlib::ActionServer<control_msgs::FollowJointTrajectoryAction>::GoalHandle youbotArmGoal, unsigned int armIndex)
 {
 	boost::mutex::scoped_lock lock(_mutex);
-	ROS_DEBUG("Goal for arm%i received", armIndex + 1);
+	ROS_DEBUG("Cancel for arm%i received", armIndex + 1);
 	ROS_ASSERT(armIndex < youBotConfiguration.youBotArmConfigurations.size());
 
 	// stop the controller
@@ -1379,7 +1379,7 @@ bool YouBotOODLWrapper::switchOffArmMotorsCallback(std_srvs::Empty::Request& req
 		ROS_ERROR("Arm%i not initialized!", armIndex + 1);
 		return false;
 	}
-	areArmMotorsSwitchedOn = false;
+	areArmMotorsSwitchedOn[armIndex] = false;
 	return true;
 }
 
@@ -1416,7 +1416,7 @@ bool YouBotOODLWrapper::switchOnArmMotorsCallback(std_srvs::Empty::Request& requ
 		ROS_ERROR("Arm%i not initialized!", armIndex + 1);
 		return false;
 	}
-	areArmMotorsSwitchedOn = true;
+	areArmMotorsSwitchedOn[armIndex] = true;
 	return true;
 }
 
@@ -1451,6 +1451,7 @@ bool YouBotOODLWrapper::calibrateArmCallback(std_srvs::Empty::Request& request, 
 
 bool YouBotOODLWrapper::reconnectCallback(std_srvs::Empty::Request& request, std_srvs::Empty::Response& response)
 {
+  cout << "Reconnecting!!!" << endl;
 	boost::mutex::scoped_lock lock(_mutex);
 	//store the current odometry so it won't be lost during the reconnect
 	quantity < si::length > longitudinalPosition;
@@ -1659,13 +1660,15 @@ void YouBotOODLWrapper::publishArmAndBaseDiagnostics(double publish_rate_in_secs
 	else
 		platformStateMessage.circuit_state[0] = youbot_common::PowerBoardState::STATE_DISABLED;
 
-	if (youBotConfiguration.hasArms && areArmMotorsSwitchedOn)
-		platformStateMessage.circuit_state[1] = youbot_common::PowerBoardState::STATE_ENABLED;
-	else if (youBotConfiguration.hasArms && !areArmMotorsSwitchedOn)
-		platformStateMessage.circuit_state[1] = youbot_common::PowerBoardState::STATE_STANDBY;
+	for(int i= 1; i < youBotConfiguration.youBotArmConfigurations.size(); i++)
+	{
+	if (youBotConfiguration.hasArms && areArmMotorsSwitchedOn[i-1])
+		platformStateMessage.circuit_state[i] = youbot_common::PowerBoardState::STATE_ENABLED;
+	else if (youBotConfiguration.hasArms && !areArmMotorsSwitchedOn[i-1])
+		platformStateMessage.circuit_state[i] = youbot_common::PowerBoardState::STATE_STANDBY;
 	else
-		platformStateMessage.circuit_state[1] = youbot_common::PowerBoardState::STATE_DISABLED;
-
+		platformStateMessage.circuit_state[i] = youbot_common::PowerBoardState::STATE_DISABLED;
+	}
 	// publish established messages
 	dashboardMessagePublisher.publish(platformStateMessage);
 	diagnosticArrayPublisher.publish(diagnosticArrayMessage);
