@@ -269,3 +269,37 @@ Parsed CXX implicit link information from above output:
   implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
 
 
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1271805103/fast"
+make[1]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1271805103.dir/build.make CMakeFiles/cmTryCompileExec1271805103.dir/build
+make[2]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1271805103.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1271805103.dir/CheckIncludeFiles.c.o   -c /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1271805103
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1271805103.dir/link.txt --verbose=1
+/usr/bin/cc         CMakeFiles/cmTryCompileExec1271805103.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1271805103 -rdynamic 
+make[2]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2975594862/fast"
+make[1]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2975594862.dir/build.make CMakeFiles/cmTryCompileExec2975594862.dir/build
+make[2]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2975594862.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2975594862.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2975594862
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2975594862.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2975594862.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2975594862 -rdynamic -lpthread 
+make[2]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/CMakeFiles/CMakeTmp'
+
+

@@ -14,6 +14,18 @@
 # EXTERNAL cache entries
 ########################
 
+//Build shared libraries (DLLs).
+BUILD_SHARED_LIBS:BOOL=ON
+
+//Catkin enable testing
+CATKIN_ENABLE_TESTING:BOOL=ON
+
+//Prefix to apply to package generated via gendebian
+CATKIN_PACKAGE_PREFIX:STRING=
+
+//Catkin skip testing
+CATKIN_SKIP_TESTING:BOOL=OFF
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
@@ -150,8 +162,8 @@ CMAKE_SKIP_RPATH:BOOL=NO
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/usr/bin/strip
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/opt/ros/hydro/share/ros/core/rosbuild/rostoolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=/opt/ros/hydro/share/ros/core/rosbuild/rostoolchain.cmake
 
 //If true, cmake will use relative paths in makefiles and projects.
 CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
@@ -162,17 +174,62 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a program.
+DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
+
+//Doxygen found
+DOXYGEN_FOUND:BOOL=TRUE
+
+//Path to a file.
+EIGEN_INCLUDE_DIR:PATH=/usr/include/eigen3
+
+//Path to a program.
+EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
+
 //Single output directory for building all executables.
 EXECUTABLE_OUTPUT_PATH:PATH=
 
+//The directory containing a CMake configuration file for Eigen.
+Eigen_DIR:PATH=/opt/ros/hydro/share/eigen/cmake
+
+//Path to a file.
+GTEST_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
+
+//Path to a library.
+GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
+
+//Path to a library.
+GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
+
 //Single output directory for building all libraries.
 LIBRARY_OUTPUT_PATH:PATH=
+
+//lsb_release executable was found
+LSB_FOUND:BOOL=TRUE
+
+//Path to a program.
+LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
+
+//Path to a program.
+NOSETESTS:FILEPATH=/usr/bin/nosetests
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a file.
 PROJECTCONFIG:FILEPATH=PROJECTCONFIG-NOTFOUND
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
+
+//Python version
+PYTHON_VERSION_XDOTY:STRING=2.7
 
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build
@@ -183,11 +240,81 @@ Project_SOURCE_DIR:STATIC=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy
 //rospack executable
 ROSPACK_EXE:FILEPATH=/opt/ros/hydro/bin/rospack
 
+//Path to a library.
+RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
+
+//Enable debian style python package layout
+SETUPTOOLS_DEB_LAYOUT:BOOL=ON
+
 //Path to a file.
 TOOLCHAINCONFIG:FILEPATH=TOOLCHAINCONFIG-NOTFOUND
 
+//LSB Distrib tag
+UBUNTU:BOOL=TRUE
+
+//LSB Distrib - codename tag
+UBUNTU_RARING:BOOL=TRUE
+
 //Path to a file.
 USERCONFIG:FILEPATH=USERCONFIG-NOTFOUND
+
+//Path to a file.
+_CATKIN_GTEST_INCLUDE:FILEPATH=_CATKIN_GTEST_INCLUDE-NOTFOUND
+
+//Path to a file.
+_CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
+
+//Path to a file.
+_file_name:FILEPATH=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/src/slam_backend.cpp
+
+//The directory containing a CMake configuration file for catkin.
+catkin_DIR:PATH=/opt/ros/hydro/share/catkin/cmake
+
+//The directory containing a CMake configuration file for gencpp.
+gencpp_DIR:PATH=/opt/ros/hydro/share/gencpp/cmake
+
+//The directory containing a CMake configuration file for genlisp.
+genlisp_DIR:PATH=/opt/ros/hydro/share/genlisp/cmake
+
+//The directory containing a CMake configuration file for genmsg.
+genmsg_DIR:PATH=/opt/ros/hydro/share/genmsg/cmake
+
+//The directory containing a CMake configuration file for genpy.
+genpy_DIR:PATH=/opt/ros/hydro/share/genpy/cmake
+
+//Value Computed by CMake
+gtest_BINARY_DIR:STATIC=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/gtest
+
+//Dependencies for the target
+gtest_LIB_DEPENDS:STATIC=general;-lpthread;
+
+//Value Computed by CMake
+gtest_SOURCE_DIR:STATIC=/usr/src/gtest
+
+//Build gtest's sample programs.
+gtest_build_samples:BOOL=OFF
+
+//Build all of gtest's own tests.
+gtest_build_tests:BOOL=OFF
+
+//Disable uses of pthreads in gtest.
+gtest_disable_pthreads:BOOL=OFF
+
+//Use shared (DLL) run-time lib even when Google Test is built
+// as static lib.
+gtest_force_shared_crt:BOOL=OFF
+
+//Dependencies for the target
+gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
+
+//Path to a library.
+lib:FILEPATH=/opt/ros/hydro/lib/libroslib.so
+
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/hydro/share/roslib/cmake
+
+//The directory containing a CMake configuration file for rosunit.
+rosunit_DIR:PATH=/opt/ros/hydro/share/rosunit/cmake
 
 //Value Computed by CMake
 slam_backend_BINARY_DIR:STATIC=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build
@@ -200,6 +327,9 @@ slam_backend_SOURCE_DIR:STATIC=/media/sf_youbot_edinburgh/workspaces/andrew/src/
 # INTERNAL cache entries
 ########################
 
+//catkin environment
+CATKIN_ENV:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/catkin_generated/env_cached.sh
+CATKIN_TEST_RESULTS_DIR:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/test_results
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_BUILD_TOOL
@@ -262,6 +392,14 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of generator.
 CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+//Have symbol pthread_create
+CMAKE_HAVE_LIBC_CREATE:INTERNAL=
+//Have library pthreads
+CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
+//Have library pthread
+CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
+//Have include pthread.h
+CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Start directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend
@@ -284,7 +422,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=1
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -318,9 +456,87 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: EIGEN_INCLUDE_DIR
+EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//Details about finding Eigen
+FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.26()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.4()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
+GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=
+GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest
+GTEST_FROM_SOURCE_LIBRARY_DIRS:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/build/gtest
+GTEST_FROM_SOURCE_MAIN_LIBRARIES:INTERNAL=gtest_main
+//ADVANCED property for variable: GTEST_INCLUDE_DIR
+GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY
+GTEST_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY_DEBUG
+GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY
+GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
+GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+PC_EIGEN_CFLAGS:INTERNAL=-I/usr/include/eigen3
+PC_EIGEN_CFLAGS_I:INTERNAL=
+PC_EIGEN_CFLAGS_OTHER:INTERNAL=
+PC_EIGEN_FOUND:INTERNAL=1
+PC_EIGEN_INCLUDEDIR:INTERNAL=
+PC_EIGEN_INCLUDE_DIRS:INTERNAL=/usr/include/eigen3
+PC_EIGEN_LDFLAGS:INTERNAL=
+PC_EIGEN_LDFLAGS_OTHER:INTERNAL=
+PC_EIGEN_LIBDIR:INTERNAL=
+PC_EIGEN_LIBRARIES:INTERNAL=
+PC_EIGEN_LIBRARY_DIRS:INTERNAL=
+PC_EIGEN_LIBS:INTERNAL=
+PC_EIGEN_LIBS_L:INTERNAL=
+PC_EIGEN_LIBS_OTHER:INTERNAL=
+PC_EIGEN_LIBS_PATHS:INTERNAL=
+PC_EIGEN_PREFIX:INTERNAL=
+PC_EIGEN_STATIC_CFLAGS:INTERNAL=-I/usr/include/eigen3
+PC_EIGEN_STATIC_CFLAGS_I:INTERNAL=
+PC_EIGEN_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_EIGEN_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/eigen3
+PC_EIGEN_STATIC_LDFLAGS:INTERNAL=
+PC_EIGEN_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_EIGEN_STATIC_LIBDIR:INTERNAL=
+PC_EIGEN_STATIC_LIBRARIES:INTERNAL=
+PC_EIGEN_STATIC_LIBRARY_DIRS:INTERNAL=
+PC_EIGEN_STATIC_LIBS:INTERNAL=
+PC_EIGEN_STATIC_LIBS_L:INTERNAL=
+PC_EIGEN_STATIC_LIBS_OTHER:INTERNAL=
+PC_EIGEN_STATIC_LIBS_PATHS:INTERNAL=
+PC_EIGEN_VERSION:INTERNAL=3.1.2
+PC_EIGEN_eigen3_INCLUDEDIR:INTERNAL=
+PC_EIGEN_eigen3_LIBDIR:INTERNAL=
+PC_EIGEN_eigen3_PREFIX:INTERNAL=
+PC_EIGEN_eigen3_VERSION:INTERNAL=
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
+//This needs to be in PYTHONPATH when 'setup.py install' is called.
+//  And it needs to match.  But setuptools won't tell us where
+// it will install things.
+PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
+__pkg_config_checked_PC_EIGEN:INTERNAL=1
+_rosbuild_EXPORTS:INTERNAL=
+_rosbuild_cached_flag_time:INTERNAL=1384732511.57
+_roslang_LANGS:INTERNAL=roslisp
+_rospack_deps_manifests_invoke_result:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/g2o/manifest.xml;/opt/ros/hydro/share/cpp_common/package.xml;/opt/ros/hydro/share/rostime/package.xml;/opt/ros/hydro/share/roscpp_traits/package.xml;/opt/ros/hydro/share/roscpp_serialization/package.xml;/opt/ros/hydro/share/genmsg/package.xml;/opt/ros/hydro/share/genpy/package.xml;/opt/ros/hydro/share/message_runtime/package.xml;/opt/ros/hydro/share/rosconsole/package.xml;/opt/ros/hydro/share/std_msgs/package.xml;/opt/ros/hydro/share/rosgraph_msgs/package.xml;/opt/ros/hydro/share/xmlrpcpp/package.xml;/opt/ros/hydro/share/roscpp/package.xml;/opt/ros/hydro/share/geometry_msgs/package.xml;/opt/ros/hydro/share/gencpp/package.xml;/opt/ros/hydro/share/genlisp/package.xml;/opt/ros/hydro/share/message_generation/package.xml;/opt/ros/hydro/share/actionlib_msgs/package.xml;/opt/ros/hydro/share/nav_msgs/package.xml;/opt/ros/hydro/share/visualization_msgs/package.xml
+_rospack_msgsrv_gen_invoke_result:INTERNAL=
+roslib_path:INTERNAL=/opt/ros/hydro/share/roslib
+roslisp_CMAKE:INTERNAL=/opt/ros/hydro/share/roslisp/rosbuild/roslisp.cmake
+slam_backend_CFLAGS_OTHER:INTERNAL=
 slam_backend_INCLUDEDIR:INTERNAL=
+slam_backend_INCLUDE_DIRS:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/g2o/include/;/usr/include/suitesparse;/opt/ros/hydro/include
+slam_backend_LDFLAGS_OTHER:INTERNAL=-Wl,-rpath,/media/sf_youbot_edinburgh/workspaces/andrew/src/g2o/lib/
+slam_backend_LIBRARIES:INTERNAL=csparse;roscpp;:/usr/lib/libboost_signals-mt.so;:/usr/lib/libboost_filesystem-mt.so;rosconsole;:/usr/lib/libboost_regex-mt.so;:/usr/lib/liblog4cxx.so;xmlrpcpp;roscpp_serialization;rostime;:/usr/lib/libboost_date_time-mt.so;:/usr/lib/libboost_system-mt.so;:/usr/lib/libboost_thread-mt.so;pthread;cpp_common
+slam_backend_LIBRARY_DIRS:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/g2o/lib/;/opt/ros/hydro/lib
+slam_backend_cached_manifest_list:INTERNAL=/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/slam_backend/manifest.xml;/media/sf_youbot_edinburgh/workspaces/andrew/src/g2o/manifest.xml;/opt/ros/hydro/share/cpp_common/package.xml;/opt/ros/hydro/share/rostime/package.xml;/opt/ros/hydro/share/roscpp_traits/package.xml;/opt/ros/hydro/share/roscpp_serialization/package.xml;/opt/ros/hydro/share/genmsg/package.xml;/opt/ros/hydro/share/genpy/package.xml;/opt/ros/hydro/share/message_runtime/package.xml;/opt/ros/hydro/share/rosconsole/package.xml;/opt/ros/hydro/share/std_msgs/package.xml;/opt/ros/hydro/share/rosgraph_msgs/package.xml;/opt/ros/hydro/share/xmlrpcpp/package.xml;/opt/ros/hydro/share/roscpp/package.xml;/opt/ros/hydro/share/geometry_msgs/package.xml;/opt/ros/hydro/share/gencpp/package.xml;/opt/ros/hydro/share/genlisp/package.xml;/opt/ros/hydro/share/message_generation/package.xml;/opt/ros/hydro/share/actionlib_msgs/package.xml;/opt/ros/hydro/share/nav_msgs/package.xml;/opt/ros/hydro/share/visualization_msgs/package.xml
+slam_backend_temp:INTERNAL=-Wl,-rpath,/media/sf_youbot_edinburgh/workspaces/andrew/src/g2o/lib/
 

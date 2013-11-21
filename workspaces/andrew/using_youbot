@@ -36,7 +36,7 @@ rosbag record /tf /odom /camera/rgb/image_raw /camera/depth/image_raw /base_scan
 rosparam set use_sim_time true
 ROS_NAMESPACE=camera/rgb rosrun image_proc image_proc
 rosbag play 2013-11-10-23-23-34.bag -r 1 --clock
-
+rosbag filter 2013-11-14-03-01-35.bag fabmap_training.bag "t.to_sec() >= 1384398110. and t.to_sec() <= 1384398512.312988"
 
 rosrun image_view disparity_view image:=/camera/depth/disparity
 rosrun image_view image_view image:=/camera/rgb/image_color

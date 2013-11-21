@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/usr/src/gtest/src/gtest_main.cc" "/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+  "/usr/src/gtest/src/gtest_main.cc" "/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,12 +15,12 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/include"
+  "/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/include"
   "/usr/src/gtest/include"
   "/usr/src/gtest"
   )

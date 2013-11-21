@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs
+CMAKE_SOURCE_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build
+CMAKE_BINARY_DIR = /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build
 
 # Utility rule file for doxygen.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-sl
 include CMakeFiles/doxygen.dir/progress.make
 
 CMakeFiles/doxygen:
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "doxygen found"
 
 doxygen: CMakeFiles/doxygen
@@ -62,6 +62,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

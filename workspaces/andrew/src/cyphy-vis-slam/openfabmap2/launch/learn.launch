@@ -1,12 +1,12 @@
 <launch>
 	<node pkg="openfabmap2" type="learn_node" name="learn_node">
-		<remap from="image" to="/stereo/left/image_raw"/>
-		<param name="vocab" value="$(find openfabmap2)/codebooks/new/vocab.yml"/>
-		<param name="clTree" value="$(find openfabmap2)/codebooks/new/clTree.yml"/>
-		<param name="trainbows" value="$(find openfabmap2)/codebooks/new/trainbows.yml"/>
+		<remap from="image" to="/camera/rgb/image_raw"/>
+		<param name="vocab" value="$(find openfabmap2)/../../..//codebooks/new/vocab.yml"/>
+		<param name="clTree" value="$(find openfabmap2)/../../..//codebooks/new/clTree.yml"/>
+		<param name="trainbows" value="$(find openfabmap2)/../../..//codebooks/new/trainbows.yml"/>
 		<param name="DetectorType" value="SURF"/>
-		<param name="sampleRate" value="0.65"/>
-		<param name="maxImages" value="600"/>
+		<param name="sampleRate" value="0.02"/>
+		<param name="maxImages" value="1000"/>
 		<param name="clusterSize" value="0.5"/>
 		<param name="visualise" value="true"/>
 	</node>

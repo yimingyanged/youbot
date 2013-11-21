@@ -7,16 +7,16 @@
 
 #include <cyphy_vslam_msgs/Match.h>
 
-#include <image_geometry/stereo_camera_model.h>
+//#include <image_geometry/stereo_camera_model.h>
 
 #include <sensor_msgs/image_encodings.h>
 #include <sensor_msgs/Image.h>
-#include <camera_calibration_parsers/parse.h>
+//#include <camera_calibration_parsers/parse.h>
 
 #include <opencv/highgui.h>
 #include <cv_bridge/cv_bridge.h>
 
-#include <viso_stereo.h>
+//#include <viso_stereo.h>
 
 #include <tf/LinearMath/Vector3.h>
 #include <tf/LinearMath/Matrix3x3.h>
@@ -52,7 +52,7 @@ class GeometricVerifier
 {
 private:
     ros::NodeHandle n_;
-    VisualOdometryStereo::parameters visual_odometer_params_;
+    //VisualOdometryStereo::parameters visual_odometer_params_;
     boost::mutex m_mutex_;
     std::queue<image_cache::GetImage> srv_queue_;
     ros::ServiceClient image_client_;
@@ -80,61 +80,7 @@ public:
         match_sub_ = n_.subscribe("/appearance_matches",10,&GeometricVerifier::match_callback,this);    // subscribe to fab-map matches
         add_loop_closure_pub_ = n_.advertise<slam_backend::AddLoopClosure>("add_loop_closure",1);
         debug_pub_ = n_.advertise<geometric_verification::Debug>("verification_debug",1);
-        image_cache::GetInfo left_call, right_call;
-        left_call.request.name = "left";
-        right_call.request.name = "right";
-       
-        int left_failed=0;
-        int right_failed=0;
         
-        bool got_left = 0;
-        bool got_right = 0;
-         
-        while(!got_left && left_failed < 5)
-        {
-            if(!info_client_.call(left_call))
-            {
-                ROS_INFO("Can't get left camera parameters, retrying in 5 seconds");
-                ros::Duration(5.0).sleep();
-            }
-            else
-                got_left=1;
-        }
-
-        if(!got_left)
-        {
-            ROS_ERROR("Can't get left camera info parameters from image cache.  Is the camera up and running?");
-            exit(0);
-        }
-        
-        while(!got_right && right_failed < 5)
-        {
-            if(!info_client_.call(right_call))
-            {
-                ROS_INFO("Can't get right camera parameters, retrying");
-            }
-            else
-                got_right = 1;
-        }
-
-        if(!got_right)
-        {
-            ROS_ERROR("Can't get right camera info parameters from image cache.  Is the camera up and running?");
-            exit(0);
-        }
-
-        // read camera calibration from image_cache 
-        image_geometry::StereoCameraModel model;
-        model.fromCameraInfo(left_call.response.info_msg, right_call.response.info_msg);
-        visual_odometer_params_.base = model.baseline();
-        visual_odometer_params_.calib.f = model.left().fx();
-        visual_odometer_params_.calib.cu = model.left().cx();
-        visual_odometer_params_.calib.cv = model.left().cy();
-        ROS_INFO("Camera Params are: ");
-        ROS_INFO("baseline: %f", visual_odometer_params_.base);
-        ROS_INFO("f: %f", visual_odometer_params_.calib.f);
-        ROS_INFO("cu: %f", visual_odometer_params_.calib.cu);
-        ROS_INFO("cv: %f", visual_odometer_params_.calib.cv);
         ROS_INFO("Base link frame id is %s, sensor frame id is %s, window size is %d subsampled frames",base_link_frame_id_.c_str(), sensor_frame_id_.c_str(), window_frame_size_);
         boost::thread service_thread(boost::bind(&GeometricVerifier::serviceThread,this));
         pose_covariance_.assign(0.0);

@@ -59,24 +59,24 @@ namespace openfabmap2_ros
 			local_nh_.param<int>("LineBinarized", star_line_binarized, 18);
 			local_nh_.param<int>("Suppression", star_suppression, 20);			
 			detector = new cv::StarFeatureDetector(star_max_size,
-																						 star_response, 
-																						 star_line_threshold,
-																						 star_line_binarized,
-																						 star_suppression);
+				star_response, 
+				star_line_threshold,
+				star_line_binarized,
+				star_suppression);
 			
 		} else if(detectorType == "FAST") {
 			int fast_threshold, fast_non_max_suppression;
 			local_nh_.param<int>("Threshold", fast_threshold, 50);
 			local_nh_.param<int>("NonMaxSuppression", fast_non_max_suppression, 1);													 
 			detector = new cv::FastFeatureDetector(fast_threshold,
-																						 fast_non_max_suppression > 0);
+				fast_non_max_suppression > 0);
 			
 		} else if(detectorType == "SURF") {
 			detector = new cv::SURF(surf_hessian_threshold, 
-																						 surf_num_octaves, 
-																						 surf_num_octave_layers, 
-																						 surf_extended > 0,
-																						 surf_upright > 0);
+				surf_num_octaves, 
+				surf_num_octave_layers, 
+				surf_extended > 0,
+				surf_upright > 0);
 			
 		} else if(detectorType == "SIFT") {
 			int sift_nfeatures, sift_num_octave_layers;
@@ -87,10 +87,10 @@ namespace openfabmap2_ros
 			local_nh_.param<double>("EdgeThreshold", sift_edge_threshold, 10);
 			local_nh_.param<double>("Sigma", sift_sigma, 1.6);
 			detector = new cv::SIFT(sift_nfeatures,
-															sift_num_octave_layers,
-															sift_threshold,
-															sift_edge_threshold,
-															sift_sigma);
+				sift_num_octave_layers,
+				sift_threshold,
+				sift_edge_threshold,
+				sift_sigma);
 			
 		} else {
 			int mser_delta, mser_min_area, mser_max_area, mser_max_evolution, mser_edge_blur_size;
@@ -105,14 +105,14 @@ namespace openfabmap2_ros
 			local_nh_.param<double>("MinMargin", mser_min_margin, 0.003);
 			local_nh_.param<int>("EdgeBlurSize", mser_edge_blur_size, 5);
 			detector = new cv::MSER(mser_delta,
-																						 mser_min_area,
-																						 mser_max_area,
-																						 mser_max_variation,
-																						 mser_min_diversity,
-																						 mser_max_evolution,
-																						 mser_area_threshold,
-																						 mser_min_margin,
-																						 mser_edge_blur_size);
+				mser_min_area,
+				mser_max_area,
+				mser_max_variation,
+				mser_min_diversity,
+				mser_max_evolution,
+				mser_area_threshold,
+				mser_min_margin,
+				mser_edge_blur_size);
 		}
 		
 		///////////
@@ -121,10 +121,10 @@ namespace openfabmap2_ros
 			extractor = new cv::SIFT();
 		} else {
 			extractor = new cv::SURF(surf_hessian_threshold, 
-															 surf_num_octaves, 
-																									surf_num_octave_layers,
-																									surf_extended > 0,
-																									surf_upright > 0);
+				surf_num_octaves, 
+				surf_num_octave_layers,
+				surf_extended > 0,
+				surf_upright > 0);
 		}
 		
 		matcher = new cv::FlannBasedMatcher();
@@ -143,10 +143,10 @@ namespace openfabmap2_ros
 	{
 		// Subscribe to images
 		ROS_INFO("Subscribing to:\n\t* %s", 
-						 imgTopic_.c_str());
+			imgTopic_.c_str());
 		
 		sub_ = it_.subscribe(imgTopic_, 1, &OpenFABMap2::processImgCallback,
-												 this, transport_);
+			this, transport_);
 	}
 	
 	//// Running Check
@@ -225,14 +225,14 @@ namespace openfabmap2_ros
 				cv::drawKeypoints(cv_ptr->image, kpts, feats);
 				
 				cv::imshow("KeyPoints", feats);
-				char c = cv::waitKey(10);
+				char c = cv::waitKey(100);
 				// TODO: nicer exit
 				if(c == 27) 
 				{
 					working_ = false;
 					saveQuit_ = true;
-		}
-		}
+				}
+			}
 		}
 		else
 		{
@@ -254,8 +254,8 @@ namespace openfabmap2_ros
 		cv::Mat bow;
 		
 		for (std::vector<cv_bridge::CvImagePtr>::iterator frameIter = framesSampled.begin();
-				 frameIter != framesSampled.end();
-				 ++frameIter)
+			frameIter != framesSampled.end();
+			++frameIter)
 		{
 			detector->detect((*frameIter)->image, kpts);
 			bide->compute((*frameIter)->image, kpts, bow);
@@ -273,19 +273,19 @@ namespace openfabmap2_ros
 		
 		ROS_INFO_STREAM("--Saving Vocabulary to " << vocabPath_);		
 		fs.open(vocabPath_,
-		  			cv::FileStorage::WRITE);
+			cv::FileStorage::WRITE);
 		fs << "Vocabulary" << vocab;
 		fs.release();
 		
 		ROS_INFO_STREAM("--Saving Chow Liu Tree to " << clTreePath_);
 		fs.open(clTreePath_,
-		 				cv::FileStorage::WRITE);
+			cv::FileStorage::WRITE);
 		fs << "Tree" << clTree;
 		fs.release();
 		
 		ROS_INFO_STREAM("--Saving Trained Bag of Words to " << trainbowsPath_);
 		fs.open(trainbowsPath_,
-		 				cv::FileStorage::WRITE);
+			cv::FileStorage::WRITE);
 		fs << "Trainbows" << bows;
 		fs.release();
 	}
@@ -328,7 +328,18 @@ namespace openfabmap2_ros
 		}
 	}
 	// end class implementation FABMapLearn
+	bool FABMapRun::dumpConfusionMatrix(std_srvs::Empty::Request& request, std_srvs::Empty::Response& response)
+	{
+		ROS_INFO("Starting confusion matrix dump...");	
+		//confusionMat = newConfu.clone();
+		// Declare what you need
+		cv::FileStorage file(confMatrixDumpFile_, cv::FileStorage::WRITE);
 
+		// Write to file!
+		file << "confusion_matrix" << confusionMat;
+		ROS_INFO("Confusion matrix dumped!");
+		return true;
+	}
 	////////////////
 	//// *** RUN ***
 	////////////////
@@ -344,25 +355,29 @@ namespace openfabmap2_ros
 		{
 			ROS_INFO("--Codebook successfully loaded!--");
 		// Read private parameters
-		ros::NodeHandle local_nh_("~");
-		local_nh_.param<int>("maxMatches", maxMatches_, 0);
-		local_nh_.param<double>("minMatchValue", minMatchValue_, 0.0);
-		local_nh_.param<bool>("DisableSelfMatch", disable_self_match_, false);
+			ros::NodeHandle local_nh_("~");
+			local_nh_.param<int>("maxMatches", maxMatches_, 0);
+			local_nh_.param<double>("minMatchValue", minMatchValue_, 0.0);
+			local_nh_.param<bool>("DisableSelfMatch", disable_self_match_, false);
 			local_nh_.param<int>("SelfMatchWindow", self_match_window_, 1);
-		local_nh_.param<bool>("DisableUnknownMatch", disable_unknown_match_, false);
+			local_nh_.param<bool>("DisableUnknownMatch", disable_unknown_match_, false);
 			local_nh_.param<bool>("AddOnlyNewPlaces", only_new_places_, false);
-		
+			local_nh_.param<bool>("ShowConfusionMatrix", show_confusion_matrix_, true);
+
+			local_nh_.param<std::string>("dumpFile", confMatrixDumpFile_, "confusion_matrix.yml");
+
 		// Setup publisher
-		pub_ = nh_.advertise<cyphy_vslam_msgs::Match>("appearance_matches",1000);
-		
+			pub_ = nh_.advertise<cyphy_vslam_msgs::Match>("appearance_matches", 1000);
+			service_dump_ = nh_.advertiseService("fabmap_dump_matrix", &FABMapRun::dumpConfusionMatrix, this);
+
 		// Initialise for the first to contain
 		// - Match to current
 		// - Match to nothing
-		confusionMat = cv::Mat::zeros(2,2,CV_64FC1);
-		
+			confusionMat = cv::Mat::zeros(2,2,CV_64FC1);
+
 		// Set callback
-		subscribeToImages();
-	}
+			subscribeToImages();
+		}
 		else
 		{
 			shutdown();
@@ -405,11 +420,11 @@ namespace openfabmap2_ros
 		if (!bow.empty() && kpts.size() > minDescriptorCount_)
 		{
 		// IF NOT the first frame processed
-		if (!firstFrame_)
-		{
-			ROS_DEBUG("Compare bag of words...");
-			std::vector<of2::IMatch> matches;
-			
+			if (!firstFrame_)
+			{
+				ROS_DEBUG("Compare bag of words...");
+				std::vector<of2::IMatch> matches;
+
 				// Find match likelyhoods for this 'bow'
 				fabMap->compare(bow,matches,!only_new_places_);
 				
@@ -433,7 +448,7 @@ namespace openfabmap2_ros
 				else
 				{
 				// store the mapping from 'seq' to match ID
-				toImgSeq.push_back(image_msg->header.seq);
+					toImgSeq.push_back(image_msg->header.seq);
 				}
 				
 				// Build message
@@ -444,60 +459,60 @@ namespace openfabmap2_ros
 				int matchImgSeq;				
 				// Prepare message in Decending match likelihood order
 				for (std::vector<of2::IMatch>::reverse_iterator matchIter = matches.rbegin();
-						 matchIter != matches.rend();
-						 ++matchIter) 
+					matchIter != matches.rend();
+					++matchIter) 
 				{
 					// Limit the number of matches published (by 'maxMatches_' OR 'minMatchValue_')
 					if ( (matched.toImgSeq.size() == maxMatches_ && maxMatches_ != 0)
-							|| matchIter->match < minMatchValue_)
+						|| matchIter->match < minMatchValue_)
 					{
 						break;
 					}
 					
-				ROS_DEBUG_STREAM("QueryIdx " << matchIter->queryIdx <<
-												 " ImgIdx " << matchIter->imgIdx <<
-												 " Likelihood " << matchIter->likelihood <<
-												 " Match " << matchIter->match);
-				
+					ROS_DEBUG_STREAM("QueryIdx " << matchIter->queryIdx <<
+						" ImgIdx " << matchIter->imgIdx <<
+						" Likelihood " << matchIter->likelihood <<
+						" Match " << matchIter->match);
+
 				// Lookup IMAGE seq number from MATCH seq number
-				matchImgSeq = matchIter->imgIdx > -1 ? toImgSeq.at(matchIter->imgIdx) : -1;
-				
+					matchImgSeq = matchIter->imgIdx > -1 ? toImgSeq.at(matchIter->imgIdx) : -1;
+
 					// Additionally if required, 
 					// --do NOT return matches below self matches OR new places ('-1') 
 					if ((matchImgSeq >= matched.fromImgSeq-self_match_window_ && disable_self_match_)
-							|| (matchImgSeq == -1 && disable_unknown_match_))
+						|| (matchImgSeq == -1 && disable_unknown_match_))
 					{
 						break;
 					}
 					
 				// Add the Image seq number and its match likelihood
-				matched.toImgSeq.push_back(matchImgSeq);
-				matched.toImgMatch.push_back(matchIter->match);
-			}
-			
+					matched.toImgSeq.push_back(matchImgSeq);
+					matched.toImgMatch.push_back(matchIter->match);
+				}
+
 				// IF filtered matches were found
 				if (matched.toImgSeq.size() > 0)
 				{
 			// Publish current matches
-			pub_.publish(matched);
+					pub_.publish(matched);
 					
 					if (visualise_)
 					{
 						visualiseMatches(matches);
-		}
+					}
 				}
 			}
-		else
-		{
+			else
+			{
 			// First frame processed
 				fabMap->add(bow);
 				
 				// store the mapping from 'seq' to match ID
 				toImgSeq.push_back(image_msg->header.seq);
 				
-			firstFrame_ = false;
+				firstFrame_ = false;
+			}
 		}
-	}
 		else
 		{
 			ROS_WARN("--Image not descriptive enough, ignoring.");
@@ -511,17 +526,15 @@ namespace openfabmap2_ros
 	{
 		int numMatches = matches.size();
 		
-		cv::Mat newConfu = cv::Mat::zeros(numMatches,numMatches, CV_64FC1);
-		ROS_DEBUG_STREAM("'newConfu -> rows: " << newConfu.rows
-										<< " cols: " << newConfu.cols);
-		cv::Mat roi(newConfu, cv::Rect(0,0,confusionMat.cols,confusionMat.rows));
-		ROS_DEBUG_STREAM("'ROI -> rows: " << roi.rows
-										<< " cols: " << roi.cols);
+		cv::Mat newConfu = cv::Mat::zeros(numMatches, numMatches, CV_64FC1);
+		ROS_DEBUG_STREAM("'newConfu -> rows: " << newConfu.rows << " cols: " << newConfu.cols);
+
+		cv::Mat roi(newConfu, cv::Rect(0, 0, confusionMat.cols, confusionMat.rows));
+		ROS_DEBUG_STREAM("'ROI -> rows: " << roi.rows << " cols: " << roi.cols);
+		
 		confusionMat.copyTo(roi);
 		
-		for (std::vector<of2::IMatch>::reverse_iterator matchIter = matches.rbegin();
-				 matchIter != matches.rend();
-				 ++matchIter) 
+		for (std::vector<of2::IMatch>::reverse_iterator matchIter = matches.rbegin(); matchIter != matches.rend(); ++matchIter) 
 		{
 			// Skip null match
 			if (matchIter->imgIdx == -1)
@@ -529,27 +542,28 @@ namespace openfabmap2_ros
 				continue;
 			}
 			
-			ROS_DEBUG_STREAM("QueryIdx " << matchIter->queryIdx <<
-											 " ImgIdx " << matchIter->imgIdx <<
-											 " Likelihood " << matchIter->likelihood <<
-											 " Match " << matchIter->match);
+			// ROS_DEBUG_STREAM("QueryIdx " << matchIter->queryIdx <<
+			// 	" ImgIdx " << matchIter->imgIdx <<
+			// 	" Likelihood " << matchIter->likelihood <<
+			// 	" Match " << matchIter->match);
 			
-			ROS_DEBUG_STREAM("--About to multi " << 255 << " by " << (double)matchIter->match);
-			ROS_DEBUG_STREAM("---Result " << floor(255*((double)matchIter->match)));
+			// ROS_DEBUG_STREAM("--About to multi " << 255 << " by " << (double)matchIter->match);
+			// ROS_DEBUG_STREAM("---Result " << floor(255*((double)matchIter->match)));
 			newConfu.at<double>(numMatches-1, matchIter->imgIdx) = 255*(double)matchIter->match;
-			ROS_DEBUG_STREAM("-Uchar: " << newConfu.at<double>(numMatches-1, matchIter->imgIdx)
-											<< " at (" << numMatches << ", " << matchIter->imgIdx << ")");
+			// ROS_DEBUG_STREAM("-Uchar: " << newConfu.at<double>(numMatches-1, matchIter->imgIdx)
+			// 	<< " at (" << numMatches << ", " << matchIter->imgIdx << ")");
 		}
 		newConfu.at<double>(numMatches-1, numMatches-1) = 255.0;
-		ROS_DEBUG_STREAM("-Value: " << newConfu.at<double>(numMatches-1,numMatches-1)
-										<< " at (" << numMatches << ", " << numMatches << ")");
+		// ROS_DEBUG_STREAM("-Value: " << newConfu.at<double>(numMatches-1,numMatches-1)
+		// 	<< " at (" << numMatches << ", " << numMatches << ")");
 		
 		confusionMat = newConfu.clone();
-		ROS_DEBUG_STREAM("'confusionMat -> rows: " << confusionMat.rows
-										<< " cols: " << confusionMat.cols);
-		
-		cv::imshow("Confusion Matrix", newConfu);
-		cv::waitKey(10);
+		// ROS_DEBUG_STREAM("'confusionMat -> rows: " << confusionMat.rows
+		// 	<< " cols: " << confusionMat.cols);
+		if (show_confusion_matrix_) {
+			cv::imshow("Confusion Matrix", newConfu);
+			cv::waitKey(100);
+		}
 	}
 	
 	//// File loader
@@ -562,19 +576,19 @@ namespace openfabmap2_ros
 		cv::FileStorage fs;
 		
 		fs.open(vocabPath_,
-						cv::FileStorage::READ);
+			cv::FileStorage::READ);
 		fs["Vocabulary"] >> vocab;
 		fs.release();
 		ROS_INFO("Vocabulary with %d words, %d dims loaded",vocab.rows,vocab.cols);
 		
 		fs.open(clTreePath_,
-						cv::FileStorage::READ);
+			cv::FileStorage::READ);
 		fs["Tree"] >> clTree;
 		fs.release();
 		ROS_INFO("Chow Liu Tree loaded");
 		
 		fs.open(trainbowsPath_,
-						cv::FileStorage::READ);
+			cv::FileStorage::READ);
 		fs["Trainbows"] >> trainbows;
 		fs.release();
 		ROS_INFO("Trainbows loaded");
@@ -620,20 +634,20 @@ namespace openfabmap2_ros
 		
 		if(fabMapVersion == "FABMAP1") {			
 			fabMap = new of2::FabMap1(clTree, 
-																pzge,
-																pzgne,
-																options,
-																num_samples);
+				pzge,
+				pzgne,
+				options,
+				num_samples);
 			
 		} else if(fabMapVersion == "FABMAPLUT") {
 			int lut_precision;
 			local_nh_.param<int>("Precision", lut_precision, 6);
 			fabMap = new of2::FabMapLUT(clTree, 
-																	pzge,
-																	pzgne,
-																	options,
-																	num_samples,
-																	lut_precision);
+				pzge,
+				pzgne,
+				options,
+				num_samples,
+				lut_precision);
 			
 		} else if(fabMapVersion == "FABMAPFBO") {
 			double fbo_rejection_threshold, fbo_psgd;
@@ -643,20 +657,20 @@ namespace openfabmap2_ros
 			local_nh_.param<int>("BisectionStart", fbo_bisection_start, 512);
 			local_nh_.param<int>("BisectionIts", fbo_bisection_its, 9);
 			fabMap = new of2::FabMapFBO(clTree, 
-																	pzge,
-																	pzgne,
-																	options,
-																	num_samples,
-																	fbo_rejection_threshold,
-																	fbo_psgd,
-																	fbo_bisection_start,
-																	fbo_bisection_its);
+				pzge,
+				pzgne,
+				options,
+				num_samples,
+				fbo_rejection_threshold,
+				fbo_psgd,
+				fbo_bisection_start,
+				fbo_bisection_its);
 			
 		} else if(fabMapVersion == "FABMAP2") {
 			fabMap = new of2::FabMap2(clTree, 
-																pzge,
-																pzgne,
-																options);
+				pzge,
+				pzgne,
+				options);
 		} else {
 			ROS_ERROR("Could not identify openFABMAPVersion from node params");
 			return false;

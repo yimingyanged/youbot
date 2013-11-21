@@ -2,12 +2,13 @@
 #include <map>
 #include <vector>
 
-#include <g2o/math_groups/se2.h>
-#include <g2o/core/hyper_graph.h>
+#include "g2o/types/slam2d/se2.h"
+#include "g2o/core/hyper_graph.h"
 
-#include "g2o/core/graph_optimizer_sparse.h"
+#include "g2o/core/sparse_optimizer.h"
 #include "g2o/core/block_solver.h"
 #include "g2o/solvers/csparse/linear_solver_csparse.h"
+#include "g2o/core/optimization_algorithm_dogleg.h"
 
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <nav_msgs/Odometry.h>
@@ -78,9 +79,13 @@ public:
         add_loop_closure_sub_ = n_.subscribe("add_loop_closure", 100, &SlamBackend::addLoopClosureCallback, this);
         linearSolver_ = new SlamLinearSolver();
         linearSolver_->setBlockOrdering(false);
-        SlamBlockSolver *solver = new SlamBlockSolver(&optimizer_, linearSolver_);
-        optimizer_.setSolver(solver);
-        boost::thread vis_thread(boost::bind(&SlamBackend::visualizeThread, this));
+        SlamBlockSolver *solver = new SlamBlockSolver(linearSolver_);
+        
+	//optimizer_.setSolver(solver);
+	g2o::OptimizationAlgorithmDogleg *algo = new g2o::OptimizationAlgorithmDogleg(solver);
+	optimizer_.setAlgorithm(algo);
+        
+	boost::thread vis_thread(boost::bind(&SlamBackend::visualizeThread, this));
         cumulative_covariance = Matrix3d::Zero();  // read in from msg
         node_count_=0;
         loop_closure_count_=0;
@@ -109,7 +114,7 @@ public:
         for(SparseOptimizer::EdgeSet::iterator edge_it = edge_set.begin(); edge_it!=edge_set.end(); edge_it++)
         {
             e = dynamic_cast<EdgeSE2Vis*>(*edge_it);
-            HyperGraph::VertexVector v_vec = e->vertices();
+            /*HyperGraph::VertexVector v_vec = e->vertices();
             for(HyperGraph::VertexVector::iterator vec_it = v_vec.begin(); vec_it != v_vec.end(); vec_it++)
             {
                 if((*vec_it)->id() == msg->node_id2)
@@ -117,7 +122,7 @@ public:
                     found=true;  // Edge to delete is currently stored in e, assuming only 2 vertices per edge
 		    v2 = dynamic_cast<VertexSE2Vis*>(*vec_it);
 		}
-            }
+            }*/
 	    if(found)
 		break;
         } 
@@ -163,8 +168,8 @@ public:
         odometry1->vertices()[0] = optimizer_.vertex(v1->id());
         odometry1->vertices()[1] = optimizer_.vertex(interNode->id());
         odometry1->setMeasurement(transf1);
-        odometry1->setInverseMeasurement(transf1.inverse());
-        //odometry1->setInformation(ident_cov.inverse());
+	//        odometry1->setInverseMeasurement(transf1.inverse());        
+	//odometry1->setInformation(ident_cov.inverse());
         odometry1->setInformation(information); // keep same as previous
         //ROS_INFO("Added interpolated covariance with diagonal %f, %f, %f", cov1(0,0), cov1(1,1), cov1(2,2));
         optimizer_.addEdge(odometry1);
@@ -172,7 +177,7 @@ public:
         odometry2->vertices()[0] = optimizer_.vertex(interNode->id());
         odometry2->vertices()[1] = optimizer_.vertex(v2->id());
         odometry2->setMeasurement(transf2);
-        odometry2->setInverseMeasurement(transf2.inverse());
+        //	odometry2->setInverseMeasurement(transf2.inverse());
         //odometry2->setInformation(ident_cov.inverse());
         odometry2->setInformation(information);
         //ROS_INFO("Added interpolated covariance with diagonal %f, %f, %f", cov1(0,0), cov1(1,1), cov1(2,2));
@@ -202,7 +207,7 @@ public:
         new_odometry->vertices()[0] = optimizer_.vertex(prevID_);
         new_odometry->vertices()[1] = optimizer_.vertex(newNode->id());
         new_odometry->setMeasurement(newtransf);
-        new_odometry->setInverseMeasurement(newtransf.inverse());
+        //	new_odometry->setInverseMeasurement(newtransf.inverse());
         new_odometry->setInformation(ident_cov);
         optimizer_.addEdge(new_odometry);
                
@@ -221,15 +226,15 @@ public:
         SE2 looptransf(msg->transform.pose.pose.position.x,msg->transform.pose.pose.position.y,2*atan2(msg->transform.pose.pose.orientation.z,msg->transform.pose.pose.orientation.w));
 
         SE2 edgetransf = looptransf; 
-	edgetransf[0]=0.0;
-	edgetransf[1]=0.0;
-	edgetransf[2]=0.0;
+	//	edgetransf[0]=0.0;
+	//	edgetransf[1]=0.0;
+	//	edgetransf[2]=0.0;
 
         EdgeSE2Vis* loop_odometry = new EdgeSE2Vis();
         loop_odometry->vertices()[0] = optimizer_.vertex(newNode->id());
         loop_odometry->vertices()[1] = optimizer_.vertex(interNode->id());
         loop_odometry->setMeasurement(edgetransf);
-        loop_odometry->setInverseMeasurement(edgetransf.inverse());
+        //	loop_odometry->setInverseMeasurement(edgetransf.inverse());
         Matrix3d loop_covariance = Matrix3d::Zero();
         loop_covariance(0,0) = msg->transform.pose.covariance[0];
         loop_covariance(1,1) = msg->transform.pose.covariance[7];
@@ -332,7 +337,7 @@ public:
             odometry->vertices()[1] = optimizer_.vertex(robot->id());
             odometry->setMeasurement(transf);
             //ROS_INFO("Added ege with %f,%f,%f",transf[0],transf[1],transf[2]);
-            odometry->setInverseMeasurement(transf.inverse());
+            //	odometry->setInverseMeasurement(transf.inverse());
             // Temporary fix
          /*   cumulative_covariance = Matrix3d::Zero();
             cumulative_covariance(0,0) = (0.3*node_sep_)*(0.3*node_sep_);
@@ -597,7 +602,7 @@ public:
     vertex_vis_pub_.publish(vertex);
             
                 SparseOptimizer::EdgeSet e(v->edges()); 
-                for(SparseOptimizer::EdgeSet::iterator edge_it = e.begin(); edge_it!=e.end(); edge_it++)
+                /*for(SparseOptimizer::EdgeSet::iterator edge_it = e.begin(); edge_it!=e.end(); edge_it++)
                 {
                     EdgeSE2Vis *e = dynamic_cast<EdgeSE2Vis*>(*edge_it);
                     HyperGraph::VertexVector v_vec = e->vertices();
@@ -627,7 +632,7 @@ public:
                         lines.points.push_back(p0_msg);
                         lines.points.push_back(p1_msg); 
                     }
-                }
+                }*/
             }
         }
         edge_vis_pub_.publish(lines);

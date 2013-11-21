@@ -1,25 +1,27 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1936696448/fast"
-make[1]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1936696448.dir/build.make CMakeFiles/cmTryCompileExec1936696448.dir/build
-make[2]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1936696448.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1936696448.dir/CheckSymbolExists.c.o   -c /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1936696448
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1936696448.dir/link.txt --verbose=1
-/usr/bin/cc         CMakeFiles/cmTryCompileExec1936696448.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1936696448 -rdynamic 
-CMakeFiles/cmTryCompileExec1936696448.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:/usr/bin/make "cmTryCompileExec4047517551/fast"
+make[1]: Entering directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File `Makefile' has modification time 0.67 s in the future
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4047517551.dir/build.make CMakeFiles/cmTryCompileExec4047517551.dir/build
+make[2]: Entering directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+make[2]: Warning: File `CMakeFiles/cmTryCompileExec4047517551.dir/flags.make' has modification time 0.66 s in the future
+/usr/bin/cmake -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4047517551.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec4047517551.dir/CheckSymbolExists.c.o   -c /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec4047517551
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4047517551.dir/link.txt --verbose=1
+/usr/bin/cc         CMakeFiles/cmTryCompileExec4047517551.dir/CheckSymbolExists.c.o  -o cmTryCompileExec4047517551 -rdynamic 
+CMakeFiles/cmTryCompileExec4047517551.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-make[2]: *** [cmTryCompileExec1936696448] Error 1
-make[2]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec1936696448/fast] Error 2
-make[1]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+make[2]: *** [cmTryCompileExec4047517551] Error 1
+make[1]: *** [cmTryCompileExec4047517551/fast] Error 2
+make[1]: Leaving directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
 
-File /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -35,23 +37,25 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec932922827/fast"
-make[1]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTryCompileExec932922827.dir/build.make CMakeFiles/cmTryCompileExec932922827.dir/build
-make[2]: Entering directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec932922827.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec932922827.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec932922827
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec932922827.dir/link.txt --verbose=1
-/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec932922827.dir/CheckFunctionExists.c.o  -o cmTryCompileExec932922827 -rdynamic -lpthreads 
+Run Build Command:/usr/bin/make "cmTryCompileExec50740324/fast"
+make[1]: Entering directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec50740324.dir/build.make CMakeFiles/cmTryCompileExec50740324.dir/build
+make[1]: Warning: File `Makefile' has modification time 0.67 s in the future
+make[2]: Entering directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+make[2]: Warning: File `CMakeFiles/cmTryCompileExec50740324.dir/flags.make' has modification time 0.66 s in the future
+/usr/bin/cmake -E cmake_progress_report /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec50740324.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec50740324.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec50740324
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec50740324.dir/link.txt --verbose=1
+/usr/bin/cc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec50740324.dir/CheckFunctionExists.c.o  -o cmTryCompileExec50740324 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[2]: *** [cmTryCompileExec932922827] Error 1
-make[2]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec932922827/fast] Error 2
-make[1]: Leaving directory `/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
+make[2]: *** [cmTryCompileExec50740324] Error 1
+make[1]: *** [cmTryCompileExec50740324/fast] Error 2
+make[1]: Leaving directory `/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/build/CMakeFiles/CMakeTmp'
 
 

@@ -18,7 +18,7 @@
   <depend package="openfabmap2"/>
   <depend package="image_cache"/>
   <depend package="opencv2"/>
-  <depend package="viso2_ros"/>
+  <!-- <depend package="viso2_ros"/> -->
   <depend package="tf"/>
   <depend package="geometry_msgs"/>
   <depend package="cyphy_vslam_msgs"/>
