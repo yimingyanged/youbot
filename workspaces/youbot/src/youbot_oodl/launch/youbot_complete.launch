@@ -4,7 +4,7 @@
     <arg unless="$(arg debug)" name ="launch_prefix" value="" />
     <arg if="$(arg debug)" name ="launch_prefix" value="gdb --ex run --args" />
     
-    <arg name="dualArm" value="false" />
+    <arg name="dualArm" value="true" />
     <arg name="useKinect" value="false" />
     
     <include file="$(find youbot_common)/launch/youbot_wrapper.launch">
