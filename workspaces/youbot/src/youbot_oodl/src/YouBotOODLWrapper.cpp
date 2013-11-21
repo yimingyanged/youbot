@@ -306,8 +306,6 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 
 	/* setup frame_ids */
 	youBotArmFrameID = "arm"; //TODO find default topic name
-	ROS_INFO("Arm \"%s\" is initialized.", armName.c_str());
-	ROS_INFO("System has %i initialized arm(s).", static_cast<int>(youBotConfiguration.youBotArmConfigurations.size()));
 	youBotConfiguration.hasArms = true;
 	if(areArmMotorsSwitchedOn.size() <= armIndex)
 	  areArmMotorsSwitchedOn.push_back(true);
@@ -345,6 +343,9 @@ void YouBotOODLWrapper::initializeArm(std::string armName, bool enableStandardGr
 	// we can handle actionlib requests only after the complete initialization has been performed
 	youBotConfiguration.youBotArmConfigurations[armIndex].armJointTrajectoryAction->start();
 	youBotConfiguration.youBotArmConfigurations[armIndex].gripperCommandAction->start();
+
+	ROS_INFO("Arm \"%s\" is initialized.", armName.c_str());
+	ROS_INFO("System has %i initialized arm(s).", static_cast<int>(youBotConfiguration.youBotArmConfigurations.size()));
 }
 
 /*
