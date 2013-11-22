@@ -38,14 +38,23 @@ void youbot_joy_teleop::joy_cback(const sensor_msgs::Joy::ConstPtr& joy)
 
   // create the twist message
   geometry_msgs::Twist twist;
+
   // left joystick controls the linear movement
   twist.linear.x = joy->axes.at(1);
   twist.linear.y = joy->axes.at(0);
   twist.linear.z = 0;
+  
   // right joystick controls the angular movement
   twist.angular.x = 0;
   twist.angular.y = 0;
   twist.angular.z = joy->axes.at(3);
+    
+  // Add static forwards velocity
+  // LT
+  twist.linear.x +=  joy->axes.at(2) < 0.8 ? 0.1 : 0;
+  // RT
+  twist.linear.x +=  joy->axes.at(5) < 0.8 ? 0.2 : 0;
+
   // send the twist command
   cmd_vel.publish(twist);
 }

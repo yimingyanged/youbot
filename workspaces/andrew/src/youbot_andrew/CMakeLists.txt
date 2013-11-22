@@ -105,6 +105,7 @@ include_directories(
 ## Declare a cpp executable
 # add_executable(youbot_andrew_node src/youbot_andrew_node.cpp)
 add_executable(odom_to_base_link_tf src/odom_to_base_link_tf.cpp)
+add_executable(set_camera_pose src/set_camera_pose.cpp)
 
 
 ## Add cmake target dependencies of the executable/library
@@ -119,6 +120,11 @@ add_executable(odom_to_base_link_tf src/odom_to_base_link_tf.cpp)
 target_link_libraries(odom_to_base_link_tf
   ${catkin_LIBRARIES}
 )
+
+target_link_libraries(set_camera_pose
+  ${catkin_LIBRARIES}
+)
+
 
 #############
 ## Install ##
