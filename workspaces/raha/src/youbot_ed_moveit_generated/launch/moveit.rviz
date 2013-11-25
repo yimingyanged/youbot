@@ -60,32 +60,7 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          arm_2_link_0:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_1:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_2:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_3:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_4:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_5:
+          ar_marker_fixed:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -161,25 +136,6 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          gripper_2_finger_link_l:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_2_finger_link_r:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_2_palm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_2_tcp_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           gripper_finger_link_l:
             Alpha: 1
             Show Axes: false
@@ -199,6 +155,11 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          plate_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           wheel_link_bl:
             Alpha: 1
             Show Axes: false
@@ -277,7 +238,7 @@ Visualization Manager:
       Planning Scene Topic: /move_group/monitored_planning_scene
       Robot Description: robot_description
       Scene Geometry:
-        Scene Alpha: 1
+        Scene Alpha: 0.9
         Scene Color: 50; 230; 50
         Scene Display Time: 0.2
         Show Scene Geometry: true
@@ -291,32 +252,7 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          arm_2_link_0:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_1:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_2:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_3:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_4:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_2_link_5:
+          ar_marker_fixed:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -392,25 +328,6 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-          gripper_2_finger_link_l:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_2_finger_link_r:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_2_palm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_2_tcp_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
           gripper_finger_link_l:
             Alpha: 1
             Show Axes: false
@@ -430,6 +347,11 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          plate_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           wheel_link_bl:
             Alpha: 1
             Show Axes: false
@@ -479,9 +401,9 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-        Robot Alpha: 0.3
+        Robot Alpha: 1
         Show Robot Collision: false
-        Show Robot Visual: false
+        Show Robot Visual: true
       Value: true
     - Class: rviz/Axes
       Enabled: false
@@ -547,10 +469,10 @@ Visualization Manager:
         Z: -1.53742e-06
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.195202
+      Pitch: 0.270202
       Target Frame: base_footprint
       Value: XYOrbit (rviz)
-      Yaw: 4.61639
+      Yaw: 5.22641
     Saved: ~
 Window Geometry:
   Displays:
