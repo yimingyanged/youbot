@@ -1,0 +1,8 @@
+<launch>
+    <arg name="cache_path" default="$(find image_cache)/cache"/>
+    <node name="cache_server" pkg="image_cache" type="cache_server" output="screen">
+        <param name="cache_path" value="$(arg cache_path)"/>
+        <param name="div" value="4" />
+        <param name="use_original" value="false" />
+    </node>
+</launch>

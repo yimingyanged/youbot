@@ -92,7 +92,7 @@ CMakeFiles/run_node.dir/src/FabMap.cpp.o: /opt/ros/hydro/include/opencv2/video/t
 CMakeFiles/run_node.dir/src/FabMap.cpp.o: /opt/ros/hydro/include/opencv2/video/video.hpp
 
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: ../include/openfabmap.hpp
-CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/cpp/include/cyphy_vslam_msgs/Match.h
+CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/cpp/include/cyphy_vslam_msgs/Match.h
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: ../src/openfabmap2_ros.cpp
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: ../src/openfabmap2_ros.h
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/XmlRpcDecl.h
@@ -192,9 +192,12 @@ CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/sensor
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/sensor_msgs/RegionOfInterest.h
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/sensor_msgs/image_encodings.h
 CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/std_msgs/Header.h
+CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/std_srvs/Empty.h
+CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/std_srvs/EmptyRequest.h
+CMakeFiles/run_node.dir/src/openfabmap2_ros.cpp.o: /opt/ros/hydro/include/std_srvs/EmptyResponse.h
 
 CMakeFiles/run_node.dir/src/run_node.cpp.o: ../include/openfabmap.hpp
-CMakeFiles/run_node.dir/src/run_node.cpp.o: /media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/cpp/include/cyphy_vslam_msgs/Match.h
+CMakeFiles/run_node.dir/src/run_node.cpp.o: /mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/cpp/include/cyphy_vslam_msgs/Match.h
 CMakeFiles/run_node.dir/src/run_node.cpp.o: ../src/openfabmap2_ros.h
 CMakeFiles/run_node.dir/src/run_node.cpp.o: ../src/run_node.cpp
 CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/XmlRpcDecl.h
@@ -294,4 +297,7 @@ CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/sensor_msgs/I
 CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/sensor_msgs/RegionOfInterest.h
 CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/sensor_msgs/image_encodings.h
 CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/std_msgs/Header.h
+CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/std_srvs/Empty.h
+CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/std_srvs/EmptyRequest.h
+CMakeFiles/run_node.dir/src/run_node.cpp.o: /opt/ros/hydro/include/std_srvs/EmptyResponse.h
 

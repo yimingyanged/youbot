@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-  "/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest.pdb"
-  "/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest.so"
+  "/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest.pdb"
+  "/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/lib/libgtest.so"
 )
 
 # Per-language clean rules from dependency scanning.

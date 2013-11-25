@@ -1,0 +1,22 @@
+<package>
+  <description brief="image_cache">
+
+     image_cache
+
+  </description>
+  <author>Liz Murphy (liz.murphy@qut.edu.au)</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/image_cache</url>
+  <depend package="roscpp"/>
+  <depend package="camera_calibration_parsers"/>
+  <depend package="cv_bridge"/>
+  <depend package="sensor_msgs"/>
+  <depend package="stereo_msgs"/>
+  <depend package="image_transport"/>
+  <depend package="image_geometry"/>
+  <depend package="message_filters"/>
+  <depend package="slam_backend"/>
+</package>
+
+

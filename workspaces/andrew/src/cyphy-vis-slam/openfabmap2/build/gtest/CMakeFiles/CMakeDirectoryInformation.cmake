@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 SET(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/gtest")
-SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build")
+SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/openfabmap2/build")
 
 # Force unix paths in dependencies.
 SET(CMAKE_FORCE_UNIX_PATHS 1)

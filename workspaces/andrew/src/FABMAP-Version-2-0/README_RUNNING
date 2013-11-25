@@ -1,0 +1,26 @@
+Running FabMap.
+---------------
+Once you have successfully built the binaries, please see the Examples directory for a walk-through on how to use them from the command line.
+
+FabMap configuration files are supplied in
+ Examples/RunningFabMapExample/bin
+
+
+To call FabMap from your own code, please look at the API functions and examples defined in the following files:
+
+======
+ C++
+======
+
+WordMaker/WordMaker.h
+
+FabMapV2/examples/main.cpp
+
+
+========
+ Python
+========
+
+WordMaker/python/wordmaker_example.py
+
+FabMapV2/python/fabmap_example.py

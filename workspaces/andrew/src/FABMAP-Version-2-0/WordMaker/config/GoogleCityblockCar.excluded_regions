@@ -1,0 +1,21 @@
+ProcessConfig = ExcludedRegions
+{
+    
+    //Define which parts of the image to ignore when detecting SURF features.
+    //Useful for example to blank out parts of the vehicle visible in the images
+    //This is mostly useful when generating vocabularies, to prevent many repeated features from the vehicle itself dominating the vocabulary. 
+  
+    // These settings are for the Google Cityblock dataset.
+
+    //Excluded regions are rectangular, but non-rectangular regions can be specified by defining multiple rectangles.
+    //The format is [5]{image_part,x_low,x_high,y_low,y_high}
+    
+    //image_part specifies which part of a multi-part image the region will be applied to
+    //For example, each ladybug capture can have 5 parts numbered 0 to 4.
+    //For single-part images, image_part should be 0.
+
+    //Part_0 : Exclude the bonnet
+    //Part_2 : Exclude the back of the car
+
+    ExcludedRegions = [5]{0,86,568,687,905};[5]{2,45,588,665,905}
+}

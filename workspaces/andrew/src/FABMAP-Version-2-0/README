@@ -1,0 +1,19 @@
+This is the source code for FAB-MAP 2.0, described in this paper:
+
+Appearance-only SLAM at large scale with FAB-MAP 2.0
+Mark Cummins and Paul Newman
+International Journal of Robotics Research, November 2010.
+http://ijr.sagepub.com/content/early/2010/11/11/0278364910385483.abstract
+http://www.robots.ox.ac.uk/~mjc/Papers/cummins_newman_ijrr_fabmap2_2010_preprint.pdf
+http://www.youtube.com/watch?v=GRTx5ovOSHo&hl=en&fs=1&hd=1
+
+FAB-MAP2.0 is aimed at  place recognition (or loop closure detection) for datasets up to ~100,000 images.
+====================================================================================
+
+Please note that there are pre-compiled binaries available, if you just want to try FAB-MAP on some images.
+
+ Linux, MacOS:
+ http://www.robots.ox.ac.uk/~mobile/wikisite/pmwiki/pmwiki.php?n=Software.FABMAP
+
+ Windows:
+ http://www.robots.ox.ac.uk/~mjc/Software.htm

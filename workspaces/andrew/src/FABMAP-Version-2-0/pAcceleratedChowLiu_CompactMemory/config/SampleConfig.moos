@@ -1,0 +1,9 @@
+ProcessConfig = pAcceleratedCL
+{
+    DatasetPath = /path/to/oxs/file
+    DatasetName = UberVocab_Surf_11k_KMeansRandom
+
+    BlobResponseFilter = 0.0       //Optionally, discard all SURF points with a blob response below this threshold. Comment out for no filtering.
+
+    OutputPath = /output/path      //If none supplied, defaults to input path
+}

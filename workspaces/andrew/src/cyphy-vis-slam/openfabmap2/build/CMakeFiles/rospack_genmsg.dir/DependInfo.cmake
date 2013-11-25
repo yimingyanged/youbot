@@ -10,7 +10,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../include"
-  "/media/sf_youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/cpp/include"
+  "/mnt/hgfs/youbot_edinburgh/workspaces/andrew/src/cyphy-vis-slam/cyphy_vslam_msgs/msg_gen/cpp/include"
   "/opt/ros/hydro/include"
   "/opt/ros/hydro/include/opencv"
   "../msg_gen/cpp/include"

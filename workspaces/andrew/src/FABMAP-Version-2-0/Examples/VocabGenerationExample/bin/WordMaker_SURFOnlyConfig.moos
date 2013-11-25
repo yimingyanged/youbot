@@ -1,0 +1,28 @@
+ProcessConfig = pWordMaker
+{
+	Mode = SURF_ONLY	//Mode can be SURF_ONLY or  QUANTIZE_ONLY during vocabulary generation process and  ONLINE or BATCH while running FAB-MAP.
+						//SURF_ONLY generates SURfs for a directory full of images. Use it when generating SURFs to build a new vocabulary from a training set of images.
+    			        //QUANTIZE_ONLY quantizes the SURF features extracted from images against cluster centres in feature space to generate visual words. The process generates .OXS and/or .words for a directory full of surf features. Use it when building a new vocabulary.
+						//ONLINE listens for images to be posted to the MOOSDB, then converts them to words. Used while running FAB-MAP.
+						//BATCH mode, you specify a directory full of images (any image format is OK), and it processes the contents. Used while running FAB-MAP.
+
+	//Where is the data?
+	//We read input and write output to subdirectories of this path
+    BaseDataPath = ../Resources/Sample_Data/
+	
+    //Were are the images?
+    //By default we assume BaseDataPath/Images
+    //Specifying an ImagePath overrides the default
+    //ImagePath = /some/other/custom/path
+
+    //Where to write out the .surf files to?
+    //By default we assume BaseDataPath/Surf
+    //Specifying a DescriptorOutputPath overrides the default
+	//DescriptorPath =  /some/other/custom/path
+
+	//SURF Parameters
+	SURFThres = 25.0		//Blob response threshold. 25.0 yields 50-100 interst points per image
+	SURFUpright = true		//Set true to turn off rotation invariance
+	SURF128 = true			//Set true to compute longer 128-dimensional discriptors.
+}
+

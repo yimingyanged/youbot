@@ -1,0 +1,69 @@
+ProcessConfig = pKMeans
+{
+    //Clustering parameters
+    NumberOfClusters = 50           // This controls the vocabulary size. For practical vocabularies for place recognition, sizes of ~100,000 are normal. 
+    
+    NumberOfRestarts = 0            //Set this >0 to do multiple KMeans runs with different random initialization conditions, and return the best result.
+
+    //Input options
+    InputPath = ../Resources/Sample_Data/Surf/
+    FileType = surf                 //To read all the files in the directory with a specified extension, specify it here.
+                                    //Comment this line out to read from a single file (below)                                   
+    //File = example.points         //To read from a single file, specify it here. 
+                                    //This is overridden by the FileType setting.
+
+    //Output Options
+    BaseOutputPath = ../Resources/Sample_Data/Vocabulary/         //To put the output somewhere different to the input, specify directory here.
+    OutputFormat  = OXV            //Options are STANDARD and OXV. Standard outputs cluster centres in ASCII, with one centre per line. OXV is basically the same but has a few other fields.
+    UniqueOutputSubdir = FALSE     //If true, output is written to a unique numbered subdirectory of the putput path. Useful for comparing multiple runs.
+    WriteAssignments = TRUE        //Do we want to write out the points-to-cluster assignments, or just the cluster centres?
+    PrintSSE    =   FALSE          //Prints the Sum of Squared Errors after each KMeans iteration. Slower, but useful for debugging.
+ 
+    BlobResponseFilter = 0.0       //Optionally, discard all SURF points in the input files with a blob response below this threshold. Comment out for no filtering.
+
+    //Choose algorithm
+    KmeansImplementation = APPROX_OUT_OF_CORE   //Option can be EXACT or APPROX_OUT_OF_CORE
+                                                //Exact uses the MPI library, using triangle inequality bounds for fast distance computation. It is very fast and returns exact KMeans solution, but requires O(n*k) memory for n points and k clusters.
+                                                //APPROX_OUT_OF_CORE returns an approximate solution (using kd-tree for nearest neighbour computation). Can handle arbitrarily large input, but somewhat slower.
+
+    InitializationMethod = RANDOM       //Option can be RANDOM or RADIUS_BASED
+                                        //This determines how the initial cluster centre placements are chosen
+                                        //RANDOM places the centres at randomly chosen datapoints.
+                                        //RADIUS_BASED does a pre-clustering, where the data points are scanned, and a new cluster is started if an incoming datapoint is further than a threshold from an existing cluster centre (if not, the point is assigned to an existing centre, and it's centroid is updated)
+                                        //  If RADIUS_BASED results in more than K clusters, a random subset is chosen.
+                                        //  If it results in less than K clusters, the remaining centres are chosen randomly.
+
+    InitializationRadius = 0.5      //If RADIUS_BASED initialization was selected, set the cluster creation threshold. For SURF descriptors, 0.66 tends to yield about 10,000 centres, 0.5 gives about 200,000 centres. 
+
+    //ClusterMergingThreshold = 0.5   //KMeans has a tendency to over-segment dense clusters, and not locate more diffuse clusters.
+                                    //Uncomment ClusterMergingThreshold to active a heuristic whereby at the end of every iteration, clusters closer than the specified distance are merged
+                                    //And a new cluster is added by splitting a randomly selected cluster
+                                    //if you can select a natural merging threshold for your data (easy with SIFT, for example), this tends to improve results. However, tuning it takes some care.
+
+    //Termination Conditions        
+    //The algorithm will terminate when it reaches convergence, 
+    //or when any of the conditions listed here are met.
+    //Comment these out to run until convergence
+    //NB - With the approximate algorithm, convergence may never be reached, 
+    //because of randomness in nearest neighbour finding. So for approximate KMeans, set at least one of these conditions!
+    MaxIterations       = 40      //If multiple restarts, this is max iterations per restart.
+    //MaxRunTimeInMinutes = 20      //If multiple restarts, this is the max total program running time (over all restarts)
+    //SSEChangeFactor     = 0.0005  //Stop if the Sum of Squared Errors changes by less than this fraction in one iteration. This requires calculating the SSE at each iteration, which adds slightly to runtime, but typically only by a few percent.
+
+    //Refinement Step?
+    //With APPROX_OUT_OF_CORE, how close we approach to convergence is limited by the approximate nearest-neighbour finding.
+    //Higher KDTreeNodesToCheck gives better nearest neighbours (and hence more predictable convergence), but slower performance
+    //This option allows a kind of coarse-to-fine search. We iterate until we converge as defined by SSE_Changes_By_Less_Than
+    //then, we increase KDTreeNodesToCheck by NodesToCheck_Multiplier, and iterate until convergence again.
+    //The process repeats for the number of cycles specified by RefinementCycles
+    //The final iterations here get very slow because we're checking lots of kd-tree nodes, however, if a very good clustering is needed, the process does decrease SSE slightly.
+    FinalRefinementStep     = TRUE
+    NodesToCheck_Multiplier = 5
+    RefinementCycles        = 1
+
+    //kd-tree parameters
+    //These parameters are the key determinant of speed/accuracy for the approximate algorithm.
+    NumberOfkdTrees = 8             //How many kd-trees to use in our randomized kd-tree set. More is slower, but better quality. 8 seems to be reasonable in 128D.
+    KDTreeNodesToCheck = 100        //The maximum number of kd-tree nodes to check in nearest neighbour finding. Higher values are slower but more accurate. 10 is too few. 100 seems OK.
+}
+

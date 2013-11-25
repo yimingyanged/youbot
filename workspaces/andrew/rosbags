@@ -1,0 +1,13 @@
+2013-11-10-23-23-34.bag - 1 CW almost-loop + right wing + loop closure // TODO cut: 1384125844.392730 - 1384126037.175714
+	
+2013-11-10-23-39-10.bag - 1 CCW loop + right wing + random driving near lab // TODO cut: 1384126797.489609 - 1384127292.393266
+	forum_1floor_loop_1.bag: starts/ends @LAB + medium CCW + low camera pose + no people + length 280s
+
+2013-11-14-03-01-35.bag - 1 CCW loop // TODO: cut: 1384398108.989064 - 
+	forum_1floor_loop_2.bag: starts/ends @LAB + slow CCW + medium camera pose + no people + length 
+		fabmap_training.bag
+	forum_1floor_loop_3.bag: starts/ends @LAB + fast CCW + medium camera pose + no people + length 
+	forum_1floor_loop_2_3.bag: loop 2 + loop 3
+
+2013-11-14-03-35-28.bag - // TODO: get data
+
