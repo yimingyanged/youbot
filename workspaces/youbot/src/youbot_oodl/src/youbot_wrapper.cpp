@@ -232,10 +232,10 @@ int main(int argc, char **argv)
     {
       youBot.initializeArm(*armNameIter);
       ROS_DEBUG("Added arm \"%s\" to list of armsNames", armNameParam.str().c_str());
-      ros::spinOnce();
-      int time = 30;
-      cout << "Sleeping for " << time << "secs";
-      sleep(time);
+//      ros::spinOnce();
+//      int time = 30;
+//      cout << "Sleeping for " << time << "secs" << endl;
+//      sleep(time);
     }
   }
 
