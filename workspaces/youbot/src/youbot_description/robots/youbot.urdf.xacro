@@ -61,7 +61,9 @@
 
 <!-- PLATE -->
  <xacro:youbot_plate name="plate" parent="base_link">
+ 
     <origin xyz="-0.159 0 0.055" rpy="0 0 0" />
+    
   </xacro:youbot_plate>
 
 <!-- SENSOR SPECIFIC STUFF -->
