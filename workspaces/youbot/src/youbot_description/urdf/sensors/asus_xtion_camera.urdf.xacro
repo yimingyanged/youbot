@@ -100,4 +100,6 @@
   </xacro:asus_xtion_link>
 -->	
 
+  </xacro:macro>
+  
 </robot>
