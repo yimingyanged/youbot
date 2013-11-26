@@ -87,10 +87,10 @@
   </xacro:sensor_angle>
   
   <!-- ASUS Xtion on arm sensor angle -->
-  <xacro:asus_xtion_camera name="xtion" parent="arm_sensor_angle_part2_link"  tilt="0.0">
+  <xacro:asus_xtion_link name="xtion" parent="arm_sensor_angle_part2_link"  tilt="0.0">
   <!-- AR_CALIBRATOR:EDIT_HERE -->
     <origin xyz="0.00 0.0 0.01" rpy="${M_PI} 0.0 ${M_PI}" />
-  </xacro:asus_xtion_camera>
+  </xacro:asus_xtion_link>
 
   
 </robot>
