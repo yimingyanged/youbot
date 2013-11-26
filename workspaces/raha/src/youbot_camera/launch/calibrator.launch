@@ -1,0 +1,8 @@
+<launch>
+        <arg name="urdf_location" default="$(find youbot_description)/urdf/youbot_gripper/gripper.urdf.xacro"/>
+
+	<!-- a node which publishes openni_pose based on the difference between ar_marker and ar_marker_fixed, as well as the pose of the gripper -->
+        <node name="ar_camera_calibrator" pkg="youbot_camera" type="ar_camera_calibrator" output="screen">
+                <param name="urdf_location" value="$(arg urdf_location)" />
+        </node>
+</launch>

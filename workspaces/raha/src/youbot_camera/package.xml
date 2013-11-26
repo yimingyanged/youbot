@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>youbot_camera</name>
+  <version>0.1.0</version>
+  <description>Provides a node which calibrates the camera position based on an AR tag fixed to the base. Also has a launch file for bringing up the camera.</description>
+
+  <maintainer email="andywolff@wpi.edu">Andy Wolff</maintainer>
+  <license>LGPL 2.1 or BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>ar_pose</build_depend>
+
+  <run_depend>roscpp</run_depend>
+</package>
