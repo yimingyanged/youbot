@@ -89,11 +89,12 @@
   <!-- ASUS Xtion on arm sensor angle -->
   <xacro:asus_xtion_link name="xtion" parent="arm_sensor_angle_part2_link"  tilt="0.0">
   <!-- AR_CALIBRATOR:EDIT_HERE -->
-                  <origin xyz="-0.0257147 0.0282211 -0.0477212" rpy="3.13912 -0.275912 -3.12588" />
+                  <origin xyz="-0.0256356 0.0275046 -0.0475053" rpy="3.14097 -0.273895 -3.1287" />
   </xacro:asus_xtion_link>
 
   
 </robot>
+
 
 
 
