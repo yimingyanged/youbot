@@ -176,11 +176,12 @@ int main(int argc, char** argv) {
         tf::StampedTransform transform;
         tf_listener.lookupTransform(
   		"/ar_marker",
-  		"/xtion_camera",
+  		"/xtion_link",
   		ros::Time(0), //latest
   		transform);
         tf::Quaternion q;
-        q.setRPY(0,0,1.57);
+      //q.setRPY(0,0,1.57);
+        q.setRPY(0,0,0);
         tf::Transform rot;
         rot.setRotation(q);
         transform_marker2camera=rot*transform;
@@ -205,7 +206,7 @@ int main(int argc, char** argv) {
 std::string cam_mount_frame("/arm_sensor_angle_part2_link");
 std::string cam_calib_frame("/xtion_calibrated");
     try {
-    cout << "Using new frame " << cam_mount_frame << " as parent for sensor mount" << endl;
+//  cout << "Using new frame " << cam_mount_frame << " as parent for sensor mount" << endl;
       tf::StampedTransform transform;
       tf_listener.lookupTransform(
 	cam_mount_frame,
