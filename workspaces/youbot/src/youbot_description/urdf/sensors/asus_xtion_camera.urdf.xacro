@@ -42,7 +42,7 @@
       <visual>
         <origin xyz="0.02 -0.03 0" rpy="${M_PI/2} 0 ${M_PI/2}" />
         <geometry>
-          <mesh filename="package://youbot_description/meshes/sensors/asus_xtion_pro_live_link.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://youbot_description/meshes/sensors/asus_xtion_pro_live_camera.dae" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="Black" />
       </visual>
