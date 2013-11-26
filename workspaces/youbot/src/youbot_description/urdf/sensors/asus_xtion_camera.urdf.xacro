@@ -93,13 +93,11 @@
    <!-- for simulation -->
    <xacro:asus_xtion_link_gazebo name="${name}" />
 
-  </xacro:macro>
+  </xacro:macro> <!--xacro:macro name="asus_xtion_link -->
 
 <!--  <xacro:asus_xtion_link name="xtion" tilt="0.0">
      <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:asus_xtion_link>
 -->	
-
-  </xacro:macro>
   
 </robot>
