@@ -38,11 +38,19 @@
         <joint name="arm_joint_5" value="2.8984" />
     </group_state>
     <group_state name="look_at_marker" group="arm_1_joints">
-        <joint name="arm_joint_1" value="5.8492" />
-        <joint name="arm_joint_2" value="0.5037" />
-        <joint name="arm_joint_3" value="-0.8782" />
-        <joint name="arm_joint_4" value="3.2306" />
-        <joint name="arm_joint_5" value="2.8658" />
+        <joint name="arm_joint_1" value="0.00420893" />
+        <joint name="arm_joint_2" value="0.961579" />
+        <joint name="arm_joint_3" value="-1.34504" />
+        <joint name="arm_joint_4" value="3.48031" />
+        <joint name="arm_joint_5" value="2.81146" />
+    </group_state>
+    <group_state name="open" group="gripper">
+        <joint name="gripper_finger_joint_l" value="0.011" />
+        <joint name="gripper_finger_joint_r" value="0.011" />
+    </group_state>
+    <group_state name="close" group="gripper">
+        <joint name="gripper_finger_joint_l" value="0.001" />
+        <joint name="gripper_finger_joint_r" value="0.001" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper_eef" parent_link="arm_link_5" group="gripper" />
@@ -100,7 +108,8 @@
     <disable_collisions link1="arm_link_3" link2="wheel_link_bl" reason="Never" />
     <disable_collisions link1="arm_link_3" link2="wheel_link_br" reason="Never" />
     <disable_collisions link1="arm_link_3" link2="wheel_link_fl" reason="Never" />
-    <disable_collisions link1="arm_link_3" link2="xtion_camera" reason="Never" />
+    <disable_collisions link1="arm_link_3" link2="wheel_link_fr" reason="Never" />
+    <disable_collisions link1="arm_link_3" link2="xtion_link" reason="Never" />
     <disable_collisions link1="arm_link_4" link2="arm_link_5" reason="Adjacent" />
     <disable_collisions link1="arm_link_4" link2="arm_sensor_angle_part1_link" reason="Never" />
     <disable_collisions link1="arm_link_4" link2="arm_sensor_angle_part2_link" reason="Never" />
@@ -110,7 +119,7 @@
     <disable_collisions link1="arm_link_4" link2="gripper_palm_link" reason="Never" />
     <disable_collisions link1="arm_link_4" link2="wheel_link_bl" reason="Never" />
     <disable_collisions link1="arm_link_4" link2="wheel_link_br" reason="Never" />
-    <disable_collisions link1="arm_link_4" link2="xtion_camera" reason="Never" />
+    <disable_collisions link1="arm_link_4" link2="xtion_link" reason="Never" />
     <disable_collisions link1="arm_link_5" link2="arm_sensor_angle_part1_link" reason="Adjacent" />
     <disable_collisions link1="arm_link_5" link2="arm_sensor_angle_part2_link" reason="Never" />
     <disable_collisions link1="arm_link_5" link2="base_footprint" reason="Never" />
@@ -119,7 +128,7 @@
     <disable_collisions link1="arm_link_5" link2="gripper_palm_link" reason="Adjacent" />
     <disable_collisions link1="arm_link_5" link2="wheel_link_bl" reason="Never" />
     <disable_collisions link1="arm_link_5" link2="wheel_link_br" reason="Never" />
-    <disable_collisions link1="arm_link_5" link2="xtion_camera" reason="Default" />
+    <disable_collisions link1="arm_link_5" link2="xtion_link" reason="Never" />
     <disable_collisions link1="arm_sensor_angle_part1_link" link2="arm_sensor_angle_part2_link" reason="Adjacent" />
     <disable_collisions link1="arm_sensor_angle_part1_link" link2="base_footprint" reason="Never" />
     <disable_collisions link1="arm_sensor_angle_part1_link" link2="gripper_finger_link_l" reason="Never" />
@@ -127,15 +136,16 @@
     <disable_collisions link1="arm_sensor_angle_part1_link" link2="gripper_palm_link" reason="Never" />
     <disable_collisions link1="arm_sensor_angle_part1_link" link2="wheel_link_bl" reason="Never" />
     <disable_collisions link1="arm_sensor_angle_part1_link" link2="wheel_link_br" reason="Never" />
-    <disable_collisions link1="arm_sensor_angle_part1_link" link2="xtion_camera" reason="Never" />
+    <disable_collisions link1="arm_sensor_angle_part1_link" link2="xtion_link" reason="Never" />
+    <disable_collisions link1="arm_sensor_angle_part2_link" link2="base_footprint" reason="Never" />
     <disable_collisions link1="arm_sensor_angle_part2_link" link2="gripper_finger_link_l" reason="Never" />
     <disable_collisions link1="arm_sensor_angle_part2_link" link2="gripper_finger_link_r" reason="Never" />
     <disable_collisions link1="arm_sensor_angle_part2_link" link2="gripper_palm_link" reason="Never" />
-    <disable_collisions link1="arm_sensor_angle_part2_link" link2="xtion_camera" reason="Adjacent" />
+    <disable_collisions link1="arm_sensor_angle_part2_link" link2="xtion_link" reason="Adjacent" />
     <disable_collisions link1="base_footprint" link2="base_laser_front_link" reason="Never" />
     <disable_collisions link1="base_footprint" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="base_footprint" link2="gripper_finger_link_l" reason="Never" />
-    <disable_collisions link1="base_footprint" link2="gripper_palm_link" reason="Never" />
+    <disable_collisions link1="base_footprint" link2="gripper_finger_link_r" reason="Never" />
     <disable_collisions link1="base_footprint" link2="plate_link" reason="Never" />
     <disable_collisions link1="base_footprint" link2="wheel_link_bl" reason="Never" />
     <disable_collisions link1="base_footprint" link2="wheel_link_br" reason="Never" />
@@ -154,10 +164,10 @@
     <disable_collisions link1="base_link" link2="wheel_link_fr" reason="Adjacent" />
     <disable_collisions link1="gripper_finger_link_l" link2="gripper_finger_link_r" reason="Never" />
     <disable_collisions link1="gripper_finger_link_l" link2="gripper_palm_link" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_link_l" link2="xtion_camera" reason="Default" />
+    <disable_collisions link1="gripper_finger_link_l" link2="xtion_link" reason="Never" />
     <disable_collisions link1="gripper_finger_link_r" link2="gripper_palm_link" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_link_r" link2="xtion_camera" reason="Default" />
-    <disable_collisions link1="gripper_palm_link" link2="xtion_camera" reason="Default" />
+    <disable_collisions link1="gripper_finger_link_r" link2="xtion_link" reason="Never" />
+    <disable_collisions link1="gripper_palm_link" link2="xtion_link" reason="Never" />
     <disable_collisions link1="plate_link" link2="wheel_link_bl" reason="Never" />
     <disable_collisions link1="plate_link" link2="wheel_link_br" reason="Never" />
     <disable_collisions link1="plate_link" link2="wheel_link_fl" reason="Never" />
