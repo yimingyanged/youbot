@@ -7,7 +7,7 @@
 
 #include "ObjectInfo.h"
 
-namespace youbot_ctrl
+namespace youbot_arm_ctrl
 {
 
 ObjectInfo::ObjectInfo()

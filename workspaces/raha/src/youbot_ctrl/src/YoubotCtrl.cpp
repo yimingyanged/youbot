@@ -5,13 +5,18 @@
  *      Author: raha
  */
 #include <string>
-#include "youbot_ctrl_config.h"
 
+#include <ros/ros.h>
+#include <kdl_conversions/kdl_msg.h>
+#include <moveit_msgs/GetPositionIK.h>
+#include <kdl/frames.hpp>
+
+#include "youbot_ctrl_config.h"
 #include "YoubotCtrl.h"
 
-#include <moveit_msgs/GetPositionIK.h>
 
-namespace youbot_ctrl
+
+namespace youbot_arm_ctrl
 {
 
 YoubotCtrl::YoubotCtrl()
@@ -24,6 +29,16 @@ YoubotCtrl::~YoubotCtrl()
   // TODO Auto-generated destructor stub
 }
 
+void
+YoubotCtrl::rosThread(int threads)
+{
+  ros::AsyncSpinner spinner(threads); // Use threads
+  spinner.start();
+  ros::waitForShutdown();
+
+//  quit();
+}
+
 bool
 YoubotCtrl::init()
 {
@@ -31,6 +46,8 @@ YoubotCtrl::init()
   _n.reset(new ros::NodeHandle());
 
   // setup ik service
+
+  ROS_INFO_NAMED("YoubotCtrl", "Setting up IK service client @ %s", config::ik_service_name.c_str());
   _ik_client   = _n->serviceClient<moveit_msgs::GetPositionIK> (config::ik_service_name);
   int count = 0;
   while(!_ik_client.exists())
@@ -46,8 +63,8 @@ YoubotCtrl::init()
   _frame_tcp_name = config::frame_tcp_name;
 
   // wait for tf-tree
-  ROS_INFO_NAMED("YoubotCtrl", "Waiting for TF tree to be available");
-  _tf_available = _listener.waitForTransform(_frame_tcp_name,
+  ROS_INFO_NAMED("YoubotCtrl", "Waiting for TF tree to be available.");
+  _tf_available = _tf_listener.waitForTransform(_frame_tcp_name,
                                              _group->getPoseReferenceFrame(),
                                              ros::Time(0),
                                              ros::Duration(10.0));
@@ -65,13 +82,11 @@ YoubotCtrl::init()
     pose_link_5.header.frame_id = _frame_ik_end_name;
     pose_link_5.pose.orientation.w = 1;
     // get transform from link_5 to tcp
-    listener.transformPose(_frame_tcp_name,
+    _tf_listener.transformPose(_frame_tcp_name,
                            pose_link_5,
                            pose_link_5_to_tcp);
     tf::poseMsgToKDL(pose_link_5_to_tcp.pose, _frame_link_5_to_tcp);
   }
-
-
 
   ROS_INFO("planning frame        : %s", _group->getPlanningFrame().c_str());
   ROS_INFO("getEndEffectorLink    : %s", _group->getEndEffectorLink().c_str());
@@ -102,10 +117,44 @@ bool YoubotCtrl::isReachable(const geometry_msgs::Pose &location, bool avoid_col
   if(_ik_client.call(service_request, service_response))
   {
     // process response..
+    ROS_INFO_NAMED("YoubotCTRL", "process response here..");
   }
 
 
   return res;
+}
+
+void YoubotCtrl::start()
+{
+  doRun(true);
+}
+
+void YoubotCtrl::stop()
+{
+  doRun(false);
+}
+
+void YoubotCtrl::doRun(bool val)
+{
+//  scoped_lock mutex;
+  _do_run = val;
+}
+
+bool YoubotCtrl::doRun()
+{
+//  scoped_lock mutex;
+  return _do_run;
+}
+
+bool YoubotCtrl::run()
+{
+  while(doRun())
+  {
+
+
+    // save resources
+    boost::this_thread::sleep(boost::posix_time::milliseconds(50));
+  }
 }
 
 } /* namespace youbot_ctrl */
