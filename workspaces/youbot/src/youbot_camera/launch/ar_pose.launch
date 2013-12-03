@@ -1,16 +1,16 @@
 <launch>
-	<arg name="marker_pattern" default="$(find youbot_camera)/data/patt.rail_simple"/>    <!-- "$(find ar_pose)/data/patt.hiro"/> -->
-	<arg name="marker_width" default="110.0"/>
+  <arg name="marker_pattern" default="$(find youbot_camera)/data/patt.rail_simple"/>    <!-- "$(find ar_pose)/data/patt.hiro"/> -->
+  <arg name="marker_width" default="110.0"/>
 
-        <node name="ar_pose" pkg="ar_pose" type="ar_single" respawn="false" output="screen" >
-          <remap to="/xtion/rgb/image_color" from="/camera/image_raw" />
-          <remap to="/xtion/rgb/camera_info" from="/camera/camera_info" />
-                <param name="marker_pattern" type="string" value="$(arg marker_pattern)"/>
-                <param name="marker_width" type="double" value="$(arg marker_width)"/>
-                <param name="marker_center_x" type="double" value="0.0"/>
-                <param name="marker_center_y" type="double" value="0.0"/>
-                <param name="threshold" type="int" value="100"/>
-                <param name="use_history" type="bool" value="true"/>
-	</node>
+  <node name="ar_pose" pkg="ar_pose" type="ar_single" respawn="false" output="screen" >
+    <remap to="/xtion/rgb/image_color" from="/camera/image_raw" />
+    <remap to="/xtion/rgb/camera_info" from="/camera/camera_info" />
+      <param name="marker_pattern" type="string" value="$(arg marker_pattern)"/>
+      <param name="marker_width" type="double" value="$(arg marker_width)"/>
+      <param name="marker_center_x" type="double" value="0.0"/>
+      <param name="marker_center_y" type="double" value="0.0"/>
+      <param name="threshold" type="int" value="100"/>
+      <param name="use_history" type="bool" value="true"/>
+  </node>
 
 </launch>
