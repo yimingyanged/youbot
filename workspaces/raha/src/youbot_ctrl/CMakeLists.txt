@@ -5,13 +5,13 @@ project(youbot_ctrl)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  tf
-  kdl_conversions
   moveit_core
+  moveit_ros_planning_interface
+  moveit_ros_planning
   moveit_ros_manipulation
   moveit_ros_move_group
-  moveit_ros_planning
-  moveit_ros_planning_interface
+  tf
+  kdl_conversions
   roscpp
 )
 
