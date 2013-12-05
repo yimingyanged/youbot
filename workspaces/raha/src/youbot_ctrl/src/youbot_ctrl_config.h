@@ -10,7 +10,7 @@
 
 #include <string>
 
-namespace youbot_ctrl
+namespace youbot_arm_ctrl
 {
 namespace config
 {

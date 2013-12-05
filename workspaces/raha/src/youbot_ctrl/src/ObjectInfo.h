@@ -11,7 +11,7 @@
 #include <string>
 #include <kdl/frames.hpp>
 
-namespace youbot_ctrl
+namespace youbot_arm_ctrl
 {
 
 class ObjectInfo
@@ -27,7 +27,7 @@ private:
   int objId;
 
   // offset between the objects pose and the point where to grip
-  KDL::frame _grippoint_offset;
+  KDL::Frame _grippoint_offset;
 
 
 };
