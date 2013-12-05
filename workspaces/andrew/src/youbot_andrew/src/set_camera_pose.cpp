@@ -20,7 +20,7 @@ int main(int argc, char** argv){
   rostopic pub /arm_1/arm_controller/position_command brics_actuator/JointPositions -1 '[None, None, 0.5]' '[[now, arm_joint_5, rad, 2.93]]'
   */
 
-  double positions[] = {2.925, 0.2, -1.6, 3.4}; // 2.93
+  double positions[] = {2.925, 0.2, -1.6, 3.4, 2.93};
   int joints_number = sizeof(positions) / sizeof(positions[0]);
 
   brics_actuator::JointPositions command;
