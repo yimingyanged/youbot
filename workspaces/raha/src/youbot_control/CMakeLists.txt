@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(youbot_ctrl)
+project(youbot_control)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_ros_move_group
   tf
   kdl_conversions
+  ar_tools_msgs
   roscpp
 )
 
@@ -51,7 +52,6 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 # add_message_files(
 #   FILES
-#   Message1.msg
 #   Message2.msg
 # )
 
@@ -87,7 +87,9 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES youbot_ctrl
-#  CATKIN_DEPENDS kdl_conversions moveit moveit_core moveit_ros_manipulation moveit_ros_move_group moveit_ros_planning moveit_ros_planning_interface rosconsole roscpo tf
+  CATKIN_DEPENDS    moveit_core moveit_ros_planning_interface moveit_ros_planning 
+                    moveit_ros_manipulation moveit_ros_move_group tf kdl_conversions 
+                    ar_tools_msgs roscpp
 #  DEPENDS system_lib
 )
 
@@ -108,16 +110,17 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(youbot_ctrl_node src/youbot_ctrl_node.cpp 
-                                src/YoubotCtrl.cpp
-                                src/ObjectInfo.cpp)
+add_executable(youbot_control src/youbot_control_node.cpp 
+                                src/YoubotControl.cpp
+                                src/ObjectInfo.cpp
+                                src/config.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(youbot_ctrl_node youbot_ctrl_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(youbot_ctrl_node
+target_link_libraries(youbot_control
   ${catkin_LIBRARIES}
 )
 
