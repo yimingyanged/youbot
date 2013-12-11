@@ -50,10 +50,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message2.msg
-# )
+ add_message_files(
+   FILES
+   YoubotControlConfig.msg
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -70,10 +70,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs  # Or other packages containing msgs
+ )
 
 ###################################
 ## catkin specific configuration ##
@@ -115,12 +115,19 @@ add_executable(youbot_control src/youbot_control_node.cpp
                                 src/ObjectInfo.cpp
                                 src/config.cpp)
 
+add_executable(youbot_config src/YoubotConfigNode.cpp 
+                                src/config.cpp)
+                                
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(youbot_ctrl_node youbot_ctrl_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(youbot_control
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(youbot_config
   ${catkin_LIBRARIES}
 )
 
