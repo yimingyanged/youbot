@@ -12,9 +12,11 @@
 #include <tf/transform_listener.h>
 #include <std_msgs/Int32.h>
 #include <geometry_msgs/Pose.h>
+#include <control_msgs/GripperCommandAction.h>
+#include <actionlib/client/simple_action_client.h>
 #include <ar_tools_msgs/ARMarker.h>
 #include <ar_tools_msgs/ARMarkers.h>
-
+#include <youbot_control/YoubotControlConfig.h>
 #include <moveit/move_group_interface/move_group.h>
 #include <moveit/planning_interface/planning_interface.h>
 
@@ -46,6 +48,9 @@ public:
 
   bool
   isGraspable(const ObjectInfo &obj_id, const geometry_msgs::Pose location);
+
+
+  bool isReachable(int objId);
 
   bool
   isReachable(const geometry_msgs::PoseStamped &location, bool avoid_collisions = true);
@@ -95,6 +100,9 @@ private:
                     _ik_pose_pub,
                     _tcp_pose_pub,
                     _ik_offset_pose_pub;
+
+  // the action client for the gripper controller
+  actionlib::SimpleActionClient<control_msgs::GripperCommandAction> *_acGripper;
   // subscribers
   ros::Subscriber   _marker_pose_sub;
   ros::Subscriber   _config_sub;
@@ -103,7 +111,8 @@ private:
 
   // Connect to a running instance of the move_group node
   boost::shared_ptr<moveit::planning_interface::MoveGroup> _group;
-
+  moveit::planning_interface::MoveGroup::Plan _plan;
+  bool _is_plan_valid;
   // TF listener
   tf::TransformListener _tf_listener;
   bool _tf_available;
@@ -129,10 +138,17 @@ private:
   //is running flag
   bool _is_running;
 
-  // Has new pose?
-  bool _has_new_cam_pose;
-  // Actual pose
-  geometry_msgs::PoseStamped _cam_pose;
+  std::map<int, geometry_msgs::PoseStamped> _obj_map;
+
+
+  // Has new cmd?
+  bool _has_new_cmd,
+       _has_new_obj_pose;
+
+  double _max_gripper_travel;
+  // stored command
+  youbot_control::YoubotControlConfig _command;
+
   // mutex for thread control
   boost::mutex _mutex,
                _mutexRun,
@@ -153,14 +169,58 @@ private:
   //
   // getters and setters
   //
-  void
-  setCamPose(geometry_msgs::PoseStamped camPose);
 
-  geometry_msgs::PoseStamped
-  getCamPose();
+  double
+  getMaxGripperTravelDistance();
+
+  void
+  setMaxGripperTravelDistance(double dist = 0.0115);
+
+  control_msgs::GripperCommandGoal
+  getOpenGripperGoal();
+
+  control_msgs::GripperCommandGoal
+  getCloseGripperGoal();
+
+  bool openGripper();
+  bool closeGripper();
+
+  void
+  setObjPose(geometry_msgs::PoseStamped camPose, int objId);
 
   bool
-  hasNewCamPose();
+  getObjPose(int objId,
+             geometry_msgs::PoseStamped *poseOut,
+             bool doDeleteIfFound = true);
+
+  std::vector<int> getAvailableObjs();
+
+  bool
+  getPlan(moveit::planning_interface::MoveGroup::Plan *plan);
+
+  void
+  updateTolerace();
+
+  bool
+  plan(int objId);
+
+  bool
+  execute();
+
+  void
+  setPlan(moveit::planning_interface::MoveGroup::Plan &plan);
+
+  bool
+  hasNewObjPose();
+
+  void
+  setNewCommand(const youbot_control::YoubotControlConfig &msg);
+
+  youbot_control::YoubotControlConfig
+  getNewCommand();
+
+  bool
+  hasNewCommand();
 
   void
   setIsRunning(bool val);
@@ -234,8 +294,14 @@ private:
   geometry_msgs::PoseStamped
   addOffsetToPose(const geometry_msgs::PoseStamped& pose, double offset = -0.1);
 
-  void ARCallback(const ar_tools_msgs::ARMarkerConstPtr &msg);
-  void configCallback(const std_msgs::Int32ConstPtr &msg);
+  void ARCallback(const ar_tools_msgs::ARMarkersConstPtr &msg);
+  void configCallback(const youbot_control::YoubotControlConfigConstPtr &msg);
+
+  bool
+  moveToCalib();
+
+  bool
+  moveToObjSearch();
 };
 
 

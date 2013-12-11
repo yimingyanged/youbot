@@ -23,24 +23,39 @@ extern const std::string default_frame_cam_name;
 extern const std::string default_moveit_group_name;
 extern const std::string default_ar_marker_topic;
 extern const std::string default_config_topic;
+extern const std::string default_namespace_topic;
 
 
 //// control OpCodes
-//enum CrtlOpCode: int32_t
-//    {
-//      IGNORE_CRTL               = 0,
-//      START_OBJ_TRACKER         = 1,
-//      STOP_OBJ_TRACKER          = 2,
-//
-//      ERROR_CRTL                = 100
-//    };
-//
-//    enum StatusOpCode: int32_t
-//    {
-//      IGNORE_RESP = 0,
-//
-//      ERROR_RESP = 100
-//    };
+enum CtrlOpCode
+{
+  // commands
+  IGNORE_CRTL = 0,
+  PLAN = 1,
+  EXECUTE_PLAN = 2,
+  MOVE = 3,
+  MOVE_TO_CALIB = 4,
+  PICK_OBJ = 5,
+  PLACE_OBJ = 6,
+  INCREASE_TOL = 7,
+  DECREASE_TOL = 8,
+  MOVE_TO_OBJ_SEARCH = 9,
+  IS_REACHABLE_OBJ = 10,
+  SHOW_AVAILABLE_OBJS=11,
+
+
+  ABORT = 99,
+  ERROR_CRTL = 100
+};
+
+enum StatusOpCode
+{
+  IGNORE_RESP = 0,
+
+  ID_LIST = 1,
+
+  ERROR_RESP = 100
+};
 
 } /* namespace config */
 } /* namespace youbot_ctrl */

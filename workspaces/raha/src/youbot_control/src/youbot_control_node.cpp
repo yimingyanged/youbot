@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
   youbotNode->init();
 
   // Start actual node
-  cout << "starting node" << endl;
+  cout << "Starting node" << endl;
   youbotNode->start();
   youbotNode->run();
 
