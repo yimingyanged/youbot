@@ -25,6 +25,6 @@ arm_controller:
       i: 2.0
       d: 3.0
     arm_joint_5:
-      p: 5.0
+      p: 1.0
       i: 2.0
       d: 2.0
