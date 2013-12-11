@@ -5,8 +5,9 @@
     <arg if="$(arg debug)" name ="launch_prefix" value="gdb --ex run --args" />
     
     <arg name="dualArm" default="false" />
-    <arg name="useKinect" default="false" />
+    <arg name="useKinect" default="true" />
     <arg name="publish" default="true" />
+    <arg name="publish_cam" default="false" />
 
     <include file="$(find youbot_common)/launch/youbot_wrapper.launch">
       <arg name="debug" value="$(arg debug)"/>
@@ -18,7 +19,10 @@
     </group>
 
     <group if="$(arg useKinect)">
-      <include file="$(find youbot_common)/launch/youbot_openni.launch" />
+      <include file="$(find youbot_common)/launch/youbot_openni.launch" >
+        <arg name="publish_tf" value="$(arg publish_cam)"/>
+      </include>
     </group>
+
 
   </launch>

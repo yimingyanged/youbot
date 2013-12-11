@@ -51,9 +51,9 @@ void youbot_joy_teleop::joy_cback(const sensor_msgs::Joy::ConstPtr& joy)
     
   // Add static forwards velocity
   // LT
-  twist.linear.x +=  joy->axes.at(2) < 0.8 ? 0.1 : 0;
+  twist.linear.x +=  joy->buttons.at(4) ? 0.2 : 0;
   // RT
-  twist.linear.x +=  joy->axes.at(5) < 0.8 ? 0.2 : 0;
+  twist.linear.x +=  joy->buttons.at(5) ? 0.4 : 0;
 
   // send the twist command
   cmd_vel.publish(twist);
