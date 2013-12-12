@@ -1,0 +1,8 @@
+prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/devel
+
+Name: baseIK_7dof_moveit
+Description: Description of baseIK_7dof_moveit
+Version: 0.2.0
+Cflags: 
+Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib 
+Requires: 

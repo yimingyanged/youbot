@@ -1,0 +1,8 @@
+prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/install
+
+Name: youbot_baseIK_moveit_config
+Description: Description of youbot_baseIK_moveit_config
+Version: 0.2.0
+Cflags: 
+Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/install/lib 
+Requires: 

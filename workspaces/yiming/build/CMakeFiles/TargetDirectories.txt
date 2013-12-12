@@ -1,0 +1,7 @@
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles/clean_test_results.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles/doxygen.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/gtest/CMakeFiles/gtest.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/gtest/CMakeFiles/gtest_main.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles/run_tests.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles/tests.dir
