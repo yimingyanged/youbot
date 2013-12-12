@@ -100,10 +100,10 @@ KDL::JntArray YoubotArmAnalyticalIK::ik(const KDL::Frame& g0,
 
   // Distance from arm_link_3 to arm_link_5 (can also be replaced by e.g.
   // distance from arm_link_3 to tool center point)
-  double d = 0.114;           // original distance to joint_5
-//              + 0.016          // distance to palm
-//              + 0.046          // distance from palm to finger(s)
-//              + 0.033;         // additional distance to tcp (between top of fingers)
+  double d = 0.114           // original distance to joint_5
+              + 0.016          // distance to palm
+              + 0.046          // distance from palm to finger(s)
+              + 0.033;         // additional distance to tcp (between top of fingers)
 
   double j1;
   double j2;

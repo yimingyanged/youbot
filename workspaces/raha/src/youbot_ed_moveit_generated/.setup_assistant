@@ -5,4 +5,4 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/youbot.srdf
   CONFIG:
-    generated_timestamp: 1385481393
+    generated_timestamp: 1386857588

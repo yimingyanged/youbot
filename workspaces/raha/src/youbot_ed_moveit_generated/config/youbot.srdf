@@ -21,38 +21,39 @@
         <joint name="arm_joint_3" />
         <joint name="arm_joint_4" />
         <joint name="arm_joint_5" />
-<!--         <joint name="gripper_tcp_joint" /> -->
     </group>
-    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
-    <group_state name="home" group="arm_1_joints">
+    <group name="arm_chain">
+        <chain base_link="arm_link_0" tip_link="gripper_tcp_link" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group. in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="arm_chain">
         <joint name="arm_joint_1" value="0.05" />
         <joint name="arm_joint_2" value="0.05" />
         <joint name="arm_joint_3" value="-0.2499" />
         <joint name="arm_joint_4" value="0" />
         <joint name="arm_joint_5" value="0" />
     </group_state>
-    <group_state name="up" group="arm_1_joints">
+    <group_state name="up" group="arm_chain">
         <joint name="arm_joint_1" value="0.05" />
         <joint name="arm_joint_2" value="1.1331" />
         <joint name="arm_joint_3" value="-2.4776" />
         <joint name="arm_joint_4" value="1.7441" />
         <joint name="arm_joint_5" value="2.8984" />
     </group_state>
-    <group_state name="look_at_marker" group="arm_1_joints">
+    <group_state name="look_at_marker" group="arm_chain">
         <joint name="arm_joint_1" value="0.00420893" />
         <joint name="arm_joint_2" value="0.961579" />
         <joint name="arm_joint_3" value="-1.34504" />
         <joint name="arm_joint_4" value="3.48031" />
         <joint name="arm_joint_5" value="2.81146" />
     </group_state>
-    <group_state name="look_for_obj" group="arm_1_joints">
-        <joint name="arm_joint_1" value="1.4500967398122655" />
-        <joint name="arm_joint_2" value="0.9943442824828386" />
-        <joint name="arm_joint_3" value="-1.0496218135276179" />
-        <joint name="arm_joint_4" value="2.919535150321619" />
-        <joint name="arm_joint_5" value="2.8740926763042003" />
+    <group_state name="look_for_obj" group="arm_chain">
+        <joint name="arm_joint_1" value="1.4501" />
+        <joint name="arm_joint_2" value="0.994344" />
+        <joint name="arm_joint_3" value="-1.04962" />
+        <joint name="arm_joint_4" value="2.91954" />
+        <joint name="arm_joint_5" value="2.87409" />
     </group_state>
-    
     <group_state name="open" group="gripper">
         <joint name="gripper_finger_joint_l" value="0.011" />
         <joint name="gripper_finger_joint_r" value="0.011" />
@@ -62,7 +63,7 @@
         <joint name="gripper_finger_joint_r" value="0.001" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper_eef" parent_link="arm_link_5" group="gripper" />
+    <end_effector name="gripper_eef" parent_link="gripper_tcp_link" group="gripper" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="planar" parent_frame="odom" child_link="base_footprint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
