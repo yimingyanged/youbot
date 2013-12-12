@@ -129,7 +129,8 @@ private:
   // Cached transform between cam and tcp
   KDL::Frame _frame_cam_to_tcp;
 
-  double _pose_tolerance;
+  double _position_tolerance,
+         _orientation_tolerance;
   double _plan_time;
 
   // Stop indicated
@@ -226,10 +227,17 @@ private:
   setIsRunning(bool val);
 
   void
-  setPoseTolerance(double tol);
+  setPositionTolerance(double tol);
+
+  void
+  setOrientationTolerance(double tol);
 
   double
-  getPoseTolerance();
+  getPositionTolerance();
+
+  double
+  getOrientationTolerance();
+
 
   double
   getPlanTime();

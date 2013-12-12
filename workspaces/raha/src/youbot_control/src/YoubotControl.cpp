@@ -90,9 +90,12 @@ YoubotControl::init()
   double tol = 0.05;
   double planTime = 1.5;
   ROS_INFO_STREAM("Setting tolerance to " << tol);
-  setPoseTolerance(tol);
+  setPositionTolerance(tol/2.0);
+  setOrientationTolerance(tol);
+
+  updateTolerace();
   setPlanTime(planTime);
-   _group->setPlanningTime(planTime);
+  _group->setPlanningTime(planTime);
 
   //setup frame names
   setFrameIKName(config::default_frame_ik_end_name);
@@ -190,9 +193,9 @@ YoubotControl::ARCallback(const ar_tools_msgs::ARMarkersConstPtr &msg)
 
     _tf_listener.transformPose(refFrameName, goal_tcp, goal_cam_tmp);
     // Add ik offset
-    goal_ik = convertTCPPoseToIKPose(goal_cam_tmp);
+//    goal_ik = convertTCPPoseToIKPose(goal_cam_tmp);
     // Add offset to marker
-    goal_ik_offset = addOffsetToPose(goal_ik);
+    goal_ik_offset = addOffsetToPose(goal_cam_tmp);
 
     setObjPose(goal_ik_offset, msg->markers.at(i).id);
   }
@@ -574,23 +577,38 @@ bool YoubotControl::hasNewCommand()
 }
 
 double
-YoubotControl::getPoseTolerance()
+YoubotControl::getOrientationTolerance()
 {
   boost::mutex::scoped_lock lock(_mutex);
-  return _pose_tolerance;
+  return _orientation_tolerance;
+}
+
+double
+YoubotControl::getPositionTolerance()
+{
+  boost::mutex::scoped_lock lock(_mutex);
+  return _position_tolerance;
 }
 
 void
-YoubotControl::setPoseTolerance(double tol)
+YoubotControl::setPositionTolerance(double tol)
 {
   boost::mutex::scoped_lock lock(_mutex);
-  _pose_tolerance = tol;
+  _position_tolerance = tol;
+}
+
+void
+YoubotControl::setOrientationTolerance(double tol)
+{
+  boost::mutex::scoped_lock lock(_mutex);
+  _orientation_tolerance = tol;
 }
 
 void YoubotControl::updateTolerace()
 {
   boost::mutex::scoped_lock lock(_mutex);
-  _group->setGoalTolerance(_pose_tolerance);
+  _group->setGoalOrientationTolerance(_orientation_tolerance);
+  _group->setGoalPositionTolerance(_position_tolerance);
 }
 
 void
@@ -796,19 +814,52 @@ YoubotControl::run()
           break;
 
         case youbot_arm_control::config::INCREASE_TOL:
-          tmp_double = getPoseTolerance();
-          tmp_double += 0.01;
-          setPoseTolerance(tmp_double);
+
+          switch (id)
+          {
+            case 1: //position
+              tmp_double = getPositionTolerance();
+              tmp_double += 0.01;
+              setPositionTolerance(tmp_double);
+              break;
+            case 2: // orientation
+              tmp_double = getOrientationTolerance();
+              tmp_double += 0.01;
+              setOrientationTolerance(tmp_double);
+            default:
+              ROS_INFO("Invalid id (%d) passed to tolerance modification, 1=position, 2=orientation", id);
+              break;
+          }
+
           updateTolerace();
-          ROS_INFO_STREAM("Increased tolerance to: " << tmp_double);
+
+          if(id==1)
+            ROS_INFO_STREAM("Increased position tolerance to: " << getPositionTolerance());
+          else if(id == 2)
+            ROS_INFO_STREAM("Increased orientation tolerance to: " << getOrientationTolerance());
           break;
 
         case youbot_arm_control::config::DECREASE_TOL:
-          tmp_double = getPoseTolerance();
-          tmp_double -= 0.01;
-          setPoseTolerance(tmp_double);
+          switch (id) {
+            case 1: //position
+              tmp_double = getPositionTolerance();
+              tmp_double -= 0.005;
+              setPositionTolerance(tmp_double);
+              break;
+            case 2: // orientation
+              tmp_double = getOrientationTolerance();
+              tmp_double -= 0.005;
+              setOrientationTolerance(tmp_double);
+            default:
+              ROS_INFO("Invalid id (%d) passed to tolerance modification, 1=position, 2=orientation", id);
+              break;
+          }
+
           updateTolerace();
-          ROS_INFO_STREAM("Decreased tolerance to: " << tmp_double);
+
+          if(id==1)        ROS_INFO_STREAM("Decreased position tolerance to: " << getPositionTolerance());
+          else if(id == 2) ROS_INFO_STREAM("Decreased orientation tolerance to: " << getOrientationTolerance());
+
           break;
 
         case youbot_arm_control::config::MOVE_TO_OBJ_SEARCH:

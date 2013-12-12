@@ -164,12 +164,12 @@ void YoubotConfigNode::keyLoop()
 
 
       case 't':
-        std::cout   << "Decrease tolerance";
+        std::cout   << "Decrease tolerance (id 1: position, id:2 orientation)";
         cmd = youbot_arm_control::config::DECREASE_TOL;
       break;
 
       case 'T':
-        std::cout   << "Increase tolerance";
+        std::cout   << "Increase tolerance (id 1: position, id:2 orientation)";
         cmd = youbot_arm_control::config::INCREASE_TOL;
       break;
 
