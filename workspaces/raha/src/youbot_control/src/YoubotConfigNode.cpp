@@ -178,6 +178,11 @@ void YoubotConfigNode::keyLoop()
         cmd = youbot_arm_control::config::MOVE_TO_OBJ_SEARCH;
       break;
 
+//      case 'Z':
+//        std::cout   << "Pick obj";
+//        cmd = youbot_arm_control::config::PICK_OBJ;
+//        break;
+
       case KEYCODE_ENTER:
         // do nothing on enter
       break;
