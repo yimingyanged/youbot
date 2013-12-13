@@ -9,18 +9,13 @@
 
 	<!-- start gazebo empty world-->
 	<param name="/use_sim_time" value="true" />
-	<node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen">
-		<env name="GAZEBO_RESOURCE_PATH" value="$(find youbot_description):$(find gazebo_worlds):$(find gazebo)/gazebo/share/gazebo" />  
+	<include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+
 		<remap from="base_controller/command" to="cmd_vel"/>
 		<remap from="scan_front" to="base_scan"/>
         <remap from="/base_odometry/odom" to="/odom" />
 		
-	</node>
-	
-	<!-- start gui -->
-	<node name="gazebo_gui" pkg="gazebo_ros" type="gui" respawn="false" output="screen"/>
-
-	
 	<!-- send youbot urdf to param server -->
 	<param name="robot_description" command="$(find xacro)/xacro.py '$(find youbot_description)/robots/youbot.urdf.xacro'"/>
 

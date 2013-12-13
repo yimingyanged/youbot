@@ -252,49 +252,49 @@ clean: gtest/CMakeFiles/gtest_main.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory baseIK_7dof_moveit
+# Directory level rules for directory youbot_baseIK_moveit
 
 # Convenience name for "all" pass in the directory.
-baseIK_7dof_moveit/all:
-.PHONY : baseIK_7dof_moveit/all
+youbot_baseIK_moveit/all:
+.PHONY : youbot_baseIK_moveit/all
 
 # Convenience name for "clean" pass in the directory.
-baseIK_7dof_moveit/clean: baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : baseIK_7dof_moveit/clean
+youbot_baseIK_moveit/clean: youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : youbot_baseIK_moveit/clean
 
 # Convenience name for "preinstall" pass in the directory.
-baseIK_7dof_moveit/preinstall:
-.PHONY : baseIK_7dof_moveit/preinstall
+youbot_baseIK_moveit/preinstall:
+.PHONY : youbot_baseIK_moveit/preinstall
 
 #=============================================================================
-# Target rules for target baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir
+# Target rules for target youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build.make baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build.make baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build
+youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build.make youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build.make youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 
 	@echo "Built target _catkin_empty_exported_target"
-.PHONY : baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/all
+.PHONY : youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
-.PHONY : baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-_catkin_empty_exported_target: baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/rule
+_catkin_empty_exported_target: youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/rule
 .PHONY : _catkin_empty_exported_target
 
 # clean rule for target.
-baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build.make baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
+youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/build.make youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 # clean rule for target.
-clean: baseIK_7dof_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
+clean: youbot_baseIK_moveit/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================

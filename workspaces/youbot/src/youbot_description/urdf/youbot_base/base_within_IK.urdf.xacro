@@ -65,24 +65,52 @@
       			</collision>
     		</link>
 		
-		<link name="base_dummy_link">
+		<link name="base_dummy_prismatic_x_link">
+
+		</link>
+		
+		<link name="base_dummy_prismatic_y_link">
 
 		</link>
 
-		<joint name="${name}_footprint_joint" type="revolute">
+		<link name="base_dummy_revolute_link">
+
+		</link>
+		
+		<joint name="${name}_footprint_joint" type="fixed">
+      			<origin xyz="0 0 0" rpy="0 0 0" />
+      			<child link="base_dummy_revolute_link" />
+      			<parent link="${name}_footprint"/>
+    		</joint>
+		
+		<joint name="base_dummy_revolute_joint" type="revolute">
       			<origin xyz="0 0 0" rpy="0 0 0" />
 			<axis xyz="0 0 1" />
-			<child link="base_dummy_link" />
-      			<parent link="${name}_footprint"/>
+			<child link="base_dummy_prismatic_x_link" />
+      			<parent link="base_dummy_revolute_link"/>
+			
 			<limit effort="${9.5}" velocity="${M_PI}" lower="${-M_PI}" upper="${M_PI}"/> 
     		</joint>
 
-		<joint name="base_dummy_joint" type="prismatic">
+		<joint name="base_dummy_prismatic_x_joint" type="prismatic">
       			<origin xyz="0 0 0" rpy="0 0 0" />
+			<axis xyz="1 0 0" />
+			<child link="base_dummy_prismatic_y_link" />
+      			<parent link="base_dummy_prismatic_x_link"/>
+			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
+    		</joint>		
+		
+		<joint name="base_dummy_prismatic_y_joint" type="prismatic">
+      			<origin xyz="0 0 0" rpy="0 0 0" />
+			<axis xyz="0 1 0" />			
 			<child link="${name}_link" />
-      			<parent link="base_dummy_link"/>
-			<limit effort="${9.5}" velocity="${M_PI}" lower="${-100}" upper="${100}"/> 
-    		</joint>
+      			<parent link="base_dummy_prismatic_y_link"/>
+			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
+    		</joint>		
+
+		
+		
+		
 
 
 		<link name="${name}_link">

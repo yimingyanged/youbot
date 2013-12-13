@@ -285,6 +285,12 @@ youbot_baseIK_KDL_moveit_SOURCE_DIR:STATIC=/home/youbot/youbot_edinburgh/workspa
 youbot_baseIK_SOURCE_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_baseIK_moveit_config
 
 //Value Computed by CMake
+youbot_baseIK_moveit_BINARY_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_baseIK_moveit
+
+//Value Computed by CMake
+youbot_baseIK_moveit_SOURCE_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_baseIK_moveit
+
+//Value Computed by CMake
 youbot_baseIK_moveit_config_BINARY_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_baseIK_moveit_config
 
 //Value Computed by CMake
