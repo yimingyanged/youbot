@@ -18,11 +18,5 @@
       <include file="$(find youbot_common)/launch/youbot_joint_state_publisher.launch" />
     </group>
 
-    <group if="$(arg useKinect)">
-      <include file="$(find youbot_common)/launch/youbot_openni.launch" >
-        <arg name="publish_tf" value="$(arg publish_cam)"/>
-      </include>
-    </group>
-
 
   </launch>

@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "baseIK_8dof_moveit")
-set(baseIK_8dof_moveit_MAINTAINER "MoveIt Setup Assistant <assistant@moveit.ros.org>")
-set(baseIK_8dof_moveit_DEPRECATED "")
-set(baseIK_8dof_moveit_VERSION "0.2.0")
-set(baseIK_8dof_moveit_BUILD_DEPENDS "youbot_description")
-set(baseIK_8dof_moveit_RUN_DEPENDS "moveit_ros_move_group" "moveit_planners_ompl" "moveit_ros_visualization" "joint_state_publisher" "robot_state_publisher" "xacro" "youbot_description")
-set(baseIK_8dof_moveit_BUILDTOOL_DEPENDS "catkin")

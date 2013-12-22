@@ -1,0 +1,14 @@
+\subsubsection usage Usage
+\verbatim
+<node name="kdl_kinematics_plugin_upgrade" pkg="kdl_kinematics_plugin_upgrade" type="kdl_kinematics_plugin_upgrade">
+  <param name="ik_type" type="int" value="0" />
+  <param name="use_nullspace" type="bool" value="True" />
+  <param name="use_weighting" type="bool" value="True" />
+  <param name="robot_settings" type="int" value="0" />
+  <param name="weights" type="str" value="" />
+  <param name="q_comfortable" type="str" value="" />
+  <param name="lambda" type="double" value="0.001" />
+  <param name="epsilon" type="double" value="0.01" />
+</node>
+\endverbatim
+

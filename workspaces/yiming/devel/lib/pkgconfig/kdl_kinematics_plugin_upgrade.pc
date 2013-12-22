@@ -1,0 +1,8 @@
+prefix=/home/alex/ros_workspace/youbot/workspaces/yiming/devel
+
+Name: kdl_kinematics_plugin_upgrade
+Description: Description of kdl_kinematics_plugin_upgrade
+Version: 0.4.6
+Cflags: -I/home/alex/ros_workspace/youbot/workspaces/yiming/devel/include -I/home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include
+Libs: -L/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib -lmoveit_rdf_loader -lmoveit_ros_planning -lmoveit_robot_model_loader
+Requires: pluginlib moveit_core moveit_ros_planning

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "youbot_base_ik_controller")
+set(youbot_base_ik_controller_MAINTAINER "alex <alex@todo.todo>")
+set(youbot_base_ik_controller_DEPRECATED "")
+set(youbot_base_ik_controller_VERSION "0.0.0")
+set(youbot_base_ik_controller_BUILD_DEPENDS "actionlib" "actionlib_msgs" "message_generation" "roscpp" "std_msgs")
+set(youbot_base_ik_controller_RUN_DEPENDS "actionlib" "actionlib_msgs" "message_generation" "roscpp" "std_msgs")
+set(youbot_base_ik_controller_BUILDTOOL_DEPENDS "catkin")

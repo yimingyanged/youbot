@@ -1,0 +1,7 @@
+<library path="lib/libmoveit_kdl_kinematics_upgrade_plugin">
+  <class name="kdl_kinematics_plugin/KDLKinematicsUpgradedPlugin" type="kdl_kinematics_plugin::KDLKinematicsPluginUpgrade" base_class_type="kinematics::KinematicsBase">
+    <description>
+      A implementation of kinematics as a plugin based on KDL.
+    </description>
+  </class>
+</library>

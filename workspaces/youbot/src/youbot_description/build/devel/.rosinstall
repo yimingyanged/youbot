@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/alex/ros_workspace/youbot/workspaces/youbot/src/youbot_description/build/devel/setup.sh

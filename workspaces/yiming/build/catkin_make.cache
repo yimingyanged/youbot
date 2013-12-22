@@ -1,1 +1,1 @@
-youbot_baseIK_moveit
+kdl_kinematics_plugin_upgrade:youbot_base_ik_controller:youbot_base_ik_moveit:youbot_base_ik_trajectory

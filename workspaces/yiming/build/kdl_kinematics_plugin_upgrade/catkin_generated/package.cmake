@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "kdl_kinematics_plugin_upgrade")
+set(kdl_kinematics_plugin_upgrade_MAINTAINER "Ioan Sucan <isucan@willowgarage.com>")
+set(kdl_kinematics_plugin_upgrade_DEPRECATED "")
+set(kdl_kinematics_plugin_upgrade_VERSION "0.4.6")
+set(kdl_kinematics_plugin_upgrade_BUILD_DEPENDS "moveit_core" "pluginlib" "angles" "moveit_ros_planning" "dynamic_reconfigure")
+set(kdl_kinematics_plugin_upgrade_RUN_DEPENDS "moveit_core" "pluginlib" "angles" "moveit_ros_planning" "dynamic_reconfigure")
+set(kdl_kinematics_plugin_upgrade_BUILDTOOL_DEPENDS "catkin")
