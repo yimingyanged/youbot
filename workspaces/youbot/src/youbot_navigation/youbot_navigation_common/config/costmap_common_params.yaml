@@ -19,7 +19,7 @@ observation_sources: base_scan
 base_scan: {sensor_frame: base_laser_front_link,
             data_type: LaserScan,
             topic: /base_scan,
-            expected_update_rate: 0.2,
+            expected_update_rate: 20000000,
             observation_persistence: 0.0,
             marking: true,
             clearing: true,

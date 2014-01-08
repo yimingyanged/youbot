@@ -61,11 +61,11 @@ target_link_libraries( youbot_controllers youbot_trajectory_action_server )
 
 
 
-rosbuild_add_executable(arm_joint_position_control_test examples/arm_joint_position_control_test.cpp)
+rosbuild_add_executable(arm_joint_position_control_test src/arm_joint_position_control_test.cpp)
 rosbuild_add_executable(youbot_controller_manager src/youbot_controller_manager.cpp)
-rosbuild_add_executable(arm_joint_velocity_control_test examples/arm_joint_velocity_control_test.cpp)
-rosbuild_add_executable(arm_joint_torque_control_test examples/arm_joint_torque_control_test.cpp)
-
+rosbuild_add_executable(arm_joint_velocity_control_test src/arm_joint_velocity_control_test.cpp)
+rosbuild_add_executable(arm_joint_torque_control_test src/arm_joint_torque_control_test.cpp)
+rosbuild_add_executable(YouBotArmTrajController src/YouBotArmTrajController.cpp)
 #cartesian compliance control for the unified youbot arm and base system
 #add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/20_sim_cartesian_compliance_control)
 #rosbuild_add_library(cartesian_compliance_control src/cartesian_compliance_control.cpp)

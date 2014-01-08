@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "youbot_baseik_controller")
+set(youbot_baseik_controller_MAINTAINER "youbot <youbot@todo.todo>")
+set(youbot_baseik_controller_DEPRECATED "")
+set(youbot_baseik_controller_VERSION "0.0.0")
+set(youbot_baseik_controller_BUILD_DEPENDS "actionlib" "actionlib_msgs" "message_generation" "roscpp" "std_msgs" "control_msgs")
+set(youbot_baseik_controller_RUN_DEPENDS "actionlib" "actionlib_msgs" "roscpp" "std_msgs" "control_msgs" "message_generation")
+set(youbot_baseik_controller_BUILDTOOL_DEPENDS "catkin")

@@ -6,3 +6,4 @@
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
 SUBDIRS(youbot_baseIK_moveit)
+SUBDIRS(youbot_baseik_controller)

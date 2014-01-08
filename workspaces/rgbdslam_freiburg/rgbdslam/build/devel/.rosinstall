@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/youbot/youbot_edinburgh/workspaces/rgbdslam_freiburg/rgbdslam/build/devel/setup.sh

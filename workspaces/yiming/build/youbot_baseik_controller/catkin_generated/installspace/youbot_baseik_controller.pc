@@ -1,0 +1,8 @@
+prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/install
+
+Name: youbot_baseik_controller
+Description: Description of youbot_baseik_controller
+Version: 0.0.0
+Cflags: -I/home/youbot/youbot_edinburgh/workspaces/yiming/install/include
+Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/install/lib -lyoubot_baseik_controller
+Requires: actionlib actionlib_msgs message_generation roscpp std_msgs control_msgs
