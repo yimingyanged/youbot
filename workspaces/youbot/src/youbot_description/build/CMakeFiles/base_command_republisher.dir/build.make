@@ -104,6 +104,7 @@ CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt
 CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt/ros/hydro/share/tf2_ros/package.xml
 CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt/ros/hydro/share/tf/package.xml
 CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt/ros/hydro/share/kdl_conversions/package.xml
+CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt/ros/hydro/share/python_orocos_kdl/package.xml
 CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt/ros/hydro/share/tf_conversions/package.xml
 CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt/ros/hydro/share/robot_state_publisher/package.xml
 CMakeFiles/base_command_republisher.dir/src/base_command_republisher.cpp.o: /opt/ros/hydro/share/rosbag_migration_rule/package.xml

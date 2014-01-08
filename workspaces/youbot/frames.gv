@@ -1,0 +1,8 @@
+digraph G {
+"base_link" -> "arm_link_0"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.202 Hz\nMost recent transform: 339.533 \nBuffer length: 4.940 sec\n"];
+"base_footprint" -> "base_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.202 Hz\nMost recent transform: 339.533 \nBuffer length: 4.940 sec\n"];
+"odom" -> "base_footprint"[label="Broadcaster: /virtual_joint_broadcaster_0\nAverage rate: 10.194 Hz\nMost recent transform: 339.124 \nBuffer length: 4.905 sec\n"];
+"base_link" -> "base_laser_front_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.202 Hz\nMost recent transform: 339.533 \nBuffer length: 4.940 sec\n"];
+"arm_link_5" -> "gripper_palm_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.202 Hz\nMost recent transform: 339.533 \nBuffer length: 4.940 sec\n"];
+"base_link" -> "plate_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.202 Hz\nMost recent transform: 339.533 \nBuffer length: 4.940 sec\n"];
+}

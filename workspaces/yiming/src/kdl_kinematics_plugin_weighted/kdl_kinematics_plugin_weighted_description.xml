@@ -1,0 +1,7 @@
+<library path="lib/libmoveit_kdl_kinematics_weighted_plugin">
+  <class name="kdl_kinematics_plugin/KDLKinematicsWeightedPlugin" type="kdl_kinematics_plugin::KDLKinematicsPluginWeighted" base_class_type="kinematics::KinematicsBase">
+    <description>
+      A implementation of kinematics as a plugin based on KDL.
+    </description>
+  </class>
+</library>

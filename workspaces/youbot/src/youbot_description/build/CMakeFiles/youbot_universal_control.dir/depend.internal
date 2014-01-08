@@ -3,6 +3,7 @@
 
 CMakeFiles/youbot_universal_control.dir/src/joint_state_observer_gazebo.cpp.o
  ../include/joint_state_observer_gazebo.h
+ ../include/youbot_trajectory_action_server/joint_state_observer.h
  ../include/youbot_universal_control.h
  /home/alex/ros_workspace/youbot/workspaces/youbot/src/youbot_description/src/joint_state_observer_gazebo.cpp
  /opt/ros/hydro/include/XmlRpcDecl.h
@@ -136,6 +137,8 @@ CMakeFiles/youbot_universal_control.dir/src/joint_state_observer_gazebo.cpp.o
  /opt/ros/hydro/include/urdf_model/pose.h
 CMakeFiles/youbot_universal_control.dir/src/youbot_universal_control.cpp.o
  ../include/joint_state_observer_gazebo.h
+ ../include/youbot_trajectory_action_server/joint_state_observer.h
+ ../include/youbot_trajectory_action_server/joint_trajectory_action.h
  ../include/youbot_universal_control.h
  /home/alex/ros_workspace/youbot/workspaces/youbot/src/youbot_description/src/youbot_universal_control.cpp
  /opt/ros/hydro/include/XmlRpcDecl.h

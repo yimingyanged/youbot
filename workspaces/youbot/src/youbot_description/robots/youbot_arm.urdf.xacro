@@ -39,9 +39,6 @@
 		   <inertia ixx="0.1"  ixy="0"  ixz="0" iyy="0.1" iyz="0" izz="0.1" />
     </inertial>
     </link>
-    <gazebo reference="base_link">
-		   <material>youbot/Orange</material>
-    </gazebo>
   <xacro:youbot_arm name="arm" parent="base_link">
     <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:youbot_arm>

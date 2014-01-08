@@ -86,9 +86,12 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/gtest/cmake_install.cmake")
   INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/cmake_install.cmake")
+  INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted/cmake_install.cmake")
   INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_controller/cmake_install.cmake")
   INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_moveit/cmake_install.cmake")
   INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/cmake_install.cmake")
+  INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_weighted_moveit/cmake_install.cmake")
+  INCLUDE("/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_moveit_generated/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

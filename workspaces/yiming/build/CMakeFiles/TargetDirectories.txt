@@ -23,6 +23,7 @@
 /home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_lisp.dir
 /home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_py.dir
 /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir
+/home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir
 /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_msgs_generate_messages_cpp.dir
 /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_msgs_generate_messages_lisp.dir
 /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_msgs_generate_messages_py.dir

@@ -109,6 +109,7 @@ CMakeFiles/youbot_controllers.dir/src/joint_position_control.cpp.o: /opt/ros/hyd
 CMakeFiles/youbot_controllers.dir/src/joint_position_control.cpp.o: /opt/ros/hydro/include/urdf_model/pose.h
 
 CMakeFiles/youbot_controllers.dir/src/joint_state_observer_gazebo.cpp.o: ../include/joint_state_observer_gazebo.h
+CMakeFiles/youbot_controllers.dir/src/joint_state_observer_gazebo.cpp.o: ../include/youbot_trajectory_action_server/joint_state_observer.h
 CMakeFiles/youbot_controllers.dir/src/joint_state_observer_gazebo.cpp.o: ../include/youbot_universal_control.h
 CMakeFiles/youbot_controllers.dir/src/joint_state_observer_gazebo.cpp.o: ../src/joint_state_observer_gazebo.cpp
 CMakeFiles/youbot_controllers.dir/src/joint_state_observer_gazebo.cpp.o: /opt/ros/hydro/include/XmlRpcDecl.h
@@ -242,6 +243,8 @@ CMakeFiles/youbot_controllers.dir/src/joint_state_observer_gazebo.cpp.o: /opt/ro
 CMakeFiles/youbot_controllers.dir/src/joint_state_observer_gazebo.cpp.o: /opt/ros/hydro/include/urdf_model/pose.h
 
 CMakeFiles/youbot_controllers.dir/src/youbot_universal_control.cpp.o: ../include/joint_state_observer_gazebo.h
+CMakeFiles/youbot_controllers.dir/src/youbot_universal_control.cpp.o: ../include/youbot_trajectory_action_server/joint_state_observer.h
+CMakeFiles/youbot_controllers.dir/src/youbot_universal_control.cpp.o: ../include/youbot_trajectory_action_server/joint_trajectory_action.h
 CMakeFiles/youbot_controllers.dir/src/youbot_universal_control.cpp.o: ../include/youbot_universal_control.h
 CMakeFiles/youbot_controllers.dir/src/youbot_universal_control.cpp.o: ../src/youbot_universal_control.cpp
 CMakeFiles/youbot_controllers.dir/src/youbot_universal_control.cpp.o: /opt/ros/hydro/include/XmlRpcDecl.h

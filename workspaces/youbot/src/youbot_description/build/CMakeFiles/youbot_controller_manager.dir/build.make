@@ -104,6 +104,7 @@ CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /o
 CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /opt/ros/hydro/share/tf2_ros/package.xml
 CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /opt/ros/hydro/share/tf/package.xml
 CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /opt/ros/hydro/share/kdl_conversions/package.xml
+CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /opt/ros/hydro/share/python_orocos_kdl/package.xml
 CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /opt/ros/hydro/share/tf_conversions/package.xml
 CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /opt/ros/hydro/share/robot_state_publisher/package.xml
 CMakeFiles/youbot_controller_manager.dir/src/youbot_controller_manager.cpp.o: /opt/ros/hydro/share/rosbag_migration_rule/package.xml

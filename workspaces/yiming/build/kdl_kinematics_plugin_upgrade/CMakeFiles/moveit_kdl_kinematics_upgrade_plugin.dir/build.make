@@ -166,8 +166,8 @@ moveit_kdl_kinematics_upgrade_plugin_EXTERNAL_OBJECTS =
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/librostime.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/librandom_numbers.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/libeigen_conversions.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/liborocos-kdl.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/libkdl_parser.so
+/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /usr/lib/libtinyxml.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/libroscpp.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /usr/lib/libboost_signals-mt.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/librosconsole.so
@@ -177,7 +177,6 @@ moveit_kdl_kinematics_upgrade_plugin_EXTERNAL_OBJECTS =
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/liburdf.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/librosconsole_bridge.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/libsrdfdom.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /usr/lib/libtinyxml.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /opt/ros/hydro/lib/libclass_loader.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /usr/lib/libPocoFoundation.so
 /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_upgrade_plugin.so: /usr/lib/x86_64-linux-gnu/libdl.so

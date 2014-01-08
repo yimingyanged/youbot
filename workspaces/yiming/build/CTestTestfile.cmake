@@ -6,6 +6,9 @@
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
 SUBDIRS(kdl_kinematics_plugin_upgrade)
+SUBDIRS(kdl_kinematics_plugin_weighted)
 SUBDIRS(youbot_base_ik_controller)
 SUBDIRS(youbot_base_ik_moveit)
 SUBDIRS(youbot_base_ik_trajectory)
+SUBDIRS(youbot_base_ik_weighted_moveit)
+SUBDIRS(youbot_moveit_generated)

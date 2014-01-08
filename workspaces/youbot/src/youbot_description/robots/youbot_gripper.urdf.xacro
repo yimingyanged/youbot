@@ -33,9 +33,6 @@
   <link name="base_link">
     
   </link>
-  <gazebo reference="base_link">
-       <material>youbot/DarkGrey</material>
-  </gazebo>
 
   <xacro:youbot_gripper name="gripper" parent="base_link">
     <origin xyz="0 0 0" rpy="0 0 0" />

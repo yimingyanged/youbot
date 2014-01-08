@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "kdl_kinematics_plugin_weighted")
+set(kdl_kinematics_plugin_weighted_MAINTAINER "alex <alex@todo.todo>")
+set(kdl_kinematics_plugin_weighted_DEPRECATED "")
+set(kdl_kinematics_plugin_weighted_VERSION "0.0.0")
+set(kdl_kinematics_plugin_weighted_BUILD_DEPENDS "moveit_core" "pluginlib" "angles" "moveit_ros_planning" "dynamic_reconfigure")
+set(kdl_kinematics_plugin_weighted_RUN_DEPENDS "moveit_core" "pluginlib" "angles" "moveit_ros_planning" "dynamic_reconfigure")
+set(kdl_kinematics_plugin_weighted_BUILDTOOL_DEPENDS "catkin")

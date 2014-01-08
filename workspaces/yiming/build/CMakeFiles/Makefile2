@@ -1843,6 +1843,56 @@ clean: kdl_kinematics_plugin_upgrade/CMakeFiles/trajectory_msgs_generate_message
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory kdl_kinematics_plugin_weighted
+
+# Convenience name for "all" pass in the directory.
+kdl_kinematics_plugin_weighted/all: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/all
+.PHONY : kdl_kinematics_plugin_weighted/all
+
+# Convenience name for "clean" pass in the directory.
+kdl_kinematics_plugin_weighted/clean: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean
+.PHONY : kdl_kinematics_plugin_weighted/clean
+
+# Convenience name for "preinstall" pass in the directory.
+kdl_kinematics_plugin_weighted/preinstall:
+.PHONY : kdl_kinematics_plugin_weighted/preinstall
+
+#=============================================================================
+# Target rules for target kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir
+
+# All Build rule for target.
+kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/all:
+	$(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/depend
+	$(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  8 9 10
+	@echo "Built target moveit_kdl_kinematics_weighted_plugin"
+.PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/all
+
+# Include target in all.
+all: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 0
+.PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/rule
+
+# Convenience name for target.
+moveit_kdl_kinematics_weighted_plugin: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/rule
+.PHONY : moveit_kdl_kinematics_weighted_plugin
+
+# clean rule for target.
+kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean:
+	$(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean
+.PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean
+
+# clean rule for target.
+clean: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory youbot_base_ik_controller
 
 # Convenience name for "all" pass in the directory.
@@ -1864,7 +1914,7 @@ youbot_base_ik_controller/preinstall:
 youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all:
 	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/depend
 	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  11
 	@echo "Built target youbot_base_ik_controller"
 .PHONY : youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all
 
@@ -2121,7 +2171,7 @@ clean: youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages
 youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/all:
 	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build.make youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/depend
 	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build.make youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  12
 	@echo "Built target youbot_base_ik_trajectory_server"
 .PHONY : youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/all
 
@@ -2148,6 +2198,36 @@ youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/clean:
 # clean rule for target.
 clean: youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory youbot_base_ik_weighted_moveit
+
+# Convenience name for "all" pass in the directory.
+youbot_base_ik_weighted_moveit/all:
+.PHONY : youbot_base_ik_weighted_moveit/all
+
+# Convenience name for "clean" pass in the directory.
+youbot_base_ik_weighted_moveit/clean:
+.PHONY : youbot_base_ik_weighted_moveit/clean
+
+# Convenience name for "preinstall" pass in the directory.
+youbot_base_ik_weighted_moveit/preinstall:
+.PHONY : youbot_base_ik_weighted_moveit/preinstall
+
+#=============================================================================
+# Directory level rules for directory youbot_moveit_generated
+
+# Convenience name for "all" pass in the directory.
+youbot_moveit_generated/all:
+.PHONY : youbot_moveit_generated/all
+
+# Convenience name for "clean" pass in the directory.
+youbot_moveit_generated/clean:
+.PHONY : youbot_moveit_generated/clean
+
+# Convenience name for "preinstall" pass in the directory.
+youbot_moveit_generated/preinstall:
+.PHONY : youbot_moveit_generated/preinstall
 
 #=============================================================================
 # Special targets to cleanup operation of make.

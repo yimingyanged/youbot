@@ -862,6 +862,19 @@ trajectory_msgs_generate_messages_py/fast:
 .PHONY : trajectory_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named moveit_kdl_kinematics_weighted_plugin
+
+# Build rule for target.
+moveit_kdl_kinematics_weighted_plugin: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 moveit_kdl_kinematics_weighted_plugin
+.PHONY : moveit_kdl_kinematics_weighted_plugin
+
+# fast build rule for target.
+moveit_kdl_kinematics_weighted_plugin/fast:
+	$(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build
+.PHONY : moveit_kdl_kinematics_weighted_plugin/fast
+
+#=============================================================================
 # Target rules for targets named youbot_base_ik_controller
 
 # Build rule for target.
@@ -1033,6 +1046,7 @@ help:
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... moveit_kdl_kinematics_weighted_plugin"
 	@echo "... youbot_base_ik_controller"
 	@echo "... control_msgs_generate_messages_cpp"
 	@echo "... control_msgs_generate_messages_lisp"
