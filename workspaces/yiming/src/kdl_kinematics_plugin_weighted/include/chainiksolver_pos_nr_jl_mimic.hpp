@@ -3,9 +3,8 @@
 
 #include "kdl/chainiksolver.hpp"
 #include "kdl/chainfksolver.hpp"
-
-#include <moveit/kdl_kinematics_plugin/joint_mimic.hpp>
-
+#include "joint_mimic.hpp"
+#include <ros/ros.h>
 namespace KDL
 {
     
@@ -45,7 +44,7 @@ namespace KDL
         
         virtual int CartToJntAdvanced(const JntArray& q_init, const Frame& p_in, JntArray& q_out, bool lock_redundant_joints);
         
-        bool setMimicJoints(const std::vector<kdl_kinematics_plugin::JointMimic>& mimic_joints);
+        bool setMimicJoints(const std::vector<ipab_weighted_ik::JointMimic>& mimic_joints);
         
     private:
         const Chain chain;
@@ -61,7 +60,7 @@ namespace KDL
         Twist delta_twist;
         unsigned int maxiter;
         double eps;
-        std::vector<kdl_kinematics_plugin::JointMimic> mimic_joints;
+        std::vector<ipab_weighted_ik::JointMimic> mimic_joints;
         void qToqMimic(const JntArray& q, JntArray& q_result); //Convert from the "reduced" state (only active DOFs) to the "full" state
         void qMimicToq(const JntArray& q, JntArray& q_result); //Convert from the "full" state to the "reduced" state
         bool position_ik;

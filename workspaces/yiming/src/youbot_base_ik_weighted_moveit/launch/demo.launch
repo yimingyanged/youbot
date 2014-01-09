@@ -14,7 +14,7 @@
   <!-- If needed, broadcast static tf for robot root -->
     <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom base_footprint 100" />
 
-
+  <rosparam command="load" file="$(find youbot_base_ik_weighted_moveit)/config/weighting.yaml"/>
   <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/> 

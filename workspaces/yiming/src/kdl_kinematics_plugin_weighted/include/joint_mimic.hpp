@@ -1,7 +1,7 @@
 #ifndef MOVEIT_KDL_KINEMATICS_PLUGIN_JOINT_MIMIC
 #define MOVEIT_KDL_KINEMATICS_PLUGIN_JOINT_MIMIC
 
-namespace kdl_kinematics_plugin
+namespace ipab_weighted_ik
 {
     
     /** \brief A model of a mimic joint. Mimic joints are typically unactuated joints

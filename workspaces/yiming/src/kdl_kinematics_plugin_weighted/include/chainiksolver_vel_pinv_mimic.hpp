@@ -1,12 +1,12 @@
 #ifndef KDL_CHAIN_IKSOLVERVEL_PINV_Mimic_HPP
 #define KDL_CHAIN_IKSOLVERVEL_PINV_Mimic_HPP
 
-#include "kdl/chainiksolver.hpp"
-#include "kdl/chainjnttojacsolver.hpp"
-#include "kdl/utilities/svd_HH.hpp"
-#include "kdl/utilities/svd_eigen_HH.hpp"
+#include <kdl/chainiksolver.hpp>
+#include <kdl/chainjnttojacsolver.hpp>
+#include <kdl/utilities/svd_HH.hpp>
+#include <kdl/utilities/svd_eigen_HH.hpp>
 
-#include <moveit/kdl_kinematics_plugin/joint_mimic.hpp>
+#include "joint_mimic.hpp"
 
 namespace KDL
 {
@@ -60,7 +60,7 @@ namespace KDL
          * @param mimic_joints Vector of size chain.getNrOfJoints() that maps every joint in the chain onto (a) itself
          * if its not a mimic joint or (b) onto the active dof that it is mimicking
          */
-        bool setMimicJoints(const std::vector<kdl_kinematics_plugin::JointMimic> &_mimic_joints);
+        bool setMimicJoints(const std::vector<ipab_weighted_ik::JointMimic> &_mimic_joints);
         
         /**
          * @brief Set a mapping between a reduced set of joints (numbering either 6 or 3) and the full set of active (i.e
@@ -117,7 +117,7 @@ namespace KDL
         int maxiter;
         
         // Mimic joint specific
-        std::vector<kdl_kinematics_plugin::JointMimic> mimic_joints_;
+        std::vector<ipab_weighted_ik::JointMimic> mimic_joints_;
         int num_mimic_joints;
         
         bool position_ik;

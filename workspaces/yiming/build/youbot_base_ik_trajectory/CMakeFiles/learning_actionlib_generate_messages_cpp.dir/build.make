@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alex/ros_workspace/youbot/workspaces/yiming/src
+CMAKE_SOURCE_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alex/ros_workspace/youbot/workspaces/yiming/build
+CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
 
 # Utility rule file for learning_actionlib_generate_messages_cpp.
 
@@ -53,10 +53,10 @@ youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.di
 .PHONY : youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/build
 
 youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/clean:
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory && $(CMAKE_COMMAND) -P CMakeFiles/learning_actionlib_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory && $(CMAKE_COMMAND) -P CMakeFiles/learning_actionlib_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/clean
 
 youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/depend:
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex/ros_workspace/youbot/workspaces/yiming/src /home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory /home/alex/ros_workspace/youbot/workspaces/yiming/build /home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory /home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/youbot/youbot_edinburgh/workspaces/yiming/src /home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory /home/youbot/youbot_edinburgh/workspaces/yiming/build /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/depend
 

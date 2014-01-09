@@ -59,14 +59,14 @@ set(youbot_base_ik_trajectory_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(youbot_base_ik_trajectory_SOURCE_PREFIX /home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory)
-  set(youbot_base_ik_trajectory_DEVEL_PREFIX /home/alex/ros_workspace/youbot/workspaces/yiming/devel)
+  set(youbot_base_ik_trajectory_SOURCE_PREFIX /home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory)
+  set(youbot_base_ik_trajectory_DEVEL_PREFIX /home/youbot/youbot_edinburgh/workspaces/yiming/devel)
   set(youbot_base_ik_trajectory_INSTALL_PREFIX "")
   set(youbot_base_ik_trajectory_PREFIX ${youbot_base_ik_trajectory_DEVEL_PREFIX})
 else()
   set(youbot_base_ik_trajectory_SOURCE_PREFIX "")
   set(youbot_base_ik_trajectory_DEVEL_PREFIX "")
-  set(youbot_base_ik_trajectory_INSTALL_PREFIX /home/alex/ros_workspace/youbot/workspaces/yiming/install)
+  set(youbot_base_ik_trajectory_INSTALL_PREFIX /home/youbot/youbot_edinburgh/workspaces/yiming/install)
   set(youbot_base_ik_trajectory_PREFIX ${youbot_base_ik_trajectory_INSTALL_PREFIX})
 endif()
 
@@ -83,9 +83,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(youbot_base_ik_trajectory_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory/include" STREQUAL "")
+if(NOT "/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory/include" STREQUAL "")
   set(youbot_base_ik_trajectory_INCLUDE_DIRS "")
-  set(_include_dirs "/home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory/include")
+  set(_include_dirs "/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -95,7 +95,7 @@ if(NOT "/home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_tra
         message(FATAL_ERROR "Project 'youbot_base_ik_trajectory' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'alex <alex@todo.todo>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'youbot_base_ik_trajectory' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory/${idir}'.  Ask the maintainer 'alex <alex@todo.todo>' to fix it.")
+      message(FATAL_ERROR "Project 'youbot_base_ik_trajectory' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory/${idir}'.  Ask the maintainer 'alex <alex@todo.todo>' to fix it.")
     endif()
     _list_append_unique(youbot_base_ik_trajectory_INCLUDE_DIRS ${include})
   endforeach()
@@ -111,7 +111,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib;/home/alex/ros_workspace/youbot/workspaces/raha/devel/lib;/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib;/opt/ros/hydro/lib)
+    foreach(path /home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib;/home/youbot/ros_workspace/devel/lib;/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib;/home/youbot/youbot_edinburgh/workspaces/raha/devel/lib;/opt/ros/hydro/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

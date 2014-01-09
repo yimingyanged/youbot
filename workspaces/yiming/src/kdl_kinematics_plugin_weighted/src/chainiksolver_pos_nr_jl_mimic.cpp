@@ -1,6 +1,7 @@
-#include "moveit/kdl_kinematics_plugin/chainiksolver_pos_nr_jl_mimic.hpp"
+#include "chainiksolver_pos_nr_jl_mimic.hpp"
 #include <ros/console.h>
-
+#include <ros/param.h>
+#include <ros/ros.h>
 namespace KDL
 {
     
@@ -19,7 +20,7 @@ namespace KDL
         ROS_DEBUG(" ");
     }
     
-    bool ChainIkSolverPos_NR_JL_Mimic::setMimicJoints(const std::vector<kdl_kinematics_plugin::JointMimic>& _mimic_joints)
+    bool ChainIkSolverPos_NR_JL_Mimic::setMimicJoints(const std::vector<ipab_weighted_ik::JointMimic>& _mimic_joints)
     {
         if(_mimic_joints.size() != chain.getNrOfJoints())
         {
@@ -101,7 +102,21 @@ namespace KDL
                 ROS_DEBUG_NAMED("kdl","%d: %f",(int) i, delta_twist(i));
             
             iksolver.CartToJnt(q_temp,delta_twist,delta_q);
-            
+	    XmlRpc::XmlRpcValue W;
+            ros::NodeHandle w_nh("weighting_nh");
+	    w_nh.getParam("/weighting_vector", W);
+	    ROS_ASSERT(W.getType() == XmlRpc::XmlRpcValue::TypeArray);
+	    if (w_nh.hasParam("/weighting_vector")){
+	    	for(int i=0;i<W.size();++i){
+		    
+		    ROS_ASSERT(W[i].getType() == XmlRpc::XmlRpcValue::TypeDouble);
+		    delta_q(i)=static_cast<double>(W[i])*delta_q(i);		
+		}
+		ROS_INFO("Loading Weighted Matrix");
+	    }
+	    else{
+		ROS_INFO("No Weighted Matrix Found");
+	    }
             Add(q_temp,delta_q,q_temp);
             
             ROS_DEBUG_STREAM_NAMED("kdl","delta_q");

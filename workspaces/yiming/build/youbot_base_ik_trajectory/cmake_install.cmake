@@ -1,8 +1,8 @@
-# Install script for directory: /home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory
+# Install script for directory: /home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/alex/ros_workspace/youbot/workspaces/yiming/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/youbot/youbot_edinburgh/workspaces/yiming/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ IF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     STRING(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   ELSE(BUILD_TYPE)
-    SET(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    SET(CMAKE_INSTALL_CONFIG_NAME "")
   ENDIF(BUILD_TYPE)
   MESSAGE(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 ENDIF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/catkin_generated/installspace/youbot_base_ik_trajectory.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/catkin_generated/installspace/youbot_base_ik_trajectory.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/youbot_base_ik_trajectory/cmake" TYPE FILE FILES
-    "/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/catkin_generated/installspace/youbot_base_ik_trajectoryConfig.cmake"
-    "/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/catkin_generated/installspace/youbot_base_ik_trajectoryConfig-version.cmake"
+    "/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/catkin_generated/installspace/youbot_base_ik_trajectoryConfig.cmake"
+    "/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/catkin_generated/installspace/youbot_base_ik_trajectoryConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/youbot_base_ik_trajectory" TYPE FILE FILES "/home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/youbot_base_ik_trajectory" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

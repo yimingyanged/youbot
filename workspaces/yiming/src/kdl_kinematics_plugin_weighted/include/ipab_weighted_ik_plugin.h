@@ -1,5 +1,5 @@
-#ifndef MOVEIT_ROS_PLANNING_KDL_KINEMATICS_PLUGIN_
-#define MOVEIT_ROS_PLANNING_KDL_KINEMATICS_PLUGIN_
+#ifndef MOVEIT_ROS_PLANNING_KDL_KINEMATICS_PLUGIN_WEIGHTED
+#define MOVEIT_ROS_PLANNING_KDL_KINEMATICS_PLUGIN_WEIGHTED	`
 
 // ROS
 #include <ros/ros.h>
@@ -20,28 +20,28 @@
 #include <kdl/chainiksolvervel_pinv.hpp>
 #include <kdl/chainiksolverpos_nr_jl.hpp>
 #include <kdl/chainfksolverpos_recursive.hpp>
-#include <moveit/kdl_kinematics_plugin/chainiksolver_pos_nr_jl_mimic.hpp>
-#include <moveit/kdl_kinematics_plugin/chainiksolver_vel_pinv_mimic.hpp>
-#include <moveit/kdl_kinematics_plugin/joint_mimic.hpp>
+#include "chainiksolver_pos_nr_jl_mimic.hpp"
+#include "chainiksolver_vel_pinv_mimic.hpp"
+#include "joint_mimic.hpp"
 
 // MoveIt!
 #include <moveit/kinematics_base/kinematics_base.h>
 #include <moveit/robot_model/robot_model.h>
 #include <moveit/robot_state/robot_state.h>
 
-namespace kdl_kinematics_plugin
+namespace ipab_weighted_ik
 {
     /**
      * @brief Specific implementation of kinematics using KDL. This version can be used with any robot.
      */
-    class KDLKinematicsPluginWeighted : public kinematics::KinematicsBase
+    class IPABWeightedIKPlugin : public kinematics::KinematicsBase
     {
     public:
         
         /**
          *  @brief Default constructor
          */
-        KDLKinematicsPluginWeighted();
+        IPABWeightedIKPlugin();
         
         virtual bool getPositionIK(const geometry_msgs::Pose &ik_pose,
                                    const std::vector<double> &ik_seed_state,

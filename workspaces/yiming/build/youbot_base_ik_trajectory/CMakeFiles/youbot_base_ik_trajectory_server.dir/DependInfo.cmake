@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory/src/youbot_base_ik_trajectory_server.cpp" "/home/alex/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/src/youbot_base_ik_trajectory_server.cpp.o"
+  "/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory/src/youbot_base_ik_trajectory_server.cpp" "/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/src/youbot_base_ik_trajectory_server.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

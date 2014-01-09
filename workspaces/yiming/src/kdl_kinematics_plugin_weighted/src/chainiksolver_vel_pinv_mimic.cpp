@@ -1,6 +1,5 @@
-#include <moveit/kdl_kinematics_plugin/chainiksolver_vel_pinv_mimic.hpp>
+#include "chainiksolver_vel_pinv_mimic.hpp"
 #include <ros/console.h>
-
 namespace KDL
 {
     ChainIkSolverVel_pinv_mimic::ChainIkSolverVel_pinv_mimic(const Chain& _chain, int _num_mimic_joints, int _num_redundant_joints, bool _position_ik, double _eps, int _maxiter):
@@ -47,7 +46,7 @@ namespace KDL
     {
     }
     
-    bool ChainIkSolverVel_pinv_mimic::setMimicJoints(const std::vector<kdl_kinematics_plugin::JointMimic> & mimic_joints)
+    bool ChainIkSolverVel_pinv_mimic::setMimicJoints(const std::vector<ipab_weighted_ik::JointMimic> & mimic_joints)
     {
         if(mimic_joints.size() != chain.getNrOfJoints())
             return false;

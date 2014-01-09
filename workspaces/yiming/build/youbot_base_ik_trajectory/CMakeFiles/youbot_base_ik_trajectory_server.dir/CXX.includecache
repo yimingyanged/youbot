@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/alex/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_trajectory/src/youbot_base_ik_trajectory_server.cpp
+/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory/src/youbot_base_ik_trajectory_server.cpp
 ros/ros.h
 -
 control_msgs/FollowJointTrajectoryAction.h

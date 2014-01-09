@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/youbot_base_ik_trajectory_server.dir/src/youbot_base_ik_trajectory_server.cpp.o"
-  "/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_trajectory/youbot_base_ik_trajectory_server.pdb"
-  "/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_trajectory/youbot_base_ik_trajectory_server"
+  "/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/youbot_base_ik_trajectory/youbot_base_ik_trajectory_server.pdb"
+  "/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/youbot_base_ik_trajectory/youbot_base_ik_trajectory_server"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alex/ros_workspace/youbot/workspaces/yiming/src
+CMAKE_SOURCE_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alex/ros_workspace/youbot/workspaces/yiming/build
+CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
 
 # Include any dependencies generated for this target.
 include kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/depend.make
@@ -47,18 +47,18 @@ include kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted
 include kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/flags.make
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/flags.make
-kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o: /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_1)
+kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o: /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o -c /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o -c /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.i"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp > CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.i
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp > CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.i
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.s"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.s
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/kdl_kinematics_plugin.cpp -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.s
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o.requires:
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o.requires
@@ -70,18 +70,18 @@ kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o.provides.build: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/flags.make
-kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o: /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_2)
+kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o: /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o -c /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o -c /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.i"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp > CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.i
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp > CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.i
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.s"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.s
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.s
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o.requires:
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o.requires
@@ -93,18 +93,18 @@ kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o.provides.build: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/flags.make
-kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o: /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alex/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_3)
+kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o: /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o -c /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o -c /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.i"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp > CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.i
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp > CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.i
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.s"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.s
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_vel_pinv_mimic.cpp -o CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.s
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o.requires:
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o.requires
@@ -124,91 +124,92 @@ moveit_kdl_kinematics_weighted_plugin_OBJECTS = \
 # External object files for target moveit_kdl_kinematics_weighted_plugin
 moveit_kdl_kinematics_weighted_plugin_EXTERNAL_OBJECTS =
 
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_exceptions.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_background_processing.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematics_base.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_model.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_transforms.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_state.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_trajectory.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_interface.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_collision_detection.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematic_constraints.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_scene.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_constraint_samplers.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_request_adapter.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_profiler.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_trajectory_processing.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_distance_field.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematics_metrics.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_dynamics_solver.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liboctomap.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liboctomath.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_system-mt.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_filesystem-mt.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_date_time-mt.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_thread-mt.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_iostreams-mt.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_sensor.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_model_state.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_model.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_world.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libconsole_bridge.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libgeometric_shapes.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libshape_tools.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libcpp_common.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libroscpp_serialization.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librostime.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librandom_numbers.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libeigen_conversions.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libkdl_parser.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libtinyxml.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libroscpp.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_signals-mt.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librosconsole.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_regex-mt.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/liblog4cxx.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libxmlrpcpp.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdf.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librosconsole_bridge.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libsrdfdom.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libclass_loader.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libPocoFoundation.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libroslib.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmessage_filters.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf2_ros.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libactionlib.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf2.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf_conversions.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libkdl_conversions.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_rdf_loader.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematics_plugin_loader.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_model_loader.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_constraint_sampler_manager_loader.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_pipeline.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_trajectory_execution_manager.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_plan_execution.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_scene_monitor.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_point_containment_filter.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_occupancy_map_monitor.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_pointcloud_octomap_updater_core.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_semantic_world.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libimage_transport.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make
-/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so"
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/link.txt --verbose=$(VERBOSE)
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_exceptions.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_background_processing.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematics_base.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_model.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_transforms.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_state.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_trajectory.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_interface.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_collision_detection.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematic_constraints.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_scene.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_constraint_samplers.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_request_adapter.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_profiler.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_trajectory_processing.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_distance_field.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematics_metrics.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_dynamics_solver.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liboctomap.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liboctomath.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_system-mt.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_filesystem-mt.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_date_time-mt.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_thread-mt.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_iostreams-mt.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_sensor.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_model_state.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_model.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdfdom_world.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libconsole_bridge.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libgeometric_shapes.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libshape_tools.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libcpp_common.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libroscpp_serialization.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librostime.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librandom_numbers.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libeigen_conversions.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liborocos-kdl.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libkdl_parser.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libroscpp.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_signals-mt.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librosconsole.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libboost_regex-mt.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/liblog4cxx.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libxmlrpcpp.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/liburdf.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/librosconsole_bridge.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libsrdfdom.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libtinyxml.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libclass_loader.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/libPocoFoundation.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libroslib.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmessage_filters.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf2_ros.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libactionlib.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf2.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libtf_conversions.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libkdl_conversions.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_rdf_loader.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_kinematics_plugin_loader.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_robot_model_loader.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_constraint_sampler_manager_loader.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_pipeline.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_trajectory_execution_manager.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_plan_execution.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_planning_scene_monitor.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_point_containment_filter.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_occupancy_map_monitor.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_pointcloud_octomap_updater_core.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_semantic_world.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libimage_transport.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make
+/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so"
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build: /home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so
+kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build: /home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/requires: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o.requires
@@ -217,10 +218,10 @@ kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/requires
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean:
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted && $(CMAKE_COMMAND) -P CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/cmake_clean.cmake
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted && $(CMAKE_COMMAND) -P CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/cmake_clean.cmake
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean
 
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/depend:
-	cd /home/alex/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex/ros_workspace/youbot/workspaces/yiming/src /home/alex/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted /home/alex/ros_workspace/youbot/workspaces/yiming/build /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted /home/alex/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/youbot/youbot_edinburgh/workspaces/yiming/src /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted /home/youbot/youbot_edinburgh/workspaces/yiming/build /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/depend
 

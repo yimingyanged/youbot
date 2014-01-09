@@ -250,7 +250,7 @@ if __name__ == '__main__':
         exit(1)
 
     # environment at generation time
-    CMAKE_PREFIX_PATH = '/home/alex/ros_workspace/youbot/workspaces/raha/devel;/home/alex/ros_workspace/youbot/workspaces/yiming/devel;/opt/ros/hydro'.split(';')
+    CMAKE_PREFIX_PATH = '/home/youbot/ros_workspace/devel;/home/youbot/youbot_edinburgh/workspaces/yiming/devel;/home/youbot/youbot_edinburgh/workspaces/raha/devel;/opt/ros/hydro;/home/alex/ros_workspace/youbot/workspaces/raha/devel;/home/alex/ros_workspace/youbot/workspaces/yiming/devel'.split(';')
     # prepend current workspace if not already part of CPP
     base_path = os.path.dirname(__file__)
     if base_path not in CMAKE_PREFIX_PATH:

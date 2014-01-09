@@ -1,4 +1,4 @@
-#include <moveit/kdl_kinematics_plugin/kdl_kinematics_plugin.h>
+#include "ipab_weighted_ik_plugin.h"
 #include <class_loader/class_loader.h>
 
 //#include <tf/transform_datatypes.h>
@@ -11,15 +11,13 @@
 
 #include <moveit/rdf_loader/rdf_loader.h>
 
+#include <pluginlib/class_list_macros.h>
 //register KDLKinematics as a KinematicsBase implementation
-CLASS_LOADER_REGISTER_CLASS(kdl_kinematics_plugin::KDLKinematicsPlugin, kinematics::KinematicsBase)
+PLUGINLIB_EXPORT_CLASS(ipab_weighted_ik::IPABWeightedIKPlugin, kinematics::KinematicsBase);
 
-namespace kdl_kinematics_plugin
-{
+    ipab_weighted_ik::IPABWeightedIKPlugin::IPABWeightedIKPlugin():active_(false) {}
     
-    KDLKinematicsPlugin::KDLKinematicsPlugin():active_(false) {}
-    
-    void KDLKinematicsPlugin::getRandomConfiguration(KDL::JntArray &jnt_array, bool lock_redundancy) const
+    void ipab_weighted_ik::IPABWeightedIKPlugin::getRandomConfiguration(KDL::JntArray &jnt_array, bool lock_redundancy) const
     {
         std::vector<double> jnt_array_vector(dimension_, 0.0);
         state_->setToRandomPositions(joint_model_group_);
@@ -33,7 +31,7 @@ namespace kdl_kinematics_plugin
         }
     }
     
-    bool KDLKinematicsPlugin::isRedundantJoint(unsigned int index) const
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::isRedundantJoint(unsigned int index) const
     {
         for (std::size_t j=0; j < redundant_joint_indices_.size(); ++j)
             if (redundant_joint_indices_[j] == index)
@@ -41,7 +39,7 @@ namespace kdl_kinematics_plugin
         return false;
     }
     
-    void KDLKinematicsPlugin::getRandomConfiguration(const KDL::JntArray &seed_state,
+    void ipab_weighted_ik::IPABWeightedIKPlugin::getRandomConfiguration(const KDL::JntArray &seed_state,
                                                      const std::vector<double> &consistency_limits,
                                                      KDL::JntArray &jnt_array,
                                                      bool lock_redundancy) const
@@ -78,7 +76,7 @@ namespace kdl_kinematics_plugin
         }
     }
     
-    bool KDLKinematicsPlugin::checkConsistency(const KDL::JntArray& seed_state,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::checkConsistency(const KDL::JntArray& seed_state,
                                                const std::vector<double> &consistency_limits,
                                                const KDL::JntArray& solution) const
     {
@@ -88,7 +86,7 @@ namespace kdl_kinematics_plugin
         return true;
     }
     
-    bool KDLKinematicsPlugin::initialize(const std::string &robot_description,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::initialize(const std::string &robot_description,
                                          const std::string& group_name,
                                          const std::string& base_frame,
                                          const std::string& tip_frame,
@@ -189,7 +187,7 @@ namespace kdl_kinematics_plugin
         bool has_mimic_joints = joint_model_group->getMimicJointModels().size() > 0;
         std::vector<unsigned int> redundant_joints_map_index;
         
-        std::vector<JointMimic> mimic_joints;
+        std::vector<ipab_weighted_ik::JointMimic> mimic_joints;
         unsigned int joint_counter = 0;
         for (std::size_t i = 0; i < kdl_chain_.getNrOfSegments(); ++i)
         {
@@ -198,7 +196,7 @@ namespace kdl_kinematics_plugin
             //first check whether it belongs to the set of active joints in the group
             if (jm->getMimic() == NULL && jm->getVariableCount() > 0)
             {
-                JointMimic mimic_joint;
+                ipab_weighted_ik::JointMimic mimic_joint;
                 mimic_joint.reset(joint_counter);
                 mimic_joint.joint_name = kdl_chain_.segments[i].getJoint().getName();
                 mimic_joint.active = true;
@@ -210,7 +208,7 @@ namespace kdl_kinematics_plugin
             {
                 if (jm->getMimic() && joint_model_group->hasJointModel(jm->getMimic()->getName()))
                 {
-                    JointMimic mimic_joint;
+                    ipab_weighted_ik::JointMimic mimic_joint;
                     mimic_joint.reset(joint_counter);
                     mimic_joint.joint_name = kdl_chain_.segments[i].getJoint().getName();
                     mimic_joint.offset = jm->getMimicOffset();
@@ -251,7 +249,7 @@ namespace kdl_kinematics_plugin
         return true;
     }
     
-    bool KDLKinematicsPlugin::setRedundantJoints(const std::vector<unsigned int> &redundant_joints)
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::setRedundantJoints(const std::vector<unsigned int> &redundant_joints)
     {
         if(num_possible_redundant_joints_ < 0)
         {
@@ -309,7 +307,7 @@ namespace kdl_kinematics_plugin
         return true;
     }
     
-    int KDLKinematicsPlugin::getJointIndex(const std::string &name) const
+    int ipab_weighted_ik::IPABWeightedIKPlugin::getJointIndex(const std::string &name) const
     {
         for (unsigned int i=0; i < ik_chain_info_.joint_names.size(); i++) {
             if (ik_chain_info_.joint_names[i] == name)
@@ -318,7 +316,7 @@ namespace kdl_kinematics_plugin
         return -1;
     }
     
-    int KDLKinematicsPlugin::getKDLSegmentIndex(const std::string &name) const
+    int ipab_weighted_ik::IPABWeightedIKPlugin::getKDLSegmentIndex(const std::string &name) const
     {
         int i=0;
         while (i < (int)kdl_chain_.getNrOfSegments()) {
@@ -330,12 +328,12 @@ namespace kdl_kinematics_plugin
         return -1;
     }
     
-    bool KDLKinematicsPlugin::timedOut(const ros::WallTime &start_time, double duration) const
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::timedOut(const ros::WallTime &start_time, double duration) const
     {
         return ((ros::WallTime::now()-start_time).toSec() >= duration);
     }
     
-    bool KDLKinematicsPlugin::getPositionIK(const geometry_msgs::Pose &ik_pose,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::getPositionIK(const geometry_msgs::Pose &ik_pose,
                                             const std::vector<double> &ik_seed_state,
                                             std::vector<double> &solution,
                                             moveit_msgs::MoveItErrorCodes &error_code,
@@ -354,7 +352,7 @@ namespace kdl_kinematics_plugin
                                 options);
     }
     
-    bool KDLKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
                                                const std::vector<double> &ik_seed_state,
                                                double timeout,
                                                std::vector<double> &solution,
@@ -374,7 +372,7 @@ namespace kdl_kinematics_plugin
                                 options);
     }
     
-    bool KDLKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
                                                const std::vector<double> &ik_seed_state,
                                                double timeout,
                                                const std::vector<double> &consistency_limits,
@@ -393,7 +391,7 @@ namespace kdl_kinematics_plugin
                                 options);
     }
     
-    bool KDLKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
                                                const std::vector<double> &ik_seed_state,
                                                double timeout,
                                                std::vector<double> &solution,
@@ -412,7 +410,7 @@ namespace kdl_kinematics_plugin
                                 options);
     }
     
-    bool KDLKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
                                                const std::vector<double> &ik_seed_state,
                                                double timeout,
                                                const std::vector<double> &consistency_limits,
@@ -431,7 +429,7 @@ namespace kdl_kinematics_plugin
                                 options);
     }
     
-    bool KDLKinematicsPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::searchPositionIK(const geometry_msgs::Pose &ik_pose,
                                                const std::vector<double> &ik_seed_state,
                                                double timeout,
                                                std::vector<double> &solution,
@@ -558,7 +556,7 @@ namespace kdl_kinematics_plugin
         return false;
     }
     
-    bool KDLKinematicsPlugin::getPositionFK(const std::vector<std::string> &link_names,
+    bool ipab_weighted_ik::IPABWeightedIKPlugin::getPositionFK(const std::vector<std::string> &link_names,
                                             const std::vector<double> &joint_angles,
                                             std::vector<geometry_msgs::Pose> &poses) const
     {
@@ -604,14 +602,13 @@ namespace kdl_kinematics_plugin
         return valid;
     }
     
-    const std::vector<std::string>& KDLKinematicsPlugin::getJointNames() const
+    const std::vector<std::string>& ipab_weighted_ik::IPABWeightedIKPlugin::getJointNames() const
     {
         return ik_chain_info_.joint_names;
     }
     
-    const std::vector<std::string>& KDLKinematicsPlugin::getLinkNames() const
+    const std::vector<std::string>& ipab_weighted_ik::IPABWeightedIKPlugin::getLinkNames() const
     {
         return ik_chain_info_.link_names;
     }
     
-} // namespace

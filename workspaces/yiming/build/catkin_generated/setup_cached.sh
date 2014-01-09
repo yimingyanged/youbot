@@ -7,5 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/alex/ros_workspace/youbot/workspaces/yiming/build"
-export ROS_PACKAGE_PATH="/home/alex/ros_workspace/youbot/workspaces/raha/src:/home/alex/ros_workspace/youbot/workspaces/yiming/src:/opt/ros/hydro/share:/opt/ros/hydro/stacks"
+export PWD="/home/youbot/youbot_edinburgh/workspaces/yiming/build"
+export ROS_PACKAGE_PATH="/home/youbot/ros_workspace/src:/home/youbot/youbot_edinburgh/workspaces/yiming/src:/home/youbot/youbot_edinburgh/workspaces/raha/src:/opt/ros/hydro/share:/opt/ros/hydro/stacks"

@@ -1,8 +1,8 @@
-prefix=/home/alex/ros_workspace/youbot/workspaces/yiming/devel
+prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/devel
 
 Name: youbot_base_ik_controller
 Description: Description of youbot_base_ik_controller
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/alex/ros_workspace/youbot/workspaces/yiming/devel/lib 
+Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib 
 Requires: 
