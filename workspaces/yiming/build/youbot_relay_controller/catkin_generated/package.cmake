@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "youbot_relay_controller")
+set(youbot_relay_controller_MAINTAINER "youbot <youbot@todo.todo>")
+set(youbot_relay_controller_DEPRECATED "")
+set(youbot_relay_controller_VERSION "0.0.0")
+set(youbot_relay_controller_BUILD_DEPENDS "actionlib" "roscpp" "roslib" "geometry_msgs" "moveit_msgs")
+set(youbot_relay_controller_RUN_DEPENDS "actionlib" "roscpp" "roslib" "geometry_msgs" "moveit_msgs")
+set(youbot_relay_controller_BUILDTOOL_DEPENDS "catkin")

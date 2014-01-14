@@ -34,9 +34,6 @@
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="planar" parent_frame="odom" child_link="base_footprint" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
-    <passive_joint name="base_dummy_revolute_joint" />
-    <passive_joint name="base_dummy_prismatic_x_joint" />
-    <passive_joint name="base_dummy_prismatic_y_joint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="ar_marker_fixed" link2="arm_link_0" reason="Never" />
     <disable_collisions link1="ar_marker_fixed" link2="arm_link_1" reason="Never" />

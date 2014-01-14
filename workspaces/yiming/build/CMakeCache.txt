@@ -402,7 +402,7 @@ kdl_parser_DIR:PATH=/opt/ros/hydro/share/kdl_parser/cmake
 learning_actionlib_DIR:PATH=/home/youbot/ros_workspace/devel/share/learning_actionlib/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/hydro/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/hydro/lib/libroslib.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/hydro/share/message_filters/cmake
@@ -412,6 +412,9 @@ message_generation_DIR:PATH=/opt/ros/hydro/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/hydro/share/message_runtime/cmake
+
+//The directory containing a CMake configuration file for move_base_msgs.
+move_base_msgs_DIR:PATH=/opt/ros/hydro/share/move_base_msgs/cmake
 
 //The directory containing a CMake configuration file for moveit_core.
 moveit_core_DIR:PATH=/opt/ros/hydro/share/moveit_core/cmake
@@ -515,6 +518,18 @@ urdf_DIR:PATH=/opt/ros/hydro/share/urdf/cmake
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/hydro/share/xmlrpcpp/cmake
 
+//The directory containing a CMake configuration file for yaml-cpp.
+yaml-cpp_DIR:PATH=yaml-cpp_DIR-NOTFOUND
+
+//Path to a file.
+yaml-cpp_HAVE_H:FILEPATH=/usr/local/include/yaml-cpp/yaml.h
+
+//Path to a file.
+yaml-cpp_H_INCLUDE_DIR:PATH=/usr/local/include
+
+//Path to a library.
+yaml-cpp_LIBRARY:FILEPATH=/usr/local/lib/libyaml-cpp.a
+
 //Value Computed by CMake
 youbot_base_ik_controller_BINARY_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_controller
 
@@ -540,10 +555,22 @@ youbot_base_ik_weighted_moveit_BINARY_DIR:STATIC=/home/youbot/youbot_edinburgh/w
 youbot_base_ik_weighted_moveit_SOURCE_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_weighted_moveit
 
 //Value Computed by CMake
+youbot_goal_passer_BINARY_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer
+
+//Value Computed by CMake
+youbot_goal_passer_SOURCE_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_goal_passer
+
+//Value Computed by CMake
 youbot_moveit_generated_BINARY_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_moveit_generated
 
 //Value Computed by CMake
 youbot_moveit_generated_SOURCE_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_moveit_generated
+
+//Value Computed by CMake
+youbot_relay_controller_BINARY_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_relay_controller
+
+//Value Computed by CMake
+youbot_relay_controller_SOURCE_DIR:STATIC=/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_relay_controller
 
 
 ########################
@@ -705,7 +732,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=9
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

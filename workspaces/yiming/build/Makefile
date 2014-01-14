@@ -978,6 +978,84 @@ youbot_base_ik_trajectory_server/fast:
 	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build.make youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build
 .PHONY : youbot_base_ik_trajectory_server/fast
 
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_cpp
+
+# Build rule for target.
+move_base_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_cpp
+.PHONY : move_base_msgs_generate_messages_cpp
+
+# fast build rule for target.
+move_base_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
+.PHONY : move_base_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_lisp
+
+# Build rule for target.
+move_base_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_lisp
+.PHONY : move_base_msgs_generate_messages_lisp
+
+# fast build rule for target.
+move_base_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
+.PHONY : move_base_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_py
+
+# Build rule for target.
+move_base_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_py
+.PHONY : move_base_msgs_generate_messages_py
+
+# fast build rule for target.
+move_base_msgs_generate_messages_py/fast:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
+.PHONY : move_base_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named youbot_goal_passer
+
+# Build rule for target.
+youbot_goal_passer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer
+.PHONY : youbot_goal_passer
+
+# fast build rule for target.
+youbot_goal_passer/fast:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build
+.PHONY : youbot_goal_passer/fast
+
+#=============================================================================
+# Target rules for targets named youbot_active_relay
+
+# Build rule for target.
+youbot_active_relay: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_active_relay
+.PHONY : youbot_active_relay
+
+# fast build rule for target.
+youbot_active_relay/fast:
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build
+.PHONY : youbot_active_relay/fast
+
+#=============================================================================
+# Target rules for targets named youbot_passive_relay
+
+# Build rule for target.
+youbot_passive_relay: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_passive_relay
+.PHONY : youbot_passive_relay
+
+# fast build rule for target.
+youbot_passive_relay/fast:
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/build
+.PHONY : youbot_passive_relay/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1055,6 +1133,12 @@ help:
 	@echo "... learning_actionlib_generate_messages_lisp"
 	@echo "... learning_actionlib_generate_messages_py"
 	@echo "... youbot_base_ik_trajectory_server"
+	@echo "... move_base_msgs_generate_messages_cpp"
+	@echo "... move_base_msgs_generate_messages_lisp"
+	@echo "... move_base_msgs_generate_messages_py"
+	@echo "... youbot_goal_passer"
+	@echo "... youbot_active_relay"
+	@echo "... youbot_passive_relay"
 .PHONY : help
 
 

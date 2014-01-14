@@ -22,6 +22,9 @@
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_lisp.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_py.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_msgs_generate_messages_cpp.dir
@@ -60,5 +63,8 @@
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/trajectory_msgs_generate_messages_py.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_relay_controller/CMakeFiles/youbot_active_relay.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir
 /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir
+/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir

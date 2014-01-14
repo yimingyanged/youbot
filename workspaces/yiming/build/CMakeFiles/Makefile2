@@ -1914,7 +1914,7 @@ youbot_base_ik_controller/preinstall:
 youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all:
 	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/depend
 	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles  11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles  13
 	@echo "Built target youbot_base_ik_controller"
 .PHONY : youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all
 
@@ -2171,7 +2171,7 @@ clean: youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages
 youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/all:
 	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build.make youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/depend
 	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build.make youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles  14
 	@echo "Built target youbot_base_ik_trajectory_server"
 .PHONY : youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/all
 
@@ -2215,6 +2215,152 @@ youbot_base_ik_weighted_moveit/preinstall:
 .PHONY : youbot_base_ik_weighted_moveit/preinstall
 
 #=============================================================================
+# Directory level rules for directory youbot_goal_passer
+
+# Convenience name for "all" pass in the directory.
+youbot_goal_passer/all: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/all
+.PHONY : youbot_goal_passer/all
+
+# Convenience name for "clean" pass in the directory.
+youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/clean
+youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/clean
+youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/clean
+youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/clean
+.PHONY : youbot_goal_passer/clean
+
+# Convenience name for "preinstall" pass in the directory.
+youbot_goal_passer/preinstall:
+.PHONY : youbot_goal_passer/preinstall
+
+#=============================================================================
+# Target rules for target youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 
+	@echo "Built target move_base_msgs_generate_messages_cpp"
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+move_base_msgs_generate_messages_cpp: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
+.PHONY : move_base_msgs_generate_messages_cpp
+
+# clean rule for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/clean
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 
+	@echo "Built target move_base_msgs_generate_messages_lisp"
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+move_base_msgs_generate_messages_lisp: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
+.PHONY : move_base_msgs_generate_messages_lisp
+
+# clean rule for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/clean
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 
+	@echo "Built target move_base_msgs_generate_messages_py"
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+move_base_msgs_generate_messages_py: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
+.PHONY : move_base_msgs_generate_messages_py
+
+# clean rule for target.
+youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/clean
+.PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir
+
+# All Build rule for target.
+youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/all:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/depend
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles  15 16
+	@echo "Built target youbot_goal_passer"
+.PHONY : youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/all
+
+# Include target in all.
+all: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+.PHONY : youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule
+
+# Convenience name for target.
+youbot_goal_passer: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule
+.PHONY : youbot_goal_passer
+
+# clean rule for target.
+youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/clean:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/clean
+.PHONY : youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/clean
+
+# clean rule for target.
+clean: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory youbot_moveit_generated
 
 # Convenience name for "all" pass in the directory.
@@ -2228,6 +2374,93 @@ youbot_moveit_generated/clean:
 # Convenience name for "preinstall" pass in the directory.
 youbot_moveit_generated/preinstall:
 .PHONY : youbot_moveit_generated/preinstall
+
+#=============================================================================
+# Directory level rules for directory youbot_relay_controller
+
+# Convenience name for "all" pass in the directory.
+youbot_relay_controller/all: youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/all
+youbot_relay_controller/all: youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/all
+.PHONY : youbot_relay_controller/all
+
+# Convenience name for "clean" pass in the directory.
+youbot_relay_controller/clean: youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/clean
+youbot_relay_controller/clean: youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/clean
+.PHONY : youbot_relay_controller/clean
+
+# Convenience name for "preinstall" pass in the directory.
+youbot_relay_controller/preinstall:
+.PHONY : youbot_relay_controller/preinstall
+
+#=============================================================================
+# Target rules for target youbot_relay_controller/CMakeFiles/youbot_active_relay.dir
+
+# All Build rule for target.
+youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/all:
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/depend
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles  11 12
+	@echo "Built target youbot_active_relay"
+.PHONY : youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/all
+
+# Include target in all.
+all: youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+.PHONY : youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/rule
+
+# Convenience name for target.
+youbot_active_relay: youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/rule
+.PHONY : youbot_active_relay
+
+# clean rule for target.
+youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/clean:
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/clean
+.PHONY : youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/clean
+
+# clean rule for target.
+clean: youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir
+
+# All Build rule for target.
+youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/all:
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/depend
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles  17 18
+	@echo "Built target youbot_passive_relay"
+.PHONY : youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/all
+
+# Include target in all.
+all: youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+.PHONY : youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/rule
+
+# Convenience name for target.
+youbot_passive_relay: youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/rule
+.PHONY : youbot_passive_relay
+
+# clean rule for target.
+youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/clean:
+	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/clean
+.PHONY : youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/clean
+
+# clean rule for target.
+clean: youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/clean
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

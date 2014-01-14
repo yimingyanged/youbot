@@ -102,21 +102,27 @@ namespace KDL
                 ROS_DEBUG_NAMED("kdl","%d: %f",(int) i, delta_twist(i));
             
             iksolver.CartToJnt(q_temp,delta_twist,delta_q);
-	    XmlRpc::XmlRpcValue W;
-            ros::NodeHandle w_nh("weighting_nh");
+	    /*XmlRpc::XmlRpcValue W;
+	    //ROS_INFO("Starting size: %d",W.size());
+            ros::NodeHandle w_nh;
+	    ROS_INFO("Getting param");
 	    w_nh.getParam("/weighting_vector", W);
+	    ROS_INFO("ROS_assert");
 	    ROS_ASSERT(W.getType() == XmlRpc::XmlRpcValue::TypeArray);
 	    if (w_nh.hasParam("/weighting_vector")){
+		ROS_INFO("Start for loop,%d",W.size());
 	    	for(int i=0;i<W.size();++i){
-		    
+		    ROS_INFO("AAAAAAAAAAAAAAAAAA");
 		    ROS_ASSERT(W[i].getType() == XmlRpc::XmlRpcValue::TypeDouble);
-		    delta_q(i)=static_cast<double>(W[i])*delta_q(i);		
+                    ROS_INFO("Value (1) %lf",static_cast<double>(W[i]));
+		    delta_q(i)=static_cast<double>(W[i])*delta_q(i);
+		    ROS_INFO("Value (2) %f",static_cast<double>(W[i]));
 		}
 		ROS_INFO("Loading Weighted Matrix");
 	    }
 	    else{
 		ROS_INFO("No Weighted Matrix Found");
-	    }
+	    }*/
             Add(q_temp,delta_q,q_temp);
             
             ROS_DEBUG_STREAM_NAMED("kdl","delta_q");

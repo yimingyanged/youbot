@@ -1,0 +1,8 @@
+prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/devel
+
+Name: youbot_relay_controller
+Description: Description of youbot_relay_controller
+Version: 0.0.0
+Cflags: -I/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_relay_controller/include
+Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib -lyoubot_relay_controller
+Requires: actionlib roscpp
