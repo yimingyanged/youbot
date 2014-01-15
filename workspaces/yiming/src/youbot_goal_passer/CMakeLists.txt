@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   move_base_msgs
   roscpp
   roslib
+  tf
 )
 
 ## System dependencies are found with CMake's conventions
@@ -86,7 +87,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES youbot_goal_passer
-  CATKIN_DEPENDS actionlib geometry_msgs moveit_msgs actionlib_msgs roscpp roslib move_base_msgs
+  CATKIN_DEPENDS actionlib geometry_msgs moveit_msgs actionlib_msgs roscpp roslib move_base_msgs tf
   DEPENDS system_lib
 )
 
@@ -110,7 +111,7 @@ include_directories(SYSTEM
 
 ## Declare a cpp executable
  add_executable(youbot_goal_passer src/youbot_goal_passer_node.cpp src/youbot_goal_passer.cpp)
-
+ add_executable(dummy_tf_publisher src/dummy_tf_publisher.cpp)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(youbot_goal_passer_node youbot_goal_passer_generate_messages_cpp)
@@ -119,7 +120,9 @@ include_directories(SYSTEM
  target_link_libraries(youbot_goal_passer
    ${catkin_LIBRARIES}
  )
-
+ target_link_libraries(dummy_tf_publisher
+   ${catkin_LIBRARIES}
+ )
 #############
 ## Install ##
 #############

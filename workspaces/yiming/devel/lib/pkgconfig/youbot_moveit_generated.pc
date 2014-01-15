@@ -1,8 +1,8 @@
-prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/devel
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel
 
 Name: youbot_moveit_generated
 Description: Description of youbot_moveit_generated
 Version: 0.2.0
 Cflags: 
-Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib 
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib 
 Requires: 

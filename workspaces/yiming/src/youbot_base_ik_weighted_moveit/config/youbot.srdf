@@ -20,11 +20,21 @@
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="HOME" group="ArmAndBase">
-        <joint name="arm_joint_1" value="0.05" />
-        <joint name="arm_joint_2" value="0.05" />
-        <joint name="arm_joint_3" value="-0.05" />
-        <joint name="arm_joint_4" value="0" />
-        <joint name="arm_joint_5" value="0" />
+        <joint name="arm_joint_1" value="0.1" />
+        <joint name="arm_joint_2" value="0.1" />
+        <joint name="arm_joint_3" value="-0.1" />
+        <joint name="arm_joint_4" value="0.1" />
+        <joint name="arm_joint_5" value="0.1" />
+        <joint name="base_dummy_prismatic_x_joint" value="0" />
+        <joint name="base_dummy_prismatic_y_joint" value="0" />
+        <joint name="base_dummy_revolute_joint" value="0" />
+    </group_state>
+    <group_state name="W_TEST" group="ArmAndBase">
+        <joint name="arm_joint_1" value="0" />
+        <joint name="arm_joint_2" value="0" />
+        <joint name="arm_joint_3" value="-1.2495" />
+        <joint name="arm_joint_4" value="1.8432" />
+        <joint name="arm_joint_5" value="2.9635" />
         <joint name="base_dummy_prismatic_x_joint" value="0" />
         <joint name="base_dummy_prismatic_y_joint" value="0" />
         <joint name="base_dummy_revolute_joint" value="0" />
@@ -34,6 +44,9 @@
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="planar" parent_frame="odom" child_link="base_footprint" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="base_dummy_revolute_joint" />
+    <passive_joint name="base_dummy_prismatic_x_joint" />
+    <passive_joint name="base_dummy_prismatic_y_joint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="ar_marker_fixed" link2="arm_link_0" reason="Never" />
     <disable_collisions link1="ar_marker_fixed" link2="arm_link_1" reason="Never" />

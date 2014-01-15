@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/src
+CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
+CMAKE_BINARY_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/build
 
 # Utility rule file for doxygen.
 
@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
 include CMakeFiles/doxygen.dir/progress.make
 
 CMakeFiles/doxygen:
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "doxygen found"
 
 doxygen: CMakeFiles/doxygen
@@ -59,6 +59,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/youbot/youbot_edinburgh/workspaces/yiming/src /home/youbot/youbot_edinburgh/workspaces/yiming/src /home/youbot/youbot_edinburgh/workspaces/yiming/build /home/youbot/youbot_edinburgh/workspaces/yiming/build /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yiming/ros_workspace/youbot/workspaces/yiming/src /home/yiming/ros_workspace/youbot/workspaces/yiming/src /home/yiming/ros_workspace/youbot/workspaces/yiming/build /home/yiming/ros_workspace/youbot/workspaces/yiming/build /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

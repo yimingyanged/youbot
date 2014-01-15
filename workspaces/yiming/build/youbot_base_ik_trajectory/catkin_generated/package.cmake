@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "youbot_base_ik_trajectory")
-set(youbot_base_ik_trajectory_MAINTAINER "alex <alex@todo.todo>")
-set(youbot_base_ik_trajectory_DEPRECATED "")
-set(youbot_base_ik_trajectory_VERSION "0.0.0")
-set(youbot_base_ik_trajectory_BUILD_DEPENDS "actionlib" "actionlib_msgs" "control_msgs" "learning_actionlib")
-set(youbot_base_ik_trajectory_RUN_DEPENDS "actionlib" "actionlib_msgs" "control_msgs" "learning_actionlib")
-set(youbot_base_ik_trajectory_BUILDTOOL_DEPENDS "catkin")

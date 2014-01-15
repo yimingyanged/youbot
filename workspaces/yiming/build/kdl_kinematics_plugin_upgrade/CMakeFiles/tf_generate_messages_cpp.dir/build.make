@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/src
+CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
+CMAKE_BINARY_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/build
 
 # Utility rule file for tf_generate_messages_cpp.
 
@@ -53,10 +53,10 @@ kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/build: tf_
 .PHONY : kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/build
 
 kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/clean:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade && $(CMAKE_COMMAND) -P CMakeFiles/tf_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade && $(CMAKE_COMMAND) -P CMakeFiles/tf_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/clean
 
 kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/depend:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/youbot/youbot_edinburgh/workspaces/yiming/src /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade /home/youbot/youbot_edinburgh/workspaces/yiming/build /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yiming/ros_workspace/youbot/workspaces/yiming/src /home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade /home/yiming/ros_workspace/youbot/workspaces/yiming/build /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : kdl_kinematics_plugin_upgrade/CMakeFiles/tf_generate_messages_cpp.dir/depend
 

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(kdl_kinematics_plugin_weighted)
 
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
 if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
@@ -40,7 +41,7 @@ catkin_package(
 )
 
 include_directories(
-					include
+		    include
                     ${catkin_INCLUDE_DIRS}
 		    )
 include_directories(SYSTEM
@@ -50,7 +51,6 @@ include_directories(SYSTEM
 
 link_directories(${Boost_LIBRARY_DIRS})
 link_directories(${catkin_LIBRARY_DIRS})
-
 set(MOVEIT_LIB_NAME moveit_kdl_kinematics_weighted_plugin)
 
 add_library(${MOVEIT_LIB_NAME} src/kdl_kinematics_plugin.cpp 

@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/src
+CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
+CMAKE_BINARY_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -117,14 +117,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles /home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/progress.marks
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles /home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/progress.marks
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/clean
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/clean
 .PHONY : clean
 
 # The main clean target
@@ -133,22 +133,36 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/preinstall
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/preinstall
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
+youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule
+.PHONY : youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule
+
+# Convenience name for target.
+dummy_tf_publisher: youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule
+.PHONY : dummy_tf_publisher
+
+# fast build rule for target.
+dummy_tf_publisher/fast:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build
+.PHONY : dummy_tf_publisher/fast
+
+# Convenience name for target.
 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
 .PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -157,12 +171,12 @@ move_base_msgs_generate_messages_cpp: youbot_goal_passer/CMakeFiles/move_base_ms
 
 # fast build rule for target.
 move_base_msgs_generate_messages_cpp/fast:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
 .PHONY : move_base_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
 .PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -171,12 +185,12 @@ move_base_msgs_generate_messages_lisp: youbot_goal_passer/CMakeFiles/move_base_m
 
 # fast build rule for target.
 move_base_msgs_generate_messages_lisp/fast:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
 .PHONY : move_base_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
 .PHONY : youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -185,12 +199,12 @@ move_base_msgs_generate_messages_py: youbot_goal_passer/CMakeFiles/move_base_msg
 
 # fast build rule for target.
 move_base_msgs_generate_messages_py/fast:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
 .PHONY : move_base_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule
 .PHONY : youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule
 
 # Convenience name for target.
@@ -199,15 +213,39 @@ youbot_goal_passer: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule
 
 # fast build rule for target.
 youbot_goal_passer/fast:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build
 .PHONY : youbot_goal_passer/fast
+
+src/dummy_tf_publisher.o: src/dummy_tf_publisher.cpp.o
+.PHONY : src/dummy_tf_publisher.o
+
+# target to build an object file
+src/dummy_tf_publisher.cpp.o:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/src/dummy_tf_publisher.cpp.o
+.PHONY : src/dummy_tf_publisher.cpp.o
+
+src/dummy_tf_publisher.i: src/dummy_tf_publisher.cpp.i
+.PHONY : src/dummy_tf_publisher.i
+
+# target to preprocess a source file
+src/dummy_tf_publisher.cpp.i:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/src/dummy_tf_publisher.cpp.i
+.PHONY : src/dummy_tf_publisher.cpp.i
+
+src/dummy_tf_publisher.s: src/dummy_tf_publisher.cpp.s
+.PHONY : src/dummy_tf_publisher.s
+
+# target to generate assembly for a file
+src/dummy_tf_publisher.cpp.s:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/src/dummy_tf_publisher.cpp.s
+.PHONY : src/dummy_tf_publisher.cpp.s
 
 src/youbot_goal_passer.o: src/youbot_goal_passer.cpp.o
 .PHONY : src/youbot_goal_passer.o
 
 # target to build an object file
 src/youbot_goal_passer.cpp.o:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o
 .PHONY : src/youbot_goal_passer.cpp.o
 
 src/youbot_goal_passer.i: src/youbot_goal_passer.cpp.i
@@ -215,7 +253,7 @@ src/youbot_goal_passer.i: src/youbot_goal_passer.cpp.i
 
 # target to preprocess a source file
 src/youbot_goal_passer.cpp.i:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.i
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.i
 .PHONY : src/youbot_goal_passer.cpp.i
 
 src/youbot_goal_passer.s: src/youbot_goal_passer.cpp.s
@@ -223,7 +261,7 @@ src/youbot_goal_passer.s: src/youbot_goal_passer.cpp.s
 
 # target to generate assembly for a file
 src/youbot_goal_passer.cpp.s:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.s
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.s
 .PHONY : src/youbot_goal_passer.cpp.s
 
 src/youbot_goal_passer_node.o: src/youbot_goal_passer_node.cpp.o
@@ -231,7 +269,7 @@ src/youbot_goal_passer_node.o: src/youbot_goal_passer_node.cpp.o
 
 # target to build an object file
 src/youbot_goal_passer_node.cpp.o:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o
 .PHONY : src/youbot_goal_passer_node.cpp.o
 
 src/youbot_goal_passer_node.i: src/youbot_goal_passer_node.cpp.i
@@ -239,7 +277,7 @@ src/youbot_goal_passer_node.i: src/youbot_goal_passer_node.cpp.i
 
 # target to preprocess a source file
 src/youbot_goal_passer_node.cpp.i:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.i
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.i
 .PHONY : src/youbot_goal_passer_node.cpp.i
 
 src/youbot_goal_passer_node.s: src/youbot_goal_passer_node.cpp.s
@@ -247,7 +285,7 @@ src/youbot_goal_passer_node.s: src/youbot_goal_passer_node.cpp.s
 
 # target to generate assembly for a file
 src/youbot_goal_passer_node.cpp.s:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.s
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.s
 .PHONY : src/youbot_goal_passer_node.cpp.s
 
 # Help Target
@@ -256,6 +294,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... dummy_tf_publisher"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
@@ -267,6 +306,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... youbot_goal_passer"
+	@echo "... src/dummy_tf_publisher.o"
+	@echo "... src/dummy_tf_publisher.i"
+	@echo "... src/dummy_tf_publisher.s"
 	@echo "... src/youbot_goal_passer.o"
 	@echo "... src/youbot_goal_passer.i"
 	@echo "... src/youbot_goal_passer.s"
@@ -284,6 +326,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

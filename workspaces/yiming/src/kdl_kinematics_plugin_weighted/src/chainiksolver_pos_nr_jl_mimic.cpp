@@ -2,6 +2,7 @@
 #include <ros/console.h>
 #include <ros/param.h>
 #include <ros/ros.h>
+#include <ros/package.h>
 namespace KDL
 {
     
@@ -102,27 +103,40 @@ namespace KDL
                 ROS_DEBUG_NAMED("kdl","%d: %f",(int) i, delta_twist(i));
             
             iksolver.CartToJnt(q_temp,delta_twist,delta_q);
-	    /*XmlRpc::XmlRpcValue W;
-	    //ROS_INFO("Starting size: %d",W.size());
-            ros::NodeHandle w_nh;
-	    ROS_INFO("Getting param");
-	    w_nh.getParam("/weighting_vector", W);
-	    ROS_INFO("ROS_assert");
-	    ROS_ASSERT(W.getType() == XmlRpc::XmlRpcValue::TypeArray);
-	    if (w_nh.hasParam("/weighting_vector")){
-		ROS_INFO("Start for loop,%d",W.size());
-	    	for(int i=0;i<W.size();++i){
-		    ROS_INFO("AAAAAAAAAAAAAAAAAA");
-		    ROS_ASSERT(W[i].getType() == XmlRpc::XmlRpcValue::TypeDouble);
-                    ROS_INFO("Value (1) %lf",static_cast<double>(W[i]));
-		    delta_q(i)=static_cast<double>(W[i])*delta_q(i);
-		    ROS_INFO("Value (2) %f",static_cast<double>(W[i]));
+	    
+	    /*YAML::Node weighting_configs = YAML::LoadFile((std::string(ros::package::getPath("kdl_kinematics_plugin_weighted")).append("/config/weighting.yaml")));
+	    if (weighting_configs["weighting_vector"])	//!< If loaded correct file
+	    {
+		for (int i = 0; i < weighting_configs["weighting_vector"][0].size(); i++) //!< And now the arm joints
+		{
+		    delta_q(i)=delta_q(i)*(weighting_configs["weighting_vector"][0][i].as<double>());
 		}
-		ROS_INFO("Loading Weighted Matrix");
 	    }
-	    else{
-		ROS_INFO("No Weighted Matrix Found");
-	    }*/
+	    else
+	    {
+	    	ROS_ERROR("File is inexistent or broken.");
+	    }
+	    */
+	    std::string weighting_type;
+	    if (ros::param::get("/weighting_type", weighting_type))
+      	    {
+		if (weighting_type == "base")
+		{
+		    for(int i=0;i<3;i++)
+	 	    {
+			delta_q(i)=delta_q(i)*0.1;
+		    }
+		}
+		else if (weighting_type == "arm")
+		{
+		    for(int i=3;i<8;i++)
+	 	    {
+			delta_q(i)=delta_q(i)*0.1;
+		    }
+		}
+	    }
+	    
+	    
             Add(q_temp,delta_q,q_temp);
             
             ROS_DEBUG_STREAM_NAMED("kdl","delta_q");

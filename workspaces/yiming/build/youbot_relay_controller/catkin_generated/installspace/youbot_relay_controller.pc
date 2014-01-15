@@ -1,8 +1,8 @@
-prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/install
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/install
 
 Name: youbot_relay_controller
 Description: Description of youbot_relay_controller
 Version: 0.0.0
-Cflags: -I/home/youbot/youbot_edinburgh/workspaces/yiming/install/include
-Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/install/lib -lyoubot_relay_controller
+Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/install/include
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/install/lib -lyoubot_relay_controller
 Requires: actionlib roscpp

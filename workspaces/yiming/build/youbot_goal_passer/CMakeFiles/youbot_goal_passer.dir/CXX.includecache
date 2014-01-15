@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_goal_passer/include/youbot_goal_passer/youbot_goal_passer.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/include/youbot_goal_passer/youbot_goal_passer.h
 ros/ros.h
 -
 ros/package.h
@@ -38,9 +38,13 @@ yaml-cpp/parser.h
 cmath
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer.cpp
 youbot_goal_passer/youbot_goal_passer.h
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer/youbot_goal_passer.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer/youbot_goal_passer.h
+
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer_node.cpp
+youbot_goal_passer/youbot_goal_passer.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer/youbot_goal_passer.h
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

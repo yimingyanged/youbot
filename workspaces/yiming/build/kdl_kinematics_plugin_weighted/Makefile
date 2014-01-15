@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/src
+CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
+CMAKE_BINARY_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -117,14 +117,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles /home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted/CMakeFiles/progress.marks
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted/CMakeFiles/progress.marks
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/clean
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/clean
 .PHONY : clean
 
 # The main clean target
@@ -133,22 +133,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/preinstall
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/preinstall
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/rule:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/rule
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/rule
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/rule
 
 # Convenience name for target.
@@ -157,7 +157,7 @@ moveit_kdl_kinematics_weighted_plugin: kdl_kinematics_plugin_weighted/CMakeFiles
 
 # fast build rule for target.
 moveit_kdl_kinematics_weighted_plugin/fast:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build
 .PHONY : moveit_kdl_kinematics_weighted_plugin/fast
 
 src/chainiksolver_pos_nr_jl_mimic.o: src/chainiksolver_pos_nr_jl_mimic.cpp.o
@@ -165,7 +165,7 @@ src/chainiksolver_pos_nr_jl_mimic.o: src/chainiksolver_pos_nr_jl_mimic.cpp.o
 
 # target to build an object file
 src/chainiksolver_pos_nr_jl_mimic.cpp.o:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.o
 .PHONY : src/chainiksolver_pos_nr_jl_mimic.cpp.o
 
 src/chainiksolver_pos_nr_jl_mimic.i: src/chainiksolver_pos_nr_jl_mimic.cpp.i
@@ -173,7 +173,7 @@ src/chainiksolver_pos_nr_jl_mimic.i: src/chainiksolver_pos_nr_jl_mimic.cpp.i
 
 # target to preprocess a source file
 src/chainiksolver_pos_nr_jl_mimic.cpp.i:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.i
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.i
 .PHONY : src/chainiksolver_pos_nr_jl_mimic.cpp.i
 
 src/chainiksolver_pos_nr_jl_mimic.s: src/chainiksolver_pos_nr_jl_mimic.cpp.s
@@ -181,7 +181,7 @@ src/chainiksolver_pos_nr_jl_mimic.s: src/chainiksolver_pos_nr_jl_mimic.cpp.s
 
 # target to generate assembly for a file
 src/chainiksolver_pos_nr_jl_mimic.cpp.s:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.s
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_pos_nr_jl_mimic.cpp.s
 .PHONY : src/chainiksolver_pos_nr_jl_mimic.cpp.s
 
 src/chainiksolver_vel_pinv_mimic.o: src/chainiksolver_vel_pinv_mimic.cpp.o
@@ -189,7 +189,7 @@ src/chainiksolver_vel_pinv_mimic.o: src/chainiksolver_vel_pinv_mimic.cpp.o
 
 # target to build an object file
 src/chainiksolver_vel_pinv_mimic.cpp.o:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.o
 .PHONY : src/chainiksolver_vel_pinv_mimic.cpp.o
 
 src/chainiksolver_vel_pinv_mimic.i: src/chainiksolver_vel_pinv_mimic.cpp.i
@@ -197,7 +197,7 @@ src/chainiksolver_vel_pinv_mimic.i: src/chainiksolver_vel_pinv_mimic.cpp.i
 
 # target to preprocess a source file
 src/chainiksolver_vel_pinv_mimic.cpp.i:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.i
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.i
 .PHONY : src/chainiksolver_vel_pinv_mimic.cpp.i
 
 src/chainiksolver_vel_pinv_mimic.s: src/chainiksolver_vel_pinv_mimic.cpp.s
@@ -205,7 +205,7 @@ src/chainiksolver_vel_pinv_mimic.s: src/chainiksolver_vel_pinv_mimic.cpp.s
 
 # target to generate assembly for a file
 src/chainiksolver_vel_pinv_mimic.cpp.s:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.s
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/chainiksolver_vel_pinv_mimic.cpp.s
 .PHONY : src/chainiksolver_vel_pinv_mimic.cpp.s
 
 src/kdl_kinematics_plugin.o: src/kdl_kinematics_plugin.cpp.o
@@ -213,7 +213,7 @@ src/kdl_kinematics_plugin.o: src/kdl_kinematics_plugin.cpp.o
 
 # target to build an object file
 src/kdl_kinematics_plugin.cpp.o:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.o
 .PHONY : src/kdl_kinematics_plugin.cpp.o
 
 src/kdl_kinematics_plugin.i: src/kdl_kinematics_plugin.cpp.i
@@ -221,7 +221,7 @@ src/kdl_kinematics_plugin.i: src/kdl_kinematics_plugin.cpp.i
 
 # target to preprocess a source file
 src/kdl_kinematics_plugin.cpp.i:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.i
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.i
 .PHONY : src/kdl_kinematics_plugin.cpp.i
 
 src/kdl_kinematics_plugin.s: src/kdl_kinematics_plugin.cpp.s
@@ -229,7 +229,7 @@ src/kdl_kinematics_plugin.s: src/kdl_kinematics_plugin.cpp.s
 
 # target to generate assembly for a file
 src/kdl_kinematics_plugin.cpp.s:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.s
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/src/kdl_kinematics_plugin.cpp.s
 .PHONY : src/kdl_kinematics_plugin.cpp.s
 
 # Help Target
@@ -266,6 +266,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/youbot/youbot_edinburgh/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

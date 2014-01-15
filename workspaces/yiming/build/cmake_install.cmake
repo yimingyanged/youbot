@@ -1,8 +1,8 @@
-# Install script for directory: /home/youbot/youbot_edinburgh/workspaces/yiming/src
+# Install script for directory: /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/youbot/youbot_edinburgh/workspaces/yiming/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/yiming/ros_workspace/youbot/workspaces/yiming/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,44 +34,44 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CPACK_ABSOLUTE_DESTINATION_FILES
-   "/home/youbot/youbot_edinburgh/workspaces/yiming/install/.catkin")
-FILE(INSTALL DESTINATION "/home/youbot/youbot_edinburgh/workspaces/yiming/install" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/catkin_generated/installspace/.catkin")
+   "/home/yiming/ros_workspace/youbot/workspaces/yiming/install/.catkin")
+FILE(INSTALL DESTINATION "/home/yiming/ros_workspace/youbot/workspaces/yiming/install" TYPE FILE FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/catkin_generated/installspace/.catkin")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CPACK_ABSOLUTE_DESTINATION_FILES
-   "/home/youbot/youbot_edinburgh/workspaces/yiming/install/_setup_util.py")
-FILE(INSTALL DESTINATION "/home/youbot/youbot_edinburgh/workspaces/yiming/install" TYPE PROGRAM FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/catkin_generated/installspace/_setup_util.py")
+   "/home/yiming/ros_workspace/youbot/workspaces/yiming/install/_setup_util.py")
+FILE(INSTALL DESTINATION "/home/yiming/ros_workspace/youbot/workspaces/yiming/install" TYPE PROGRAM FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/catkin_generated/installspace/_setup_util.py")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CPACK_ABSOLUTE_DESTINATION_FILES
-   "/home/youbot/youbot_edinburgh/workspaces/yiming/install/env.sh")
-FILE(INSTALL DESTINATION "/home/youbot/youbot_edinburgh/workspaces/yiming/install" TYPE PROGRAM FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/catkin_generated/installspace/env.sh")
+   "/home/yiming/ros_workspace/youbot/workspaces/yiming/install/env.sh")
+FILE(INSTALL DESTINATION "/home/yiming/ros_workspace/youbot/workspaces/yiming/install" TYPE PROGRAM FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/catkin_generated/installspace/env.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CPACK_ABSOLUTE_DESTINATION_FILES
-   "/home/youbot/youbot_edinburgh/workspaces/yiming/install/setup.bash")
-FILE(INSTALL DESTINATION "/home/youbot/youbot_edinburgh/workspaces/yiming/install" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/catkin_generated/installspace/setup.bash")
+   "/home/yiming/ros_workspace/youbot/workspaces/yiming/install/setup.bash")
+FILE(INSTALL DESTINATION "/home/yiming/ros_workspace/youbot/workspaces/yiming/install" TYPE FILE FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/catkin_generated/installspace/setup.bash")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CPACK_ABSOLUTE_DESTINATION_FILES
-   "/home/youbot/youbot_edinburgh/workspaces/yiming/install/setup.sh")
-FILE(INSTALL DESTINATION "/home/youbot/youbot_edinburgh/workspaces/yiming/install" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/catkin_generated/installspace/setup.sh")
+   "/home/yiming/ros_workspace/youbot/workspaces/yiming/install/setup.sh")
+FILE(INSTALL DESTINATION "/home/yiming/ros_workspace/youbot/workspaces/yiming/install" TYPE FILE FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/catkin_generated/installspace/setup.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CPACK_ABSOLUTE_DESTINATION_FILES
-   "/home/youbot/youbot_edinburgh/workspaces/yiming/install/setup.zsh")
-FILE(INSTALL DESTINATION "/home/youbot/youbot_edinburgh/workspaces/yiming/install" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/catkin_generated/installspace/setup.zsh")
+   "/home/yiming/ros_workspace/youbot/workspaces/yiming/install/setup.zsh")
+FILE(INSTALL DESTINATION "/home/yiming/ros_workspace/youbot/workspaces/yiming/install" TYPE FILE FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/catkin_generated/installspace/setup.zsh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CPACK_ABSOLUTE_DESTINATION_FILES
-   "/home/youbot/youbot_edinburgh/workspaces/yiming/install/.rosinstall")
-FILE(INSTALL DESTINATION "/home/youbot/youbot_edinburgh/workspaces/yiming/install" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/catkin_generated/installspace/.rosinstall")
+   "/home/yiming/ros_workspace/youbot/workspaces/yiming/install/.rosinstall")
+FILE(INSTALL DESTINATION "/home/yiming/ros_workspace/youbot/workspaces/yiming/install" TYPE FILE FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/catkin_generated/installspace/.rosinstall")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -84,16 +84,16 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/gtest/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/kdl_kinematics_plugin_weighted/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_controller/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_moveit/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_trajectory/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_base_ik_weighted_moveit/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_moveit_generated/cmake_install.cmake")
-  INCLUDE("/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_relay_controller/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_weighted/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/moveit_goal_publisher/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_controller/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_moveit/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_weighted_moveit/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_moveit_generated/cmake_install.cmake")
+  INCLUDE("/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_relay_controller/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -103,7 +103,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/youbot/youbot_edinburgh/workspaces/yiming/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/youbot/youbot_edinburgh/workspaces/yiming/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

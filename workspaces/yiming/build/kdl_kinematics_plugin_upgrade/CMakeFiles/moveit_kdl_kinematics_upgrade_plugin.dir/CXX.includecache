@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/devel/include/kdl_kinematics_plugin_upgrade/kdl_ik_paramsConfig.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/include/kdl_kinematics_plugin_upgrade/kdl_ik_paramsConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -24,29 +24,29 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/chainiksolver_pos_nr_jl_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/chainiksolver_pos_nr_jl_mimic.hpp
 kdl/chainiksolver.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainiksolver.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainiksolver.hpp
 kdl/chainfksolver.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainfksolver.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainfksolver.hpp
 moveit/kdl_kinematics_plugin_upgrade/joint_mimic.hpp
 -
 moveit/kdl_kinematics_plugin_upgrade/kdl_kinematics_plugin.h
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/chainiksolver_vel_pinv_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/chainiksolver_vel_pinv_mimic.hpp
 kdl/chainiksolver.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainiksolver.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainiksolver.hpp
 kdl/chainjnttojacsolver.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainjnttojacsolver.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl/chainjnttojacsolver.hpp
 moveit/kdl_kinematics_plugin_upgrade/joint_mimic.hpp
 -
 moveit/kdl_kinematics_plugin_upgrade/kdl_kinematics_plugin.h
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/joint_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/joint_mimic.hpp
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl_kinematics_plugin.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/include/moveit/kdl_kinematics_plugin_upgrade/kdl_kinematics_plugin.h
 ros/ros.h
 -
 random_numbers/random_numbers.h
@@ -94,13 +94,13 @@ dynamic_reconfigure/server.h
 kdl_kinematics_plugin_upgrade/kdl_ik_paramsConfig.h
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/chainiksolver_pos_nr_jl_mimic.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/chainiksolver_pos_nr_jl_mimic.cpp
 moveit/kdl_kinematics_plugin_upgrade/chainiksolver_pos_nr_jl_mimic.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/moveit/kdl_kinematics_plugin_upgrade/chainiksolver_pos_nr_jl_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/moveit/kdl_kinematics_plugin_upgrade/chainiksolver_pos_nr_jl_mimic.hpp
 ros/console.h
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/chainiksolver_vel_pinv_mimic.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/chainiksolver_vel_pinv_mimic.cpp
 moveit/kdl_kinematics_plugin_upgrade/chainiksolver_vel_pinv_mimic.hpp
 -
 ros/console.h
@@ -108,7 +108,7 @@ ros/console.h
 Eigen/Eigen
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/kdl_kinematics_plugin.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_upgrade/src/kdl_kinematics_plugin.cpp
 moveit/kdl_kinematics_plugin/kdl_kinematics_plugin.h
 -
 class_loader/class_loader.h
@@ -717,6 +717,8 @@ jntarrayvel.hpp
 /opt/ros/hydro/include/kdl/jntarrayvel.hpp
 jntarrayacc.hpp
 /opt/ros/hydro/include/kdl/jntarrayacc.hpp
+solveri.hpp
+/opt/ros/hydro/include/kdl/solveri.hpp
 
 /opt/ros/hydro/include/kdl/chainfksolverpos_recursive.hpp
 chainfksolver.hpp
@@ -737,6 +739,8 @@ jntarrayvel.hpp
 /opt/ros/hydro/include/kdl/jntarrayvel.hpp
 jntarrayacc.hpp
 /opt/ros/hydro/include/kdl/jntarrayacc.hpp
+solveri.hpp
+/opt/ros/hydro/include/kdl/solveri.hpp
 
 /opt/ros/hydro/include/kdl/chainiksolverpos_nr_jl.hpp
 chainiksolver.hpp
@@ -855,6 +859,8 @@ joint.hpp
 /opt/ros/hydro/include/kdl/joint.hpp
 vector
 -
+
+/opt/ros/hydro/include/kdl/solveri.hpp
 
 /opt/ros/hydro/include/kdl/tree.hpp
 segment.hpp
@@ -1007,8 +1013,6 @@ moveit/kdl_kinematics_plugin/chainiksolver_pos_nr_jl_mimic.hpp
 -
 moveit/kdl_kinematics_plugin/chainiksolver_vel_pinv_mimic.hpp
 -
-moveit/kdl_kinematics_plugin/chainiksolver_pos_nr_jl_mimic.hpp
--
 moveit/kdl_kinematics_plugin/joint_mimic.hpp
 -
 moveit/kinematics_base/kinematics_base.h
@@ -1160,6 +1164,8 @@ visualization_msgs/MarkerArray.h
 geometry_msgs/Twist.h
 -
 cassert
+-
+boost/assert.hpp
 -
 
 /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h

@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/src
+CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/youbot/youbot_edinburgh/workspaces/yiming/build
+CMAKE_BINARY_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -117,9 +117,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/youbot/youbot_edinburgh/workspaces/yiming/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -875,6 +875,45 @@ moveit_kdl_kinematics_weighted_plugin/fast:
 .PHONY : moveit_kdl_kinematics_weighted_plugin/fast
 
 #=============================================================================
+# Target rules for targets named visualization_msgs_generate_messages_cpp
+
+# Build rule for target.
+visualization_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualization_msgs_generate_messages_cpp
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f moveit_goal_publisher/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make moveit_goal_publisher/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named visualization_msgs_generate_messages_lisp
+
+# Build rule for target.
+visualization_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualization_msgs_generate_messages_lisp
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f moveit_goal_publisher/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make moveit_goal_publisher/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named visualization_msgs_generate_messages_py
+
+# Build rule for target.
+visualization_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualization_msgs_generate_messages_py
+.PHONY : visualization_msgs_generate_messages_py
+
+# fast build rule for target.
+visualization_msgs_generate_messages_py/fast:
+	$(MAKE) -f moveit_goal_publisher/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make moveit_goal_publisher/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named youbot_base_ik_controller
 
 # Build rule for target.
@@ -888,95 +927,17 @@ youbot_base_ik_controller/fast:
 .PHONY : youbot_base_ik_controller/fast
 
 #=============================================================================
-# Target rules for targets named control_msgs_generate_messages_cpp
+# Target rules for targets named dummy_tf_publisher
 
 # Build rule for target.
-control_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_cpp
-.PHONY : control_msgs_generate_messages_cpp
+dummy_tf_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dummy_tf_publisher
+.PHONY : dummy_tf_publisher
 
 # fast build rule for target.
-control_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/control_msgs_generate_messages_cpp.dir/build.make youbot_base_ik_trajectory/CMakeFiles/control_msgs_generate_messages_cpp.dir/build
-.PHONY : control_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named control_msgs_generate_messages_lisp
-
-# Build rule for target.
-control_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_lisp
-.PHONY : control_msgs_generate_messages_lisp
-
-# fast build rule for target.
-control_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make youbot_base_ik_trajectory/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
-.PHONY : control_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named control_msgs_generate_messages_py
-
-# Build rule for target.
-control_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_py
-.PHONY : control_msgs_generate_messages_py
-
-# fast build rule for target.
-control_msgs_generate_messages_py/fast:
-	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/control_msgs_generate_messages_py.dir/build.make youbot_base_ik_trajectory/CMakeFiles/control_msgs_generate_messages_py.dir/build
-.PHONY : control_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named learning_actionlib_generate_messages_cpp
-
-# Build rule for target.
-learning_actionlib_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 learning_actionlib_generate_messages_cpp
-.PHONY : learning_actionlib_generate_messages_cpp
-
-# fast build rule for target.
-learning_actionlib_generate_messages_cpp/fast:
-	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/build.make youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_cpp.dir/build
-.PHONY : learning_actionlib_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named learning_actionlib_generate_messages_lisp
-
-# Build rule for target.
-learning_actionlib_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 learning_actionlib_generate_messages_lisp
-.PHONY : learning_actionlib_generate_messages_lisp
-
-# fast build rule for target.
-learning_actionlib_generate_messages_lisp/fast:
-	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_lisp.dir/build.make youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_lisp.dir/build
-.PHONY : learning_actionlib_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named learning_actionlib_generate_messages_py
-
-# Build rule for target.
-learning_actionlib_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 learning_actionlib_generate_messages_py
-.PHONY : learning_actionlib_generate_messages_py
-
-# fast build rule for target.
-learning_actionlib_generate_messages_py/fast:
-	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_py.dir/build.make youbot_base_ik_trajectory/CMakeFiles/learning_actionlib_generate_messages_py.dir/build
-.PHONY : learning_actionlib_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named youbot_base_ik_trajectory_server
-
-# Build rule for target.
-youbot_base_ik_trajectory_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 youbot_base_ik_trajectory_server
-.PHONY : youbot_base_ik_trajectory_server
-
-# fast build rule for target.
-youbot_base_ik_trajectory_server/fast:
-	$(MAKE) -f youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build.make youbot_base_ik_trajectory/CMakeFiles/youbot_base_ik_trajectory_server.dir/build
-.PHONY : youbot_base_ik_trajectory_server/fast
+dummy_tf_publisher/fast:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build
+.PHONY : dummy_tf_publisher/fast
 
 #=============================================================================
 # Target rules for targets named move_base_msgs_generate_messages_cpp
@@ -1125,14 +1086,11 @@ help:
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... moveit_kdl_kinematics_weighted_plugin"
+	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... youbot_base_ik_controller"
-	@echo "... control_msgs_generate_messages_cpp"
-	@echo "... control_msgs_generate_messages_lisp"
-	@echo "... control_msgs_generate_messages_py"
-	@echo "... learning_actionlib_generate_messages_cpp"
-	@echo "... learning_actionlib_generate_messages_lisp"
-	@echo "... learning_actionlib_generate_messages_py"
-	@echo "... youbot_base_ik_trajectory_server"
+	@echo "... dummy_tf_publisher"
 	@echo "... move_base_msgs_generate_messages_cpp"
 	@echo "... move_base_msgs_generate_messages_lisp"
 	@echo "... move_base_msgs_generate_messages_py"

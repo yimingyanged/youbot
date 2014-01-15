@@ -1,8 +1,8 @@
-prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/devel
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel
 
 Name: kdl_kinematics_plugin_weighted
 Description: Description of kdl_kinematics_plugin_weighted
 Version: 0.0.0
-Cflags: -I/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include
-Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib -lmoveit_rdf_loader -lmoveit_ros_planning -lmoveit_robot_model_loader
+Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib -lmoveit_rdf_loader -lmoveit_ros_planning -lmoveit_robot_model_loader
 Requires: pluginlib moveit_core moveit_ros_planning

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_controller/src/youbot_base_ik_controller.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_controller/src/youbot_base_ik_controller.cpp
 ros/ros.h
 -
 actionlib/server/simple_action_server.h

@@ -1,8 +1,8 @@
-prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/devel
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel
 
 Name: youbot_goal_passer
 Description: Description of youbot_goal_passer
 Version: 0.0.0
-Cflags: -I/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_goal_passer/include
-Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib -lyoubot_goal_passer
-Requires: actionlib geometry_msgs moveit_msgs actionlib_msgs roscpp roslib move_base_msgs
+Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/include
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib -lyoubot_goal_passer
+Requires: actionlib geometry_msgs moveit_msgs actionlib_msgs roscpp roslib move_base_msgs tf

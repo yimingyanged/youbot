@@ -59,14 +59,14 @@ set(kdl_kinematics_plugin_weighted_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(kdl_kinematics_plugin_weighted_SOURCE_PREFIX /home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted)
-  set(kdl_kinematics_plugin_weighted_DEVEL_PREFIX /home/youbot/youbot_edinburgh/workspaces/yiming/devel)
+  set(kdl_kinematics_plugin_weighted_SOURCE_PREFIX /home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted)
+  set(kdl_kinematics_plugin_weighted_DEVEL_PREFIX /home/yiming/ros_workspace/youbot/workspaces/yiming/devel)
   set(kdl_kinematics_plugin_weighted_INSTALL_PREFIX "")
   set(kdl_kinematics_plugin_weighted_PREFIX ${kdl_kinematics_plugin_weighted_DEVEL_PREFIX})
 else()
   set(kdl_kinematics_plugin_weighted_SOURCE_PREFIX "")
   set(kdl_kinematics_plugin_weighted_DEVEL_PREFIX "")
-  set(kdl_kinematics_plugin_weighted_INSTALL_PREFIX /home/youbot/youbot_edinburgh/workspaces/yiming/install)
+  set(kdl_kinematics_plugin_weighted_INSTALL_PREFIX /home/yiming/ros_workspace/youbot/workspaces/yiming/install)
   set(kdl_kinematics_plugin_weighted_PREFIX ${kdl_kinematics_plugin_weighted_INSTALL_PREFIX})
 endif()
 
@@ -83,9 +83,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(kdl_kinematics_plugin_weighted_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include" STREQUAL "")
+if(NOT "/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include" STREQUAL "")
   set(kdl_kinematics_plugin_weighted_INCLUDE_DIRS "")
-  set(_include_dirs "/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include")
+  set(_include_dirs "/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -95,7 +95,7 @@ if(NOT "/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugi
         message(FATAL_ERROR "Project 'kdl_kinematics_plugin_weighted' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'alex <alex@todo.todo>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'kdl_kinematics_plugin_weighted' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/${idir}'.  Ask the maintainer 'alex <alex@todo.todo>' to fix it.")
+      message(FATAL_ERROR "Project 'kdl_kinematics_plugin_weighted' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/${idir}'.  Ask the maintainer 'alex <alex@todo.todo>' to fix it.")
     endif()
     _list_append_unique(kdl_kinematics_plugin_weighted_INCLUDE_DIRS ${include})
   endforeach()
@@ -111,7 +111,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib;/home/youbot/ros_workspace/devel/lib;/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib;/home/youbot/youbot_edinburgh/workspaces/raha/devel/lib;/opt/ros/hydro/lib)
+    foreach(path /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib;/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib;/opt/ros/hydro/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

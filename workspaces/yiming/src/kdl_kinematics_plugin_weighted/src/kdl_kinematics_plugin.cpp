@@ -12,6 +12,7 @@
 #include <moveit/rdf_loader/rdf_loader.h>
 
 #include <pluginlib/class_list_macros.h>
+
 //register KDLKinematics as a KinematicsBase implementation
 PLUGINLIB_EXPORT_CLASS(ipab_weighted_ik::IPABWeightedIKPlugin, kinematics::KinematicsBase);
 

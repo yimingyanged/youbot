@@ -85,7 +85,6 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 	base_goal.header = goal->trajectory.header;
 #endif
 	arm_goal.trajectory.header = goal->trajectory.header;
-
 	while (!base_goal_retrieved){
 		ROS_INFO("Waiting for base goal");
 		ros::Duration(0.1).sleep();
@@ -107,15 +106,17 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 	int trails=0;
 	for (int i = trails; i < 10; i++)	//Wait for 10 sec for base movement
 	{
+		ROS_INFO("Trails %d",i);
 		if (base_succeeded)
 		{
 			break;
 		}
+		ros::Duration(1).sleep();
 	}
 
 	if (base_succeeded) 
 	{
-		arm_ac.sendGoal(arm_goal, boost::bind(&YoubotGoalPasser::doneCb, this, _1, _2, false));
+		arm_ac.sendGoal(*goal, boost::bind(&YoubotGoalPasser::doneCb, this, _1, _2, false));
 		if (success)
 		{
 			while(current_state.getState() != RCS_IDLE) //!< If not yet idle
@@ -135,6 +136,11 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 			ROS_INFO("Arm movement succeeded");
 			as_.setSucceeded();
 		}
+	}
+	else
+	{
+		ROS_INFO("Arm movement aborted");
+		as_.setAborted();
 	}
 }				
 
@@ -182,13 +188,14 @@ void youbot_goal_passer::YoubotGoalPasser::base_doneCallback(const move_base_msg
 {
 	if (true)
 	{
-		ros::Duration(3.0).sleep();
+		ros::Duration(3).sleep();
 		ROS_INFO("Base Movement Has Been Succeeded! Now Performing Arm Movement");
 		base_succeeded=true;
 	}
 	else
 	{
-		ROS_INFO("Base Movement Has Been Failed! Arm Movement Is Not Going To Be Performed");
+		ROS_INFO("Base Movement Has Not Yet Been Succeeded! Arm Movement Is Not Going To Be Performed");
 		base_succeeded=false;
 	}
+	ros::Duration(0.1).sleep();
 }

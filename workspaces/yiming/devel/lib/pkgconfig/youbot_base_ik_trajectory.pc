@@ -1,8 +1,0 @@
-prefix=/home/youbot/youbot_edinburgh/workspaces/yiming/devel
-
-Name: youbot_base_ik_trajectory
-Description: Description of youbot_base_ik_trajectory
-Version: 0.0.0
-Cflags: -I/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_base_ik_trajectory/include
-Libs: -L/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib -lyoubot_base_ik_trajectory
-Requires: actionlib actionlib_msgs control_msgs learning_actionlib

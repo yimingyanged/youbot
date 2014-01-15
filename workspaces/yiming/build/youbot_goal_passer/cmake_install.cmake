@@ -1,8 +1,8 @@
-# Install script for directory: /home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_goal_passer
+# Install script for directory: /home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/youbot/youbot_edinburgh/workspaces/yiming/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/yiming/ros_workspace/youbot/workspaces/yiming/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/catkin_generated/installspace/youbot_goal_passer.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/catkin_generated/installspace/youbot_goal_passer.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/youbot_goal_passer/cmake" TYPE FILE FILES
-    "/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/catkin_generated/installspace/youbot_goal_passerConfig.cmake"
-    "/home/youbot/youbot_edinburgh/workspaces/yiming/build/youbot_goal_passer/catkin_generated/installspace/youbot_goal_passerConfig-version.cmake"
+    "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/catkin_generated/installspace/youbot_goal_passerConfig.cmake"
+    "/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/catkin_generated/installspace/youbot_goal_passerConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/youbot_goal_passer" TYPE FILE FILES "/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_goal_passer/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/youbot_goal_passer" TYPE FILE FILES "/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

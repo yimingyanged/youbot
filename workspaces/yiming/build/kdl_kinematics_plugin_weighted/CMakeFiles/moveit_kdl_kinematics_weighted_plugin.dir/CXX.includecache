@@ -6,26 +6,28 @@
 
 #IncludeRegexTransform: 
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/chainiksolver_pos_nr_jl_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/chainiksolver_pos_nr_jl_mimic.hpp
 kdl/chainiksolver.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/kdl/chainiksolver.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/kdl/chainiksolver.hpp
 kdl/chainfksolver.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/kdl/chainfksolver.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/kdl/chainfksolver.hpp
 joint_mimic.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/joint_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/joint_mimic.hpp
 ros/ros.h
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/joint_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/include/joint_mimic.hpp
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.cpp
 chainiksolver_pos_nr_jl_mimic.hpp
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.hpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted/src/chainiksolver_pos_nr_jl_mimic.hpp
 ros/console.h
 -
 ros/param.h
 -
 ros/ros.h
+-
+ros/package.h
 -
 
 /opt/ros/hydro/include/XmlRpcDecl.h
@@ -63,6 +65,8 @@ jntarrayvel.hpp
 /opt/ros/hydro/include/kdl/jntarrayvel.hpp
 jntarrayacc.hpp
 /opt/ros/hydro/include/kdl/jntarrayacc.hpp
+solveri.hpp
+/opt/ros/hydro/include/kdl/solveri.hpp
 
 /opt/ros/hydro/include/kdl/chainiksolver.hpp
 chain.hpp
@@ -79,6 +83,8 @@ jntarrayvel.hpp
 /opt/ros/hydro/include/kdl/jntarrayvel.hpp
 jntarrayacc.hpp
 /opt/ros/hydro/include/kdl/jntarrayacc.hpp
+solveri.hpp
+/opt/ros/hydro/include/kdl/solveri.hpp
 
 /opt/ros/hydro/include/kdl/frameacc.hpp
 utilities/rall2d.h
@@ -173,6 +179,8 @@ joint.hpp
 /opt/ros/hydro/include/kdl/joint.hpp
 vector
 -
+
+/opt/ros/hydro/include/kdl/solveri.hpp
 
 /opt/ros/hydro/include/kdl/utilities/kdl-config.h
 
@@ -442,6 +450,14 @@ common.h
 boost/bind.hpp
 -
 XmlRpcValue.h
+-
+
+/opt/ros/hydro/include/ros/package.h
+string
+-
+vector
+-
+map
 -
 
 /opt/ros/hydro/include/ros/param.h

@@ -1,8 +1,8 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o"
   "CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o"
-  "/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/youbot_goal_passer/youbot_goal_passer.pdb"
-  "/home/youbot/youbot_edinburgh/workspaces/yiming/devel/lib/youbot_goal_passer/youbot_goal_passer"
+  "/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_goal_passer/youbot_goal_passer.pdb"
+  "/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_goal_passer/youbot_goal_passer"
 )
 
 # Per-language clean rules from dependency scanning.

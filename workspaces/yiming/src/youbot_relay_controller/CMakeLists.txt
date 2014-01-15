@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 2.8.3)
 project(youbot_relay_controller)
 
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
-
+if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -35,7 +37,7 @@ include_directories(
 include_directories(SYSTEM
                     ${EIGEN_INCLUDE_DIRS}
                     ${Boost_INCLUDE_DIRS}
-					${yaml-cpp_INCLUDE_DIRS}
+		    ${yaml-cpp_INCLUDE_DIRS}
                     )
 
 link_directories(${Boost_LIBRARY_DIRS})

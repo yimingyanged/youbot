@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_relay_controller/include/youbot_relay_controller/youbot_relay_controller.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/include/youbot_relay_controller/youbot_relay_controller.h
 ros/ros.h
 -
 ros/package.h
@@ -34,13 +34,13 @@ yaml-cpp/parser.h
 cmath
 -
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_relay_controller/src/active_relay.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/active_relay.cpp
 youbot_relay_controller/youbot_relay_controller.h
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller/youbot_relay_controller.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller/youbot_relay_controller.h
 
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller.cpp
 youbot_relay_controller/youbot_relay_controller.h
-/home/youbot/youbot_edinburgh/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller/youbot_relay_controller.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller/youbot_relay_controller.h
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

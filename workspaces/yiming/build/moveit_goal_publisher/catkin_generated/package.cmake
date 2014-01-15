@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "moveit_goal_publisher")
+set(moveit_goal_publisher_MAINTAINER "yiming <yiming@todo.todo>")
+set(moveit_goal_publisher_DEPRECATED "")
+set(moveit_goal_publisher_VERSION "0.0.0")
+set(moveit_goal_publisher_BUILD_DEPENDS "roscpp" "visualization_msgs")
+set(moveit_goal_publisher_RUN_DEPENDS "roscpp" "visualization_msgs")
+set(moveit_goal_publisher_BUILDTOOL_DEPENDS "catkin")
