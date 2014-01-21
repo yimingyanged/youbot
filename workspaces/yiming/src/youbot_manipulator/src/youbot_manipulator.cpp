@@ -1,12 +1,13 @@
 #include "youbot_manipulator/youbot_manipulator.h"
 
 namespace youbot_manipulator
-{	YoubotManipulator::YoubotManipulator(ros::NodeHandle * nh, std::string group_ns, std::string target_pose_ns, std::string display_ns, bool visual):
+{	YoubotManipulator::YoubotManipulator(ros::NodeHandle * nh, std::string group_ns, std::string target_pose_ns, std::string display_ns, double pre_offset, bool visual):
 	group_(group_ns),
 	visual_(visual),
 	spinner_(1),
 	target_pose_ns_(target_pose_ns),
-	nh_(*nh)
+	nh_(*nh),
+	pregrap_offset_(pre_offset)
 	{
 
 		target_sub_ = nh_.subscribe<geometry_msgs::PoseStamped>(target_pose_ns_, 1, boost::bind(&YoubotManipulator::targetCallback, this, _1));
@@ -18,6 +19,8 @@ namespace youbot_manipulator
 	{
 		moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
 		ROS_INFO("Planning pose received (%f,%f,%f)", pose.pose.position.x, pose.pose.position.y, pose.pose.position.z);
+		geometry_msgs::Pose pregrap_pose = pose.pose;
+		pregrap_pose.position.x = pregrap_pose.position.x - pregrap_offset_;
 		group_.setStartStateToCurrentState();
 		group_.allowReplanning(true);
 
@@ -48,12 +51,11 @@ namespace youbot_manipulator
 			if (succeeded_)
 			{
 				ROS_INFO("Motion plan generated. press (m) to move");
-				char c = std::getchar();
+				char m = std::getchar();
 
-				if (c == 'm')
+				if (m == 'm')
 				{
 					ROS_INFO("MOVING TO GOAL POSE");
-
 					group_.move();
 				}
 				else

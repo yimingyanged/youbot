@@ -19,5 +19,7 @@ workspaces/andrew/devel/*
 workspaces/raha/build/*
 workspaces/raha/devel/*
 workspaces/raha/install/*
-
 workspaces/youbot/install/*
+workspaces/yiming/build/*
+workspaces/yiming/devel/*
+workspaces/yiming/install/*

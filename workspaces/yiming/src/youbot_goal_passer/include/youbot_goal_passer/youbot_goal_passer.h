@@ -53,26 +53,27 @@ namespace youbot_goal_passer
 	{
 		public:
 			/** Constructor */
-			YoubotGoalPasser(ros::NodeHandle * nh_, std::string input_ns, std::string request_ns, std::string result_ns, std::string arm_ns, std::string base_ns);
+			YoubotGoalPasser(ros::NodeHandle * nh_, std::string input_ns, std::string request_ns, std::string result_ns, std::string arm_ns, std::string base_ns, bool use_base);
 		
 		private:
 			/** Member Variables */
-			Controller_State_t														 current_state;	//!< State Control for the FSM
-			bool																	 base_goal_retrieved;
-			bool																	 base_succeeded;//!< Base movement flag
+			Controller_State_t	current_state;	//!< State Control for the FSM
+			bool	base_goal_retrieved;
+			bool	base_succeeded;//!< Base movement flag
+			bool	use_base_;	/** arm movement only */
 			actionlib::SimpleActionServer<control_msgs::FollowJointTrajectoryAction> as_;			//!< Action Server
 
 		#ifndef USE_YB_NAV
 			actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction> base_ac;		//!< The action client for the base goal message
 		#else
-			ros::Publisher															 base_pub;		//!< Alternatively the publisher for the base
+			ros::Publisher	base_pub;		//!< Alternatively the publisher for the base
 		#endif
-			ros::Subscriber															 request_sub;	//!< Goal request subscriber
-			ros::Subscriber															 result_sub;
+			ros::Subscriber	request_sub;	//!< Goal request subscriber
+			ros::Subscriber	result_sub;
 		#ifndef USE_YB_NAV												//!< The Goal message for the base (different types)
 			control_msgs::FollowJointTrajectoryGoal		base_goal;		
 		#else
-			geometry_msgs::PoseStamped					base_goal;
+			geometry_msgs::PoseStamped	base_goal;
 		#endif
 			actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction> arm_ac;		//!< The action client for the arm goal message
 

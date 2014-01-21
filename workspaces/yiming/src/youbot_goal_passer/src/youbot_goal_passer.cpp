@@ -39,13 +39,13 @@ void youbot_goal_passer::Controller_State_t::setArmDone()
 	}
 }
 
-youbot_goal_passer::YoubotGoalPasser::YoubotGoalPasser(ros::NodeHandle * nh_, std::string input_ns, std::string request_ns, std::string result_ns, std::string arm_ns, std::string base_ns) : 
+youbot_goal_passer::YoubotGoalPasser::YoubotGoalPasser(ros::NodeHandle * nh_, std::string input_ns, std::string request_ns, std::string result_ns, std::string arm_ns, std::string base_ns, bool use_base):
 		as_(*nh_, input_ns, boost::bind(&YoubotGoalPasser::executeCallback, this, _1), false),
 #ifndef USE_YB_NAV
 		base_ac(base_ns, true),
 #endif
-		arm_ac(arm_ns, true)
-		
+		arm_ac(arm_ns, true),
+		use_base_(use_base)
 {
 	
 	base_succeeded=false;
@@ -99,18 +99,20 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 	base_pub.publish(base_goal);
 #endif
 
-	int trails=0;
-	for (int i = trails; i < 10; i++)	//Wait for 10 sec for base movement
+	if (use_base_)
 	{
-		ROS_INFO("Trails %d",i);
-		if (base_succeeded)
+		int trails=0;
+		for (int i = trails; i < 10; i++)	//Wait for 10 sec for base movement
 		{
-			break;
+			ROS_INFO("Trails %d",i);
+			if (base_succeeded)
+			{
+				break;
+			}
+			ros::Duration(1).sleep();
 		}
-		ros::Duration(1).sleep();
 	}
-
-	if (trails == 10)
+	if (base_succeeded || !use_base_)
 	{
 		arm_ac.sendGoal(*goal, boost::bind(&YoubotGoalPasser::doneCb, this, _1, _2, false));
 		if (success)
@@ -135,7 +137,7 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 	}
 	else
 	{
-		ROS_INFO("Arm movement aborted");
+		ROS_INFO("Base movement not yet succeeded. Arm movement aborted");
 		as_.setAborted();
 	}
 }				

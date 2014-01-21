@@ -1,3 +1,11 @@
+/*
+ * Youbot manipulator.
+ * Receives target pose and send out move_group request.
+ * Currently using async spinner, Need to be removed when moveit bug fixed
+ *
+ * yiming yang
+ * 19 Jan 2014
+ */
 #ifndef YOUBOT_MANIPULATOR_H
 #define YOUBOT_MANIPULATOR_H
 
@@ -24,7 +32,7 @@ namespace youbot_manipulator
 		 * @param display_ns display topic for rviz
 		 * @param visual true if want to publish to rviz
 		 */
-		YoubotManipulator(ros::NodeHandle * nh_, std::string group_ns, std::string target_pose_ns, std::string display_ns, bool visual);
+		YoubotManipulator(ros::NodeHandle * nh_, std::string group_ns, std::string target_pose_ns, std::string display_ns, double pre_offset, bool visual);
 
 		/**
 		 * @brief Compute IK
@@ -64,6 +72,7 @@ namespace youbot_manipulator
 		geometry_msgs::PoseStamped pose_;	/** target pose */
 		bool visual_; /** true if want to publish visual state to rviz */
 		bool succeeded_;
+		double pregrap_offset_;
 		/**
 		 * @brief there is a bug in current moveit move_group version, group_.plan is a dead loop
 		 * so use asyncSpinner to get plan back and then move. REMOVE when the bug fixed

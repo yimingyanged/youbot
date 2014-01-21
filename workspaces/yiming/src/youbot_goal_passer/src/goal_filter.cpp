@@ -1,3 +1,11 @@
+/*
+ * Youbot goal filter.
+ * Since current moveit has a bug in move group service, we should not send to much goals to the server.
+ * Just hold the goal, send it when ready. Could be removed when moveit's bug been fixed, or we could keep if for further applications.
+ *
+ * yiming yang
+ * 21 Jan 2014
+ */
 #include <ros/ros.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <string.h>
@@ -23,7 +31,8 @@ protected:
 			ROS_INFO("Target pose not received");
 			return false;
 		}
-		ROS_INFO("Publish target pose");
+		ROS_INFO("Publish target pose (%f, %f, %f) (%f, %f, %f, %f)", pose_.pose.position.x, pose_.pose.position.y, pose_.pose.position.z,
+								pose_.pose.orientation.x, pose_.pose.orientation.y, pose_.pose.orientation.z, pose_.pose.orientation.w);
 		filter_pub_.publish(pose_);
 		return true;
 	}
@@ -47,7 +56,6 @@ private:
 	ros::Publisher	filter_pub_;
 	geometry_msgs::PoseStamped pose_;
 	bool hasPose_;
-	boost::thread pid;
 	ros::AsyncSpinner spinner_;
 	void originCallback(const geometry_msgs::PoseStamped::ConstPtr & origin)
 	{
