@@ -3,9 +3,9 @@ controller_list:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
-      - base_dummy_revolute_joint
-      - base_dummy_prismatic_x_joint
-      - base_dummy_prismatic_y_joint
+      - dummy_revolute_joint
+      - dummy_prismatic_x_joint
+      - dummy_prismatic_y_joint
       - arm_joint_1
       - arm_joint_2
       - arm_joint_3

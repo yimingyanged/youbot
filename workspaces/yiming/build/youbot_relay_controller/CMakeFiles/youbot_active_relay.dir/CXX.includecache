@@ -34,10 +34,6 @@ yaml-cpp/parser.h
 cmath
 -
 
-/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/active_relay.cpp
-youbot_relay_controller/youbot_relay_controller.h
-/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller/youbot_relay_controller.h
-
 /home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller.cpp
 youbot_relay_controller/youbot_relay_controller.h
 /home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller/src/youbot_relay_controller/youbot_relay_controller.h

@@ -1,0 +1,8 @@
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel
+
+Name: object_recognition_core
+Description: Description of object_recognition_core
+Version: 0.6.0
+Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/object_recognition_core/include
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib -lobject_recognition_core_db -lobject_recognition_core_common
+Requires: ecto

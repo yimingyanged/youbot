@@ -1,0 +1,8 @@
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/install
+
+Name: object_recognition_tod
+Description: Description of object_recognition_tod
+Version: 0.4.16
+Cflags: 
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/install/lib 
+Requires: 

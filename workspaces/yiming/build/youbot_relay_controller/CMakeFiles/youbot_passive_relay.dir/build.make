@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
@@ -118,7 +121,7 @@ youbot_passive_relay_EXTERNAL_OBJECTS =
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay: /usr/lib/liblog4cxx.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay: /opt/ros/hydro/lib/libxmlrpcpp.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay: /opt/ros/hydro/lib/libroslib.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay: /usr/local/lib/libyaml-cpp.a
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay: /usr/local/lib/libyaml-cpp.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay: youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/build.make
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay: youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_relay_controller/youbot_passive_relay"

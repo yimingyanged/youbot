@@ -101,7 +101,7 @@ if(NOT "include" STREQUAL "")
   endforeach()
 endif()
 
-set(libraries "moveit_rdf_loader;moveit_ros_planning;moveit_robot_model_loader")
+set(libraries "moveit_rdf_loader;s;moveit_ros_planning;moveit_robot_model_loader")
 foreach(library ${libraries})
   if(TARGET ${library})
     list(APPEND kdl_kinematics_plugin_weighted_LIBRARIES ${library})

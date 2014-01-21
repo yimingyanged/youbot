@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
@@ -202,6 +205,7 @@ moveit_kdl_kinematics_weighted_plugin_EXTERNAL_OBJECTS =
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libmoveit_semantic_world.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libimage_transport.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: /usr/local/lib/libyaml-cpp.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/libmoveit_kdl_kinematics_weighted_plugin.so"

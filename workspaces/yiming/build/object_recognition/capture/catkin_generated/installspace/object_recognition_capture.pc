@@ -1,0 +1,8 @@
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/install
+
+Name: object_recognition_capture
+Description: Description of object_recognition_capture
+Version: 0.2.22
+Cflags: 
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/install/lib 
+Requires: 

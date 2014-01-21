@@ -112,6 +112,7 @@ include_directories(SYSTEM
 ## Declare a cpp executable
  add_executable(youbot_goal_passer src/youbot_goal_passer_node.cpp src/youbot_goal_passer.cpp)
  add_executable(dummy_tf_publisher src/dummy_tf_publisher.cpp)
+ add_executable(goal_filter src/goal_filter.cpp)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(youbot_goal_passer_node youbot_goal_passer_generate_messages_cpp)
@@ -121,6 +122,9 @@ include_directories(SYSTEM
    ${catkin_LIBRARIES}
  )
  target_link_libraries(dummy_tf_publisher
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(goal_filter
    ${catkin_LIBRARIES}
  )
 #############

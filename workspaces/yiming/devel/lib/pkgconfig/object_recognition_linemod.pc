@@ -1,0 +1,8 @@
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel
+
+Name: object_recognition_linemod
+Description: Description of object_recognition_linemod
+Version: 0.2.12
+Cflags: 
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib 
+Requires: ecto object_recognition_core object_recognition_renderer

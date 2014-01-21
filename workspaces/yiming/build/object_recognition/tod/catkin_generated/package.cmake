@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "object_recognition_tod")
+set(object_recognition_tod_MAINTAINER "Vincent Rabaud <vincent.rabaud@gmail.com>")
+set(object_recognition_tod_DEPRECATED "")
+set(object_recognition_tod_VERSION "0.4.16")
+set(object_recognition_tod_BUILD_DEPENDS "ecto" "ecto_opencv" "eigen" "object_recognition_core")
+set(object_recognition_tod_RUN_DEPENDS "ecto" "ecto_opencv" "object_recognition_core")
+set(object_recognition_tod_BUILDTOOL_DEPENDS "catkin")

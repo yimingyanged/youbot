@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "youbot_manipulator")
+set(youbot_manipulator_MAINTAINER "yiming <yiming@todo.todo>")
+set(youbot_manipulator_DEPRECATED "")
+set(youbot_manipulator_VERSION "0.0.0")
+set(youbot_manipulator_BUILD_DEPENDS "geometry_msgs" "moveit_core" "roscpp" "moveit_msgs" "moveit_ros_planning_interface")
+set(youbot_manipulator_RUN_DEPENDS "geometry_msgs" "moveit_core" "roscpp" "moveit_msgs" "moveit_ros_planning_interface")
+set(youbot_manipulator_BUILDTOOL_DEPENDS "catkin")

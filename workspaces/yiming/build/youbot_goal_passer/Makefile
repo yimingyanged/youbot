@@ -35,6 +35,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
@@ -46,8 +49,8 @@ CMAKE_BINARY_DIR = /home/yiming/ros_workspace/youbot/workspaces/yiming/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
-	/usr/bin/cmake -i .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +91,7 @@ install/strip/fast: install/strip
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"main\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -159,6 +162,20 @@ dummy_tf_publisher: youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule
 dummy_tf_publisher/fast:
 	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build
 .PHONY : dummy_tf_publisher/fast
+
+# Convenience name for target.
+youbot_goal_passer/CMakeFiles/goal_filter.dir/rule:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/goal_filter.dir/rule
+.PHONY : youbot_goal_passer/CMakeFiles/goal_filter.dir/rule
+
+# Convenience name for target.
+goal_filter: youbot_goal_passer/CMakeFiles/goal_filter.dir/rule
+.PHONY : goal_filter
+
+# fast build rule for target.
+goal_filter/fast:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/goal_filter.dir/build.make youbot_goal_passer/CMakeFiles/goal_filter.dir/build
+.PHONY : goal_filter/fast
 
 # Convenience name for target.
 youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule:
@@ -240,6 +257,30 @@ src/dummy_tf_publisher.cpp.s:
 	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/src/dummy_tf_publisher.cpp.s
 .PHONY : src/dummy_tf_publisher.cpp.s
 
+src/goal_filter.o: src/goal_filter.cpp.o
+.PHONY : src/goal_filter.o
+
+# target to build an object file
+src/goal_filter.cpp.o:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/goal_filter.dir/build.make youbot_goal_passer/CMakeFiles/goal_filter.dir/src/goal_filter.cpp.o
+.PHONY : src/goal_filter.cpp.o
+
+src/goal_filter.i: src/goal_filter.cpp.i
+.PHONY : src/goal_filter.i
+
+# target to preprocess a source file
+src/goal_filter.cpp.i:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/goal_filter.dir/build.make youbot_goal_passer/CMakeFiles/goal_filter.dir/src/goal_filter.cpp.i
+.PHONY : src/goal_filter.cpp.i
+
+src/goal_filter.s: src/goal_filter.cpp.s
+.PHONY : src/goal_filter.s
+
+# target to generate assembly for a file
+src/goal_filter.cpp.s:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/goal_filter.dir/build.make youbot_goal_passer/CMakeFiles/goal_filter.dir/src/goal_filter.cpp.s
+.PHONY : src/goal_filter.cpp.s
+
 src/youbot_goal_passer.o: src/youbot_goal_passer.cpp.o
 .PHONY : src/youbot_goal_passer.o
 
@@ -296,6 +337,7 @@ help:
 	@echo "... depend"
 	@echo "... dummy_tf_publisher"
 	@echo "... edit_cache"
+	@echo "... goal_filter"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
@@ -309,6 +351,9 @@ help:
 	@echo "... src/dummy_tf_publisher.o"
 	@echo "... src/dummy_tf_publisher.i"
 	@echo "... src/dummy_tf_publisher.s"
+	@echo "... src/goal_filter.o"
+	@echo "... src/goal_filter.i"
+	@echo "... src/goal_filter.s"
 	@echo "... src/youbot_goal_passer.o"
 	@echo "... src/youbot_goal_passer.i"
 	@echo "... src/youbot_goal_passer.s"

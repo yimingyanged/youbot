@@ -12,12 +12,11 @@
   </include>
 
   <!-- If needed, broadcast static tf for robot root -->
-    <!--node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom base_footprint 100" /-->
+    <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom base_footprint 100" />
 
 
   <node name="dummy_tf_publisher" pkg="youbot_goal_passer" type="dummy_tf_publisher"/>
-
-  <rosparam command="load" file="$(find youbot_base_ik_weighted_moveit)/config/weighting.yaml"/>
+  <rosparam command="load" file="$(find kdl_kinematics_plugin_weighted)/config/weighting.yaml" />
   <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/> 
@@ -30,7 +29,7 @@
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find youbot_base_ik_weighted_moveit)/launch/move_group.launch">
     <arg name="allow_trajectory_execution" value="true"/>  
-    <arg name="fake_execution" value="false"/>
+    <arg name="fake_execution" value="true"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>

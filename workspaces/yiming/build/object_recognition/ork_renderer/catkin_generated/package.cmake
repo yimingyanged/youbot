@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "object_recognition_renderer")
+set(object_recognition_renderer_MAINTAINER "Vincent Rabaud <vincent.rabaud@gmail.com>")
+set(object_recognition_renderer_DEPRECATED "")
+set(object_recognition_renderer_VERSION "0.1.11")
+set(object_recognition_renderer_BUILD_DEPENDS "assimp" "boost" "freeimage" "glut" "libdevil-dev" "libosmesa6-dev" "libxi-dev" "libxmu-dev" "opencv2" "sdl")
+set(object_recognition_renderer_RUN_DEPENDS "assimp" "boost" "freeimage" "glut" "libdevil-dev" "libosmesa6-dev" "libxi-dev" "libxmu-dev" "opencv2" "sdl")
+set(object_recognition_renderer_BUILDTOOL_DEPENDS "catkin")

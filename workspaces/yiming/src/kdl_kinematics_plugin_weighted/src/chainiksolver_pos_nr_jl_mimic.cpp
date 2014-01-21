@@ -3,6 +3,9 @@
 #include <ros/param.h>
 #include <ros/ros.h>
 #include <ros/package.h>
+#include <yaml-cpp/yaml.h>
+#include <yaml-cpp/parser.h>
+#include <XmlRpcValue.h>
 namespace KDL
 {
     
@@ -80,7 +83,45 @@ namespace KDL
         ROS_DEBUG_STREAM_NAMED("kdl","Input:");
         for(std::size_t i=0; i < q_out.rows(); ++i)
             ROS_DEBUG_NAMED("kdl","%d: %f",(int) i,q_out(i));
-        
+
+	//Loading weighting factor
+	
+        double weighting;
+	std::vector<double> W;
+	W.resize(chain.getNrOfJoints());
+	for (int i = 0; i < W.size(); i++)
+	{
+	    std::string ww="/weighting_"+std::to_string(i);
+            if (ros::param::get(ww, weighting))
+  	    {
+	        if(weighting > 0.0 && weighting <= 1.0)
+	            W[i]= weighting;
+	        else
+	            W[i]=1.0;
+	    }
+	    else
+	    {
+		W[i]=1.0;
+	    }
+	}
+
+	/*
+	ROS_INFO("Try loading weighting fector   1");
+	//YAML::Node weighting_configs = YAML::LoadFile((std::string(ros::package::getPath("kdl_kinematics_plugin_weighted")).append("/config/weighting.yaml")));
+	YAML::Node weighting_configs = YAML::LoadFile((std::string(ros::package::getPath("youbot_base_ik_weighted_moveit")).append("/config/controllers.yaml")));	
+	ROS_INFO("Try loading weighting fector   2");
+	    if (weighting_configs["weighting_vector"])	//!< If loaded correct file
+	    {
+		ROS_INFO("Loading weighting factor");
+		for (int i = 0; i < weighting_configs["weighting_vector"][0].size(); i++) 
+		{
+		    delta_q(i)=delta_q(i)*(weighting_configs["weighting_vector"][0][i].as<double>());
+		}
+	    }
+	    else
+	    {
+	    	ROS_ERROR("File is inexistent or broken.");
+	    }*/
         unsigned int i;
         for(i=0;i<maxiter;++i)
         {
@@ -104,39 +145,12 @@ namespace KDL
             
             iksolver.CartToJnt(q_temp,delta_twist,delta_q);
 	    
-	    /*YAML::Node weighting_configs = YAML::LoadFile((std::string(ros::package::getPath("kdl_kinematics_plugin_weighted")).append("/config/weighting.yaml")));
-	    if (weighting_configs["weighting_vector"])	//!< If loaded correct file
-	    {
-		for (int i = 0; i < weighting_configs["weighting_vector"][0].size(); i++) //!< And now the arm joints
-		{
-		    delta_q(i)=delta_q(i)*(weighting_configs["weighting_vector"][0][i].as<double>());
-		}
-	    }
-	    else
-	    {
-	    	ROS_ERROR("File is inexistent or broken.");
-	    }
-	    */
-	    std::string weighting_type;
-	    if (ros::param::get("/weighting_type", weighting_type))
-      	    {
-		if (weighting_type == "base")
-		{
-		    for(int i=0;i<3;i++)
-	 	    {
-			delta_q(i)=delta_q(i)*0.1;
-		    }
-		}
-		else if (weighting_type == "arm")
-		{
-		    for(int i=3;i<8;i++)
-	 	    {
-			delta_q(i)=delta_q(i)*0.1;
-		    }
-		}
-	    }
+
+
 	    
-	    
+	    for(int i=0;i<chain.getNrOfJoints();i++)
+	        delta_q(i)=delta_q(i)*W[i];
+
             Add(q_temp,delta_q,q_temp);
             
             ROS_DEBUG_STREAM_NAMED("kdl","delta_q");

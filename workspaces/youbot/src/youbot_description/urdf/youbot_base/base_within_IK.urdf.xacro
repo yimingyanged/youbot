@@ -44,7 +44,7 @@
 	<xacro:macro name="youbot_base" params="name">
 		
 		<link name="${name}_footprint">
-      			<inertial>
+      			<!--inertial>
         			<mass value="0.0001" />
         			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
         			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
@@ -62,57 +62,8 @@
         			<geometry>
           				<box size="0.001 0.001 0.001" />
         			</geometry>
-      			</collision>
+      			</collision-->
     		</link>
-		
-		<link name="base_dummy_prismatic_x_link">
-
-		</link>
-		
-		<link name="base_dummy_prismatic_y_link">
-
-		</link>
-
-		<link name="base_dummy_revolute_link">
-
-		</link>
-		
-		<joint name="${name}_footprint_joint" type="fixed">
-      			<origin xyz="0 0 0" rpy="0 0 0" />
-      			<child link="base_dummy_revolute_link" />
-      			<parent link="${name}_footprint"/>
-    		</joint>
-		
-		<joint name="base_dummy_revolute_joint" type="revolute">
-      			<origin xyz="0 0 0" rpy="0 0 0" />
-			<axis xyz="0 0 1" />
-			<child link="base_dummy_prismatic_x_link" />
-      			<parent link="base_dummy_revolute_link"/>
-			
-			<limit effort="${9.5}" velocity="${M_PI}" lower="${-M_PI}" upper="${M_PI}"/> 
-    		</joint>
-
-		<joint name="base_dummy_prismatic_x_joint" type="prismatic">
-      			<origin xyz="0 0 0" rpy="0 0 0" />
-			<axis xyz="1 0 0" />
-			<child link="base_dummy_prismatic_y_link" />
-      			<parent link="base_dummy_prismatic_x_link"/>
-			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
-    		</joint>		
-		
-		<joint name="base_dummy_prismatic_y_joint" type="prismatic">
-      			<origin xyz="0 0 0" rpy="0 0 0" />
-			<axis xyz="0 1 0" />			
-			<child link="${name}_link" />
-      			<parent link="base_dummy_prismatic_y_link"/>
-			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
-    		</joint>		
-
-		
-		
-		
-
-
 		<link name="${name}_link">
       			<inertial>
         			<mass value="${base_mass}" />
@@ -135,7 +86,75 @@
 	       			</geometry>
       			</collision>
     		</link>		
+			
+		<link name="dummy_prismatic_link">
+			<inertial>
+        			<mass value="0.0001" />
+        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
+        			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                 			iyy="1.0" iyz="0.0" izz="1.0" />
+      				</inertial>
+      			<visual>
+        			<origin xyz="0 0 0" rpy="0 0 0" />
+        			<geometry>
+          				<box size="0.001 0.001 0.001" />
+        			</geometry>
+               			<material name="Red" />
+      			</visual>
+      			<collision>
+        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
+        			<geometry>
+          				<box size="0.001 0.001 0.001" />
+        			</geometry>
+      			</collision>
+		</link>
 
+		<link name="dummy_revolute_link">
+			<inertial>
+        			<mass value="0.0001" />
+        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
+        			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                 			iyy="1.0" iyz="0.0" izz="1.0" />
+      				</inertial>
+      			<visual>
+        			<origin xyz="0 0 0" rpy="0 0 0" />
+        			<geometry>
+          				<box size="0.001 0.001 0.001" />
+        			</geometry>
+               			<material name="Red" />
+      			</visual>
+      			<collision>
+        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
+        			<geometry>
+          				<box size="0.001 0.001 0.001" />
+        			</geometry>
+      			</collision>
+		</link>
+		<joint name="dummy_prismatic_x_joint" type="prismatic">
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<axis xyz="1 0 0" />
+			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
+      			<child link="dummy_prismatic_link" />
+      			<parent link="${name}_footprint"/>
+    		</joint>
+		
+
+		<joint name="dummy_prismatic_y_joint" type="prismatic">
+      			<origin xyz="0 0 0" rpy="0 0 0" />
+			<axis xyz="0 1 0" />
+			<child link="dummy_revolute_link" />
+      			<parent link="dummy_prismatic_link"/>
+			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
+    		</joint>		
+		
+		<joint name="dummy_revolute_joint" type="revolute">
+      			<origin xyz="0 0 0" rpy="0 0 0" />
+			<axis xyz="0 0 1" />			
+			<child link="${name}_link" />
+      			<parent link="dummy_revolute_link"/>
+			<limit effort="${9.5}" velocity="${M_PI}" lower="${-M_PI}" upper="${M_PI}"/>
+    		</joint>	
+		
 		<!-- base laser front -->
                        
     		<xacro:hokuyo_urg04_laser name="${name}_laser_front" parent="${name}" ros_topic="scan_front" update_rate="10" min_angle="-1.57" max_angle="1.57" >

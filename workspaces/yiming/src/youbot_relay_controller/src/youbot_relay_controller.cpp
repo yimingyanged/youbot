@@ -48,9 +48,11 @@ youbot_relay_controller::YoubotRelayController::YoubotRelayController(ros::NodeH
 {
 	
 	/** Joint Name Setup */
+	ROS_INFO("Loading joint names from YAML");
 	YAML::Node name_configs = YAML::LoadFile((std::string(ros::package::getPath("youbot_base_ik_weighted_moveit")).append("/config/controllers.yaml")));
 	if (name_configs["controller_list"])	//!< If loaded correct file
 	{
+		ROS_INFO("YAML loaded");
 		for (int i = 0; i < 3; i++)	//!< First the base joints
 		{
 			joint_map[name_configs["controller_list"][0]["joints"][i].as<std::string>()] = true;
@@ -72,6 +74,7 @@ youbot_relay_controller::YoubotRelayController::YoubotRelayController(ros::NodeH
 	/** Check that individual servers are up / or set up publisher...*/
 	bool server_ok = false;
 	ROS_INFO("Waiting for Servers to come online!");
+	int trails=0;
 	while (!server_ok)
 	{
 	#ifndef USE_YB_NAV
@@ -79,6 +82,12 @@ youbot_relay_controller::YoubotRelayController::YoubotRelayController(ros::NodeH
 	#else 
 		server_ok = arm_ac.waitForServer(ros::Duration(0.1));
 	#endif
+		trails++;
+		if (trails > 20) //wait for 2 sec
+		{
+			ROS_INFO("Servers not connected......");
+			break;
+		}
 	}
 #ifdef USE_YB_NAV
 	base_pub = nh_->advertise<geometry_msgs::PoseStamped>(base_ns, 1);

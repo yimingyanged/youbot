@@ -14,8 +14,14 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for ASSIMP.
+ASSIMP_DIR:PATH=ASSIMP_DIR-NOTFOUND
+
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
+
+//Build tests
+BUILD_TEST:BOOL=ON
 
 //The Boost DATE_TIME library
 Boost_DATE_TIME_LIBRARY:FILEPATH=/usr/lib/libboost_date_time-mt.so
@@ -41,6 +47,15 @@ Boost_FILESYSTEM_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_filesystem-mt.so
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
 
+//The Boost IOSTREAMS library
+Boost_IOSTREAMS_LIBRARY:FILEPATH=/usr/lib/libboost_iostreams-mt.so
+
+//Boost iostreams library (debug)
+Boost_IOSTREAMS_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_iostreams-mt.so
+
+//Boost iostreams library (release)
+Boost_IOSTREAMS_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_iostreams-mt.so
+
 //Boost library directory
 Boost_LIBRARY_DIRS:FILEPATH=/usr/lib
 
@@ -52,6 +67,33 @@ Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_program_options-m
 
 //Boost program_options library (release)
 Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_program_options-mt.so
+
+//The Boost PYTHON library
+Boost_PYTHON_LIBRARY:FILEPATH=/usr/lib/libboost_python.so
+
+//Boost python library (debug)
+Boost_PYTHON_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_python.so
+
+//Boost python library (release)
+Boost_PYTHON_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_python.so
+
+//The Boost REGEX library
+Boost_REGEX_LIBRARY:FILEPATH=/usr/lib/libboost_regex-mt.so
+
+//Boost regex library (debug)
+Boost_REGEX_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_regex-mt.so
+
+//Boost regex library (release)
+Boost_REGEX_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_regex-mt.so
+
+//The Boost SERIALIZATION library
+Boost_SERIALIZATION_LIBRARY:FILEPATH=/usr/lib/libboost_serialization-mt.so
+
+//Boost serialization library (debug)
+Boost_SERIALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/libboost_serialization-mt.so
+
+//Boost serialization library (release)
+Boost_SERIALIZATION_LIBRARY_RELEASE:FILEPATH=/usr/lib/libboost_serialization-mt.so
 
 //The Boost SIGNALS library
 Boost_SIGNALS_LIBRARY:FILEPATH=/usr/lib/libboost_signals-mt.so
@@ -98,9 +140,9 @@ CATKIN_WHITELIST_PACKAGES:STRING=
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
-// CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel.
+CMAKE_BUILD_TYPE:STRING=RelWithDebInfo
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -233,13 +275,33 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a program.
+COUCHAPP:FILEPATH=COUCHAPP-NOTFOUND
+
+//Path to a file.
+CURL_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+CURL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
+
+//Path to a program.
 DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
 
 //Doxygen found
 DOXYGEN_FOUND:BOOL=TRUE
 
+//Deploy destination for docs, or OFF.  Will be passed to rsync;
+// may contain user@ syntax for ssh
+ECTO_DOCS_DEPLOY_DESTINATION:STRING=OFF
+
+//Generate logs containing fine-grained per-cell execution timing
+// information.  You probably don't want this.
+ECTO_LOG_STATS:BOOL=OFF
+
 //Path to a file.
 EIGEN_INCLUDE_DIR:PATH=/usr/include/eigen3
+
+//Path to a file.
+EIGEN_INCLUDE_DIRS:PATH=/usr/include/eigen3
 
 //Path to a program.
 EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
@@ -247,8 +309,32 @@ EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 //The directory containing a CMake configuration file for Eigen.
 Eigen_DIR:PATH=/opt/ros/hydro/share/eigen/cmake
 
+//Path to a file.
+FLANN_INCLUDE_DIRS:PATH=/usr/include
+
+//Path to a library.
+FLANN_LIBRARY:FILEPATH=/usr/lib/libflann_cpp_s.a
+
+//Path to a library.
+FLANN_LIBRARY_DEBUG:FILEPATH=/usr/lib/libflann_cpp_s.a
+
 //Path to a program.
 GENACTION_BIN:FILEPATH=/opt/ros/hydro/lib/actionlib_msgs/genaction.py
+
+//git command line client
+GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
+//Path to a file.
+GLUT_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+GLUT_Xi_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libXi.so
+
+//Path to a library.
+GLUT_Xmu_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libXmu.so
+
+//Path to a library.
+GLUT_glut_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libglut.so
 
 //Path to a file.
 GTEST_INCLUDE_DIR:PATH=/usr/include
@@ -265,6 +351,12 @@ GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
 
+//Path to a file.
+LIBUSB_1_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+LIBUSB_1_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libusb-1.0.so
+
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
 
@@ -274,11 +366,223 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests
 
+//Path to a file.
+OPENGL_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+OPENGL_gl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGL.so
+
+//Path to a library.
+OPENGL_glu_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLU.so
+
+//Path to a file.
+OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
+
+//Path to a file.
+OPENNI_INCLUDE_DIRS:PATH=/usr/include/ni
+
+//Path to a library.
+OPENNI_LIBRARY:FILEPATH=/usr/lib/libOpenNI.so
+
+//The location for the web ui to be installed to.
+OR_WEB_UI_LOCATION:STRING=http://localhost:5984/or_web_ui
+
+//Path where debug 3rdpaty OpenCV dependencies are located
+OpenCV_3RDPARTY_LIB_DIR_DBG:PATH=/opt/ros/hydro/share/OpenCV/3rdparty/lib
+
+//Path where release 3rdpaty OpenCV dependencies are located
+OpenCV_3RDPARTY_LIB_DIR_OPT:PATH=/opt/ros/hydro/share/OpenCV/3rdparty/lib
+
+OpenCV_CONFIG_PATH:FILEPATH=/opt/ros/hydro/share/OpenCV
+
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/opt/ros/hydro/share/OpenCV
+
+//Path where debug OpenCV libraries are located
+OpenCV_LIB_DIR_DBG:PATH=/opt/ros/hydro/lib
+
+//Path where release OpenCV libraries are located
+OpenCV_LIB_DIR_OPT:PATH=/opt/ros/hydro/lib
+
+//path to apps headers
+PCL_APPS_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_apps library
+PCL_APPS_LIBRARY:FILEPATH=/usr/lib/libpcl_apps.so
+
+//path to pcl_apps library debug
+PCL_APPS_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_apps.so
+
+//path to common headers
+PCL_COMMON_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_common library
+PCL_COMMON_LIBRARY:FILEPATH=/usr/lib/libpcl_common.so
+
+//path to pcl_common library debug
+PCL_COMMON_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_common.so
+
+//The directory containing a CMake configuration file for PCL.
+PCL_DIR:PATH=/usr/share/pcl-1.7
+
+//path to features headers
+PCL_FEATURES_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_features library
+PCL_FEATURES_LIBRARY:FILEPATH=/usr/lib/libpcl_features.so
+
+//path to pcl_features library debug
+PCL_FEATURES_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_features.so
+
+//path to filters headers
+PCL_FILTERS_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_filters library
+PCL_FILTERS_LIBRARY:FILEPATH=/usr/lib/libpcl_filters.so
+
+//path to pcl_filters library debug
+PCL_FILTERS_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_filters.so
+
+//path to geometry headers
+PCL_GEOMETRY_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to io headers
+PCL_IO_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_io library
+PCL_IO_LIBRARY:FILEPATH=/usr/lib/libpcl_io.so
+
+//path to pcl_io library debug
+PCL_IO_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_io.so
+
+//path to kdtree headers
+PCL_KDTREE_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_kdtree library
+PCL_KDTREE_LIBRARY:FILEPATH=/usr/lib/libpcl_kdtree.so
+
+//path to pcl_kdtree library debug
+PCL_KDTREE_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_kdtree.so
+
+//path to keypoints headers
+PCL_KEYPOINTS_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_keypoints library
+PCL_KEYPOINTS_LIBRARY:FILEPATH=/usr/lib/libpcl_keypoints.so
+
+//path to pcl_keypoints library debug
+PCL_KEYPOINTS_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_keypoints.so
+
+//path to octree headers
+PCL_OCTREE_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_octree library
+PCL_OCTREE_LIBRARY:FILEPATH=/usr/lib/libpcl_octree.so
+
+//path to pcl_octree library debug
+PCL_OCTREE_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_octree.so
+
+//path to outofcore headers
+PCL_OUTOFCORE_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_outofcore library
+PCL_OUTOFCORE_LIBRARY:FILEPATH=/usr/lib/libpcl_outofcore.so
+
+//path to pcl_outofcore library debug
+PCL_OUTOFCORE_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_outofcore.so
+
+//path to people headers
+PCL_PEOPLE_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_people library
+PCL_PEOPLE_LIBRARY:FILEPATH=/usr/lib/libpcl_people.so
+
+//path to pcl_people library debug
+PCL_PEOPLE_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_people.so
+
+//path to recognition headers
+PCL_RECOGNITION_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_recognition library
+PCL_RECOGNITION_LIBRARY:FILEPATH=/usr/lib/libpcl_recognition.so
+
+//path to pcl_recognition library debug
+PCL_RECOGNITION_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_recognition.so
+
+//path to registration headers
+PCL_REGISTRATION_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_registration library
+PCL_REGISTRATION_LIBRARY:FILEPATH=/usr/lib/libpcl_registration.so
+
+//path to pcl_registration library debug
+PCL_REGISTRATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_registration.so
+
+//path to sample_consensus headers
+PCL_SAMPLE_CONSENSUS_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_sample_consensus library
+PCL_SAMPLE_CONSENSUS_LIBRARY:FILEPATH=/usr/lib/libpcl_sample_consensus.so
+
+//path to pcl_sample_consensus library debug
+PCL_SAMPLE_CONSENSUS_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_sample_consensus.so
+
+//path to search headers
+PCL_SEARCH_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_search library
+PCL_SEARCH_LIBRARY:FILEPATH=/usr/lib/libpcl_search.so
+
+//path to pcl_search library debug
+PCL_SEARCH_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_search.so
+
+//path to segmentation headers
+PCL_SEGMENTATION_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_segmentation library
+PCL_SEGMENTATION_LIBRARY:FILEPATH=/usr/lib/libpcl_segmentation.so
+
+//path to pcl_segmentation library debug
+PCL_SEGMENTATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_segmentation.so
+
+//path to surface headers
+PCL_SURFACE_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_surface library
+PCL_SURFACE_LIBRARY:FILEPATH=/usr/lib/libpcl_surface.so
+
+//path to pcl_surface library debug
+PCL_SURFACE_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_surface.so
+
+//path to tracking headers
+PCL_TRACKING_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_tracking library
+PCL_TRACKING_LIBRARY:FILEPATH=/usr/lib/libpcl_tracking.so
+
+//path to pcl_tracking library debug
+PCL_TRACKING_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_tracking.so
+
+//path to visualization headers
+PCL_VISUALIZATION_INCLUDE_DIR:PATH=/usr/include/pcl-1.7
+
+//path to pcl_visualization library
+PCL_VISUALIZATION_LIBRARY:FILEPATH=/usr/lib/libpcl_visualization.so
+
+//path to pcl_visualization library debug
+PCL_VISUALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/libpcl_visualization.so
+
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
+
+//Path to a file.
+PYTHON_INCLUDE_DIR:PATH=/usr/include/python2.7
+
+//Path to a library.
+PYTHON_LIBRARY:FILEPATH=/usr/lib/libpython2.7.so
 
 //Python version
 PYTHON_VERSION_XDOTY:STRING=2.7
@@ -289,17 +593,206 @@ Project_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/bu
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src
 
+//Path to a file.
+QHULL_INCLUDE_DIRS:PATH=/usr/include/qhull
+
+//Path to a library.
+QHULL_LIBRARY:FILEPATH=/usr/lib/libqhull.so
+
+//Path to a library.
+QHULL_LIBRARY_DEBUG:FILEPATH=/usr/lib/libqhull.so
+
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
+//Path to a program.
+SPHINX_BUILD:FILEPATH=/usr/bin/sphinx-build
+
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
 
 //LSB Distrib - codename tag
 UBUNTU_PRECISE:BOOL=TRUE
+
+//Use GLUT instead of OSMesa
+USE_GLUT:BOOL=ON
+
+//Path to a file.
+X11_ICE_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_ICE_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libICE.so
+
+//Path to a file.
+X11_SM_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_SM_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libSM.so
+
+//Path to a file.
+X11_X11_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_X11_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libX11.so
+
+//Path to a file.
+X11_XRes_INCLUDE_PATH:PATH=X11_XRes_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+X11_XRes_LIB:FILEPATH=X11_XRes_LIB-NOTFOUND
+
+//Path to a file.
+X11_XShm_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_XSync_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_XTest_INCLUDE_PATH:PATH=X11_XTest_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+X11_XTest_LIB:FILEPATH=X11_XTest_LIB-NOTFOUND
+
+//Path to a file.
+X11_Xaccessrules_INCLUDE_PATH:PATH=X11_Xaccessrules_INCLUDE_PATH-NOTFOUND
+
+//Path to a file.
+X11_Xaccessstr_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_Xau_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xau_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXau.so
+
+//Path to a file.
+X11_Xcomposite_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xcomposite_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXcomposite.so
+
+//Path to a file.
+X11_Xcursor_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xcursor_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXcursor.so
+
+//Path to a file.
+X11_Xdamage_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xdamage_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXdamage.so
+
+//Path to a file.
+X11_Xdmcp_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xdmcp_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXdmcp.so
+
+//Path to a library.
+X11_Xext_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXext.so
+
+//Path to a file.
+X11_Xfixes_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xfixes_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXfixes.so
+
+//Path to a file.
+X11_Xft_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xft_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXft.so
+
+//Path to a file.
+X11_Xi_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xi_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXi.so
+
+//Path to a file.
+X11_Xinerama_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xinerama_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXinerama.so
+
+//Path to a file.
+X11_Xinput_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xinput_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXi.so
+
+//Path to a file.
+X11_Xkb_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_Xkbfile_INCLUDE_PATH:PATH=X11_Xkbfile_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+X11_Xkbfile_LIB:FILEPATH=X11_Xkbfile_LIB-NOTFOUND
+
+//Path to a file.
+X11_Xkblib_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_Xlib_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_Xpm_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xpm_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXpm.so
+
+//Path to a file.
+X11_Xrandr_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xrandr_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXrandr.so
+
+//Path to a file.
+X11_Xrender_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xrender_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXrender.so
+
+//Path to a file.
+X11_Xscreensaver_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xscreensaver_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXss.so
+
+//Path to a file.
+X11_Xshape_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_Xt_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a library.
+X11_Xt_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXt.so
+
+//Path to a file.
+X11_Xutil_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_Xv_INCLUDE_PATH:PATH=X11_Xv_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+X11_Xv_LIB:FILEPATH=X11_Xv_LIB-NOTFOUND
+
+//Path to a library.
+X11_Xxf86misc_LIB:FILEPATH=X11_Xxf86misc_LIB-NOTFOUND
+
+//Path to a file.
+X11_dpms_INCLUDE_PATH:PATH=/usr/include
+
+//Path to a file.
+X11_xf86misc_INCLUDE_PATH:PATH=X11_xf86misc_INCLUDE_PATH-NOTFOUND
+
+//Path to a file.
+X11_xf86vmode_INCLUDE_PATH:PATH=X11_xf86vmode_INCLUDE_PATH-NOTFOUND
 
 //Path to a file.
 _CATKIN_GTEST_INCLUDE:FILEPATH=_CATKIN_GTEST_INCLUDE-NOTFOUND
@@ -313,23 +806,83 @@ actionlib_DIR:PATH=/opt/ros/hydro/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/hydro/share/actionlib_msgs/cmake
 
+//The directory containing a CMake configuration file for ar_pose.
+ar_pose_DIR:PATH=ar_pose_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for ar_tools.
+ar_tools_DIR:PATH=ar_tools_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for artoolkit.
+artoolkit_DIR:PATH=artoolkit_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for bond.
+bond_DIR:PATH=/opt/ros/hydro/share/bond/cmake
+
+//The directory containing a CMake configuration file for bondcpp.
+bondcpp_DIR:PATH=/opt/ros/hydro/share/bondcpp/cmake
+
+//Dependencies for the target
+capture_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;object_recognition_core_db;general;object_recognition_core_common;general;/opt/ros/hydro/lib/libecto.so;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/hydro/share/catkin/cmake
 
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/hydro/share/class_loader/cmake
 
+//Dependencies for the target
+common_interface_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;object_recognition_core_db;
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/hydro/share/cpp_common/cmake
 
+//Dependencies for the target
+db_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;object_recognition_core_db;
+
+//Dependencies for the target
+db_interface_LIB_DEPENDS:STATIC=general;object_recognition_core_common;general;object_recognition_core_db;
+
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/hydro/share/dynamic_reconfigure/cmake
+
+//The directory containing a CMake configuration file for ecto.
+ecto_DIR:PATH=/opt/ros/hydro/share/ecto/cmake
+
+//Dependencies for the target
+ecto_detection_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;/opt/ros/hydro/lib/libecto.so;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;object_recognition_core_db;general;object_recognition_core_common;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;
+
+//The directory containing a CMake configuration file for ecto_image_pipeline.
+ecto_image_pipeline_DIR:PATH=/opt/ros/hydro/share/ecto_image_pipeline/cmake
+
+//Dependencies for the target
+ecto_linemod_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;object_recognition_core_db;general;object_recognition_core_common;general;/opt/ros/hydro/lib/libecto.so;general;object_recognition_renderer_glut;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;
+
+//The directory containing a CMake configuration file for ecto_opencv.
+ecto_opencv_DIR:PATH=/opt/ros/hydro/share/ecto_opencv/cmake
+
+//The directory containing a CMake configuration file for ecto_pcl.
+ecto_pcl_DIR:PATH=/opt/ros/hydro/share/ecto_pcl/cmake
+
+//Dependencies for the target
+ecto_sample_linemod_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;object_recognition_core_db;general;object_recognition_core_common;general;/opt/ros/hydro/lib/libecto.so;general;object_recognition_renderer_glut;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;
+
+//Dependencies for the target
+ecto_training_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;/opt/ros/hydro/lib/libecto.so;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;object_recognition_core_db;general;object_recognition_core_common;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;
+
+//Dependencies for the target
+edges_pose_refiner_LIB_DEPENDS:STATIC=general;fdcm;general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;general;/usr/lib/libOpenNI.so;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;cholmod;general;cxsparse;
 
 //The directory containing a CMake configuration file for eigen_conversions.
 eigen_conversions_DIR:PATH=/opt/ros/hydro/share/eigen_conversions/cmake
 
 //The directory containing a CMake configuration file for eigen_stl_containers.
 eigen_stl_containers_DIR:PATH=/opt/ros/hydro/share/eigen_stl_containers/cmake
+
+//Dependencies for the target
+fdcm_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;general;/usr/lib/libOpenNI.so;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;
+
+//Dependencies for the target
+filters_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/hydro/share/gencpp/cmake
@@ -345,6 +898,9 @@ genpy_DIR:PATH=/opt/ros/hydro/share/genpy/cmake
 
 //The directory containing a CMake configuration file for geometric_shapes.
 geometric_shapes_DIR:PATH=/opt/ros/hydro/share/geometric_shapes/cmake
+
+//The directory containing a CMake configuration file for geometry_msg.
+geometry_msg_DIR:PATH=geometry_msg_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/hydro/share/geometry_msgs/cmake
@@ -374,8 +930,20 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//The directory containing a CMake configuration file for household_objects_database.
+household_objects_database_DIR:PATH=/opt/ros/hydro/share/household_objects_database/cmake
+
+//The directory containing a CMake configuration file for household_objects_database_msgs.
+household_objects_database_msgs_DIR:PATH=/opt/ros/hydro/share/household_objects_database_msgs/cmake
+
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/hydro/share/image_transport/cmake
+
+//The directory containing a CMake configuration file for interactive_markers.
+interactive_markers_DIR:PATH=/opt/ros/hydro/share/interactive_markers/cmake
+
+//Dependencies for the target
+io_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;object_recognition_core_common;
 
 //The directory containing a CMake configuration file for kdl_conversions.
 kdl_conversions_DIR:PATH=/opt/ros/hydro/share/kdl_conversions/cmake
@@ -397,6 +965,9 @@ kdl_parser_DIR:PATH=/opt/ros/hydro/share/kdl_parser/cmake
 
 //Path to a library.
 lib:FILEPATH=/opt/ros/hydro/lib/libroslib.so
+
+//The directory containing a CMake configuration file for manipulation_msgs.
+manipulation_msgs_DIR:PATH=/opt/ros/hydro/share/manipulation_msgs/cmake
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/hydro/share/message_filters/cmake
@@ -423,10 +994,16 @@ moveit_goal_publisher_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/worksp
 moveit_kdl_kinematics_upgrade_plugin_LIB_DEPENDS:STATIC=general;moveit_rdf_loader;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/libtf_conversions.so;general;/opt/ros/hydro/lib/libkdl_conversions.so;general;/opt/ros/hydro/lib/libmoveit_rdf_loader.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_plugin_loader.so;general;/opt/ros/hydro/lib/libmoveit_robot_model_loader.so;general;/opt/ros/hydro/lib/libmoveit_constraint_sampler_manager_loader.so;general;/opt/ros/hydro/lib/libmoveit_planning_pipeline.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_execution_manager.so;general;/opt/ros/hydro/lib/libmoveit_plan_execution.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene_monitor.so;general;/opt/ros/hydro/lib/libmoveit_point_containment_filter.so;general;/opt/ros/hydro/lib/libmoveit_occupancy_map_monitor.so;general;/opt/ros/hydro/lib/libmoveit_pointcloud_octomap_updater_core.so;general;/opt/ros/hydro/lib/libmoveit_semantic_world.so;general;/opt/ros/hydro/lib/libimage_transport.so;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;
 
 //Dependencies for the target
-moveit_kdl_kinematics_weighted_plugin_LIB_DEPENDS:STATIC=general;moveit_rdf_loader;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/libtf_conversions.so;general;/opt/ros/hydro/lib/libkdl_conversions.so;general;/opt/ros/hydro/lib/libmoveit_rdf_loader.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_plugin_loader.so;general;/opt/ros/hydro/lib/libmoveit_robot_model_loader.so;general;/opt/ros/hydro/lib/libmoveit_constraint_sampler_manager_loader.so;general;/opt/ros/hydro/lib/libmoveit_planning_pipeline.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_execution_manager.so;general;/opt/ros/hydro/lib/libmoveit_plan_execution.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene_monitor.so;general;/opt/ros/hydro/lib/libmoveit_point_containment_filter.so;general;/opt/ros/hydro/lib/libmoveit_occupancy_map_monitor.so;general;/opt/ros/hydro/lib/libmoveit_pointcloud_octomap_updater_core.so;general;/opt/ros/hydro/lib/libmoveit_semantic_world.so;general;/opt/ros/hydro/lib/libimage_transport.so;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;
+moveit_kdl_kinematics_weighted_plugin_LIB_DEPENDS:STATIC=general;moveit_rdf_loader;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;general;/opt/ros/hydro/lib/libtf_conversions.so;general;/opt/ros/hydro/lib/libkdl_conversions.so;general;/opt/ros/hydro/lib/libmoveit_rdf_loader.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_plugin_loader.so;general;/opt/ros/hydro/lib/libmoveit_robot_model_loader.so;general;/opt/ros/hydro/lib/libmoveit_constraint_sampler_manager_loader.so;general;/opt/ros/hydro/lib/libmoveit_planning_pipeline.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_execution_manager.so;general;/opt/ros/hydro/lib/libmoveit_plan_execution.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene_monitor.so;general;/opt/ros/hydro/lib/libmoveit_point_containment_filter.so;general;/opt/ros/hydro/lib/libmoveit_occupancy_map_monitor.so;general;/opt/ros/hydro/lib/libmoveit_pointcloud_octomap_updater_core.so;general;/opt/ros/hydro/lib/libmoveit_semantic_world.so;general;/opt/ros/hydro/lib/libimage_transport.so;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;general;/usr/local/lib/libyaml-cpp.so;
 
 //The directory containing a CMake configuration file for moveit_msgs.
 moveit_msgs_DIR:PATH=/opt/ros/hydro/share/moveit_msgs/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_manipulation.
+moveit_ros_manipulation_DIR:PATH=/opt/ros/hydro/share/moveit_ros_manipulation/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_move_group.
+moveit_ros_move_group_DIR:PATH=/opt/ros/hydro/share/moveit_ros_move_group/cmake
 
 //The directory containing a CMake configuration file for moveit_ros_perception.
 moveit_ros_perception_DIR:PATH=/opt/ros/hydro/share/moveit_ros_perception/cmake
@@ -434,17 +1011,113 @@ moveit_ros_perception_DIR:PATH=/opt/ros/hydro/share/moveit_ros_perception/cmake
 //The directory containing a CMake configuration file for moveit_ros_planning.
 moveit_ros_planning_DIR:PATH=/opt/ros/hydro/share/moveit_ros_planning/cmake
 
+//The directory containing a CMake configuration file for moveit_ros_planning_interface.
+moveit_ros_planning_interface_DIR:PATH=/opt/ros/hydro/share/moveit_ros_planning_interface/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_warehouse.
+moveit_ros_warehouse_DIR:PATH=/opt/ros/hydro/share/moveit_ros_warehouse/cmake
+
+//The directory containing a CMake configuration file for nodelet.
+nodelet_DIR:PATH=/opt/ros/hydro/share/nodelet/cmake
+
+//Value Computed by CMake
+object_recognition_capture_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/capture
+
+//Value Computed by CMake
+object_recognition_capture_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/capture
+
+//Value Computed by CMake
+object_recognition_core_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/object_recognition_core
+
+//The directory containing a CMake configuration file for object_recognition_core.
+object_recognition_core_DIR:PATH=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/share/object_recognition_core/cmake
+
+//Value Computed by CMake
+object_recognition_core_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/object_recognition_core
+
+//Dependencies for the target
+object_recognition_core_common_LIB_DEPENDS:STATIC=general;object_recognition_core_db;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;
+
+//Dependencies for the target
+object_recognition_core_db_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_regex-mt.so;general;/opt/ros/hydro/lib/libecto.so;general;/usr/lib/x86_64-linux-gnu/libcurl.so;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;
+
+//Value Computed by CMake
+object_recognition_linemod_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/linemod
+
+//Value Computed by CMake
+object_recognition_linemod_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/linemod
+
 //The directory containing a CMake configuration file for object_recognition_msgs.
 object_recognition_msgs_DIR:PATH=/opt/ros/hydro/share/object_recognition_msgs/cmake
 
+//Value Computed by CMake
+object_recognition_reconstruction_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/reconstruction
+
+//Value Computed by CMake
+object_recognition_reconstruction_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/reconstruction
+
+//Dependencies for the target
+object_recognition_reconstruction_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/opt/ros/hydro/lib/libecto.so;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libecto_image_pipeline.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;/usr/lib/libpcl_common.so;general;/usr/lib/libflann_cpp_s.a;general;/usr/lib/libpcl_kdtree.so;general;/usr/lib/libpcl_octree.so;general;/usr/lib/libpcl_search.so;general;/usr/lib/libOpenNI.so;general;/usr/lib/libpcl_io.so;general;/usr/lib/libpcl_sample_consensus.so;general;/usr/lib/libpcl_filters.so;general;/usr/lib/libpcl_visualization.so;general;/usr/lib/libpcl_outofcore.so;general;/usr/lib/libpcl_features.so;general;/usr/lib/libpcl_segmentation.so;general;/usr/lib/libpcl_people.so;general;/usr/lib/libpcl_registration.so;general;/usr/lib/libpcl_recognition.so;general;/usr/lib/libpcl_keypoints.so;general;/usr/lib/libqhull.so;general;/usr/lib/libpcl_surface.so;general;/usr/lib/libpcl_tracking.so;general;/usr/lib/libpcl_apps.so;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libpcl_ros_filters.so;general;/opt/ros/hydro/lib/libpcl_ros_io.so;general;/opt/ros/hydro/lib/libpcl_ros_tf.so;general;/opt/ros/hydro/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libnodeletlib.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/hydro/lib/libbondcpp.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/librosbag.so;general;/opt/ros/hydro/lib/libtopic_tools.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;general;object_recognition_core_db;general;object_recognition_core_common;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;general;/usr/lib/libOpenNI.so;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;
+
+//Dependencies for the target
+object_recognition_renderer_2d_LIB_DEPENDS:STATIC=debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;
+
+//Value Computed by CMake
+object_recognition_renderer_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/ork_renderer
+
+//The directory containing a CMake configuration file for object_recognition_renderer.
+object_recognition_renderer_DIR:PATH=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/share/object_recognition_renderer/cmake
+
+//Value Computed by CMake
+object_recognition_renderer_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/ork_renderer
+
+//Dependencies for the target
+object_recognition_renderer_glut_LIB_DEPENDS:STATIC=debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libSM.so;general;/usr/lib/x86_64-linux-gnu/libICE.so;general;/usr/lib/x86_64-linux-gnu/libX11.so;general;/usr/lib/x86_64-linux-gnu/libXext.so;general;/usr/lib/x86_64-linux-gnu/libglut.so;general;/usr/lib/x86_64-linux-gnu/libXmu.so;general;/usr/lib/x86_64-linux-gnu/libXi.so;general;freeimage;
+
+//Value Computed by CMake
+object_recognition_tabletop_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/tabletop
+
+//Value Computed by CMake
+object_recognition_tabletop_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/tabletop
+
+//Value Computed by CMake
+object_recognition_tod_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/tod
+
+//Value Computed by CMake
+object_recognition_tod_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/tod
+
+//Value Computed by CMake
+object_recognition_transparent_objects_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/object_recognition/transparent_objects
+
+//Value Computed by CMake
+object_recognition_transparent_objects_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/transparent_objects
+
 //The directory containing a CMake configuration file for octomap_msgs.
 octomap_msgs_DIR:PATH=/opt/ros/hydro/share/octomap_msgs/cmake
+
+//The directory containing a CMake configuration file for opencv_candidate.
+opencv_candidate_DIR:PATH=/opt/ros/hydro/share/opencv_candidate/cmake
+
+//The directory containing a CMake configuration file for pcl_conversions.
+pcl_conversions_DIR:PATH=/opt/ros/hydro/share/pcl_conversions/cmake
+
+//The directory containing a CMake configuration file for pcl_msgs.
+pcl_msgs_DIR:PATH=/opt/ros/hydro/share/pcl_msgs/cmake
+
+//The directory containing a CMake configuration file for pcl_ros.
+pcl_ros_DIR:PATH=/opt/ros/hydro/share/pcl_ros/cmake
+
+//Dependencies for the target
+pipelines_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;object_recognition_core_common;
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/hydro/share/pluginlib/cmake
 
 //The directory containing a CMake configuration file for random_numbers.
 random_numbers_DIR:PATH=/opt/ros/hydro/share/random_numbers/cmake
+
+//The directory containing a CMake configuration file for rosbag.
+rosbag_DIR:PATH=/opt/ros/hydro/share/rosbag/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/hydro/share/rosconsole/cmake
@@ -485,11 +1158,32 @@ shape_msgs_DIR:PATH=/opt/ros/hydro/share/shape_msgs/cmake
 //The directory containing a CMake configuration file for shape_tools.
 shape_tools_DIR:PATH=/opt/ros/hydro/share/shape_tools/cmake
 
+//The directory containing a CMake configuration file for smclib.
+smclib_DIR:PATH=/opt/ros/hydro/share/smclib/cmake
+
+//The directory containing a CMake configuration file for sql_database.
+sql_database_DIR:PATH=/opt/ros/hydro/share/sql_database/cmake
+
 //The directory containing a CMake configuration file for srdfdom.
 srdfdom_DIR:PATH=/opt/ros/hydro/share/srdfdom/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/hydro/share/std_msgs/cmake
+
+//Dependencies for the target
+tabletop_db_LIB_DEPENDS:STATIC=general;/opt/ros/hydro/lib/libecto.so;general;/opt/ros/hydro/lib/libmesh_loader.so;general;/opt/ros/hydro/lib/libhousehold_objects_database.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libpostgresql_database.so;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;object_recognition_core_db;general;object_recognition_core_common;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;
+
+//Dependencies for the target
+tabletop_db_interface_LIB_DEPENDS:STATIC=general;tabletop_db;general;/opt/ros/hydro/lib/libecto.so;general;/opt/ros/hydro/lib/libmesh_loader.so;general;/opt/ros/hydro/lib/libhousehold_objects_database.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libpostgresql_database.so;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;object_recognition_core_db;general;object_recognition_core_common;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;
+
+//Dependencies for the target
+tabletop_model_fitter_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/opt/ros/hydro/lib/libecto.so;general;/opt/ros/hydro/lib/libmesh_loader.so;general;/opt/ros/hydro/lib/libhousehold_objects_database.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libpostgresql_database.so;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;object_recognition_core_db;general;object_recognition_core_common;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;
+
+//Dependencies for the target
+tabletop_object_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;/opt/ros/hydro/lib/libecto.so;general;/opt/ros/hydro/lib/libmesh_loader.so;general;/opt/ros/hydro/lib/libhousehold_objects_database.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libpostgresql_database.so;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;object_recognition_core_db;general;object_recognition_core_common;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;tabletop_model_fitter;general;tabletop_db;
+
+//Dependencies for the target
+tabletop_table_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/opt/ros/hydro/lib/libecto.so;general;/opt/ros/hydro/lib/libmesh_loader.so;general;/opt/ros/hydro/lib/libhousehold_objects_database.so;general;/opt/ros/hydro/lib/libcpp_common.so;general;/opt/ros/hydro/lib/libroscpp_serialization.so;general;/opt/ros/hydro/lib/librostime.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/hydro/lib/libroscpp.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/opt/ros/hydro/lib/librosconsole.so;general;/usr/lib/libboost_regex-mt.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/hydro/lib/libxmlrpcpp.so;general;/opt/ros/hydro/lib/libpostgresql_database.so;general;/opt/ros/hydro/lib/libmoveit_exceptions.so;general;/opt/ros/hydro/lib/libmoveit_background_processing.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_base.so;general;/opt/ros/hydro/lib/libmoveit_robot_model.so;general;/opt/ros/hydro/lib/libmoveit_transforms.so;general;/opt/ros/hydro/lib/libmoveit_robot_state.so;general;/opt/ros/hydro/lib/libmoveit_robot_trajectory.so;general;/opt/ros/hydro/lib/libmoveit_planning_interface.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection.so;general;/opt/ros/hydro/lib/libmoveit_collision_detection_fcl.so;general;/opt/ros/hydro/lib/libmoveit_kinematic_constraints.so;general;/opt/ros/hydro/lib/libmoveit_planning_scene.so;general;/opt/ros/hydro/lib/libmoveit_constraint_samplers.so;general;/opt/ros/hydro/lib/libmoveit_planning_request_adapter.so;general;/opt/ros/hydro/lib/libmoveit_profiler.so;general;/opt/ros/hydro/lib/libmoveit_trajectory_processing.so;general;/opt/ros/hydro/lib/libmoveit_distance_field.so;general;/opt/ros/hydro/lib/libmoveit_kinematics_metrics.so;general;/opt/ros/hydro/lib/libmoveit_dynamics_solver.so;general;/opt/ros/hydro/lib/liboctomap.so;general;/opt/ros/hydro/lib/liboctomath.so;general;/usr/lib/libboost_iostreams-mt.so;general;/opt/ros/hydro/lib/liburdfdom_sensor.so;general;/opt/ros/hydro/lib/liburdfdom_model_state.so;general;/opt/ros/hydro/lib/liburdfdom_model.so;general;/opt/ros/hydro/lib/liburdfdom_world.so;general;/opt/ros/hydro/lib/libconsole_bridge.so;general;/opt/ros/hydro/lib/libgeometric_shapes.so;general;/opt/ros/hydro/lib/libshape_tools.so;general;/opt/ros/hydro/lib/librandom_numbers.so;general;/opt/ros/hydro/lib/libeigen_conversions.so;general;/opt/ros/hydro/lib/libkdl_parser.so;general;/usr/lib/libtinyxml.so;general;/opt/ros/hydro/lib/liburdf.so;general;/opt/ros/hydro/lib/librosconsole_bridge.so;general;/opt/ros/hydro/lib/libsrdfdom.so;general;object_recognition_core_db;general;object_recognition_core_common;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;/opt/ros/hydro/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/hydro/lib/libroslib.so;general;/opt/ros/hydro/lib/libtf.so;general;/opt/ros/hydro/lib/libmessage_filters.so;general;/opt/ros/hydro/lib/libtf2_ros.so;general;/opt/ros/hydro/lib/libactionlib.so;general;/opt/ros/hydro/lib/libtf2.so;
 
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/hydro/share/tf2/cmake
@@ -509,8 +1203,14 @@ tf_DIR:PATH=/opt/ros/hydro/share/tf/cmake
 //The directory containing a CMake configuration file for tf_conversions.
 tf_conversions_DIR:PATH=/opt/ros/hydro/share/tf_conversions/cmake
 
+//The directory containing a CMake configuration file for topic_tools.
+topic_tools_DIR:PATH=/opt/ros/hydro/share/topic_tools/cmake
+
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/hydro/share/trajectory_msgs/cmake
+
+//Dependencies for the target
+transparent_objects_cells_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;general;/usr/lib/libOpenNI.so;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;general;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;general;vtkCommon;general;vtkRendering;general;vtkHybrid;general;vtkCharts;general;/usr/lib/libboost_program_options-mt.so;general;/usr/lib/libboost_signals-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_date_time-mt.so;general;/usr/lib/libboost_iostreams-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/opt/ros/hydro/lib/libecto.so;general;cholmod;general;cxsparse;general;/opt/ros/hydro/lib/libopencv_candidate.so;general;/opt/ros/hydro/lib/libopencv_rgbd.so;general;/opt/ros/hydro/lib/libopencv_calib3d.so;general;/opt/ros/hydro/lib/libopencv_contrib.so;general;/opt/ros/hydro/lib/libopencv_core.so;general;/opt/ros/hydro/lib/libopencv_features2d.so;general;/opt/ros/hydro/lib/libopencv_flann.so;general;/opt/ros/hydro/lib/libopencv_gpu.so;general;/opt/ros/hydro/lib/libopencv_highgui.so;general;/opt/ros/hydro/lib/libopencv_imgproc.so;general;/opt/ros/hydro/lib/libopencv_legacy.so;general;/opt/ros/hydro/lib/libopencv_ml.so;general;/opt/ros/hydro/lib/libopencv_nonfree.so;general;/opt/ros/hydro/lib/libopencv_objdetect.so;general;/opt/ros/hydro/lib/libopencv_photo.so;general;/opt/ros/hydro/lib/libopencv_stitching.so;general;/opt/ros/hydro/lib/libopencv_superres.so;general;/opt/ros/hydro/lib/libopencv_video.so;general;/opt/ros/hydro/lib/libopencv_videostab.so;general;object_recognition_core_db;general;object_recognition_core_common;general;edges_pose_refiner;
 
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/hydro/share/urdf/cmake
@@ -518,11 +1218,14 @@ urdf_DIR:PATH=/opt/ros/hydro/share/urdf/cmake
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/hydro/share/visualization_msgs/cmake
 
+//Dependencies for the target
+voter_ectomodule_LIB_DEPENDS:STATIC=general;/usr/lib/libboost_python.so;general;/usr/lib/libboost_thread-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_system-mt.so;general;/usr/lib/libboost_filesystem-mt.so;general;/usr/lib/libboost_serialization-mt.so;general;/usr/lib/libpython2.7.so;general;/opt/ros/hydro/lib/libecto.so;debug;/opt/ros/hydro/lib/libopencv_calib3d.so;debug;/opt/ros/hydro/lib/libopencv_contrib.so;debug;/opt/ros/hydro/lib/libopencv_core.so;debug;/opt/ros/hydro/lib/libopencv_features2d.so;debug;/opt/ros/hydro/lib/libopencv_flann.so;debug;/opt/ros/hydro/lib/libopencv_gpu.so;debug;/opt/ros/hydro/lib/libopencv_highgui.so;debug;/opt/ros/hydro/lib/libopencv_imgproc.so;debug;/opt/ros/hydro/lib/libopencv_legacy.so;debug;/opt/ros/hydro/lib/libopencv_ml.so;debug;/opt/ros/hydro/lib/libopencv_nonfree.so;debug;/opt/ros/hydro/lib/libopencv_objdetect.so;debug;/opt/ros/hydro/lib/libopencv_photo.so;debug;/opt/ros/hydro/lib/libopencv_stitching.so;debug;/opt/ros/hydro/lib/libopencv_superres.so;debug;/opt/ros/hydro/lib/libopencv_video.so;debug;/opt/ros/hydro/lib/libopencv_videostab.so;optimized;/opt/ros/hydro/lib/libopencv_calib3d.so;optimized;/opt/ros/hydro/lib/libopencv_contrib.so;optimized;/opt/ros/hydro/lib/libopencv_core.so;optimized;/opt/ros/hydro/lib/libopencv_features2d.so;optimized;/opt/ros/hydro/lib/libopencv_flann.so;optimized;/opt/ros/hydro/lib/libopencv_gpu.so;optimized;/opt/ros/hydro/lib/libopencv_highgui.so;optimized;/opt/ros/hydro/lib/libopencv_imgproc.so;optimized;/opt/ros/hydro/lib/libopencv_legacy.so;optimized;/opt/ros/hydro/lib/libopencv_ml.so;optimized;/opt/ros/hydro/lib/libopencv_nonfree.so;optimized;/opt/ros/hydro/lib/libopencv_objdetect.so;optimized;/opt/ros/hydro/lib/libopencv_photo.so;optimized;/opt/ros/hydro/lib/libopencv_stitching.so;optimized;/opt/ros/hydro/lib/libopencv_superres.so;optimized;/opt/ros/hydro/lib/libopencv_video.so;optimized;/opt/ros/hydro/lib/libopencv_videostab.so;general;object_recognition_core_db;
+
+//The directory containing a CMake configuration file for warehouse_ros.
+warehouse_ros_DIR:PATH=/opt/ros/hydro/share/warehouse_ros/cmake
+
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/hydro/share/xmlrpcpp/cmake
-
-//The directory containing a CMake configuration file for yaml-cpp.
-yaml-cpp_DIR:PATH=yaml-cpp_DIR-NOTFOUND
 
 //Path to a file.
 yaml-cpp_HAVE_H:FILEPATH=/usr/local/include/yaml-cpp/yaml.h
@@ -531,7 +1234,7 @@ yaml-cpp_HAVE_H:FILEPATH=/usr/local/include/yaml-cpp/yaml.h
 yaml-cpp_H_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to a library.
-yaml-cpp_LIBRARY:FILEPATH=/usr/local/lib/libyaml-cpp.a
+yaml-cpp_LIBRARY:FILEPATH=/usr/local/lib/libyaml-cpp.so
 
 //Value Computed by CMake
 youbot_base_ik_controller_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_controller
@@ -558,6 +1261,12 @@ youbot_goal_passer_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspace
 youbot_goal_passer_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer
 
 //Value Computed by CMake
+youbot_manipulator_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_manipulator
+
+//Value Computed by CMake
+youbot_manipulator_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator
+
+//Value Computed by CMake
 youbot_moveit_generated_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_moveit_generated
 
 //Value Computed by CMake
@@ -569,11 +1278,51 @@ youbot_relay_controller_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/work
 //Value Computed by CMake
 youbot_relay_controller_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_relay_controller
 
+//Value Computed by CMake
+youbot_target_pose_publisher_BINARY_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_target_pose_publisher
+
+//Value Computed by CMake
+youbot_target_pose_publisher_SOURCE_DIR:STATIC=/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_target_pose_publisher
+
 
 ########################
 # INTERNAL cache entries
 ########################
 
+ASSIMP_CFLAGS:INTERNAL=-I/usr/include/assimp
+ASSIMP_CFLAGS_I:INTERNAL=
+ASSIMP_CFLAGS_OTHER:INTERNAL=
+ASSIMP_FOUND:INTERNAL=1
+ASSIMP_INCLUDEDIR:INTERNAL=/usr/include/assimp
+ASSIMP_INCLUDE_DIRS:INTERNAL=/usr/include/assimp
+ASSIMP_LDFLAGS:INTERNAL=-lassimp
+ASSIMP_LDFLAGS_OTHER:INTERNAL=
+ASSIMP_LIBDIR:INTERNAL=/usr/lib
+ASSIMP_LIBRARIES:INTERNAL=assimp
+ASSIMP_LIBRARY_DIRS:INTERNAL=
+ASSIMP_LIBS:INTERNAL=
+ASSIMP_LIBS_L:INTERNAL=
+ASSIMP_LIBS_OTHER:INTERNAL=
+ASSIMP_LIBS_PATHS:INTERNAL=
+ASSIMP_PREFIX:INTERNAL=/usr
+ASSIMP_STATIC_CFLAGS:INTERNAL=-I/usr/include/assimp
+ASSIMP_STATIC_CFLAGS_I:INTERNAL=
+ASSIMP_STATIC_CFLAGS_OTHER:INTERNAL=
+ASSIMP_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/assimp
+ASSIMP_STATIC_LDFLAGS:INTERNAL=-lassimp
+ASSIMP_STATIC_LDFLAGS_OTHER:INTERNAL=
+ASSIMP_STATIC_LIBDIR:INTERNAL=
+ASSIMP_STATIC_LIBRARIES:INTERNAL=assimp
+ASSIMP_STATIC_LIBRARY_DIRS:INTERNAL=
+ASSIMP_STATIC_LIBS:INTERNAL=
+ASSIMP_STATIC_LIBS_L:INTERNAL=
+ASSIMP_STATIC_LIBS_OTHER:INTERNAL=
+ASSIMP_STATIC_LIBS_PATHS:INTERNAL=
+ASSIMP_VERSION:INTERNAL=2.0
+ASSIMP_assimp_INCLUDEDIR:INTERNAL=
+ASSIMP_assimp_LIBDIR:INTERNAL=
+ASSIMP_assimp_PREFIX:INTERNAL=
+ASSIMP_assimp_VERSION:INTERNAL=
 //Whether the Boost DATE_TIME library found
 Boost_DATE_TIME_FOUND:INTERNAL=ON
 //ADVANCED property for variable: Boost_DATE_TIME_LIBRARY
@@ -592,6 +1341,14 @@ Boost_FILESYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 Boost_FILESYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_INCLUDE_DIR
 Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//Whether the Boost IOSTREAMS library found
+Boost_IOSTREAMS_FOUND:INTERNAL=ON
+//ADVANCED property for variable: Boost_IOSTREAMS_LIBRARY
+Boost_IOSTREAMS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_IOSTREAMS_LIBRARY_DEBUG
+Boost_IOSTREAMS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_IOSTREAMS_LIBRARY_RELEASE
+Boost_IOSTREAMS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_LIBRARY_DIRS
 Boost_LIBRARY_DIRS-ADVANCED:INTERNAL=1
 //The library version string for boost libraries
@@ -604,6 +1361,30 @@ Boost_PROGRAM_OPTIONS_LIBRARY-ADVANCED:INTERNAL=1
 Boost_PROGRAM_OPTIONS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE
 Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Whether the Boost PYTHON library found
+Boost_PYTHON_FOUND:INTERNAL=ON
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY
+Boost_PYTHON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_DEBUG
+Boost_PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_RELEASE
+Boost_PYTHON_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Whether the Boost REGEX library found
+Boost_REGEX_FOUND:INTERNAL=ON
+//ADVANCED property for variable: Boost_REGEX_LIBRARY
+Boost_REGEX_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_REGEX_LIBRARY_DEBUG
+Boost_REGEX_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_REGEX_LIBRARY_RELEASE
+Boost_REGEX_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//Whether the Boost SERIALIZATION library found
+Boost_SERIALIZATION_FOUND:INTERNAL=ON
+//ADVANCED property for variable: Boost_SERIALIZATION_LIBRARY
+Boost_SERIALIZATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SERIALIZATION_LIBRARY_DEBUG
+Boost_SERIALIZATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SERIALIZATION_LIBRARY_RELEASE
+Boost_SERIALIZATION_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //Whether the Boost SIGNALS library found
 Boost_SIGNALS_FOUND:INTERNAL=ON
 //ADVANCED property for variable: Boost_SIGNALS_LIBRARY
@@ -685,6 +1466,8 @@ CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_DETERMINE_CXX_ABI_COMPILED:INTERNAL=TRUE
 //Result of TRY_COMPILE
 CMAKE_DETERMINE_C_ABI_COMPILED:INTERNAL=TRUE
+//Path to cache edit program executable.
+CMAKE_EDIT_COMMAND:INTERNAL=/usr/bin/cmake-gui
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
@@ -701,17 +1484,27 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of generator.
 CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+//Have function connect
+CMAKE_HAVE_CONNECT:INTERNAL=1
+//Have function gethostbyname
+CMAKE_HAVE_GETHOSTBYNAME:INTERNAL=1
 //Have library pthreads
 CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
 //Have library pthread
 CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
 //Have include CMAKE_HAVE_PTHREAD_H
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
+//Have function remove
+CMAKE_HAVE_REMOVE:INTERNAL=1
+//Have function shmat
+CMAKE_HAVE_SHMAT:INTERNAL=1
 //Start directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/yiming/ros_workspace/youbot/workspaces/yiming/src
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//Have library ICE
+CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
@@ -729,7 +1522,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=11
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=46
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -758,14 +1551,90 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_INCLUDE_DIR
+CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_LIBRARY
+CURL_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ECTO_LOG_STATS
+ECTO_LOG_STATS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EIGEN_INCLUDE_DIR
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//Details about finding CURL
+FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include][v()]
 //Details about finding Eigen
 FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v()]
+//Details about finding Flann
+FIND_PACKAGE_MESSAGE_DETAILS_Flann:INTERNAL=[/usr/lib/libflann_cpp_s.a][/usr/include][v()]
+//Details about finding Git
+FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v()]
+//Details about finding OpenGL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libGL.so][v()]
+//Details about finding PCL
+FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[/usr/lib/libboost_program_options-mt.so;/usr/lib/libboost_signals-mt.so;/usr/lib/libboost_system-mt.so;/usr/lib/libboost_filesystem-mt.so;/usr/lib/libboost_thread-mt.so;/usr/lib/libboost_date_time-mt.so;/usr/lib/libboost_iostreams-mt.so;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libpcl_common.so;debug;/usr/lib/libpcl_common.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;optimized;/usr/lib/libpcl_kdtree.so;debug;/usr/lib/libpcl_kdtree.so;optimized;/usr/lib/libpcl_octree.so;debug;/usr/lib/libpcl_octree.so;optimized;/usr/lib/libpcl_search.so;debug;/usr/lib/libpcl_search.so;/usr/lib/libOpenNI.so;vtkCommon;vtkRendering;vtkHybrid;vtkCharts;optimized;/usr/lib/libpcl_io.so;debug;/usr/lib/libpcl_io.so;optimized;/usr/lib/libpcl_sample_consensus.so;debug;/usr/lib/libpcl_sample_consensus.so;optimized;/usr/lib/libpcl_filters.so;debug;/usr/lib/libpcl_filters.so;optimized;/usr/lib/libpcl_visualization.so;debug;/usr/lib/libpcl_visualization.so;optimized;/usr/lib/libpcl_outofcore.so;debug;/usr/lib/libpcl_outofcore.so;optimized;/usr/lib/libpcl_features.so;debug;/usr/lib/libpcl_features.so;optimized;/usr/lib/libpcl_segmentation.so;debug;/usr/lib/libpcl_segmentation.so;optimized;/usr/lib/libpcl_people.so;debug;/usr/lib/libpcl_people.so;optimized;/usr/lib/libpcl_registration.so;debug;/usr/lib/libpcl_registration.so;optimized;/usr/lib/libpcl_recognition.so;debug;/usr/lib/libpcl_recognition.so;optimized;/usr/lib/libpcl_keypoints.so;debug;/usr/lib/libpcl_keypoints.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;optimized;/usr/lib/libpcl_surface.so;debug;/usr/lib/libpcl_surface.so;optimized;/usr/lib/libpcl_tracking.so;debug;/usr/lib/libpcl_tracking.so;optimized;/usr/lib/libpcl_apps.so;debug;/usr/lib/libpcl_apps.so;/usr/lib/libboost_program_options-mt.so;/usr/lib/libboost_signals-mt.so;/usr/lib/libboost_system-mt.so;/usr/lib/libboost_filesystem-mt.so;/usr/lib/libboost_thread-mt.so;/usr/lib/libboost_date_time-mt.so;/usr/lib/libboost_iostreams-mt.so;/usr/lib/libboost_serialization-mt.so;optimized;/usr/lib/libqhull.so;debug;/usr/lib/libqhull.so;/usr/lib/libOpenNI.so;optimized;/usr/lib/libflann_cpp_s.a;debug;/usr/lib/libflann_cpp_s.a;vtkCommon;vtkRendering;vtkHybrid;vtkCharts][/usr/include/pcl-1.7;/usr/include/eigen3;/usr/include;/usr/include/ni;/usr/include/vtk-5.8;/usr/include/qhull][v()]
+//Details about finding PCL_APPS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_APPS:INTERNAL=[/usr/lib/libpcl_apps.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_COMMON
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_COMMON:INTERNAL=[/usr/lib/libpcl_common.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_FEATURES
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_FEATURES:INTERNAL=[/usr/lib/libpcl_features.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_FILTERS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_FILTERS:INTERNAL=[/usr/lib/libpcl_filters.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_GEOMETRY
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_GEOMETRY:INTERNAL=[/usr/include/pcl-1.7][v()]
+//Details about finding PCL_IO
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_IO:INTERNAL=[/usr/lib/libpcl_io.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_KDTREE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_KDTREE:INTERNAL=[/usr/lib/libpcl_kdtree.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_KEYPOINTS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_KEYPOINTS:INTERNAL=[/usr/lib/libpcl_keypoints.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_OCTREE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_OCTREE:INTERNAL=[/usr/lib/libpcl_octree.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_OUTOFCORE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_OUTOFCORE:INTERNAL=[/usr/lib/libpcl_outofcore.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_PEOPLE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_PEOPLE:INTERNAL=[/usr/lib/libpcl_people.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_RECOGNITION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_RECOGNITION:INTERNAL=[/usr/lib/libpcl_recognition.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_REGISTRATION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_REGISTRATION:INTERNAL=[/usr/lib/libpcl_registration.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_SAMPLE_CONSENSUS
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SAMPLE_CONSENSUS:INTERNAL=[/usr/lib/libpcl_sample_consensus.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_SEARCH
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SEARCH:INTERNAL=[/usr/lib/libpcl_search.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_SEGMENTATION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SEGMENTATION:INTERNAL=[/usr/lib/libpcl_segmentation.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_SURFACE
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_SURFACE:INTERNAL=[/usr/lib/libpcl_surface.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_TRACKING
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_TRACKING:INTERNAL=[/usr/lib/libpcl_tracking.so][/usr/include/pcl-1.7][v()]
+//Details about finding PCL_VISUALIZATION
+FIND_PACKAGE_MESSAGE_DETAILS_PCL_VISUALIZATION:INTERNAL=[/usr/lib/libpcl_visualization.so][/usr/include/pcl-1.7][v()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.3()]
+//Details about finding PythonLibs
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/libpython2.7.so][/usr/include/python2.7][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding X11
+FIND_PACKAGE_MESSAGE_DETAILS_X11:INTERNAL=[/usr/lib/x86_64-linux-gnu/libX11.so][/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include;/usr/include]
+//Details about finding eigen
+FIND_PACKAGE_MESSAGE_DETAILS_eigen:INTERNAL=[/usr/include/eigen3][v()]
+//Details about finding libusb-1.0
+FIND_PACKAGE_MESSAGE_DETAILS_libusb-1.0:INTERNAL=[/usr/include][v()]
+//Details about finding openni
+FIND_PACKAGE_MESSAGE_DETAILS_openni:INTERNAL=[/usr/lib/libOpenNI.so][/usr/include/ni][v()]
+//Details about finding qhull
+FIND_PACKAGE_MESSAGE_DETAILS_qhull:INTERNAL=[/usr/lib/libqhull.so][/usr/include/qhull][v()]
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLUT_INCLUDE_DIR
+GLUT_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLUT_Xi_LIBRARY
+GLUT_Xi_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLUT_Xmu_LIBRARY
+GLUT_Xmu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLUT_glut_LIBRARY
+GLUT_glut_LIBRARY-ADVANCED:INTERNAL=1
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=
 GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest
@@ -781,6 +1650,96 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_INCLUDE_DIR
+OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_gl_LIBRARY
+OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_glu_LIBRARY
+OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_xmesa_INCLUDE_DIR
+OPENGL_xmesa_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_DBG
+OpenCV_3RDPARTY_LIB_DIR_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_OPT
+OpenCV_3RDPARTY_LIB_DIR_OPT-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_CONFIG_PATH
+OpenCV_CONFIG_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_LIB_DIR_DBG
+OpenCV_LIB_DIR_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCV_LIB_DIR_OPT
+OpenCV_LIB_DIR_OPT-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_APPS_LIBRARY
+PCL_APPS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_APPS_LIBRARY_DEBUG
+PCL_APPS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_COMMON_LIBRARY
+PCL_COMMON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_COMMON_LIBRARY_DEBUG
+PCL_COMMON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FEATURES_LIBRARY
+PCL_FEATURES_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FEATURES_LIBRARY_DEBUG
+PCL_FEATURES_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FILTERS_LIBRARY
+PCL_FILTERS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_FILTERS_LIBRARY_DEBUG
+PCL_FILTERS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_IO_LIBRARY
+PCL_IO_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_IO_LIBRARY_DEBUG
+PCL_IO_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KDTREE_LIBRARY
+PCL_KDTREE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KDTREE_LIBRARY_DEBUG
+PCL_KDTREE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KEYPOINTS_LIBRARY
+PCL_KEYPOINTS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_KEYPOINTS_LIBRARY_DEBUG
+PCL_KEYPOINTS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OCTREE_LIBRARY
+PCL_OCTREE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OCTREE_LIBRARY_DEBUG
+PCL_OCTREE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OUTOFCORE_LIBRARY
+PCL_OUTOFCORE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_OUTOFCORE_LIBRARY_DEBUG
+PCL_OUTOFCORE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_PEOPLE_LIBRARY
+PCL_PEOPLE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_PEOPLE_LIBRARY_DEBUG
+PCL_PEOPLE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_RECOGNITION_LIBRARY
+PCL_RECOGNITION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_RECOGNITION_LIBRARY_DEBUG
+PCL_RECOGNITION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_REGISTRATION_LIBRARY
+PCL_REGISTRATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_REGISTRATION_LIBRARY_DEBUG
+PCL_REGISTRATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SAMPLE_CONSENSUS_LIBRARY
+PCL_SAMPLE_CONSENSUS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SAMPLE_CONSENSUS_LIBRARY_DEBUG
+PCL_SAMPLE_CONSENSUS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEARCH_LIBRARY
+PCL_SEARCH_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEARCH_LIBRARY_DEBUG
+PCL_SEARCH_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEGMENTATION_LIBRARY
+PCL_SEGMENTATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SEGMENTATION_LIBRARY_DEBUG
+PCL_SEGMENTATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SURFACE_LIBRARY
+PCL_SURFACE_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_SURFACE_LIBRARY_DEBUG
+PCL_SURFACE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_TRACKING_LIBRARY
+PCL_TRACKING_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_TRACKING_LIBRARY_DEBUG
+PCL_TRACKING_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_VISUALIZATION_LIBRARY
+PCL_VISUALIZATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PCL_VISUALIZATION_LIBRARY_DEBUG
+PCL_VISUALIZATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 PC_EIGEN_CFLAGS:INTERNAL=-I/usr/include/eigen3
 PC_EIGEN_CFLAGS_I:INTERNAL=
 PC_EIGEN_CFLAGS_OTHER:INTERNAL=
@@ -815,13 +1774,200 @@ PC_EIGEN_eigen3_INCLUDEDIR:INTERNAL=
 PC_EIGEN_eigen3_LIBDIR:INTERNAL=
 PC_EIGEN_eigen3_PREFIX:INTERNAL=
 PC_EIGEN_eigen3_VERSION:INTERNAL=
+PC_FLANN_CFLAGS:INTERNAL=
+PC_FLANN_CFLAGS_I:INTERNAL=
+PC_FLANN_CFLAGS_OTHER:INTERNAL=
+PC_FLANN_FOUND:INTERNAL=1
+PC_FLANN_INCLUDEDIR:INTERNAL=/usr/include
+PC_FLANN_INCLUDE_DIRS:INTERNAL=
+PC_FLANN_LDFLAGS:INTERNAL=-lflann_cpp;-lflann_cpp-gd
+PC_FLANN_LDFLAGS_OTHER:INTERNAL=
+PC_FLANN_LIBDIR:INTERNAL=/usr/lib
+PC_FLANN_LIBRARIES:INTERNAL=flann_cpp;flann_cpp-gd
+PC_FLANN_LIBRARY_DIRS:INTERNAL=
+PC_FLANN_LIBS:INTERNAL=
+PC_FLANN_LIBS_L:INTERNAL=
+PC_FLANN_LIBS_OTHER:INTERNAL=
+PC_FLANN_LIBS_PATHS:INTERNAL=
+PC_FLANN_PREFIX:INTERNAL=/usr
+PC_FLANN_STATIC_CFLAGS:INTERNAL=
+PC_FLANN_STATIC_CFLAGS_I:INTERNAL=
+PC_FLANN_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_FLANN_STATIC_INCLUDE_DIRS:INTERNAL=
+PC_FLANN_STATIC_LDFLAGS:INTERNAL=-lflann_cpp;-lflann_cpp-gd
+PC_FLANN_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_FLANN_STATIC_LIBDIR:INTERNAL=
+PC_FLANN_STATIC_LIBRARIES:INTERNAL=flann_cpp;flann_cpp-gd
+PC_FLANN_STATIC_LIBRARY_DIRS:INTERNAL=
+PC_FLANN_STATIC_LIBS:INTERNAL=
+PC_FLANN_STATIC_LIBS_L:INTERNAL=
+PC_FLANN_STATIC_LIBS_OTHER:INTERNAL=
+PC_FLANN_STATIC_LIBS_PATHS:INTERNAL=
+PC_FLANN_VERSION:INTERNAL=1.7.1
+PC_FLANN_flann_INCLUDEDIR:INTERNAL=
+PC_FLANN_flann_LIBDIR:INTERNAL=
+PC_FLANN_flann_PREFIX:INTERNAL=
+PC_FLANN_flann_VERSION:INTERNAL=
+PC_OPENNI_CFLAGS:INTERNAL=
+PC_OPENNI_CFLAGS_I:INTERNAL=
+PC_OPENNI_CFLAGS_OTHER:INTERNAL=
+PC_OPENNI_FOUND:INTERNAL=
+PC_OPENNI_INCLUDEDIR:INTERNAL=
+PC_OPENNI_LIBDIR:INTERNAL=
+PC_OPENNI_LIBS:INTERNAL=
+PC_OPENNI_LIBS_L:INTERNAL=
+PC_OPENNI_LIBS_OTHER:INTERNAL=
+PC_OPENNI_LIBS_PATHS:INTERNAL=
+PC_OPENNI_PREFIX:INTERNAL=
+PC_OPENNI_STATIC_CFLAGS:INTERNAL=
+PC_OPENNI_STATIC_CFLAGS_I:INTERNAL=
+PC_OPENNI_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_OPENNI_STATIC_LIBDIR:INTERNAL=
+PC_OPENNI_STATIC_LIBS:INTERNAL=
+PC_OPENNI_STATIC_LIBS_L:INTERNAL=
+PC_OPENNI_STATIC_LIBS_OTHER:INTERNAL=
+PC_OPENNI_STATIC_LIBS_PATHS:INTERNAL=
+PC_OPENNI_VERSION:INTERNAL=
+PC_OPENNI_openni-dev_INCLUDEDIR:INTERNAL=
+PC_OPENNI_openni-dev_LIBDIR:INTERNAL=
+PC_OPENNI_openni-dev_PREFIX:INTERNAL=
+PC_OPENNI_openni-dev_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_INCLUDE_DIR
+PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//Path to where Python.h is found (deprecated)
+PYTHON_INCLUDE_PATH:INTERNAL=/usr/include/python2.7
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
+//ADVANCED property for variable: PYTHON_LIBRARY
+PYTHON_LIBRARY-ADVANCED:INTERNAL=1
+//File containing master sphinx projects list
+SPHINX_LIST:INTERNAL=/home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles/sphinx_projects.list
+//ADVANCED property for variable: X11_ICE_INCLUDE_PATH
+X11_ICE_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_ICE_LIB
+X11_ICE_LIB-ADVANCED:INTERNAL=1
+//Have library /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+X11_LIB_X11_SOLO:INTERNAL=1
+//ADVANCED property for variable: X11_SM_INCLUDE_PATH
+X11_SM_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_SM_LIB
+X11_SM_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_X11_INCLUDE_PATH
+X11_X11_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_X11_LIB
+X11_X11_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_XRes_INCLUDE_PATH
+X11_XRes_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_XRes_LIB
+X11_XRes_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_XShm_INCLUDE_PATH
+X11_XShm_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_XSync_INCLUDE_PATH
+X11_XSync_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_XTest_INCLUDE_PATH
+X11_XTest_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_XTest_LIB
+X11_XTest_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xaccessrules_INCLUDE_PATH
+X11_Xaccessrules_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xaccessstr_INCLUDE_PATH
+X11_Xaccessstr_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xau_INCLUDE_PATH
+X11_Xau_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xau_LIB
+X11_Xau_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xcomposite_INCLUDE_PATH
+X11_Xcomposite_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xcomposite_LIB
+X11_Xcomposite_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xcursor_INCLUDE_PATH
+X11_Xcursor_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xcursor_LIB
+X11_Xcursor_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xdamage_INCLUDE_PATH
+X11_Xdamage_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xdamage_LIB
+X11_Xdamage_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xdmcp_INCLUDE_PATH
+X11_Xdmcp_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xdmcp_LIB
+X11_Xdmcp_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xext_LIB
+X11_Xext_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xfixes_INCLUDE_PATH
+X11_Xfixes_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xfixes_LIB
+X11_Xfixes_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xft_INCLUDE_PATH
+X11_Xft_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xft_LIB
+X11_Xft_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xi_INCLUDE_PATH
+X11_Xi_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xi_LIB
+X11_Xi_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xinerama_INCLUDE_PATH
+X11_Xinerama_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xinerama_LIB
+X11_Xinerama_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xinput_INCLUDE_PATH
+X11_Xinput_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xinput_LIB
+X11_Xinput_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xkb_INCLUDE_PATH
+X11_Xkb_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xkbfile_INCLUDE_PATH
+X11_Xkbfile_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xkbfile_LIB
+X11_Xkbfile_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xkblib_INCLUDE_PATH
+X11_Xkblib_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xlib_INCLUDE_PATH
+X11_Xlib_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xpm_INCLUDE_PATH
+X11_Xpm_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xpm_LIB
+X11_Xpm_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xrandr_INCLUDE_PATH
+X11_Xrandr_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xrandr_LIB
+X11_Xrandr_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xrender_INCLUDE_PATH
+X11_Xrender_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xrender_LIB
+X11_Xrender_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xscreensaver_INCLUDE_PATH
+X11_Xscreensaver_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xscreensaver_LIB
+X11_Xscreensaver_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xshape_INCLUDE_PATH
+X11_Xshape_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xt_INCLUDE_PATH
+X11_Xt_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xt_LIB
+X11_Xt_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xutil_INCLUDE_PATH
+X11_Xutil_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xv_INCLUDE_PATH
+X11_Xv_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xv_LIB
+X11_Xv_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_Xxf86misc_LIB
+X11_Xxf86misc_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_dpms_INCLUDE_PATH
+X11_dpms_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_xf86misc_INCLUDE_PATH
+X11_xf86misc_INCLUDE_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: X11_xf86vmode_INCLUDE_PATH
+X11_xf86vmode_INCLUDE_PATH-ADVANCED:INTERNAL=1
+__pkg_config_checked_ASSIMP:INTERNAL=1
 __pkg_config_checked_PC_EIGEN:INTERNAL=1
+__pkg_config_checked_PC_FLANN:INTERNAL=1
+__pkg_config_checked_PC_OPENNI:INTERNAL=1
 

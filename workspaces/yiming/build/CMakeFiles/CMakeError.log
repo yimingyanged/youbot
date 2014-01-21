@@ -12,8 +12,8 @@ Linking C executable cmTryCompileExec
 /usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec.dir/CheckFunctionExists.c.o  -o cmTryCompileExec -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: ld returned 1 exit status
-make[1]: Leaving directory `/home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles/CMakeTmp'
 make[1]: *** [cmTryCompileExec] Error 1
+make[1]: Leaving directory `/home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles/CMakeTmp'
 make: *** [cmTryCompileExec/fast] Error 2
 
 

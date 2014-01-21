@@ -29,6 +29,12 @@ ros/ros.h
 -
 ros/package.h
 -
+yaml-cpp/yaml.h
+-
+yaml-cpp/parser.h
+-
+XmlRpcValue.h
+-
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "object_recognition_capture")
+set(object_recognition_capture_MAINTAINER "Vincent Rabaud <vincent.rabaud@gmail.com>")
+set(object_recognition_capture_DEPRECATED "")
+set(object_recognition_capture_VERSION "0.2.22")
+set(object_recognition_capture_BUILD_DEPENDS "boost" "ecto" "ecto_image_pipeline" "ecto_opencv" "ecto_openni" "object_recognition_core")
+set(object_recognition_capture_RUN_DEPENDS "boost" "ecto" "ecto_image_pipeline" "ecto_opencv" "ecto_openni" "ecto_ros" "object_recognition_core")
+set(object_recognition_capture_BUILDTOOL_DEPENDS "catkin")

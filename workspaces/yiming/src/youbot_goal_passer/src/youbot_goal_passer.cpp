@@ -92,14 +92,10 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 	ROS_INFO("Base goal retrieved. Move base first");
 	
 	/** Send Messages */
-	ROS_INFO("Publishing base goal0");
 	current_state.reset();
-	ROS_INFO("Publishing base goal1");
 #ifndef USE_YB_NAV
-    ROS_INFO("Publishing base goal2");
 	base_ac.sendGoal(base_goal, boost::bind(&YoubotGoalPasser::doneCb, this, _1, _2, true));
 #else
-	ROS_INFO("Publishing base goal3");
 	base_pub.publish(base_goal);
 #endif
 
@@ -114,7 +110,7 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 		ros::Duration(1).sleep();
 	}
 
-	if (base_succeeded) 
+	if (trails == 10)
 	{
 		arm_ac.sendGoal(*goal, boost::bind(&YoubotGoalPasser::doneCb, this, _1, _2, false));
 		if (success)
@@ -165,14 +161,13 @@ void youbot_goal_passer::YoubotGoalPasser::goal_requestCallback(const moveit_msg
 {
 	base_goal.header = request->workspace_parameters.header;
 	//Rough implementation, needs to be improved
-	ROS_INFO("Goal constraints size %d",request ->goal_constraints.size());
 	for (int i = 0; i < request -> goal_constraints[0].joint_constraints.size(); i++)
 	{
-		if (request ->goal_constraints[0].joint_constraints[i].joint_name == "base_dummy_prismatic_x_joint")
+		if (request ->goal_constraints[0].joint_constraints[i].joint_name == "dummy_prismatic_x_joint")
 			base_goal.pose.position.x = request->goal_constraints[0].joint_constraints[i].position;
-		else if (request ->goal_constraints[0].joint_constraints[i].joint_name == "base_dummy_prismatic_y_joint")
+		else if (request ->goal_constraints[0].joint_constraints[i].joint_name == "dummy_prismatic_y_joint")
 			base_goal.pose.position.y = request->goal_constraints[0].joint_constraints[i].position;
-		else if (request ->goal_constraints[0].joint_constraints[i].joint_name == "base_dummy_revolute_joint")
+		else if (request ->goal_constraints[0].joint_constraints[i].joint_name == "dummy_revolute_joint")
 		{
 			base_goal.pose.orientation.w = cos((request->goal_constraints[0].joint_constraints[i].position)/2);
 			base_goal.pose.orientation.z = sin((request->goal_constraints[0].joint_constraints[i].position)/2);
@@ -186,9 +181,8 @@ void youbot_goal_passer::YoubotGoalPasser::goal_requestCallback(const moveit_msg
 }
 void youbot_goal_passer::YoubotGoalPasser::base_doneCallback(const move_base_msgs::MoveBaseActionResult::ConstPtr & result)
 {
-	if (true)
+	if (result->status.status == actionlib_msgs::GoalStatus::SUCCEEDED)
 	{
-		ros::Duration(3).sleep();
 		ROS_INFO("Base Movement Has Been Succeeded! Now Performing Arm Movement");
 		base_succeeded=true;
 	}

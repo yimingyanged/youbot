@@ -21,15 +21,14 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_ros_planning
   dynamic_reconfigure
 )
-
 find_package(Eigen REQUIRED)
-
+find_package(yaml-cpp REQUIRED)
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 
 catkin_package(
   LIBRARIES
-    moveit_rdf_loader
+    moveit_rdf_loader s
     moveit_ros_planning
     moveit_robot_model_loader
   INCLUDE_DIRS
@@ -47,6 +46,7 @@ include_directories(
 include_directories(SYSTEM
                     ${EIGEN_INCLUDE_DIRS}
                     ${Boost_INCLUDE_DIRS}
+		    ${yaml-cpp_INCLUDE_DIRS}
                     )
 
 link_directories(${Boost_LIBRARY_DIRS})
@@ -59,7 +59,7 @@ add_library(${MOVEIT_LIB_NAME} src/kdl_kinematics_plugin.cpp
   
 add_dependencies(${MOVEIT_LIB_NAME} ${PROJECT_NAME}_gencfg) 
 
-target_link_libraries(${MOVEIT_LIB_NAME} moveit_rdf_loader ${catkin_LIBRARIES})
+target_link_libraries(${MOVEIT_LIB_NAME} moveit_rdf_loader ${catkin_LIBRARIES} ${yaml-cpp_LIBRARY})
 
 install(TARGETS ${MOVEIT_LIB_NAME} LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
 install(DIRECTORY include/ DESTINATION include)

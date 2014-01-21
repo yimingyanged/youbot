@@ -7,14 +7,18 @@ int main(int argc, char** argv){
   ros::NodeHandle node;
   static tf::TransformBroadcaster br;
   tf::Transform transform;
-  transform.setOrigin( tf::Vector3(0.0, 0.0, 0.0) );
-  transform.setRotation( tf::Quaternion(0, 0, 0) );
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_footprint", "base_link"));
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link", "base_dummy_revolute_joint"));
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link", "base_dummy_prismatic_x_link"));
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link", "base_dummy_prismatic_y_link"));
-
-  ros::spin();
+  transform.setOrigin( tf::Vector3(0.5, 0.0, 0.0) );
+  transform.setRotation( tf::Quaternion(1.0, 0.0, 0.0, 1.0) );
+  while(ros::ok())
+  {
+  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_dummy_prismatic_y_link", "base_link"));
+  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link", "base_dummy_revolute_link"));
+  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_dummy_revolute_link", "base_dummy_prismatic_x_link"));
+  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_dummy_prismatic_x_link", "base_dummy_prismatic_y_link"));
+  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "xtion_link", "ar_marker"));
+  ros::spinOnce();
+  ros::Duration(0.01).sleep();
+  }
   return 0;
 };
 

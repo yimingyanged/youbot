@@ -1,0 +1,8 @@
+prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel
+
+Name: youbot_target_pose_publisher
+Description: Description of youbot_target_pose_publisher
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib 
+Requires: 
