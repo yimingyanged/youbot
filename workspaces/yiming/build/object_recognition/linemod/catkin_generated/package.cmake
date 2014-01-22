@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "object_recognition_linemod")
-set(object_recognition_linemod_MAINTAINER "Vincent Rabaud <vincent.rabaud@gmail.com>")
-set(object_recognition_linemod_DEPRECATED "")
-set(object_recognition_linemod_VERSION "0.2.12")
-set(object_recognition_linemod_BUILD_DEPENDS "ecto" "object_recognition_core" "object_recognition_renderer" "opencv2")
-set(object_recognition_linemod_RUN_DEPENDS "ecto" "object_recognition_core" "object_recognition_renderer" "opencv2")
-set(object_recognition_linemod_BUILDTOOL_DEPENDS "catkin")

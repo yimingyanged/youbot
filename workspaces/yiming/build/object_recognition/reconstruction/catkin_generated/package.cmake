@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "object_recognition_reconstruction")
-set(object_recognition_reconstruction_MAINTAINER "Vincent Rabaud <vincent.rabaud@gmail.com>")
-set(object_recognition_reconstruction_DEPRECATED "")
-set(object_recognition_reconstruction_VERSION "0.3.0")
-set(object_recognition_reconstruction_BUILD_DEPENDS "ecto" "ecto_image_pipeline" "ecto_pcl" "object_recognition_core" "opencv2" "opencv_candidate" "sensor_msgs")
-set(object_recognition_reconstruction_RUN_DEPENDS "ecto" "ecto_image_pipeline" "ecto_pcl" "meshlab" "object_recognition_core" "opencv2" "opencv_candidate")
-set(object_recognition_reconstruction_BUILDTOOL_DEPENDS "catkin")

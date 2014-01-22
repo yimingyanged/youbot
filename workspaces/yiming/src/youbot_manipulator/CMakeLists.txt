@@ -5,6 +5,8 @@ project(youbot_manipulator)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
+  actionlib_msgs
   geometry_msgs
   moveit_core
   moveit_msgs
@@ -84,7 +86,7 @@ find_package(Boost REQUIRED COMPONENTS system)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES youbot_manipulator
-  CATKIN_DEPENDS geometry_msgs moveit_core roscpp moveit_msgs moveit_ros_planning_interface
+  CATKIN_DEPENDS geometry_msgs moveit_core roscpp moveit_msgs moveit_ros_planning_interface actionlib actionlib_msgs
   DEPENDS system_lib
 )
 

@@ -16,6 +16,9 @@
 #include <moveit/move_group_interface/move_group.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
 #include <moveit_msgs/DisplayTrajectory.h>
+#include <actionlib/server/simple_action_server.h>
+#include <actionlib/client/simple_action_client.h>
+#include <control_msgs/GripperCommandAction.h>
 namespace youbot_manipulator
 {
 	/**
@@ -26,13 +29,14 @@ namespace youbot_manipulator
 	public:
 		/**
 		 * @brief Youbot manipulator constructor
-		 * @param nh_ ros nodehandle
-		 * @param group_ns moveit planning group namespace
-		 * @param target_pose_ns target pose topic name space
-		 * @param display_ns display topic for rviz
-		 * @param visual true if want to publish to rviz
+		 * @param nh_				ros nodehandle
+		 * @param group_ns			moveit planning group namespace
+		 * @param target_pose_ns	target pose topic name space
+		 * @param display_ns		display topic for rviz
+		 * @param gripper_ns		gripper action topic
+		 * @param visual			true if want to publish to rviz
 		 */
-		YoubotManipulator(ros::NodeHandle * nh_, std::string group_ns, std::string target_pose_ns, std::string display_ns, double pre_offset, bool visual);
+		YoubotManipulator(ros::NodeHandle * nh_, std::string group_ns, std::string target_pose_ns, std::string display_ns, std::string gripper_ns, geometry_msgs::Pose pre_offset, bool visual);
 
 		/**
 		 * @brief Compute IK
@@ -53,17 +57,29 @@ namespace youbot_manipulator
 		 */
 		void targetCallback(const geometry_msgs::PoseStamped::ConstPtr & target);
 
+		/** Implementation of gripper action */
+		void gripper_doneCallback(const actionlib::SimpleClientGoalState& state, const control_msgs::GripperCommandResult::ConstPtr & result);
+
 		/**
-		 * @brief restart the target callback
-		 * @param flag restart flag
+		 * @brief open gripper
+		 * @return action goal for open gripper position
 		 */
-		//void restartCallback(const std_msgs)
+		control_msgs::GripperCommandGoal open_gripper();
+
+		/**
+		 * @brief grasp position
+		 * @return action goal for gripper grasp position
+		 */
+		control_msgs::GripperCommandGoal grasp_gripper();
+
 		/**
 		 * @brief command line start listener
 		 * @return true if start
 		 */
 		bool startListener();
 
+		actionlib::SimpleActionClient<control_msgs::GripperCommandAction> gripper_ac;	/** Gripper Action Client */
+		bool hasGripper_;
 		ros::NodeHandle nh_;	/** NodeHandler */
 		ros::Subscriber target_sub_;	/** target subscriber */
 		ros::Publisher plan_pub_;	/** move plan publisher to rviz */
@@ -72,7 +88,7 @@ namespace youbot_manipulator
 		geometry_msgs::PoseStamped pose_;	/** target pose */
 		bool visual_; /** true if want to publish visual state to rviz */
 		bool succeeded_;
-		double pregrap_offset_;
+		geometry_msgs::Pose pregrasp_offset_;
 		/**
 		 * @brief there is a bug in current moveit move_group version, group_.plan is a dead loop
 		 * so use asyncSpinner to get plan back and then move. REMOVE when the bug fixed

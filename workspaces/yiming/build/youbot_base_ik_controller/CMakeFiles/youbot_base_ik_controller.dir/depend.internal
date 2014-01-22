@@ -30,6 +30,8 @@ youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/src/youbot_ba
  /opt/ros/hydro/include/ros/builtin_message_traits.h
  /opt/ros/hydro/include/ros/common.h
  /opt/ros/hydro/include/ros/console.h
+ /opt/ros/hydro/include/ros/console_backend.h
+ /opt/ros/hydro/include/ros/datatypes.h
  /opt/ros/hydro/include/ros/duration.h
  /opt/ros/hydro/include/ros/exception.h
  /opt/ros/hydro/include/ros/exceptions.h

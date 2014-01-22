@@ -1,8 +1,0 @@
-prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/devel
-
-Name: object_recognition_renderer
-Description: Description of object_recognition_renderer
-Version: 0.1.11
-Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/src/object_recognition/ork_renderer/include -I/usr/include
-Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib -lobject_recognition_renderer_glut
-Requires: 

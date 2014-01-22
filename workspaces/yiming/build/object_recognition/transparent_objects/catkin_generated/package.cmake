@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "object_recognition_transparent_objects")
-set(object_recognition_transparent_objects_MAINTAINER "Ilya Lysenkov <ilya.lysenkov@itseez.com>, Vincent Rabaud <vincent.rabaud@gmail.com>")
-set(object_recognition_transparent_objects_DEPRECATED "")
-set(object_recognition_transparent_objects_VERSION "0.3.18")
-set(object_recognition_transparent_objects_BUILD_DEPENDS "ecto" "object_recognition_core" "libopenni-dev" "pcl_ros")
-set(object_recognition_transparent_objects_RUN_DEPENDS "ecto" "ecto_opencv" "object_recognition_core" "libopenni-dev" "pcl_ros")
-set(object_recognition_transparent_objects_BUILDTOOL_DEPENDS "catkin")

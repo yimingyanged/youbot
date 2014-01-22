@@ -11,11 +11,9 @@ int main(int argc, char** argv){
   transform.setRotation( tf::Quaternion(1.0, 0.0, 0.0, 1.0) );
   while(ros::ok())
   {
-  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_dummy_prismatic_y_link", "base_link"));
-  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link", "base_dummy_revolute_link"));
-  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_dummy_revolute_link", "base_dummy_prismatic_x_link"));
-  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_dummy_prismatic_x_link", "base_dummy_prismatic_y_link"));
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "xtion_link", "ar_marker"));
+  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_footprint", "dummy_prismatic_link"));
+  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "dummy_prismatic_link", "dummy_revolute_link"));
+  //br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "xtion_link", "ar_marker"));
   ros::spinOnce();
   ros::Duration(0.01).sleep();
   }

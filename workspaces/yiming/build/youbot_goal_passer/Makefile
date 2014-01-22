@@ -91,7 +91,7 @@ install/strip/fast: install/strip
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"main\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -148,6 +148,20 @@ preinstall/fast:
 depend:
 	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+youbot_goal_passer/CMakeFiles/dummy_goal.dir/rule:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/dummy_goal.dir/rule
+.PHONY : youbot_goal_passer/CMakeFiles/dummy_goal.dir/rule
+
+# Convenience name for target.
+dummy_goal: youbot_goal_passer/CMakeFiles/dummy_goal.dir/rule
+.PHONY : dummy_goal
+
+# fast build rule for target.
+dummy_goal/fast:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_goal.dir/build.make youbot_goal_passer/CMakeFiles/dummy_goal.dir/build
+.PHONY : dummy_goal/fast
 
 # Convenience name for target.
 youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule:
@@ -232,6 +246,30 @@ youbot_goal_passer: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/rule
 youbot_goal_passer/fast:
 	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build.make youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/build
 .PHONY : youbot_goal_passer/fast
+
+src/dummy_goal.o: src/dummy_goal.cpp.o
+.PHONY : src/dummy_goal.o
+
+# target to build an object file
+src/dummy_goal.cpp.o:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_goal.dir/build.make youbot_goal_passer/CMakeFiles/dummy_goal.dir/src/dummy_goal.cpp.o
+.PHONY : src/dummy_goal.cpp.o
+
+src/dummy_goal.i: src/dummy_goal.cpp.i
+.PHONY : src/dummy_goal.i
+
+# target to preprocess a source file
+src/dummy_goal.cpp.i:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_goal.dir/build.make youbot_goal_passer/CMakeFiles/dummy_goal.dir/src/dummy_goal.cpp.i
+.PHONY : src/dummy_goal.cpp.i
+
+src/dummy_goal.s: src/dummy_goal.cpp.s
+.PHONY : src/dummy_goal.s
+
+# target to generate assembly for a file
+src/dummy_goal.cpp.s:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_goal.dir/build.make youbot_goal_passer/CMakeFiles/dummy_goal.dir/src/dummy_goal.cpp.s
+.PHONY : src/dummy_goal.cpp.s
 
 src/dummy_tf_publisher.o: src/dummy_tf_publisher.cpp.o
 .PHONY : src/dummy_tf_publisher.o
@@ -335,6 +373,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... dummy_goal"
 	@echo "... dummy_tf_publisher"
 	@echo "... edit_cache"
 	@echo "... goal_filter"
@@ -348,6 +387,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... youbot_goal_passer"
+	@echo "... src/dummy_goal.o"
+	@echo "... src/dummy_goal.i"
+	@echo "... src/dummy_goal.s"
 	@echo "... src/dummy_tf_publisher.o"
 	@echo "... src/dummy_tf_publisher.i"
 	@echo "... src/dummy_tf_publisher.s"

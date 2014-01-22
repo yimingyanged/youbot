@@ -81,20 +81,23 @@ youbot_base_ik_controller_EXTERNAL_OBJECTS =
 
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/src/youbot_base_ik_controller.cpp.o
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libactionlib.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_thread-mt.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libcpp_common.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libroscpp_serialization.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/librostime.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_date_time-mt.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_system-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libroscpp.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_signals-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_filesystem-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/librosconsole.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_regex-mt.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/librosconsole_log4cxx.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/librosconsole_backend_interface.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/liblog4cxx.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_regex-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libxmlrpcpp.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libroscpp_serialization.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/librostime.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_date_time-mt.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_system-mt.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/libboost_thread-mt.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libcpp_common.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: /opt/ros/hydro/lib/libconsole_bridge.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_base_ik_controller/youbot_base_ik_controller"

@@ -75,6 +75,8 @@ youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/callback_queue_interface.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/common.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/console.h
+youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/console_backend.h
+youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/datatypes.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/duration.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/exception.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer.cpp.o: /opt/ros/hydro/include/ros/exceptions.h
@@ -206,6 +208,8 @@ youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/callback_queue_interface.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/common.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/console.h
+youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/console_backend.h
+youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/datatypes.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/duration.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/exception.h
 youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/src/youbot_goal_passer_node.cpp.o: /opt/ros/hydro/include/ros/exceptions.h

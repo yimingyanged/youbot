@@ -1,5 +1,17 @@
 # generated from catkin/cmake/template/pkgConfig.cmake.in
 
+# append elements to a list and remove existing duplicates from the list
+# copied from catkin/cmake/list_append_deduplicate.cmake to keep pkgConfig
+# self contained
+macro(_list_append_deduplicate listname)
+  if(NOT "${ARGN}" STREQUAL "")
+    if(${listname})
+      list(REMOVE_ITEM ${listname} ${ARGN})
+    endif()
+    list(APPEND ${listname} ${ARGN})
+  endif()
+endmacro()
+
 # append elements to a list if they are not already in the list
 # copied from catkin/cmake/list_append_unique.cmake to keep pkgConfig
 # self contained
@@ -10,45 +22,6 @@ macro(_list_append_unique listname)
       list(APPEND ${listname} ${_item})
     endif()
   endforeach()
-endmacro()
-
-# remove duplicate libraries, generalized from PCLConfig.cmake.in
-macro(_remove_duplicate_libraries _unfiltered_libraries _final_filtered_libraries)
-  set(_filtered_libraries)
-  set(_debug_libraries)
-  set(_optimized_libraries)
-  set(_other_libraries)
-  set(_waiting_for_debug 0)
-  set(_waiting_for_optimized 0)
-  set(_library_position -1)
-  foreach(library ${${_unfiltered_libraries}})
-    if("${library}" STREQUAL "debug")
-      set(_waiting_for_debug 1)
-    elseif("${library}" STREQUAL "optimized")
-      set(_waiting_for_optimized 1)
-    elseif(_waiting_for_debug)
-      list(FIND _debug_libraries "${library}" library_position)
-      if(library_position EQUAL -1)
-        list(APPEND ${_filtered_libraries} debug ${library})
-        list(APPEND _debug_libraries ${library})
-      endif()
-      set(_waiting_for_debug 0)
-    elseif(_waiting_for_optimized)
-      list(FIND _optimized_libraries "${library}" library_position)
-      if(library_position EQUAL -1)
-        list(APPEND ${_filtered_libraries} optimized ${library})
-        list(APPEND _optimized_libraries ${library})
-      endif()
-      set(_waiting_for_optimized 0)
-    else("${library}" STREQUAL "debug")
-      list(FIND _other_libraries "${library}" library_position)
-      if(library_position EQUAL -1)
-        list(APPEND ${_filtered_libraries} ${library})
-        list(APPEND _other_libraries ${library})
-      endif()
-    endif("${library}" STREQUAL "debug")
-  endforeach(library)
-  set(_final_filtered_libraries _filtered_libraries)
 endmacro()
 
 
@@ -103,7 +76,10 @@ endif()
 
 set(libraries "moveit_rdf_loader;s;moveit_ros_planning;moveit_robot_model_loader")
 foreach(library ${libraries})
-  if(TARGET ${library})
+  # keep build configuration keywords, target names and absolute libraries as-is
+  if("${library}" MATCHES "^debug|optimized|general$")
+    list(APPEND kdl_kinematics_plugin_weighted_LIBRARIES ${library})
+  elseif(TARGET ${library})
     list(APPEND kdl_kinematics_plugin_weighted_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
     list(APPEND kdl_kinematics_plugin_weighted_LIBRARIES ${library})
@@ -159,14 +135,10 @@ foreach(depend ${depends})
     find_package(${kdl_kinematics_plugin_weighted_dep} REQUIRED ${depend_list})
   endif()
   _list_append_unique(kdl_kinematics_plugin_weighted_INCLUDE_DIRS ${${kdl_kinematics_plugin_weighted_dep}_INCLUDE_DIRS})
-  list(APPEND kdl_kinematics_plugin_weighted_LIBRARIES ${${kdl_kinematics_plugin_weighted_dep}_LIBRARIES})
+  _list_append_deduplicate(kdl_kinematics_plugin_weighted_LIBRARIES ${${kdl_kinematics_plugin_weighted_dep}_LIBRARIES})
   _list_append_unique(kdl_kinematics_plugin_weighted_LIBRARY_DIRS ${${kdl_kinematics_plugin_weighted_dep}_LIBRARY_DIRS})
   list(APPEND kdl_kinematics_plugin_weighted_EXPORTED_TARGETS ${${kdl_kinematics_plugin_weighted_dep}_EXPORTED_TARGETS})
 endforeach()
-
-if(kdl_kinematics_plugin_weighted_LIBRARIES)
-  _remove_duplicate_libraries(kdl_kinematics_plugin_weighted_LIBRARIES kdl_kinematics_plugin_weighted_LIBRARIES)
-endif()
 
 set(pkg_cfg_extras "")
 foreach(extra ${pkg_cfg_extras})

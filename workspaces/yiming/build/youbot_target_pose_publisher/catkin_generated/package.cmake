@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "youbot_target_pose_publisher")
-set(youbot_target_pose_publisher_MAINTAINER "yiming <yiming@todo.todo>")
-set(youbot_target_pose_publisher_DEPRECATED "")
-set(youbot_target_pose_publisher_VERSION "0.0.0")
-set(youbot_target_pose_publisher_BUILD_DEPENDS "ar_pose" "interactive_markers" "moveit_core" "moveit_ros_perception" "moveit_ros_planning_interface" "roscpp")
-set(youbot_target_pose_publisher_RUN_DEPENDS "ar_pose" "interactive_markers" "moveit_core" "moveit_ros_perception" "moveit_ros_planning_interface" "roscpp")
-set(youbot_target_pose_publisher_BUILDTOOL_DEPENDS "catkin")

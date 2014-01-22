@@ -15,6 +15,8 @@ youbot_goal_passer/CMakeFiles/goal_filter.dir/src/goal_filter.cpp.o
  /opt/ros/hydro/include/ros/builtin_message_traits.h
  /opt/ros/hydro/include/ros/common.h
  /opt/ros/hydro/include/ros/console.h
+ /opt/ros/hydro/include/ros/console_backend.h
+ /opt/ros/hydro/include/ros/datatypes.h
  /opt/ros/hydro/include/ros/duration.h
  /opt/ros/hydro/include/ros/exception.h
  /opt/ros/hydro/include/ros/exceptions.h

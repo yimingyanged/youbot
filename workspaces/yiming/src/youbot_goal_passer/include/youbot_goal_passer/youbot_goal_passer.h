@@ -52,7 +52,15 @@ namespace youbot_goal_passer
 	class YoubotGoalPasser
 	{
 		public:
-			/** Constructor */
+			/**
+			 * @brief 	Youbot goal passer.	Separates trajectories, sets executing orders.
+			 * @nh_		ROS node handle
+			 * @param	input_ns			Input 5DOF arm plan action from moveit
+			 * @param	request_ns			Plan request from moveit (used to subtract base goal)
+			 * @param	arm_ns				Arm action server topic from youbot driver
+			 * @param	base_ns				Base navigation request topic
+			 * @param	use_base			true if use base movement, false if only use arm
+			 */
 			YoubotGoalPasser(ros::NodeHandle * nh_, std::string input_ns, std::string request_ns, std::string result_ns, std::string arm_ns, std::string base_ns, bool use_base);
 		
 		private:
@@ -76,7 +84,6 @@ namespace youbot_goal_passer
 			geometry_msgs::PoseStamped	base_goal;
 		#endif
 			actionlib::SimpleActionClient<control_msgs::FollowJointTrajectoryAction> arm_ac;		//!< The action client for the arm goal message
-
 			/** Implementation of the Action Server */
 			void executeCallback(const control_msgs::FollowJointTrajectoryGoal::ConstPtr & goal);
 
@@ -86,7 +93,9 @@ namespace youbot_goal_passer
 			/** Implementation of goal request retrireving */
 			void goal_requestCallback(const moveit_msgs::MotionPlanRequest::ConstPtr & request);
 
+			/** Implementation of base navigation result retrireving */
 			void base_doneCallback(const move_base_msgs::MoveBaseActionResult::ConstPtr & result);
+
 	};
 }
 #endif

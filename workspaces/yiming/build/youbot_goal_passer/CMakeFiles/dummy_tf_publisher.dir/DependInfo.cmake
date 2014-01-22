@@ -12,6 +12,7 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 SET(CMAKE_TARGET_DEFINITIONS
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"youbot_goal_passer\""
+  "ROSCONSOLE_BACKEND_LOG4CXX"
   )
 
 # Targets to which this target links.

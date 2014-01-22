@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "object_recognition_core")
-set(object_recognition_core_MAINTAINER "Vincent Rabaud <vincent.rabaud@gmail.com>")
-set(object_recognition_core_DEPRECATED "")
-set(object_recognition_core_VERSION "0.6.0")
-set(object_recognition_core_BUILD_DEPENDS "boost" "curl" "ecto" "ecto_image_pipeline" "sensor_msgs")
-set(object_recognition_core_RUN_DEPENDS "boost" "couchdb" "curl" "ecto" "ecto_image_pipeline" "sensor_msgs")
-set(object_recognition_core_BUILDTOOL_DEPENDS "catkin")

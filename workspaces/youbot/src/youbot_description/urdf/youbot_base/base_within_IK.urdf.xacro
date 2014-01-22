@@ -64,6 +64,10 @@
         			</geometry>
       			</collision-->
     		</link>
+
+		<link name ="moveit_fixed_link">
+
+		</link>
 		<link name="${name}_link">
       			<inertial>
         			<mass value="${base_mass}" />
@@ -130,12 +134,18 @@
         			</geometry>
       			</collision>
 		</link>
+
+		<joint name="moveit_fixed_joint" type="fixed">
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<child link="moveit_fixed_link"/>
+			<parent link="${name}_footprint" />
+		</joint>
 		<joint name="dummy_prismatic_x_joint" type="prismatic">
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<axis xyz="1 0 0" />
 			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
       			<child link="dummy_prismatic_link" />
-      			<parent link="${name}_footprint"/>
+      			<parent link="moveit_fixed_link"/>
     		</joint>
 		
 

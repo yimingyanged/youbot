@@ -1,8 +1,0 @@
-prefix=/home/yiming/ros_workspace/youbot/workspaces/yiming/install
-
-Name: object_recognition_transparent_objects
-Description: Description of object_recognition_transparent_objects
-Version: 0.3.18
-Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/install/include
-Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/install/lib 
-Requires: 

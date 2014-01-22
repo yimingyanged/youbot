@@ -1,4 +1,0 @@
-set(object_recognition_tabletop_SETUP_PY_VERSION "0.3.1")
-set(object_recognition_tabletop_SETUP_PY_SCRIPTS "")
-set(object_recognition_tabletop_SETUP_PY_PACKAGES "object_recognition_tabletop")
-set(object_recognition_tabletop_SETUP_PY_PACKAGE_DIRS "python/object_recognition_tabletop")
