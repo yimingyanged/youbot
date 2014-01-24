@@ -1,13 +1,12 @@
 /*
- * Youbot manipulator.
- * Receives target pose and send out move_group request.
- * Currently using async spinner, Need to be removed when moveit bug fixed
+ * Youbot manipulator using IK.
+ * Compute joint values using 8 DOF, but plan with 5 DOF arm
  *
  * yiming yang
- * 19 Jan 2014
+ * 23 Jan 2014
  */
-#ifndef YOUBOT_MANIPULATOR_H
-#define YOUBOT_MANIPULATOR_H
+#ifndef YOUBOT_IK_MANIPULATOR_H
+#define YOUBOT_IK_MANIPULATOR_H
 
 #include <ros/ros.h>
 #include <boost/bind.hpp>
@@ -31,29 +30,28 @@
 
 // Kinematics
 #include <moveit_msgs/GetPositionIK.h>
-namespace youbot_manipulator
+namespace youbot_ik_manipulator
 {
 	/**
-	 * @brief Youbot arm and base combined manipulator
+	 * @brief Youbot manipulator using 8DOF IK and 5DOF plan
 	 */
-	class YoubotManipulator
+	class YoubotIKManipulator
 	{
 	public:
 		/**
-		 * @brief Youbot manipulator constructor
+		 * @brief Youbot IK manipulator constructor
 		 * @param nh_				ros nodehandle
-		 * @param group_ns			moveit planning group namespace
-		 * @param target_pose_ns	target pose topic name space
-		 * @param display_ns		display topic for rviz
-		 * @param gripper_ns		gripper action topic
-		 * @param visual			true if want to publish to rviz
+		 * @param ik_group_ns		group name for IK
+		 * @param plan_group_ns		group name for plan
+		 * @param base_ns			topic of base navigation goal
+		 * @param gripper_ns		gripper action server name
+		 * @param goal_ns			goal topic
+		 * @param pre_offset		offset for pre grasp
+		 * @param use_base			true if move the base
 		 */
-		YoubotManipulator(ros::NodeHandle * nh_, std::string group_ns, std::string target_pose_ns, std::string display_ns, std::string gripper_ns, geometry_msgs::Pose pre_offset, bool visual);
+		YoubotIKManipulator(ros::NodeHandle * nh_, std::string ik_group_ns, std::string plan_group_ns, std::string base_ns, std::string gripper_ns, std::string goal_ns, geometry_msgs::Pose pre_offset, bool use_base);
 
-		/**
-		 * @brief Compute IK
-		 */
-
+	private:
 		/**
 		 * @brief Planning to a target pose
 		 * @param pose target pose
@@ -62,7 +60,6 @@ namespace youbot_manipulator
 		bool planPose(const geometry_msgs::PoseStamped pose);
 		moveit::planning_interface::MoveGroup group_;	/** moveit planning group */
 
-	private:
 		/**
 		 * @brief target pose call back
 		 * @param target target pose
@@ -91,10 +88,10 @@ namespace youbot_manipulator
 		bool startListener();
 
 		actionlib::SimpleActionClient<control_msgs::GripperCommandAction> gripper_ac;	/** Gripper Action Client */
-		bool hasGripper_;
+		bool has_gripper_;
 		ros::NodeHandle nh_;	/** NodeHandler */
 		ros::Subscriber target_sub_;	/** target subscriber */
-		ros::Publisher plan_pub_;	/** move plan publisher to rviz */
+		ros::Publisher base_pub_;	/** base navigation goal publisher */
 		std::string target_pose_ns_;	/** target pose topic name */
 		moveit_msgs::DisplayTrajectory display_trajectory_;	/** trajectory */
 		geometry_msgs::PoseStamped pose_;	/** target pose */
@@ -106,49 +103,8 @@ namespace youbot_manipulator
 		 * so use asyncSpinner to get plan back and then move. REMOVE when the bug fixed
 		 */
 		ros::AsyncSpinner spinner_;
-
-	};
-
-	/**
-	 * @brief Youbot manipulator using 8DOF IK and 5DOF plan
-	 */
-	class YoubotIKManipulator{
-	public:
-		/**
-		 * @brief Constructor
-		 */
-		YoubotIKManipulator(ros::NodeHandle * nh_, std::string ik_group_ns, std::string plan_group_ns, std::string base_ns, std::string gripper_ns, std::string goal_ns, geometry_msgs::Pose pre_offset, bool has_base);
-
-	private:
-		ros::Subscriber target_sub_;	/**	target topic subscriber	*/
-		ros::Publisher	base_pub_;	/**	base goal publisher	*/
-		bool has_base_;	/**	true if perform base motion	*/
-		bool has_gripper_;	/** true if perform gripper motion	*/
-
-		/**	moveit kinematics setup	*/
-		const robot_state::JointModelGroup* ik_group_;	/**	group for Ik computing	*/
-		const robot_state::JointModelGroup* plan_group_;	/**	group for motion planning	*/
-		const std::vector<std::string> & ik_joint_names_;	/**	joint names of ik_group_	*/
-		const std::vector<std::string> & plan_joint_names_;	/**	joint names of plan_group_	*/
-
-
-		actionlib::SimpleActionClient gripper_ac_;	/**	gripper action client	*/
-		/**
-		 * @brief Gripper done call back
-		 */
-		void gripper_doneCallback(const actionlib::SimpleClientGoalState& state, const control_msgs::GripperCommandResult::ConstPtr & result);
-
-		/**
-		 * @brief open gripper
-		 * @return action goal for open gripper position
-		 */
-		control_msgs::GripperCommandGoal open_gripper();
-
-		/**
-		 * @brief grasp position
-		 * @return action goal for gripper grasp position
-		 */
-		control_msgs::GripperCommandGoal grasp_gripper();
+		moveit_msgs::GetPositionIK::Request ik_request_;
+		moveit_msgs::GetPositionIK::Response ik_response_;
 	};
 }
 #endif

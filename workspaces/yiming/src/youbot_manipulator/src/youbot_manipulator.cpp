@@ -31,6 +31,7 @@ namespace youbot_manipulator
 		moveit::planning_interface::MoveGroup::Plan target_plan;
 		spinner_.start();
 		succeeded_= group_.plan(target_plan);
+		//succeeded_ = group_.move();
 		if (succeeded_)
 		{
 			ROS_INFO("Planning SUCCESSED");

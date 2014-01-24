@@ -1,5 +1,5 @@
 <launch>
-  <!-- <arg name="marker_pattern" default="$(find youbot_camera)/data/4x4_79.patt"/> -->
+  <arg name="marker_pattern" default="$(find youbot_camera)/data/4x4_91.patt"/>
   <arg name="marker_width" default="135.0"/>
   <node name="ar_poses_obj" pkg="ar_pose" type="ar_single" respawn="false" output="screen" >
     <!-- Remap input-->
@@ -10,8 +10,8 @@
     <remap to="visualization_obj" from="visualization_marker" />
     
     <!-- Marker specification -->
-    <param name="marker_pattern_list" type="string" value="$(find youbot_camera)/data/4x4_91.patt"/>
-    <param name="marker_width" type="double" value="40"/>
+    <param name="marker_pattern" type="string" value="$(find youbot_camera)/data/4x4_91.patt"/>
+    <param name="marker_width" type="double" value="135.0"/>
     <param name="marker_center_x" type="double" value="0.0"/>
     <param name="marker_center_y" type="double" value="0.0"/>
     <param name="threshold" type="int" value="100"/>
