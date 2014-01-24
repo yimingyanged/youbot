@@ -1,7 +1,8 @@
 #include "youbot_manipulator/youbot_manipulator.h"
 
 namespace youbot_manipulator
-{	YoubotManipulator::YoubotManipulator(ros::NodeHandle * nh, std::string group_ns, std::string target_pose_ns, std::string display_ns, std::string gripper_ns, geometry_msgs::Pose pre_offset, bool visual):
+{
+	YoubotManipulator::YoubotManipulator(ros::NodeHandle * nh, std::string group_ns, std::string target_pose_ns, std::string display_ns, std::string gripper_ns, geometry_msgs::Pose pre_offset, bool visual):
 	group_(group_ns),
 	visual_(visual),
 	spinner_(1),
@@ -10,7 +11,6 @@ namespace youbot_manipulator
 	gripper_ac(gripper_ns, true),
 	pregrasp_offset_(pre_offset)
 	{
-
 		target_sub_ = nh_.subscribe<geometry_msgs::PoseStamped>(target_pose_ns_, 1, boost::bind(&YoubotManipulator::targetCallback, this, _1));
 		//plan_pub_ = nh_.advertise<moveit_msgs::DisplayTrajectory>(display_ns, 1, true);
 		succeeded_ = false;

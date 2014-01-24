@@ -65,9 +65,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/geometry_msgs/Wrench.h
  /opt/ros/hydro/include/moveit/exceptions/exceptions.h
  /opt/ros/hydro/include/moveit/kinematics_base/kinematics_base.h
+ /opt/ros/hydro/include/moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
  /opt/ros/hydro/include/moveit/macros/class_forward.h
  /opt/ros/hydro/include/moveit/move_group_interface/move_group.h
  /opt/ros/hydro/include/moveit/planning_scene_interface/planning_scene_interface.h
+ /opt/ros/hydro/include/moveit/rdf_loader/rdf_loader.h
  /opt/ros/hydro/include/moveit/robot_model/fixed_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/floating_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/joint_model.h
@@ -77,22 +79,31 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/moveit/robot_model/prismatic_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/revolute_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/robot_model.h
+ /opt/ros/hydro/include/moveit/robot_model_loader/robot_model_loader.h
  /opt/ros/hydro/include/moveit/robot_state/attached_body.h
+ /opt/ros/hydro/include/moveit/robot_state/conversions.h
  /opt/ros/hydro/include/moveit/robot_state/robot_state.h
+ /opt/ros/hydro/include/moveit/transforms/transforms.h
  /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h
  /opt/ros/hydro/include/moveit_msgs/BoundingVolume.h
  /opt/ros/hydro/include/moveit_msgs/CollisionObject.h
  /opt/ros/hydro/include/moveit_msgs/Constraints.h
+ /opt/ros/hydro/include/moveit_msgs/DisplayRobotState.h
  /opt/ros/hydro/include/moveit_msgs/DisplayTrajectory.h
+ /opt/ros/hydro/include/moveit_msgs/GetPositionIK.h
+ /opt/ros/hydro/include/moveit_msgs/GetPositionIKRequest.h
+ /opt/ros/hydro/include/moveit_msgs/GetPositionIKResponse.h
  /opt/ros/hydro/include/moveit_msgs/Grasp.h
  /opt/ros/hydro/include/moveit_msgs/GripperTranslation.h
  /opt/ros/hydro/include/moveit_msgs/JointConstraint.h
  /opt/ros/hydro/include/moveit_msgs/JointLimits.h
  /opt/ros/hydro/include/moveit_msgs/MoveItErrorCodes.h
+ /opt/ros/hydro/include/moveit_msgs/ObjectColor.h
  /opt/ros/hydro/include/moveit_msgs/OrientationConstraint.h
  /opt/ros/hydro/include/moveit_msgs/PlaceLocation.h
  /opt/ros/hydro/include/moveit_msgs/PlannerInterfaceDescription.h
  /opt/ros/hydro/include/moveit_msgs/PositionConstraint.h
+ /opt/ros/hydro/include/moveit_msgs/PositionIKRequest.h
  /opt/ros/hydro/include/moveit_msgs/RobotState.h
  /opt/ros/hydro/include/moveit_msgs/RobotTrajectory.h
  /opt/ros/hydro/include/moveit_msgs/VisibilityConstraint.h
@@ -189,6 +200,7 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/trajectory_msgs/JointTrajectoryPoint.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectory.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectoryPoint.h
+ /opt/ros/hydro/include/urdf/model.h
  /opt/ros/hydro/include/urdf_exception/exception.h
  /opt/ros/hydro/include/urdf_model/color.h
  /opt/ros/hydro/include/urdf_model/joint.h
@@ -443,9 +455,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/geometry_msgs/Wrench.h
  /opt/ros/hydro/include/moveit/exceptions/exceptions.h
  /opt/ros/hydro/include/moveit/kinematics_base/kinematics_base.h
+ /opt/ros/hydro/include/moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
  /opt/ros/hydro/include/moveit/macros/class_forward.h
  /opt/ros/hydro/include/moveit/move_group_interface/move_group.h
  /opt/ros/hydro/include/moveit/planning_scene_interface/planning_scene_interface.h
+ /opt/ros/hydro/include/moveit/rdf_loader/rdf_loader.h
  /opt/ros/hydro/include/moveit/robot_model/fixed_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/floating_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/joint_model.h
@@ -455,22 +469,31 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/moveit/robot_model/prismatic_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/revolute_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/robot_model.h
+ /opt/ros/hydro/include/moveit/robot_model_loader/robot_model_loader.h
  /opt/ros/hydro/include/moveit/robot_state/attached_body.h
+ /opt/ros/hydro/include/moveit/robot_state/conversions.h
  /opt/ros/hydro/include/moveit/robot_state/robot_state.h
+ /opt/ros/hydro/include/moveit/transforms/transforms.h
  /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h
  /opt/ros/hydro/include/moveit_msgs/BoundingVolume.h
  /opt/ros/hydro/include/moveit_msgs/CollisionObject.h
  /opt/ros/hydro/include/moveit_msgs/Constraints.h
+ /opt/ros/hydro/include/moveit_msgs/DisplayRobotState.h
  /opt/ros/hydro/include/moveit_msgs/DisplayTrajectory.h
+ /opt/ros/hydro/include/moveit_msgs/GetPositionIK.h
+ /opt/ros/hydro/include/moveit_msgs/GetPositionIKRequest.h
+ /opt/ros/hydro/include/moveit_msgs/GetPositionIKResponse.h
  /opt/ros/hydro/include/moveit_msgs/Grasp.h
  /opt/ros/hydro/include/moveit_msgs/GripperTranslation.h
  /opt/ros/hydro/include/moveit_msgs/JointConstraint.h
  /opt/ros/hydro/include/moveit_msgs/JointLimits.h
  /opt/ros/hydro/include/moveit_msgs/MoveItErrorCodes.h
+ /opt/ros/hydro/include/moveit_msgs/ObjectColor.h
  /opt/ros/hydro/include/moveit_msgs/OrientationConstraint.h
  /opt/ros/hydro/include/moveit_msgs/PlaceLocation.h
  /opt/ros/hydro/include/moveit_msgs/PlannerInterfaceDescription.h
  /opt/ros/hydro/include/moveit_msgs/PositionConstraint.h
+ /opt/ros/hydro/include/moveit_msgs/PositionIKRequest.h
  /opt/ros/hydro/include/moveit_msgs/RobotState.h
  /opt/ros/hydro/include/moveit_msgs/RobotTrajectory.h
  /opt/ros/hydro/include/moveit_msgs/VisibilityConstraint.h
@@ -567,6 +590,7 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/trajectory_msgs/JointTrajectoryPoint.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectory.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectoryPoint.h
+ /opt/ros/hydro/include/urdf/model.h
  /opt/ros/hydro/include/urdf_exception/exception.h
  /opt/ros/hydro/include/urdf_model/color.h
  /opt/ros/hydro/include/urdf_model/joint.h

@@ -6,5 +6,4 @@ YoubotIKManipulator::YoubotIKManipulator(ros::NodeHandle * nh_, std::string ik_g
 {
 	target_sub_ = nh_->subscribe<geometry_msgs::PoseStamped>(goal_ns, 1, boost::bind(&YoubotManipulator::targetCallback, this, _1));
 }
-YoubotIKManipulator::gr
 }
