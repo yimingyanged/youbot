@@ -83,56 +83,18 @@
         			<material name="DarkGrey"/>
       			</visual>
       			<collision>
-        			<origin xyz="0 0 0" rpy="0 0 0" />
+        			<origin xyz="0 0 0.05" rpy="0 0 0" />
         			<geometry>
-          				<!--<box size="${base_size_x} ${base_size_y} ${base_size_z}" />-->
-					<mesh filename="package://youbot_description/meshes/youbot_base/base_convex.dae"/>
+          				<box size="${base_size_x} ${base_size_y} ${base_size_z}" />
+					<!--mesh filename="package://youbot_description/meshes/youbot_base/base_convex.dae"/-->
 	       			</geometry>
       			</collision>
     		</link>		
 			
 		<link name="dummy_prismatic_link">
-			<inertial>
-        			<mass value="0.0001" />
-        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
-        			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
-                 			iyy="1.0" iyz="0.0" izz="1.0" />
-      				</inertial>
-      			<visual>
-        			<origin xyz="0 0 0" rpy="0 0 0" />
-        			<geometry>
-          				<box size="0.001 0.001 0.001" />
-        			</geometry>
-               			<material name="Red" />
-      			</visual>
-      			<collision>
-        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
-        			<geometry>
-          				<box size="0.001 0.001 0.001" />
-        			</geometry>
-      			</collision>
 		</link>
 
 		<link name="dummy_revolute_link">
-			<inertial>
-        			<mass value="0.0001" />
-        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
-        			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
-                 			iyy="1.0" iyz="0.0" izz="1.0" />
-      				</inertial>
-      			<visual>
-        			<origin xyz="0 0 0" rpy="0 0 0" />
-        			<geometry>
-          				<box size="0.001 0.001 0.001" />
-        			</geometry>
-               			<material name="Red" />
-      			</visual>
-      			<collision>
-        			<origin xyz="0 0 ${-base_size_z / 2.0}" rpy="0 0 0" />
-        			<geometry>
-          				<box size="0.001 0.001 0.001" />
-        			</geometry>
-      			</collision>
 		</link>
 
 		<joint name="moveit_fixed_joint" type="fixed">
@@ -143,7 +105,7 @@
 		<joint name="dummy_prismatic_x_joint" type="prismatic">
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<axis xyz="1 0 0" />
-			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
+			<limit effort="${9.5}" velocity="${M_PI}" lower="${-10}" upper="${10}"/> 
       			<child link="dummy_prismatic_link" />
       			<parent link="moveit_fixed_link"/>
     		</joint>
@@ -154,7 +116,7 @@
 			<axis xyz="0 1 0" />
 			<child link="dummy_revolute_link" />
       			<parent link="dummy_prismatic_link"/>
-			<limit effort="${9.5}" velocity="${M_PI}" lower="${-50}" upper="${50}"/> 
+			<limit effort="${9.5}" velocity="${M_PI}" lower="${-10}" upper="${10}"/> 
     		</joint>		
 		
 		<joint name="dummy_revolute_joint" type="revolute">
@@ -216,7 +178,7 @@
        				<material name="Orange" />
       			</visual>
       			<collision>
-        			<origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
+        			<origin xyz="0 0 0.05" rpy="${M_PI/2} 0 0" />
         			<geometry>
         		       		<cylinder radius="${wheel_radius}" length="${wheel_radius}" />
         	       		</geometry>
@@ -269,7 +231,7 @@
        				<material name="Orange" />
       			</visual>
       			<collision>
-        			<origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
+        			<origin xyz="0 0 0.05" rpy="${M_PI/2} 0 0" />
         			<geometry>
         		       		<cylinder radius="${wheel_radius}" length="${wheel_radius}" />
         	       		</geometry>
@@ -324,7 +286,7 @@
        				<material name="Orange" />
       			</visual>
       			<collision>
-        			<origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
+        			<origin xyz="0 0 0.05" rpy="${M_PI/2} 0 0" />
         			<geometry>
         		       		<cylinder radius="${wheel_radius}" length="${wheel_radius}" />
         	       		</geometry>
@@ -379,7 +341,7 @@
        				<material name="Orange" />
       			</visual>
       			<collision>
-        			<origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
+        			<origin xyz="0 0 0.05" rpy="${M_PI/2} 0 0" />
         			<geometry>
         		       		<cylinder radius="${wheel_radius}" length="${wheel_radius}" />
         	       		</geometry>

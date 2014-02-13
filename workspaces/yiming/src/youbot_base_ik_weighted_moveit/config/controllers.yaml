@@ -1,19 +1,13 @@
 controller_list:
-  - name: arm_and_base_controller
+  - name: arm_1/arm_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
-      - dummy_revolute_joint
       - dummy_prismatic_x_joint
       - dummy_prismatic_y_joint
+      - dummy_revolute_joint
       - arm_joint_1
       - arm_joint_2
       - arm_joint_3
       - arm_joint_4
       - arm_joint_5
-  - name: gripper_controller
-    action_ns: gripper_action
-    type: GripperCommand
-    joints:
-      - gripper_finger_joint_l
-      - gripper_finger_joint_r

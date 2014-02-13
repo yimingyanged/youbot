@@ -7,7 +7,6 @@
 SUBDIRS(gtest)
 SUBDIRS(kdl_kinematics_plugin_upgrade)
 SUBDIRS(kdl_kinematics_plugin_weighted)
-SUBDIRS(youbot_base_ik_controller)
 SUBDIRS(youbot_base_ik_moveit)
 SUBDIRS(youbot_base_ik_weighted_moveit)
 SUBDIRS(youbot_goal_passer)

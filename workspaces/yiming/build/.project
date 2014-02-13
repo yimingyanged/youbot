@@ -139,11 +139,6 @@
 			<location>/home/yiming/ros_workspace/youbot/workspaces/yiming/src/kdl_kinematics_plugin_weighted</location>
 		</link>
 		<link>
-			<name>[Subprojects]/youbot_base_ik_controller</name>
-			<type>2</type>
-			<location>/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_controller</location>
-		</link>
-		<link>
 			<name>[Subprojects]/youbot_base_ik_moveit</name>
 			<type>2</type>
 			<location>/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_moveit</location>
@@ -339,41 +334,6 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] youbot_base_ik_controller</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] youbot_base_ik_controller/</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] youbot_base_ik_controller/Source Files</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] youbot_base_ik_controller/Source Files/youbot_base_ik_controller.cpp</name>
-			<type>1</type>
-			<location>/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_base_ik_controller/src/youbot_base_ik_controller.cpp</location>
-		</link>
-		<link>
-			<name>[Targets]/[exe] youbot_base_ik_controller/Header Files</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] youbot_base_ik_controller/CMake Rules</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] youbot_base_ik_controller/Resources</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
 			<name>[Targets]/[exe] dummy_goal</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
@@ -405,6 +365,41 @@
 		</link>
 		<link>
 			<name>[Targets]/[exe] dummy_goal/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] dummy_laser</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] dummy_laser/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] dummy_laser/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] dummy_laser/Source Files/dummy_laser.cpp</name>
+			<type>1</type>
+			<location>/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/dummy_laser.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] dummy_laser/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] dummy_laser/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] dummy_laser/Resources</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>

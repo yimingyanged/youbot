@@ -18,4 +18,6 @@
     <param name="use_history" type="bool" value="false"/>
     <param name="publish_tf" type="bool" value="true" />
   </node>
+
+  <node name="goal_filter" pkg="youbot_goal_passer" type="goal_filter" />
 </launch>

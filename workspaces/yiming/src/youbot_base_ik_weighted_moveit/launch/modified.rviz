@@ -1,0 +1,618 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 84
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /MotionPlanning1
+        - /TF1
+        - /Marker1
+      Splitter Ratio: 0.74256
+    Tree Height: 568
+  - Class: rviz/Help
+    Name: Help
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: moveit_rviz_plugin/MotionPlanning
+      Enabled: true
+      MoveIt_Goal_Tolerance: 0
+      MoveIt_Planning_Time: 5
+      MoveIt_Use_Constraint_Aware_IK: true
+      MoveIt_Warehouse_Host: 127.0.0.1
+      MoveIt_Warehouse_Port: 33829
+      Name: MotionPlanning
+      Planned Path:
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Link Tree Style: Links in Alphabetic Order
+          ar_marker_fixed:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_sensor_angle_part1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_sensor_angle_part2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_footprint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          base_laser_front_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          caster_link_bl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          caster_link_br:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          caster_link_fl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          caster_link_fr:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          dummy_prismatic_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          dummy_revolute_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_finger_link_l:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_finger_link_r:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_palm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_tcp_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          moveit_fixed_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          plate_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_bl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_br:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_fl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_fr:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          xtion_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_laser_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_laser_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          xtion_rgb_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_rgb_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+        Loop Animation: true
+        Robot Alpha: 0.5
+        Show Robot Collision: false
+        Show Robot Visual: true
+        Show Trail: false
+        State Display Time: 0.05 s
+        Trajectory Topic: /move_group/display_planned_path
+      Planning Metrics:
+        Payload: 1
+        Show Joint Torques: false
+        Show Manipulability: false
+        Show Manipulability Index: false
+        Show Weight Limit: false
+        TextHeight: 0.08
+      Planning Request:
+        Colliding Link Color: 255; 0; 0
+        Goal State Alpha: 1
+        Goal State Color: 250; 128; 0
+        Interactive Marker Size: 0
+        Joint Violation Color: 255; 0; 255
+        Planning Group: Arm
+        Query Goal State: true
+        Query Start State: false
+        Show Workspace: false
+        Start State Alpha: 1
+        Start State Color: 0; 255; 0
+      Planning Scene Topic: /move_group/monitored_planning_scene
+      Robot Description: robot_description
+      Scene Geometry:
+        Scene Alpha: 1
+        Scene Color: 50; 230; 50
+        Scene Display Time: 0.2
+        Show Scene Geometry: true
+        Voxel Coloring: Z-Axis
+        Voxel Rendering: Occupied Voxels
+      Scene Robot:
+        Attached Body Color: 150; 50; 150
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Link Tree Style: Links in Alphabetic Order
+          ar_marker_fixed:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_link_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_sensor_angle_part1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          arm_sensor_angle_part2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_footprint:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          base_laser_front_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          caster_link_bl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          caster_link_br:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          caster_link_fl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          caster_link_fr:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          dummy_prismatic_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          dummy_revolute_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_finger_link_l:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_finger_link_r:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_palm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_tcp_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          moveit_fixed_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          plate_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_bl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_br:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_fl:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wheel_link_fr:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          xtion_depth_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_depth_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_laser_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_laser_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          xtion_rgb_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          xtion_rgb_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+        Robot Alpha: 0.5
+        Show Robot Collision: false
+        Show Robot Visual: true
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        ar_marker:
+          Value: true
+        ar_marker_fixed:
+          Value: false
+        arm_link_0:
+          Value: false
+        arm_link_1:
+          Value: false
+        arm_link_2:
+          Value: false
+        arm_link_3:
+          Value: false
+        arm_link_4:
+          Value: false
+        arm_link_5:
+          Value: false
+        arm_sensor_angle_part1_link:
+          Value: false
+        arm_sensor_angle_part2_link:
+          Value: false
+        base_footprint:
+          Value: false
+        base_laser_front_link:
+          Value: false
+        base_link:
+          Value: false
+        caster_link_bl:
+          Value: false
+        caster_link_br:
+          Value: false
+        caster_link_fl:
+          Value: false
+        caster_link_fr:
+          Value: false
+        dummy_prismatic_link:
+          Value: false
+        dummy_revolute_link:
+          Value: false
+        gripper_finger_link_l:
+          Value: false
+        gripper_finger_link_r:
+          Value: false
+        gripper_palm_link:
+          Value: false
+        gripper_tcp_link:
+          Value: true
+        laser:
+          Value: false
+        moveit_fixed_link:
+          Value: false
+        odom:
+          Value: false
+        plate_link:
+          Value: false
+        wheel_link_bl:
+          Value: false
+        wheel_link_br:
+          Value: false
+        wheel_link_fl:
+          Value: false
+        wheel_link_fr:
+          Value: false
+        xtion_depth_frame:
+          Value: false
+        xtion_depth_optical_frame:
+          Value: false
+        xtion_laser_frame:
+          Value: false
+        xtion_laser_optical_frame:
+          Value: false
+        xtion_link:
+          Value: false
+        xtion_rgb_frame:
+          Value: false
+        xtion_rgb_optical_frame:
+          Value: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        odom:
+          base_footprint:
+            moveit_fixed_link:
+              dummy_prismatic_link:
+                dummy_revolute_link:
+                  base_link:
+                    arm_link_0:
+                      arm_link_1:
+                        arm_link_2:
+                          arm_link_3:
+                            arm_link_4:
+                              arm_link_5:
+                                arm_sensor_angle_part1_link:
+                                  arm_sensor_angle_part2_link:
+                                    xtion_link:
+                                      xtion_depth_frame:
+                                        {}
+                                      xtion_depth_optical_frame:
+                                        {}
+                                      xtion_laser_frame:
+                                        {}
+                                      xtion_laser_optical_frame:
+                                        {}
+                                      xtion_rgb_frame:
+                                        {}
+                                      xtion_rgb_optical_frame:
+                                        ar_marker:
+                                          {}
+                                gripper_palm_link:
+                                  gripper_finger_link_l:
+                                    {}
+                                  gripper_finger_link_r:
+                                    {}
+                                  gripper_tcp_link:
+                                    {}
+                    base_laser_front_link:
+                      laser:
+                        {}
+                    caster_link_bl:
+                      wheel_link_bl:
+                        {}
+                    caster_link_br:
+                      wheel_link_br:
+                        {}
+                    caster_link_fl:
+                      wheel_link_fl:
+                        {}
+                    caster_link_fr:
+                      wheel_link_fr:
+                        {}
+                    plate_link:
+                      ar_marker_fixed:
+                        {}
+      Update Interval: 0
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /visualization_obj
+      Name: Marker
+      Namespaces:
+        basic_shapes: true
+      Queue Size: 100
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: odom
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+  Value: true
+  Views:
+    Current:
+      Class: rviz/XYOrbit
+      Distance: 2.58023
+      Focal Point:
+        X: 0.980484
+        Y: -0.139796
+        Z: 3.42727e-07
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.529797
+      Target Frame: base_footprint
+      Value: XYOrbit (rviz)
+      Yaw: 3.14994
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1176
+  Help:
+    collapsed: false
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Motion Planning:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000452fc0200000005fb000000100044006900730070006c0061007900730100000028000002cd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000002fb0000017f0000017400ffffff000004970000045200000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 1855
+  X: 65
+  Y: 24

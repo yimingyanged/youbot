@@ -5,4 +5,4 @@ Description: Description of youbot_manipulator
 Version: 0.0.0
 Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/install/include
 Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/install/lib -lyoubot_manipulator
-Requires: geometry_msgs moveit_core roscpp moveit_msgs moveit_ros_planning_interface actionlib actionlib_msgs
+Requires: geometry_msgs moveit_core roscpp moveit_msgs moveit_ros_planning_interface actionlib actionlib_msgs std_msgs tf

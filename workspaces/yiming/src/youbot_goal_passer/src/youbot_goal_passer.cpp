@@ -62,8 +62,8 @@ youbot_goal_passer::YoubotGoalPasser::YoubotGoalPasser(ros::NodeHandle * nh_, st
 	}
 #ifdef USE_YB_NAV
 	base_pub = nh_->advertise<geometry_msgs::PoseStamped>(base_ns, 1);
-	request_sub = nh_->subscribe(request_ns, 1, &youbot_goal_passer::YoubotGoalPasser::goal_requestCallback,this);
-	result_sub = nh_->subscribe(result_ns , 1, &youbot_goal_passer::YoubotGoalPasser::base_doneCallback,this);
+	//request_sub = nh_->subscribe(request_ns, 1, &youbot_goal_passer::YoubotGoalPasser::goal_requestCallback,this);
+	//result_sub = nh_->subscribe(result_ns , 1, &youbot_goal_passer::YoubotGoalPasser::base_doneCallback,this);
 #endif
 
 	/** Start our action server */
@@ -85,19 +85,14 @@ void youbot_goal_passer::YoubotGoalPasser::executeCallback(const control_msgs::F
 	base_goal.header = goal->trajectory.header;
 #endif
 	arm_goal.trajectory.header = goal->trajectory.header;
-	while (!base_goal_retrieved){
-		ROS_INFO("Waiting for base goal");
-		ros::Duration(0.1).sleep();
-	}
-	ROS_INFO("Base goal retrieved. Move base first");
 	
 	/** Send Messages */
 	current_state.reset();
-#ifndef USE_YB_NAV
-	base_ac.sendGoal(base_goal, boost::bind(&YoubotGoalPasser::doneCb, this, _1, _2, true));
-#else
-	base_pub.publish(base_goal);
-#endif
+//#ifndef USE_YB_NAV
+//	base_ac.sendGoal(base_goal, boost::bind(&YoubotGoalPasser::doneCb, this, _1, _2, true));
+//#else
+//	base_pub.publish(base_goal);
+//#endif
 
 	if (use_base_)
 	{

@@ -1,4 +1,6 @@
 <launch>
+  <!-- Now we have changed Youbot Wapper to publish these dummy joints -->
+  <!--node name="dummy_tf_publisher" pkg="youbot_goal_passer" type="dummy_tf_publisher"/-->
 
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
@@ -12,15 +14,14 @@
   </include>
 
   <!-- If needed, broadcast static tf for robot root -->
-    <!-- node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom base_footprint 100" /-->
+    <!-- node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 /base_laser_front_link /laser 100" /-->
 
 
-  <!--node name="dummy_tf_publisher" pkg="youbot_goal_passer" type="dummy_tf_publisher"/-->
-  <!--node name="youbot_goal_passer" pkg="youbot_goal_passer" type="youbot_goal_passer"/-->
+
   <rosparam command="load" file="$(find kdl_kinematics_plugin_weighted)/config/weighting.yaml" />
   
   <!-- Given the published joint states, publish tf for the robot links -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+  <!-- node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /-->
 
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find youbot_base_ik_weighted_moveit)/launch/move_group.launch">

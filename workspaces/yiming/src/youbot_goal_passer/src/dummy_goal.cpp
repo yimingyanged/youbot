@@ -8,16 +8,21 @@ int main(int argc, char** argv)
 {
 	ros::init(argc, argv, "dummy_goal_publisher_node");
 	ros::NodeHandle n;
-	ros::Publisher pub = n.advertise<geometry_msgs::PoseStamped>("target_goal_pose", 1, true);
-	geometry_msgs::PoseStamped goal;
-	goal.pose.position.x = 0.5;
-	goal.pose.position.y = 0.4;
-	goal.pose.position.z = 0.3;
-	goal.pose.orientation.x = 1.0;
-	goal.pose.orientation.y = 0.0;
-	goal.pose.orientation.z = 0.0;
-	goal.pose.orientation.w = 1.0;
+	ros::Publisher pub = n.advertise<geometry_msgs::Pose>("target_goal_pose", 1, true);
+	ros::Publisher stamped_pub = n.advertise<geometry_msgs::PoseStamped>("target_goal_pose_stamped", 1, true);
+	geometry_msgs::Pose goal;
+	geometry_msgs::PoseStamped gs;
+	goal.position.x = -5.0;
+	goal.position.y = 0.4;
+	goal.position.z = 0.3;
+	goal.orientation.x = 0.0;
+	goal.orientation.y = 0.0;
+	goal.orientation.z = 1.0;
+	goal.orientation.w = 1.0;
 
+	gs.header.frame_id = "odom";
+	gs.header.stamp = ros::Time::now();
+	gs.pose = goal;
 	char c;
 	while (ros::ok())
 	{
@@ -27,6 +32,7 @@ int main(int argc, char** argv)
 		{
 			ROS_INFO("Dummy Goal Published");
 			pub.publish(goal);
+			stamped_pub.publish(gs);
 		}
 		else if (c == 'q')
 		{

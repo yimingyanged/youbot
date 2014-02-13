@@ -5,4 +5,4 @@ Description: Description of youbot_goal_passer
 Version: 0.0.0
 Cflags: -I/home/yiming/ros_workspace/youbot/workspaces/yiming/install/include
 Libs: -L/home/yiming/ros_workspace/youbot/workspaces/yiming/install/lib -lyoubot_goal_passer
-Requires: actionlib geometry_msgs moveit_msgs actionlib_msgs roscpp roslib move_base_msgs tf
+Requires: actionlib geometry_msgs moveit_msgs actionlib_msgs roscpp roslib move_base_msgs tf sensor_msgs

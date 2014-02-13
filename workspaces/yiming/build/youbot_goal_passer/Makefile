@@ -164,6 +164,20 @@ dummy_goal/fast:
 .PHONY : dummy_goal/fast
 
 # Convenience name for target.
+youbot_goal_passer/CMakeFiles/dummy_laser.dir/rule:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/dummy_laser.dir/rule
+.PHONY : youbot_goal_passer/CMakeFiles/dummy_laser.dir/rule
+
+# Convenience name for target.
+dummy_laser: youbot_goal_passer/CMakeFiles/dummy_laser.dir/rule
+.PHONY : dummy_laser
+
+# fast build rule for target.
+dummy_laser/fast:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/build
+.PHONY : dummy_laser/fast
+
+# Convenience name for target.
 youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule:
 	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule
 .PHONY : youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/rule
@@ -271,6 +285,30 @@ src/dummy_goal.cpp.s:
 	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_goal.dir/build.make youbot_goal_passer/CMakeFiles/dummy_goal.dir/src/dummy_goal.cpp.s
 .PHONY : src/dummy_goal.cpp.s
 
+src/dummy_laser.o: src/dummy_laser.cpp.o
+.PHONY : src/dummy_laser.o
+
+# target to build an object file
+src/dummy_laser.cpp.o:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/src/dummy_laser.cpp.o
+.PHONY : src/dummy_laser.cpp.o
+
+src/dummy_laser.i: src/dummy_laser.cpp.i
+.PHONY : src/dummy_laser.i
+
+# target to preprocess a source file
+src/dummy_laser.cpp.i:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/src/dummy_laser.cpp.i
+.PHONY : src/dummy_laser.cpp.i
+
+src/dummy_laser.s: src/dummy_laser.cpp.s
+.PHONY : src/dummy_laser.s
+
+# target to generate assembly for a file
+src/dummy_laser.cpp.s:
+	cd /home/yiming/ros_workspace/youbot/workspaces/yiming/build && $(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/src/dummy_laser.cpp.s
+.PHONY : src/dummy_laser.cpp.s
+
 src/dummy_tf_publisher.o: src/dummy_tf_publisher.cpp.o
 .PHONY : src/dummy_tf_publisher.o
 
@@ -374,6 +412,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... dummy_goal"
+	@echo "... dummy_laser"
 	@echo "... dummy_tf_publisher"
 	@echo "... edit_cache"
 	@echo "... goal_filter"
@@ -390,6 +429,9 @@ help:
 	@echo "... src/dummy_goal.o"
 	@echo "... src/dummy_goal.i"
 	@echo "... src/dummy_goal.s"
+	@echo "... src/dummy_laser.o"
+	@echo "... src/dummy_laser.i"
+	@echo "... src/dummy_laser.s"
 	@echo "... src/dummy_tf_publisher.o"
 	@echo "... src/dummy_tf_publisher.i"
 	@echo "... src/dummy_tf_publisher.s"

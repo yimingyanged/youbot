@@ -8,6 +8,7 @@
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles/clean_test_results.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles/doxygen.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/dummy_goal.dir
+/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/dummy_laser.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir
@@ -62,7 +63,6 @@
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/kdl_kinematics_plugin_upgrade/CMakeFiles/trajectory_msgs_generate_messages_py.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_relay_controller/CMakeFiles/youbot_active_relay.dir
-/home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir
 /home/yiming/ros_workspace/youbot/workspaces/yiming/build/youbot_relay_controller/CMakeFiles/youbot_passive_relay.dir

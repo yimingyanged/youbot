@@ -199,7 +199,7 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  6
 	@echo "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
@@ -230,7 +230,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  7
 	@echo "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
@@ -728,7 +728,7 @@ clean: kdl_kinematics_plugin_upgrade/CMakeFiles/geometry_msgs_generate_messages_
 kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_gencfg.dir/all:
 	$(MAKE) -f kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_gencfg.dir/build.make kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_gencfg.dir/depend
 	$(MAKE) -f kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_gencfg.dir/build.make kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_gencfg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  8
 	@echo "Built target kdl_kinematics_plugin_upgrade_gencfg"
 .PHONY : kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_gencfg.dir/all
 
@@ -763,7 +763,7 @@ clean: kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_ge
 kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir/all: kdl_kinematics_plugin_upgrade/CMakeFiles/kdl_kinematics_plugin_upgrade_gencfg.dir/all
 	$(MAKE) -f kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir/build.make kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir/depend
 	$(MAKE) -f kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir/build.make kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  8 9 10
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  9 10 11
 	@echo "Built target moveit_kdl_kinematics_upgrade_plugin"
 .PHONY : kdl_kinematics_plugin_upgrade/CMakeFiles/moveit_kdl_kinematics_upgrade_plugin.dir/all
 
@@ -1867,7 +1867,7 @@ kdl_kinematics_plugin_weighted/preinstall:
 kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/all:
 	$(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/depend
 	$(MAKE) -f kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build.make kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  11 12 13
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  12 13 14
 	@echo "Built target moveit_kdl_kinematics_weighted_plugin"
 .PHONY : kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/all
 
@@ -1893,56 +1893,6 @@ kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.
 
 # clean rule for target.
 clean: kdl_kinematics_plugin_weighted/CMakeFiles/moveit_kdl_kinematics_weighted_plugin.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory youbot_base_ik_controller
-
-# Convenience name for "all" pass in the directory.
-youbot_base_ik_controller/all: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all
-.PHONY : youbot_base_ik_controller/all
-
-# Convenience name for "clean" pass in the directory.
-youbot_base_ik_controller/clean: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/clean
-.PHONY : youbot_base_ik_controller/clean
-
-# Convenience name for "preinstall" pass in the directory.
-youbot_base_ik_controller/preinstall:
-.PHONY : youbot_base_ik_controller/preinstall
-
-#=============================================================================
-# Target rules for target youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir
-
-# All Build rule for target.
-youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all:
-	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/depend
-	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  16
-	@echo "Built target youbot_base_ik_controller"
-.PHONY : youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all
-
-# Include target in all.
-all: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 0
-.PHONY : youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/rule
-
-# Convenience name for target.
-youbot_base_ik_controller: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/rule
-.PHONY : youbot_base_ik_controller
-
-# clean rule for target.
-youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/clean:
-	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/clean
-.PHONY : youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/clean
-
-# clean rule for target.
-clean: youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -1980,6 +1930,7 @@ youbot_base_ik_weighted_moveit/preinstall:
 
 # Convenience name for "all" pass in the directory.
 youbot_goal_passer/all: youbot_goal_passer/CMakeFiles/dummy_goal.dir/all
+youbot_goal_passer/all: youbot_goal_passer/CMakeFiles/dummy_laser.dir/all
 youbot_goal_passer/all: youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/all
 youbot_goal_passer/all: youbot_goal_passer/CMakeFiles/goal_filter.dir/all
 youbot_goal_passer/all: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/all
@@ -1987,6 +1938,7 @@ youbot_goal_passer/all: youbot_goal_passer/CMakeFiles/youbot_goal_passer.dir/all
 
 # Convenience name for "clean" pass in the directory.
 youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/dummy_goal.dir/clean
+youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/dummy_laser.dir/clean
 youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/clean
 youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/goal_filter.dir/clean
 youbot_goal_passer/clean: youbot_goal_passer/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/clean
@@ -2035,13 +1987,48 @@ clean: youbot_goal_passer/CMakeFiles/dummy_goal.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target youbot_goal_passer/CMakeFiles/dummy_laser.dir
+
+# All Build rule for target.
+youbot_goal_passer/CMakeFiles/dummy_laser.dir/all:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/depend
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  3
+	@echo "Built target dummy_laser"
+.PHONY : youbot_goal_passer/CMakeFiles/dummy_laser.dir/all
+
+# Include target in all.
+all: youbot_goal_passer/CMakeFiles/dummy_laser.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+youbot_goal_passer/CMakeFiles/dummy_laser.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 youbot_goal_passer/CMakeFiles/dummy_laser.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles 0
+.PHONY : youbot_goal_passer/CMakeFiles/dummy_laser.dir/rule
+
+# Convenience name for target.
+dummy_laser: youbot_goal_passer/CMakeFiles/dummy_laser.dir/rule
+.PHONY : dummy_laser
+
+# clean rule for target.
+youbot_goal_passer/CMakeFiles/dummy_laser.dir/clean:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/clean
+.PHONY : youbot_goal_passer/CMakeFiles/dummy_laser.dir/clean
+
+# clean rule for target.
+clean: youbot_goal_passer/CMakeFiles/dummy_laser.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir
 
 # All Build rule for target.
 youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/all:
 	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/depend
 	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build.make youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  4
 	@echo "Built target dummy_tf_publisher"
 .PHONY : youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/all
 
@@ -2076,7 +2063,7 @@ clean: youbot_goal_passer/CMakeFiles/dummy_tf_publisher.dir/clean
 youbot_goal_passer/CMakeFiles/goal_filter.dir/all:
 	$(MAKE) -f youbot_goal_passer/CMakeFiles/goal_filter.dir/build.make youbot_goal_passer/CMakeFiles/goal_filter.dir/depend
 	$(MAKE) -f youbot_goal_passer/CMakeFiles/goal_filter.dir/build.make youbot_goal_passer/CMakeFiles/goal_filter.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  5
 	@echo "Built target goal_filter"
 .PHONY : youbot_goal_passer/CMakeFiles/goal_filter.dir/all
 
@@ -2353,7 +2340,7 @@ youbot_relay_controller/preinstall:
 youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/all:
 	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/depend
 	$(MAKE) -f youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build.make youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  14 15
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yiming/ros_workspace/youbot/workspaces/yiming/build/CMakeFiles  15 16
 	@echo "Built target youbot_active_relay"
 .PHONY : youbot_relay_controller/CMakeFiles/youbot_active_relay.dir/all
 

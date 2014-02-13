@@ -1,0 +1,13 @@
+<launch>
+  
+  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
+  <arg name="load_robot_description" default="true"/>
+
+  <arg name="robot_description" default="robot_description"/>
+
+  <!-- param name="$(arg robot_description)_semantic" textfile="$(find youbot_base_ik_weighted_moveit)/config/youbot.srdf" /-->
+
+  
+  <!--param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro.py '$(find youbot_description)/robots/youbot_baseIK.urdf.xacro'"/-->
+  <node name="youbot_manipulator" pkg="youbot_manipulator" type="youbot_manipulator_node" respawn="true" output="screen"/>
+</launch>

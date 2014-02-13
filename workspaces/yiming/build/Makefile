@@ -878,19 +878,6 @@ moveit_kdl_kinematics_weighted_plugin/fast:
 .PHONY : moveit_kdl_kinematics_weighted_plugin/fast
 
 #=============================================================================
-# Target rules for targets named youbot_base_ik_controller
-
-# Build rule for target.
-youbot_base_ik_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 youbot_base_ik_controller
-.PHONY : youbot_base_ik_controller
-
-# fast build rule for target.
-youbot_base_ik_controller/fast:
-	$(MAKE) -f youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build.make youbot_base_ik_controller/CMakeFiles/youbot_base_ik_controller.dir/build
-.PHONY : youbot_base_ik_controller/fast
-
-#=============================================================================
 # Target rules for targets named dummy_goal
 
 # Build rule for target.
@@ -902,6 +889,19 @@ dummy_goal: cmake_check_build_system
 dummy_goal/fast:
 	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_goal.dir/build.make youbot_goal_passer/CMakeFiles/dummy_goal.dir/build
 .PHONY : dummy_goal/fast
+
+#=============================================================================
+# Target rules for targets named dummy_laser
+
+# Build rule for target.
+dummy_laser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dummy_laser
+.PHONY : dummy_laser
+
+# fast build rule for target.
+dummy_laser/fast:
+	$(MAKE) -f youbot_goal_passer/CMakeFiles/dummy_laser.dir/build.make youbot_goal_passer/CMakeFiles/dummy_laser.dir/build
+.PHONY : dummy_laser/fast
 
 #=============================================================================
 # Target rules for targets named dummy_tf_publisher
@@ -1102,8 +1102,8 @@ help:
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... moveit_kdl_kinematics_weighted_plugin"
-	@echo "... youbot_base_ik_controller"
 	@echo "... dummy_goal"
+	@echo "... dummy_laser"
 	@echo "... dummy_tf_publisher"
 	@echo "... goal_filter"
 	@echo "... move_base_msgs_generate_messages_cpp"

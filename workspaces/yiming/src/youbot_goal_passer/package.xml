@@ -48,6 +48,7 @@
   <build_depend>roslib</build_depend>
   <build_depend>move_base_msgs</build_depend>
   <build_depend>tf</build_depend>
+  <build_depend>sensor_msgs</build_depend>
   <run_depend>actionlib</run_depend>
   <run_depend>geometry_msgs</run_depend>
   <run_depend>moveit_msgs</run_depend>
@@ -56,7 +57,7 @@
   <run_depend>roslib</run_depend>
   <run_depend>move_base_msgs</run_depend>
   <run_depend>tf</run_depend>
-
+  <run_depend>sensor_msgs</run_depend>
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- You can specify that this package is a metapackage here: -->

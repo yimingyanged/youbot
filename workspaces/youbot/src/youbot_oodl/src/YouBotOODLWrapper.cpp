@@ -1040,7 +1040,9 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 				baseJointStateMessage.name[i] = youBotConfiguration.baseConfiguration.wheelNames[i];
 				baseJointStateMessage.position[i] = currentAngle.angle.value();
 				baseJointStateMessage.velocity[i] = currentVelocity.angularVelocity.value();
-				baseJointStateMessage.effort[i] = 0;
+				baseJointStateMessage.effort[i] = 0;baseJointStateMessage
+				ROS_INFO("JOINTS %d: %s, position: %f, vel: %f, effort: %f", i, baseJointStateMessage.name[i], baseJointStateMessage.position[i]
+											baseJointStateMessage.velocity[i], baseJointStateMessage.effort[i]);
 			}
 
 			/*
@@ -1250,6 +1252,8 @@ void YouBotOODLWrapper::computeOODLSensorReadings()
 		    completeJointStateMessage.velocity.push_back(armJointStateMessages.at(k).velocity.at(i));
 		    completeJointStateMessage.effort.push_back(armJointStateMessages.at(k).effort.at(i));
 		  }
+
+		
 		youbot::EthercatMaster::getInstance().AutomaticReceiveOn(true); // ensure that all joint values will be received at the same time
 	}
 	catch (youbot::EtherCATConnectionException& e)

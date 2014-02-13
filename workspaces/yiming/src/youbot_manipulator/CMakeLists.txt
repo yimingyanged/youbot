@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(youbot_manipulator)
-
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -12,11 +11,12 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_msgs
   moveit_ros_planning_interface
   roscpp
+  std_msgs
+  tf
 )
-
+##
 ## System dependencies are found with CMake's conventions
 find_package(Boost REQUIRED COMPONENTS system)
-
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -86,7 +86,7 @@ find_package(Boost REQUIRED COMPONENTS system)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES youbot_manipulator
-  CATKIN_DEPENDS geometry_msgs moveit_core roscpp moveit_msgs moveit_ros_planning_interface actionlib actionlib_msgs
+  CATKIN_DEPENDS geometry_msgs moveit_core roscpp moveit_msgs moveit_ros_planning_interface actionlib actionlib_msgs std_msgs tf
   DEPENDS system_lib
 )
 
@@ -119,6 +119,7 @@ add_executable(youbot_manipulator_node src/youbot_manipulator_node.cpp src/youbo
 ## Specify libraries to link a library or executable target against
  target_link_libraries(youbot_manipulator_node
    ${catkin_LIBRARIES}
+   /opt/ros/hydro/lib/liborocos-kdl.so.1.2
  )
 
 #############

@@ -8,7 +8,7 @@
         
     </node>
  
-    <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom base_footprint 100" />
+    <!--node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom base_footprint 100" /-->
     <!-- for moving -->
     <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
         <!-- Load common configuration files -->

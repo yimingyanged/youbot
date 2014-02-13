@@ -118,7 +118,7 @@ foreach(t ${youbot_manipulator_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;moveit_core;roscpp;moveit_msgs;moveit_ros_planning_interface;actionlib;actionlib_msgs")
+set(depends "geometry_msgs;moveit_core;roscpp;moveit_msgs;moveit_ros_planning_interface;actionlib;actionlib_msgs;std_msgs;tf")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

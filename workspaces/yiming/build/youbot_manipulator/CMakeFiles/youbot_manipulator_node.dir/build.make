@@ -105,7 +105,6 @@ youbot_manipulator_node_EXTERNAL_OBJECTS =
 
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libactionlib.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libmoveit_common_planning_interface_objects.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libmoveit_planning_scene_interface.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libmoveit_move_group_interface.so
@@ -160,12 +159,15 @@ youbot_manipulator_node_EXTERNAL_OBJECTS =
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/librosconsole_bridge.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libsrdfdom.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libimage_transport.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libmessage_filters.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libtinyxml.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libclass_loader.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libPocoFoundation.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libroslib.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libtf.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libtf2_ros.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libactionlib.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libmessage_filters.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libroscpp.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libboost_signals-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libboost_filesystem-mt.so
@@ -174,15 +176,17 @@ youbot_manipulator_node_EXTERNAL_OBJECTS =
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/librosconsole_backend_interface.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/liblog4cxx.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libboost_regex-mt.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libxmlrpcpp.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libtf2.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libroscpp_serialization.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/librostime.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libboost_date_time-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libboost_system-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/libboost_thread-mt.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libxmlrpcpp.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libcpp_common.so
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/libconsole_bridge.so
+/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: /opt/ros/hydro/lib/liborocos-kdl.so.1.2
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/build.make
 /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node: youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib/youbot_manipulator/youbot_manipulator_node"
