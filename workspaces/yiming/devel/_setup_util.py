@@ -252,7 +252,7 @@ if __name__ == '__main__':
             sys.exit(1)
 
         # environment at generation time
-        CMAKE_PREFIX_PATH = '/home/yiming/ros_workspace/youbot/workspaces/yiming/devel;/opt/ros/hydro'.split(';')
+        CMAKE_PREFIX_PATH = '/home/yiming/ros_workspace/slmc/bdi_atlas/devel;/home/yiming/ros_workspace/slmc/core_utilities/devel;/home/yiming/ros_workspace/youbot/workspaces/yiming/devel;/opt/ros/hydro'.split(';')
         # prepend current workspace if not already part of CPP
         base_path = os.path.dirname(__file__)
         if base_path not in CMAKE_PREFIX_PATH:

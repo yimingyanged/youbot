@@ -8,4 +8,4 @@
 
 # modified environment variables
 export PWD="/home/yiming/ros_workspace/youbot/workspaces/yiming/build"
-export ROS_PACKAGE_PATH="/home/yiming/ros_workspace/youbot/workspaces/yiming/src:/opt/ros/hydro/share:/opt/ros/hydro/stacks"
+export ROS_PACKAGE_PATH="/home/yiming/ros_workspace/slmc/bdi_atlas/src:/home/yiming/ros_workspace/slmc/core_utilities/src:/home/yiming/ros_workspace/youbot/workspaces/yiming/src:/opt/ros/hydro/share:/opt/ros/hydro/stacks"

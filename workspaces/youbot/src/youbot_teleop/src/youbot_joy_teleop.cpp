@@ -43,7 +43,7 @@ void youbot_joy_teleop::joy_cback(const sensor_msgs::Joy::ConstPtr& joy)
   twist.linear.x = joy->axes.at(1);
   twist.linear.y = joy->axes.at(0);
   twist.linear.z = 0;
-  
+  ROS_INFO("SPEED: Linear: x=%f, y=%f",joy->axes.at(1), joy->axes.at(0));
   // right joystick controls the angular movement
   twist.angular.x = 0;
   twist.angular.y = 0;

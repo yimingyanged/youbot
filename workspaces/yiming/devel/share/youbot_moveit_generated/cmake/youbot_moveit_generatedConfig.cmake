@@ -24,6 +24,41 @@ macro(_list_append_unique listname)
   endforeach()
 endmacro()
 
+# pack a list of libraries with optional build configuration keywords
+# copied from catkin/cmake/catkin_libraries.cmake to keep pkgConfig
+# self contained
+macro(_pack_libraries_with_build_configuration VAR)
+  set(${VAR} "")
+  set(_argn ${ARGN})
+  list(LENGTH _argn _count)
+  set(_index 0)
+  while(${_index} LESS ${_count})
+    list(GET _argn ${_index} lib)
+    if("${lib}" MATCHES "^debug|optimized|general$")
+      math(EXPR _index "${_index} + 1")
+      if(${_index} EQUAL ${_count})
+        message(FATAL_ERROR "_pack_libraries_with_build_configuration() the list of libraries '${ARGN}' ends with '${lib}' which is a build configuration keyword and must be followed by a library")
+      endif()
+      list(GET _argn ${_index} library)
+      list(APPEND ${VAR} "${lib}${CATKIN_BUILD_CONFIGURATION_KEYWORD_SEPARATOR}${library}")
+    else()
+      list(APPEND ${VAR} "${lib}")
+    endif()
+    math(EXPR _index "${_index} + 1")
+  endwhile()
+endmacro()
+
+# unpack a list of libraries with optional build configuration keyword prefixes
+# copied from catkin/cmake/catkin_libraries.cmake to keep pkgConfig
+# self contained
+macro(_unpack_libraries_with_build_configuration VAR)
+  set(${VAR} "")
+  foreach(lib ${ARGN})
+    string(REGEX REPLACE "^(debug|optimized|general)${CATKIN_BUILD_CONFIGURATION_KEYWORD_SEPARATOR}(.+)$" "\\1;\\2" lib "${lib}")
+    list(APPEND ${VAR} "${lib}")
+  endforeach()
+endmacro()
+
 
 if(youbot_moveit_generated_CONFIG_INCLUDED)
   return()
@@ -87,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib;/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib;/opt/ros/hydro/lib)
+    foreach(path /home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib;/home/yiming/ros_workspace/slmc/bdi_atlas/devel/lib;/home/yiming/ros_workspace/slmc/core_utilities/devel/lib;/home/yiming/ros_workspace/youbot/workspaces/yiming/devel/lib;/opt/ros/hydro/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -135,7 +170,14 @@ foreach(depend ${depends})
     find_package(${youbot_moveit_generated_dep} REQUIRED ${depend_list})
   endif()
   _list_append_unique(youbot_moveit_generated_INCLUDE_DIRS ${${youbot_moveit_generated_dep}_INCLUDE_DIRS})
-  _list_append_deduplicate(youbot_moveit_generated_LIBRARIES ${${youbot_moveit_generated_dep}_LIBRARIES})
+
+  # merge build configuration keywords with library names to correctly deduplicate
+  _pack_libraries_with_build_configuration(youbot_moveit_generated_LIBRARIES ${youbot_moveit_generated_LIBRARIES})
+  _pack_libraries_with_build_configuration(_libraries ${${youbot_moveit_generated_dep}_LIBRARIES})
+  _list_append_deduplicate(youbot_moveit_generated_LIBRARIES ${_libraries})
+  # undo build configuration keyword merging after deduplication
+  _unpack_libraries_with_build_configuration(youbot_moveit_generated_LIBRARIES ${youbot_moveit_generated_LIBRARIES})
+
   _list_append_unique(youbot_moveit_generated_LIBRARY_DIRS ${${youbot_moveit_generated_dep}_LIBRARY_DIRS})
   list(APPEND youbot_moveit_generated_EXPORTED_TARGETS ${${youbot_moveit_generated_dep}_EXPORTED_TARGETS})
 endforeach()

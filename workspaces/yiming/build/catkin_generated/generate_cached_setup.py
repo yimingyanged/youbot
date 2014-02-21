@@ -11,7 +11,7 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in "/home/yiming/ros_workspace/youbot/workspaces/yiming/devel;/opt/ros/hydro".split(';'):
+    for workspace in "/home/yiming/ros_workspace/slmc/bdi_atlas/devel;/home/yiming/ros_workspace/slmc/core_utilities/devel;/home/yiming/ros_workspace/youbot/workspaces/yiming/devel;/opt/ros/hydro".split(';'):
         python_path = os.path.join(workspace, 'lib/python2.7/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)

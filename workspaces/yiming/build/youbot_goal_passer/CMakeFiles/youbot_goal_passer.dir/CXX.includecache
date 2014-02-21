@@ -42,6 +42,10 @@ cmath
 youbot_goal_passer/youbot_goal_passer.h
 /home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer/youbot_goal_passer.h
 
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer_node.cpp
+youbot_goal_passer/youbot_goal_passer.h
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_goal_passer/src/youbot_goal_passer/youbot_goal_passer.h
+
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h
 -
