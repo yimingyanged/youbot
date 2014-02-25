@@ -63,6 +63,10 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/geometry_msgs/Vector3.h
  /opt/ros/hydro/include/geometry_msgs/Vector3Stamped.h
  /opt/ros/hydro/include/geometry_msgs/Wrench.h
+ /opt/ros/hydro/include/kdl/frames.hpp
+ /opt/ros/hydro/include/kdl/frames.inl
+ /opt/ros/hydro/include/kdl/utilities/kdl-config.h
+ /opt/ros/hydro/include/kdl/utilities/utility.h
  /opt/ros/hydro/include/move_base_msgs/MoveBaseAction.h
  /opt/ros/hydro/include/move_base_msgs/MoveBaseActionFeedback.h
  /opt/ros/hydro/include/move_base_msgs/MoveBaseActionGoal.h
@@ -72,9 +76,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/move_base_msgs/MoveBaseResult.h
  /opt/ros/hydro/include/moveit/exceptions/exceptions.h
  /opt/ros/hydro/include/moveit/kinematics_base/kinematics_base.h
+ /opt/ros/hydro/include/moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
  /opt/ros/hydro/include/moveit/macros/class_forward.h
  /opt/ros/hydro/include/moveit/move_group_interface/move_group.h
  /opt/ros/hydro/include/moveit/planning_scene_interface/planning_scene_interface.h
+ /opt/ros/hydro/include/moveit/rdf_loader/rdf_loader.h
  /opt/ros/hydro/include/moveit/robot_model/fixed_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/floating_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/joint_model.h
@@ -84,8 +90,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/moveit/robot_model/prismatic_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/revolute_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/robot_model.h
+ /opt/ros/hydro/include/moveit/robot_model_loader/robot_model_loader.h
  /opt/ros/hydro/include/moveit/robot_state/attached_body.h
+ /opt/ros/hydro/include/moveit/robot_state/conversions.h
  /opt/ros/hydro/include/moveit/robot_state/robot_state.h
+ /opt/ros/hydro/include/moveit/transforms/transforms.h
  /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h
  /opt/ros/hydro/include/moveit_msgs/BoundingVolume.h
  /opt/ros/hydro/include/moveit_msgs/CollisionObject.h
@@ -168,9 +177,9 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/shape_msgs/Plane.h
  /opt/ros/hydro/include/shape_msgs/SolidPrimitive.h
  /opt/ros/hydro/include/srdfdom/model.h
+ /opt/ros/hydro/include/std_msgs/Bool.h
  /opt/ros/hydro/include/std_msgs/ColorRGBA.h
  /opt/ros/hydro/include/std_msgs/Header.h
- /opt/ros/hydro/include/std_msgs/UInt8.h
  /opt/ros/hydro/include/tf/LinearMath/Matrix3x3.h
  /opt/ros/hydro/include/tf/LinearMath/MinMax.h
  /opt/ros/hydro/include/tf/LinearMath/Scalar.h
@@ -197,6 +206,7 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/trajectory_msgs/JointTrajectoryPoint.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectory.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectoryPoint.h
+ /opt/ros/hydro/include/urdf/model.h
  /opt/ros/hydro/include/urdf_exception/exception.h
  /opt/ros/hydro/include/urdf_model/color.h
  /opt/ros/hydro/include/urdf_model/joint.h
@@ -449,6 +459,10 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/geometry_msgs/Vector3.h
  /opt/ros/hydro/include/geometry_msgs/Vector3Stamped.h
  /opt/ros/hydro/include/geometry_msgs/Wrench.h
+ /opt/ros/hydro/include/kdl/frames.hpp
+ /opt/ros/hydro/include/kdl/frames.inl
+ /opt/ros/hydro/include/kdl/utilities/kdl-config.h
+ /opt/ros/hydro/include/kdl/utilities/utility.h
  /opt/ros/hydro/include/move_base_msgs/MoveBaseAction.h
  /opt/ros/hydro/include/move_base_msgs/MoveBaseActionFeedback.h
  /opt/ros/hydro/include/move_base_msgs/MoveBaseActionGoal.h
@@ -458,9 +472,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/move_base_msgs/MoveBaseResult.h
  /opt/ros/hydro/include/moveit/exceptions/exceptions.h
  /opt/ros/hydro/include/moveit/kinematics_base/kinematics_base.h
+ /opt/ros/hydro/include/moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
  /opt/ros/hydro/include/moveit/macros/class_forward.h
  /opt/ros/hydro/include/moveit/move_group_interface/move_group.h
  /opt/ros/hydro/include/moveit/planning_scene_interface/planning_scene_interface.h
+ /opt/ros/hydro/include/moveit/rdf_loader/rdf_loader.h
  /opt/ros/hydro/include/moveit/robot_model/fixed_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/floating_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/joint_model.h
@@ -470,8 +486,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/moveit/robot_model/prismatic_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/revolute_joint_model.h
  /opt/ros/hydro/include/moveit/robot_model/robot_model.h
+ /opt/ros/hydro/include/moveit/robot_model_loader/robot_model_loader.h
  /opt/ros/hydro/include/moveit/robot_state/attached_body.h
+ /opt/ros/hydro/include/moveit/robot_state/conversions.h
  /opt/ros/hydro/include/moveit/robot_state/robot_state.h
+ /opt/ros/hydro/include/moveit/transforms/transforms.h
  /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h
  /opt/ros/hydro/include/moveit_msgs/BoundingVolume.h
  /opt/ros/hydro/include/moveit_msgs/CollisionObject.h
@@ -554,9 +573,9 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/shape_msgs/Plane.h
  /opt/ros/hydro/include/shape_msgs/SolidPrimitive.h
  /opt/ros/hydro/include/srdfdom/model.h
+ /opt/ros/hydro/include/std_msgs/Bool.h
  /opt/ros/hydro/include/std_msgs/ColorRGBA.h
  /opt/ros/hydro/include/std_msgs/Header.h
- /opt/ros/hydro/include/std_msgs/UInt8.h
  /opt/ros/hydro/include/tf/LinearMath/Matrix3x3.h
  /opt/ros/hydro/include/tf/LinearMath/MinMax.h
  /opt/ros/hydro/include/tf/LinearMath/Scalar.h
@@ -583,6 +602,7 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
  /opt/ros/hydro/include/trajectory_msgs/JointTrajectoryPoint.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectory.h
  /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectoryPoint.h
+ /opt/ros/hydro/include/urdf/model.h
  /opt/ros/hydro/include/urdf_exception/exception.h
  /opt/ros/hydro/include/urdf_model/color.h
  /opt/ros/hydro/include/urdf_model/joint.h

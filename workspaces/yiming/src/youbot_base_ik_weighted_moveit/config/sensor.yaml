@@ -1,7 +1,7 @@
 sensors:
   - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
     point_cloud_topic: /xtion/depth_registered/points
-    max_range: 5
+    max_range: 3
     point_subsample: 1
     padding_offset: 0.1
     padding_scale: 1.0

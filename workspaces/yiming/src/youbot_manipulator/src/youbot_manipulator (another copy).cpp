@@ -113,10 +113,8 @@ namespace youbot_manipulator
 			ik_group_.setJointValueTarget(lookforward_joints);
 
 			bool success;
-			ros::Duration d(4);
 			ik_group_.asyncMove();
-			d.sleep();
-			d.sleep();
+
 			/** Should see the target now, do circling search if not*/
 			if (!has_goal_)
 			{
@@ -125,7 +123,7 @@ namespace youbot_manipulator
 					lookforward_joints[3] = tmp;
 					ik_group_.setJointValueTarget(lookforward_joints);
 					ik_group_.asyncMove();
-					d.sleep();
+					ros::Duration(2).sleep();
 					if (has_goal_)
 					{
 						ROS_INFO("Goal Detected, leaving searching loop, performing grasp");
@@ -136,19 +134,28 @@ namespace youbot_manipulator
 
 		}
 
-		if (!has_goal_)
+		if (!has_goal_ || goal_.header.stamp.toSec() + 0.5 < ros::Time::now().toSec())
 		{
+			ROS_INFO("GOAL %f, NOW %f", goal_.header.stamp.toSec(), ros::Time::now().toSec());
 			ROS_INFO("Goal Not Detected. Grasp can not be performed");
 			return false;
 		}
-		geometry_msgs::PoseStamped pre_goal = setToGraspPose(getGoal(), true);
-		geometry_msgs::PoseStamped grasp_goal = setToGraspPose(getGoal(), false);
+
 		std::vector<double> joints, pre_joints;
 
 		bool valid = false;
-		int cnt = 0;
-		while (!valid)
+		int cnt = 0, approach = 0;
+		while (cnt - approach < 10)
 		{
+			//geometry_msgs::PoseStamped pre_goal = setToGraspPose(getGoal(), true);
+			geometry_msgs::PoseStamped grasp_goal = setToGraspPose(getGoal(), false);
+
+			if (grasp_goal.header.stamp.toSec() + 0.5 < ros::Time::now().toSec())
+			{
+				ROS_INFO("GOAL %f, NOW %f", grasp_goal.header.stamp.sec, ros::Time::now().sec);
+				ROS_INFO("Goal is too old.");
+				return false;
+			}
 			if (!getIK(joints, grasp_goal))
 			{
 				ROS_INFO("Direct Grasp: IK not found");
@@ -157,22 +164,23 @@ namespace youbot_manipulator
 			double dist_goal = sqrt((getGoal().pose.position.x * getGoal().pose.position.x) + (getGoal().pose.position.y * getGoal().pose.position.y));
 			double dist_est = sqrt((joints[0] * joints[0]) + (joints[1] * joints[1]));
 			ROS_INFO("GOAL: %f,  Est: %f", dist_goal, dist_est);
-			if (dist_goal > dist_est + 0.3)
+			if (dist_goal > dist_est + 0.3 || approach > 0)
 			{
-				valid = true;
-				break;
+				approach++;
+
+				if (approach > 3)
+				{
+					moveBase(joints, false);
+					ros::Duration(2).sleep();
+					break;
+				}
+				else
+				{
+					moveBase(joints, true);
+					ros::Duration(2).sleep();
+				}
 			}
 			cnt++;
-			if (cnt > 10)
-			{
-				ROS_INFO("No valid IK is found");
-				return false;
-			}
-		}
-		if (!moveBase(joints, 0.0))
-		{
-			ROS_INFO("Direct Grasp:	Base movement NOT succeeded");
-			return false;
 		}
 
 //	if (!getIK(pre_joints, pre_goal))
@@ -202,7 +210,7 @@ namespace youbot_manipulator
 			gripper_ac_.sendGoal(openGripper(), boost::bind(&YoubotManipulator::gripperDoneCallback, this, _1, _2));
 			gripper_ac_.waitForResult();
 		}
-
+		ik_group_.setStartStateToCurrentState();
 		ik_group_.setJointValueTarget(joints);
 		succeeded = ik_group_.plan(plan_);
 		if (!succeeded)
@@ -232,6 +240,7 @@ namespace youbot_manipulator
 		lookup_joints[5] = -2.56;
 		lookup_joints[6] = 1.82;
 		lookup_joints[7] = 2.96;
+		ik_group_.setStartStateToCurrentState();
 		ik_group_.setJointValueTarget(lookup_joints);
 		ik_group_.move();
 		ros::Duration(4).sleep();
@@ -270,7 +279,7 @@ namespace youbot_manipulator
 
 		robot_model::RobotModelPtr kinematic_model = robot_model_loader.getModel();
 		robot_state::RobotStatePtr kinematic_state(new robot_state::RobotState(kinematic_model));
-		kinematic_state->setToDefaultValues();
+		//kinematic_state->setToDefaultValues();
 		const robot_state::JointModelGroup* joint_model_group = kinematic_model->getJointModelGroup(ik_ns_);
 		const std::vector<std::string> &joint_names = joint_model_group->getJointModelNames();
 
@@ -305,7 +314,7 @@ namespace youbot_manipulator
 		return found_ik;
 	}
 
-	bool YoubotManipulator::moveBase(const std::vector<double> & joint_values, double dist_offset)
+	bool YoubotManipulator::moveBase(const std::vector<double> & joint_values, bool approach)
 	{
 
 		move_base_msgs::MoveBaseGoal base_goal;
@@ -315,6 +324,11 @@ namespace youbot_manipulator
 
 		base_goal.target_pose.pose.position.x = joint_values[0];
 		base_goal.target_pose.pose.position.y = joint_values[1];
+		if (approach)
+		{
+			base_goal.target_pose.pose.position.x = base_goal.target_pose.pose.position.x * 0.7;
+			base_goal.target_pose.pose.position.y = base_goal.target_pose.pose.position.y * 0.7;
+		}
 		base_goal.target_pose.pose.orientation.w = cos((joint_values[2]) / 2);
 		base_goal.target_pose.pose.orientation.z = sin((joint_values[2]) / 2);
 		base_goal.target_pose.pose.orientation.w /= (base_goal.target_pose.pose.orientation.w * base_goal.target_pose.pose.orientation.w + base_goal.target_pose.pose.orientation.z * base_goal.target_pose.pose.orientation.z);
@@ -333,7 +347,8 @@ namespace youbot_manipulator
 //		else
 //			return false;
 		/** Now we using cmd_vel controller */
-		double t = 5; /** movement duration */
+
+		double t = 3; /** movement duration */
 		ros::Duration base_move(t);
 		geometry_msgs::Twist cmd;
 		cmd.linear.x = base_goal.target_pose.pose.position.x / t;
@@ -353,7 +368,7 @@ namespace youbot_manipulator
 	geometry_msgs::PoseStamped YoubotManipulator::setToGraspPose(const geometry_msgs::PoseStamped g, bool pre)
 	{
 		ROS_INFO("Convert GOAL at (%f, %f, %f)", g.pose.position.x, g.pose.position.y, g.pose.position.z);
-		ROS_INFO("GRASP GOAL O (%f, %f, %f, %f)", g.pose.orientation.x, g.pose.orientation.y, g.pose.orientation.z, g.pose.orientation.w);
+		ROS_INFO("Orientation (%f, %f, %f, %f)", g.pose.orientation.x, g.pose.orientation.y, g.pose.orientation.z, g.pose.orientation.w);
 		KDL::Frame grasp = KDL::Frame(KDL::Rotation::Quaternion(g.pose.orientation.x, g.pose.orientation.y, g.pose.orientation.z, g.pose.orientation.w), KDL::Vector(g.pose.position.x, g.pose.position.y, g.pose.position.z));
 		geometry_msgs::PoseStamped grasp_pose;
 		grasp.M.DoRotY(-M_PI);

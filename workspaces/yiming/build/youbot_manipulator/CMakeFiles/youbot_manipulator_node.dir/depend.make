@@ -62,6 +62,10 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/geometry_msgs/Vector3.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/geometry_msgs/Vector3Stamped.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/geometry_msgs/Wrench.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/kdl/frames.hpp
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/kdl/frames.inl
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/kdl/utilities/kdl-config.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/kdl/utilities/utility.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseAction.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseActionFeedback.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseActionGoal.h
@@ -71,9 +75,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseResult.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/exceptions/exceptions.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/kinematics_base/kinematics_base.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/macros/class_forward.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/move_group_interface/move_group.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/planning_scene_interface/planning_scene_interface.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/rdf_loader/rdf_loader.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_model/fixed_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_model/floating_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_model/joint_model.h
@@ -83,8 +89,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_model/prismatic_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_model/revolute_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_model/robot_model.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_model_loader/robot_model_loader.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_state/attached_body.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_state/conversions.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/robot_state/robot_state.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit/transforms/transforms.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit_msgs/BoundingVolume.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/moveit_msgs/CollisionObject.h
@@ -167,9 +176,9 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/shape_msgs/Plane.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/shape_msgs/SolidPrimitive.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/srdfdom/model.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/std_msgs/Bool.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/std_msgs/ColorRGBA.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/std_msgs/Header.h
-youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/std_msgs/UInt8.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/tf/LinearMath/Matrix3x3.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/tf/LinearMath/MinMax.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/tf/LinearMath/Scalar.h
@@ -196,6 +205,7 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/trajectory_msgs/JointTrajectoryPoint.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectory.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectoryPoint.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/urdf/model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/urdf_exception/exception.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/urdf_model/color.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator.cpp.o: /opt/ros/hydro/include/urdf_model/joint.h
@@ -448,6 +458,10 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/geometry_msgs/Vector3.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/geometry_msgs/Vector3Stamped.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/geometry_msgs/Wrench.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/kdl/frames.hpp
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/kdl/frames.inl
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/kdl/utilities/kdl-config.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/kdl/utilities/utility.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseAction.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseActionFeedback.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseActionGoal.h
@@ -457,9 +471,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/move_base_msgs/MoveBaseResult.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/exceptions/exceptions.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/kinematics_base/kinematics_base.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/macros/class_forward.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/move_group_interface/move_group.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/planning_scene_interface/planning_scene_interface.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/rdf_loader/rdf_loader.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_model/fixed_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_model/floating_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_model/joint_model.h
@@ -469,8 +485,11 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_model/prismatic_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_model/revolute_joint_model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_model/robot_model.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_model_loader/robot_model_loader.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_state/attached_body.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_state/conversions.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/robot_state/robot_state.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit/transforms/transforms.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit_msgs/BoundingVolume.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/moveit_msgs/CollisionObject.h
@@ -553,9 +572,9 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/shape_msgs/Plane.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/shape_msgs/SolidPrimitive.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/srdfdom/model.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/std_msgs/Bool.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/std_msgs/ColorRGBA.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/std_msgs/Header.h
-youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/std_msgs/UInt8.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/tf/LinearMath/Matrix3x3.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/tf/LinearMath/MinMax.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/tf/LinearMath/Scalar.h
@@ -582,6 +601,7 @@ youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/trajectory_msgs/JointTrajectoryPoint.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectory.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/trajectory_msgs/MultiDOFJointTrajectoryPoint.h
+youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/urdf/model.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/urdf_exception/exception.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/urdf_model/color.h
 youbot_manipulator/CMakeFiles/youbot_manipulator_node.dir/src/youbot_manipulator_node.cpp.o: /opt/ros/hydro/include/urdf_model/joint.h

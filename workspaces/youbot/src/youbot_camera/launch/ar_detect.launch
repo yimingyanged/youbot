@@ -1,0 +1,23 @@
+<launch>
+  <arg name="marker_pattern" default="$(find youbot_camera)/data/4x4_91.patt"/>
+  <arg name="marker_width" default="135.0"/>
+  <node name="ar_poses_obj" pkg="ar_pose" type="ar_single" respawn="false" output="screen" >
+    <!-- Remap input-->
+    <remap to="/xtion/rgb/image_color" from="/camera/image_raw" />
+    <remap to="/xtion/rgb/camera_info" from="/camera/camera_info" />
+    <!-- Remap output -->
+    <remap to="ar_pose_obj" from="ar_pose_marker" />
+    <remap to="visualization_obj" from="visualization_marker" />
+    
+    <!-- Marker specification -->
+    <param name="marker_pattern" type="string" value="$(find youbot_camera)/data/4x4_91.patt"/>
+    <param name="marker_width" type="double" value="135.0"/>
+    <param name="marker_center_x" type="double" value="0.0"/>
+    <param name="marker_center_y" type="double" value="0.0"/>
+    <param name="threshold" type="int" value="100"/>
+    <param name="use_history" type="bool" value="false"/>
+    <param name="publish_tf" type="bool" value="true" />
+  </node>
+
+  <node name="goal_filter" pkg="youbot_goal_passer" type="goal_filter" />
+</launch>

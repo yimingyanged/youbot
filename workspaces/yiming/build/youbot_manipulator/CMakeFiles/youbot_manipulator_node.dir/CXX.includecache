@@ -31,16 +31,24 @@ actionlib/client/simple_action_client.h
 -
 control_msgs/GripperCommandAction.h
 -
-std_msgs/UInt8.h
+std_msgs/Bool.h
 -
 move_base_msgs/MoveBaseAction.h
 -
+kdl/frames.hpp
+-
+geometry_msgs/Twist.h
+-
+moveit/robot_model_loader/robot_model_loader.h
+-
+moveit/robot_model/robot_model.h
+-
+moveit/robot_state/robot_state.h
+-
+moveit/robot_state/conversions.h
+-
 
 /home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/src/youbot_manipulator.cpp
-youbot_manipulator/youbot_manipulator.h
-/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/src/youbot_manipulator/youbot_manipulator.h
-
-/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/src/youbot_manipulator_node.cpp
 youbot_manipulator/youbot_manipulator.h
 /home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/src/youbot_manipulator/youbot_manipulator.h
 
@@ -832,6 +840,28 @@ geometry_msgs/Vector3.h
 geometry_msgs/Vector3.h
 -
 
+/opt/ros/hydro/include/kdl/frames.hpp
+utilities/kdl-config.h
+/opt/ros/hydro/include/kdl/utilities/kdl-config.h
+utilities/utility.h
+/opt/ros/hydro/include/kdl/utilities/utility.h
+frames.inl
+/opt/ros/hydro/include/kdl/frames.inl
+
+/opt/ros/hydro/include/kdl/frames.inl
+
+/opt/ros/hydro/include/kdl/utilities/kdl-config.h
+
+/opt/ros/hydro/include/kdl/utilities/utility.h
+kdl-config.h
+/opt/ros/hydro/include/kdl/utilities/kdl-config.h
+cstdlib
+-
+cassert
+-
+cmath
+-
+
 /opt/ros/hydro/include/move_base_msgs/MoveBaseAction.h
 string
 -
@@ -986,6 +1016,16 @@ boost/function.hpp
 string
 -
 
+/opt/ros/hydro/include/moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
+boost/function.hpp
+-
+boost/shared_ptr.hpp
+-
+moveit/robot_model/robot_model.h
+-
+moveit/kinematics_base/kinematics_base.h
+-
+
 /opt/ros/hydro/include/moveit/macros/class_forward.h
 boost/shared_ptr.hpp
 -
@@ -1018,6 +1058,16 @@ moveit/robot_state/robot_state.h
 moveit_msgs/CollisionObject.h
 -
 moveit_msgs/AttachedCollisionObject.h
+-
+
+/opt/ros/hydro/include/moveit/rdf_loader/rdf_loader.h
+urdf/model.h
+-
+srdfdom/model.h
+-
+boost/shared_ptr.hpp
+-
+tinyxml.h
 -
 
 /opt/ros/hydro/include/moveit/robot_model/fixed_joint_model.h
@@ -1114,6 +1164,14 @@ Eigen/Geometry
 iostream
 -
 
+/opt/ros/hydro/include/moveit/robot_model_loader/robot_model_loader.h
+moveit/robot_model/robot_model.h
+-
+moveit/rdf_loader/rdf_loader.h
+-
+moveit/kinematics_plugin_loader/kinematics_plugin_loader.h
+-
+
 /opt/ros/hydro/include/moveit/robot_state/attached_body.h
 moveit/robot_model/link_model.h
 -
@@ -1124,6 +1182,16 @@ boost/function.hpp
 trajectory_msgs/JointTrajectory.h
 -
 set
+-
+
+/opt/ros/hydro/include/moveit/robot_state/conversions.h
+moveit/robot_state/robot_state.h
+-
+moveit/transforms/transforms.h
+-
+moveit_msgs/RobotState.h
+-
+moveit_msgs/RobotTrajectory.h
 -
 
 /opt/ros/hydro/include/moveit/robot_state/robot_state.h
@@ -1140,6 +1208,20 @@ geometry_msgs/Twist.h
 cassert
 -
 boost/assert.hpp
+-
+
+/opt/ros/hydro/include/moveit/transforms/transforms.h
+geometry_msgs/TransformStamped.h
+-
+geometry_msgs/Pose.h
+-
+Eigen/Geometry
+-
+boost/shared_ptr.hpp
+-
+boost/noncopyable.hpp
+-
+moveit/macros/class_forward.h
 -
 
 /opt/ros/hydro/include/moveit_msgs/AttachedCollisionObject.h
@@ -2306,6 +2388,22 @@ urdf_model/model.h
 tinyxml.h
 -
 
+/opt/ros/hydro/include/std_msgs/Bool.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /opt/ros/hydro/include/std_msgs/ColorRGBA.h
 string
 -
@@ -2323,22 +2421,6 @@ ros/message_operations.h
 -
 
 /opt/ros/hydro/include/std_msgs/Header.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
-/opt/ros/hydro/include/std_msgs/UInt8.h
 string
 -
 vector
@@ -2674,6 +2756,16 @@ geometry_msgs/Transform.h
 geometry_msgs/Twist.h
 -
 geometry_msgs/Twist.h
+-
+
+/opt/ros/hydro/include/urdf/model.h
+string
+-
+map
+-
+urdf_model/model.h
+-
+tinyxml.h
 -
 
 /opt/ros/hydro/include/urdf_exception/exception.h

@@ -3,10 +3,11 @@
   <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
   <arg name="load_robot_description" default="true"/>
 
-  <arg name="robot_description" default="robot_description"/>
-
-  <!-- param name="$(arg robot_description)_semantic" textfile="$(find youbot_base_ik_weighted_moveit)/config/youbot.srdf" /-->
-
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find youbot_base_ik_weighted_moveit)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+  <rosparam command="load" file="$(find kdl_kinematics_plugin_weighted)/config/weighting.yaml" />
   
   <!--param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro.py '$(find youbot_description)/robots/youbot_baseIK.urdf.xacro'"/-->
   <node name="youbot_manipulator" pkg="youbot_manipulator" type="youbot_manipulator_node" respawn="true" output="screen"/>

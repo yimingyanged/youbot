@@ -1,6 +1,6 @@
 <launch>
-  <arg name="marker_pattern" default="$(find youbot_camera)/data/patt.rail_simple"/>    <!-- "$(find ar_pose)/data/patt.hiro"/> -->
-  <arg name="marker_width" default="110.0"/>
+  <arg name="marker_pattern" default="$(find youbot_camera)/data/4x4_79.patt"/>    <!-- "$(find ar_pose)/data/patt.hiro"/> -->
+  <arg name="marker_width" default="135.0"/>
 
   <node name="ar_pose" pkg="ar_pose" type="ar_single" respawn="false" output="screen" >
     <remap to="/xtion/rgb/image_color" from="/camera/image_raw" />

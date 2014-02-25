@@ -20,7 +20,9 @@
         <link name="arm_link_3" />
         <link name="arm_link_4" />
         <link name="arm_link_5" />
-        <chain base_link="dummy_prismatic_link" tip_link="arm_link_5" />
+        <link name="gripper_palm_link" />
+        <link name="gripper_tcp_link" />
+        <chain base_link="dummy_prismatic_link" tip_link="gripper_tcp_link" />
     </group>
     <group name="Gripper">
         <joint name="gripper_palm_joint" />

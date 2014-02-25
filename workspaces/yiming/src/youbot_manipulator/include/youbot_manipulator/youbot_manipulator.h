@@ -21,9 +21,10 @@
 #include <actionlib/server/simple_action_server.h>
 #include <actionlib/client/simple_action_client.h>
 #include <control_msgs/GripperCommandAction.h>
-#include <std_msgs/UInt8.h>
+#include <std_msgs/Bool.h>
 #include <move_base_msgs/MoveBaseAction.h>
 #include <kdl/frames.hpp>
+#include <geometry_msgs/Twist.h>
 // MoveIt!
 #include <moveit/robot_model_loader/robot_model_loader.h>
 #include <moveit/robot_model/robot_model.h>
@@ -78,9 +79,10 @@ namespace youbot_manipulator
 		 */
 		std::vector<double> getJointValues(const robot_state::JointModelGroup * group);
 		/**
-		 * @brief Implementation of target call back
+		 * @brief Implementation of target setting
 		 * @param target target pose
 		 */
+		void setTarget(const geometry_msgs::PoseStamped & target);
 		void targetCallback(const geometry_msgs::PoseStamped::ConstPtr & target);
 
 		geometry_msgs::PoseStamped getGoal();
@@ -91,14 +93,15 @@ namespace youbot_manipulator
 
 		/**
 		 * @brief Manipulation start trigger
-		 * @param trigger	0: direct grasp;	1: pre-grasp and then grasp
+		 * @param start	0: direct grasp;	1: pre-grasp and then grasp
 		 */
-		void triggerCallback(const std_msgs::UInt8ConstPtr &  trigger);
+		void startCallback(const std_msgs::BoolConstPtr &  start);
 
 		/**
-		 * @brief Base navigation result
+		 * @brief Implementation of target searching
 		 */
-		//void baseDoneCallback(const move_base_msgs::move)
+		bool searchTarget();
+
 		/**
 		 * @brief open gripper
 		 * @return action goal for open gripper position
@@ -122,7 +125,7 @@ namespace youbot_manipulator
 		 * @param	joint_values joint values with first three the base goal
 		 * @return 	true if succeeded
 		 */
-		bool moveBase(const std::vector<double> &  joint_values, double dist_offset);
+		bool moveBase(const std::vector<double> &  joint_values, double dist_offset, geometry_msgs::Twist & final_move);
 
 		bool goHome();
 		/**
@@ -139,8 +142,10 @@ namespace youbot_manipulator
 		bool has_gripper_;	/** true if has gripper action server	*/
 		bool has_base_;	/** true if allowed to perform base movement	*/
 		ros::Subscriber target_sub_;	/** target subscriber */
-		ros::Subscriber trigger_sub_;	/** trigger subscriber	*/
-		ros::Subscriber base_done_sub_;	/** base result subscriber */
+		ros::Subscriber start_sub_;	/** start subscriber	*/
+		ros::Publisher vel_pub_;	/** base cmd_vel publisher */
+		ros::Publisher done_pub_;	/** done publisher */
+
 		std::string ik_ns_;	/**	group name for IK calculation	*/
 		std::string plan_ns_;	/** group name for planning */
 		moveit_msgs::DisplayTrajectory display_trajectory_;	/** trajectory */

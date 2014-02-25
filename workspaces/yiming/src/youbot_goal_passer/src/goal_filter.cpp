@@ -50,10 +50,10 @@ private:
 				pose_.pose.orientation.w = transform.getRotation().w();
 				//ROS_INFO("Publish target pose (%f, %f, %f) (%f, %f, %f, %f)", pose_.position.x, pose_.position.y, pose_.position.z,pose_.orientation.x, pose_.orientation.y, pose_.orientation.z, pose_.orientation.w);
 				filter_pub_.publish(pose_);
-				ros::Duration(0.5).sleep();
+				ros::Duration(0.1).sleep();
 			}
 			catch (tf::TransformException ex){
-				ROS_ERROR("%s",ex.what());
+				ROS_WARN("Target Not Detected, keep searching");
 			}
 		}
 	}
