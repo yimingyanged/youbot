@@ -97,7 +97,7 @@ namespace youbot_manipulator
 		ROS_INFO("Gripper: Grasping");
 #endif
 		control_msgs::GripperCommandGoal g;
-		g.command.position = 0.004;
+		g.command.position = 0.001;
 		return g;
 	}
 
@@ -176,7 +176,7 @@ namespace youbot_manipulator
 #ifdef DEBUG_MODE
 			ROS_INFO("GOAL: %f,  Est: %f", dist_goal, dist_est);
 #endif
-			if (dist_goal > dist_est + 0.3)
+			if (dist_goal > dist_est + 0.2)
 			{
 				valid = true;
 				break;
@@ -198,6 +198,9 @@ namespace youbot_manipulator
 #endif
 			return false;
 		}
+#ifdef DEBUG_MODE
+		ROS_INFO("Direct Grasp:	Base movement succeeded");
+#endif
 
 //	if (!getIK(pre_joints, pre_goal))
 //		{
@@ -206,33 +209,29 @@ namespace youbot_manipulator
 //		}
 		pre_joints.resize(8);
 		pre_joints = joints;
-		pre_joints[5] = pre_joints[5] - 0.13;
-		pre_joints[6] = pre_joints[6] + 0.13;
+		pre_joints[5] = pre_joints[4] - 0.1;
+		pre_joints[5] = pre_joints[5] - 0.1;
+		//pre_joints[6] = pre_joints[6] + 0.13;
 
-		ik_group_.setJointValueTarget(pre_joints);
-		bool succeeded = ik_group_.plan(plan_);
-		if (!succeeded)
-		{
-#ifdef DEBUG_MODE
-			ROS_INFO("Direct Grasp: Arm planning for pre grasp NOT succeeded");
-#endif
-			return false;
-		}
-		if (!ik_group_.move())
-		{
-#ifdef DEBUG_MODE
-			ROS_INFO("Pre grasp execute failed");
-#endif
-			return false;
-		}
+//		ik_group_.setJointValueTarget(pre_joints);
+//		bool succeeded = ik_group_.plan(plan_);
+//		if (!succeeded)
+//		{
+//#ifdef DEBUG_MODE
+//			ROS_INFO("Direct Grasp: Arm planning for pre grasp NOT succeeded");
+//#endif
+//			return false;
+//		}
+//		ik_group_.move();
+//		ros::Duration(2).sleep();
 		if (has_gripper_)
 		{
 			gripper_ac_.sendGoal(openGripper(), boost::bind(&YoubotManipulator::gripperDoneCallback, this, _1, _2));
 			gripper_ac_.waitForResult();
 		}
-
+ROS_INFO("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		ik_group_.setJointValueTarget(joints);
-		succeeded = ik_group_.plan(plan_);
+		bool succeeded = ik_group_.plan(plan_);
 		if (!succeeded)
 		{
 #ifdef DEBUG_MODE
@@ -240,20 +239,18 @@ namespace youbot_manipulator
 #endif
 			return false;
 		}
-		if (!ik_group_.move())
+		if(!ik_group_.move())
 		{
 #ifdef DEBUG_MODE
-			ROS_INFO("Grasp execute failed");
+			ROS_INFO("Direct Grasp: ik group move failed");
 #endif
-			return false;
 		}
-		ros::Duration(1.0).sleep();
+		ros::Duration(2.0).sleep();
 		vel_pub_.publish(final_move);
-		final_move.linear.x = final_move.linear.y = final_move.angular.z =0;
+		final_move.linear.x = final_move.linear.y = final_move.angular.z = 0;
 		ros::Duration(0.3).sleep();
 		vel_pub_.publish(final_move);
 		ros::Duration(1.0).sleep();
-		vel_pub_.shutdown();
 		if (has_gripper_)
 		{
 			gripper_ac_.sendGoal(graspGripper(), boost::bind(&YoubotManipulator::gripperDoneCallback, this, _1, _2));
@@ -300,6 +297,14 @@ namespace youbot_manipulator
 			gripper_ac_.sendGoal(graspGripper(), boost::bind(&YoubotManipulator::gripperDoneCallback, this, _1, _2));
 			gripper_ac_.waitForResult();
 		}
+		final_move.linear.x = -1 * final_move.linear.x;
+		final_move.linear.y = -1 * final_move.linear.y;
+		vel_pub_.publish(final_move);
+		ros::Duration(3).sleep();
+		final_move.linear.x = final_move.linear.y = 0;
+		vel_pub_.publish(final_move);
+		ros::Duration(1).sleep();
+		vel_pub_.shutdown();
 		return true;
 	}
 
@@ -392,16 +397,37 @@ namespace youbot_manipulator
 		/** Now we using cmd_vel controller */
 		double t = 5; /** movement duration */
 		geometry_msgs::Twist cmd;
-		cmd.linear.x = (base_goal.target_pose.pose.position.x -0.08) / t;
+		cmd.linear.x = (base_goal.target_pose.pose.position.x - 0.08) / t;
 		cmd.linear.y = (base_goal.target_pose.pose.position.y) / t;
 		cmd.linear.z = 0;
 		cmd.angular.x = 0;
 		cmd.angular.y = 0;
-		cmd.angular.z = base_goal.target_pose.pose.orientation.z / t;
+		cmd.angular.z = 0;
+
 		vel_pub_.publish(cmd);
 		final_move = cmd;
-		ros::Duration(t-0.3).sleep();
+		ros::Duration(t - 0.3).sleep();
 		cmd.linear.x = cmd.linear.y = 0;
+		ROS_INFO("Angular Vel %f", base_goal.target_pose.pose.orientation.z / 2);
+		cmd.angular.z = base_goal.target_pose.pose.orientation.z / 2;
+		if (cmd.angular.z > 0 && cmd.angular.z < 0.1)
+		{
+			cmd.angular.z = 0.1;
+			vel_pub_.publish(cmd);
+			ros::Duration(20 * cmd.angular.z).sleep();
+		}
+		else if (cmd.angular.z < 0 && cmd.angular.z > -0.1)
+		{
+			cmd.angular.z = -0.1;
+			vel_pub_.publish(cmd);
+			ros::Duration(20 * cmd.angular.z).sleep();
+		}
+		else
+		{
+			vel_pub_.publish(cmd);
+			ros::Duration(2).sleep();
+		}
+
 		cmd.angular.z = 0;
 		vel_pub_.publish(cmd);
 		return true;
@@ -415,8 +441,8 @@ namespace youbot_manipulator
 		KDL::Frame grasp = KDL::Frame(KDL::Rotation::Quaternion(g.pose.orientation.x, g.pose.orientation.y, g.pose.orientation.z, g.pose.orientation.w), KDL::Vector(g.pose.position.x, g.pose.position.y, g.pose.position.z));
 		geometry_msgs::PoseStamped grasp_pose;
 		grasp.M.DoRotY(-M_PI);
-		grasp.p.z(grasp.p.z() - 0.04);
-		grasp.p.y(grasp.p.y() - 0.05);
+		grasp.p.z(grasp.p.z() - 0.03);
+		//grasp.p.y(grasp.p.y() - 0.05);
 		//grasp.M.DoRotX(-M_PI/2.0);
 		grasp_pose.header = g.header;
 		grasp_pose.pose.position.x = grasp.p.x();
