@@ -406,7 +406,7 @@ ROS_INFO("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 		vel_pub_.publish(cmd);
 		final_move = cmd;
-		ros::Duration(t - 0.3).sleep();
+		ros::Duration(t - 0.1).sleep();
 		cmd.linear.x = cmd.linear.y = 0;
 		ROS_INFO("Angular Vel %f", base_goal.target_pose.pose.orientation.z / 2);
 		cmd.angular.z = base_goal.target_pose.pose.orientation.z / 2;
@@ -414,13 +414,13 @@ ROS_INFO("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		{
 			cmd.angular.z = 0.1;
 			vel_pub_.publish(cmd);
-			ros::Duration(20 * cmd.angular.z).sleep();
+			ros::Duration(2).sleep();
 		}
 		else if (cmd.angular.z < 0 && cmd.angular.z > -0.1)
 		{
 			cmd.angular.z = -0.1;
 			vel_pub_.publish(cmd);
-			ros::Duration(20 * cmd.angular.z).sleep();
+			ros::Duration(2).sleep();
 		}
 		else
 		{

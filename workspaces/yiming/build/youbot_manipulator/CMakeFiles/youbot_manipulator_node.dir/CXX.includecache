@@ -48,7 +48,7 @@ moveit/robot_state/robot_state.h
 moveit/robot_state/conversions.h
 -
 
-/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/src/youbot_manipulator.cpp
+/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/src/youbot_manipulator_node.cpp
 youbot_manipulator/youbot_manipulator.h
 /home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/src/youbot_manipulator/youbot_manipulator.h
 

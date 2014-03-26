@@ -13,6 +13,7 @@ SET(CMAKE_C_INCLUDE_PATH
   "/home/yiming/ros_workspace/youbot/workspaces/yiming/src/youbot_manipulator/include"
   "/opt/ros/hydro/include"
   "/usr/include/eigen3"
+  "/usr/include/pcl-1.7"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

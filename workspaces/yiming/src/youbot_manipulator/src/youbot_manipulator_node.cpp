@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     pre_grasp_offset.orientation.y = 0.0;
     pre_grasp_offset.orientation.z = 0.0;
     pre_grasp_offset.orientation.w = 1.0;
-    youbot_manipulator::YoubotManipulator manipulator(&n, "ArmAndBase", "Arm", "/arm_1/gripper_controller/gripper_command", "target_goal_pose", "move_base", pre_grasp_offset, has_base);
+    youbot_manipulator::YoubotManipulator manipulator(&n, "ArmAndBase", "Arm", "/arm_1/gripper_controller/position_command", "target_goal_pose", "move_base", pre_grasp_offset, has_base);
     ROS_INFO("Youbot Manipulator Initialized");
     ros::spin();
     return 0;
